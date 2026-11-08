@@ -10,9 +10,13 @@ A personal, browser-based checklist for Borderlands loot, with a Lootlemon catal
 - Catalog sync is additive: newly discovered items are added; missing source entries are archived, never silently deleted.
 - Before sync, the workflow snapshots the current catalog and metadata. The UI also supports local JSON export/import.
 
-## Run locally
+## Run locally (Windows)
 
-Open `index.html` in a browser. No build step is required.
+1. Install Python 3 if needed.
+2. Double-click `start.bat`.
+3. The app opens at `http://127.0.0.1:8765/`. Keep the server window open while using it; close that window to stop the server.
+
+The launcher binds only to `127.0.0.1` and serves the static app locally. No build step or Node.js installation is required. See [START_HERE.md](START_HERE.md) for details. You can also run `py -3 -m http.server 8765 --bind 127.0.0.1` from the project folder.
 
 ## Catalog synchronization
 
