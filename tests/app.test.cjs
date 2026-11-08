@@ -144,3 +144,30 @@ test("legacy progress and server catalog backups restore safely",async()=>{
   assert.equal(JSON.parse(x.w.localStorage.getItem("bl-loot-progress-v1"))["bl4-2"],true);
  }finally{x.close();}
 });
+
+test("rarity colours are attached to item titles and collected cards are visibly marked",async()=>{
+ const x=await boot();
+ try{
+  const alpha=x.doc.querySelector('#items [data-id="bl4-1"]').closest(".item");
+  const beta=x.doc.querySelector('#items [data-id="bl4-2"]').closest(".item");
+  assert.ok(alpha.querySelector(".name").classList.contains("rarity-legendary"));
+  assert.ok(beta.querySelector(".name").classList.contains("rarity-epic"));
+  assert.equal(alpha.classList.contains("collected"),false);
+  x.doc.querySelector('#items [data-id="bl4-1"]').click();
+  assert.equal(x.doc.querySelector('#items [data-id="bl4-1"]').closest(".item").classList.contains("collected"),true);
+ }finally{x.close();}
+});
+
+test("collected items always move to the bottom for every sort mode",async()=>{
+ const x=await boot();
+ try{
+  x.doc.querySelector('#items [data-id="bl4-1"]').click();
+  const names=()=>[...x.doc.querySelectorAll("#items .item")].map(el=>el.querySelector(".name").textContent);
+  assert.deepEqual(names(),["Beta Shield","Alpha Rifle"]);
+  const sort=x.doc.getElementById("sort");
+  sort.value="category";sort.dispatchEvent(new x.w.Event("change"));
+  assert.equal(names().at(-1),"Alpha Rifle");
+  sort.value="rarity";sort.dispatchEvent(new x.w.Event("change"));
+  assert.equal(names().at(-1),"Alpha Rifle");
+ }finally{x.close();}
+});
