@@ -239,6 +239,10 @@ def parse_page(url,game,category):
        add_attr(attributes,field_label[5:],split_values(cell))
   for field in semantic_values:
    semantic_values[field]=clean_values(semantic_values[field])
+   # Lootlemon skill/tree icon wrappers can carry generic classes like skill-link;
+   # these are layout markers, not actual skill or tree names.
+   if field in {"skill","tree"}:
+    semantic_values[field]=[value for value in semantic_values[field] if value.casefold() not in {"link","icon","image","wrapper","container","badge","label","value"}]
   # Rarity is no longer an allow-list: any explicit Lootlemon rarity value is valid.
   rarity_candidates=[]
   for el in [card,*card.find_all(True)]:
