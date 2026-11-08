@@ -8,6 +8,7 @@
  const read=(key,fallback)=>{try{return JSON.parse(localStorage.getItem(key)||"null")??fallback}catch{return fallback}};
  done=read(KEYS.progress,{});
  settings={...defaults,...read(KEYS.settings,{})};
+ if(!["name","rarity","content"].includes(settings.sort))settings.sort="name";
  backupHistory=read(KEYS.history,[]);
  const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
  const ELEMENTS={
@@ -120,7 +121,6 @@
     const collected=Number(!!done[x.id])-Number(!!done[y.id]);
     if(collected)return collected;
    }
-   if(settings.sort==="category")return (x.category||"").localeCompare(y.category||"")||x.name.localeCompare(y.name);
    if(settings.sort==="rarity")return rarityLabel(x.rarity).localeCompare(rarityLabel(y.rarity))||x.name.localeCompare(y.name);
    if(settings.sort==="content"){const rank=v=>/^base game$/i.test(v)?0:/^event$/i.test(v)?1:2;return rank(contentOf(x))-rank(contentOf(y))||contentOf(x).localeCompare(contentOf(y))||x.name.localeCompare(y.name)}
    return x.name.localeCompare(y.name);
