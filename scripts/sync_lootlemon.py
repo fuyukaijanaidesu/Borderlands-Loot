@@ -143,16 +143,16 @@ def parse_page(url,game,category):
   if not name:
    continue
 
-  item_link=None
-  for a in card.select("a[href]"):
-   href=urljoin(BASE,a.get("href",""))
-   path=urlparse(href).path
-   if path.startswith("/") and path != urlparse(url).path and "/db/" not in path:
-    item_link=a
-    break
+  # The overlay is the card's primary item link; other links may point to
+  # character skills, source locations, or filters.
+  item_link=card.select_one("a.link-overlay[href]")
   if item_link is None:
-   # Most collection cards have an overlay link with the item's slug.
-   item_link=card.select_one("a.link-overlay[href]")
+   for a in card.select("a[href]"):
+    href=urljoin(BASE,a.get("href",""))
+    path=urlparse(href).path
+    if path.startswith("/") and path != urlparse(url).path and "/db/" not in path:
+     item_link=a
+     break
   href=urljoin(BASE,item_link["href"]) if item_link else url
 
   # Extract remaining cells in DOM order. The first prominent text cell is
