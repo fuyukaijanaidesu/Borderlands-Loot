@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="360" viewBox="0 0 1400 360" role="img" aria-labelledby="t d">
+<title id="t">How Borderlands Loot Tracker works</title><desc id="d">Lootlemon catalog is synchronized by GitHub Actions, stored in the repository and displayed in the browser, while collection progress stays in local browser storage.</desc>
+<defs><linearGradient id="panel" x2="1" y2="1"><stop stop-color="#302633"/><stop offset="1" stop-color="#1b1a22"/></linearGradient><marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L9 3L0 6" fill="#ff8a67"/></marker></defs>
+<rect width="1400" height="360" rx="24" fill="#15151a"/>
+<g font-family="Arial,sans-serif">
+ <g transform="translate(50 90)"><rect width="260" height="150" rx="18" fill="url(#panel)" stroke="#ff8a67" stroke-width="2"/><text x="130" y="48" fill="#ff9c73" font-size="17" text-anchor="middle" font-weight="700">SOURCE</text><text x="130" y="88" fill="#fff" font-size="27" text-anchor="middle" font-weight="700">Lootlemon</text><text x="130" y="119" fill="#c9c1cb" font-size="16" text-anchor="middle">Item data &amp; links</text></g>
+ <path d="M320 165H390" stroke="#ff8a67" stroke-width="4" marker-end="url(#arr)"/>
+ <g transform="translate(410 90)"><rect width="260" height="150" rx="18" fill="url(#panel)" stroke="#ff8a67" stroke-width="2"/><text x="130" y="48" fill="#ff9c73" font-size="17" text-anchor="middle" font-weight="700">AUTOMATION</text><text x="130" y="88" fill="#fff" font-size="27" text-anchor="middle" font-weight="700">GitHub Actions</text><text x="130" y="119" fill="#c9c1cb" font-size="16" text-anchor="middle">Daily / manual sync</text></g>
+ <path d="M680 165H750" stroke="#ff8a67" stroke-width="4" marker-end="url(#arr)"/>
+ <g transform="translate(770 90)"><rect width="260" height="150" rx="18" fill="url(#panel)" stroke="#ff8a67" stroke-width="2"/><text x="130" y="48" fill="#ff9c73" font-size="17" text-anchor="middle" font-weight="700">CATALOG</text><text x="130" y="88" fill="#fff" font-size="27" text-anchor="middle" font-weight="700">catalog.json</text><text x="130" y="119" fill="#c9c1cb" font-size="16" text-anchor="middle">Versioned item database</text></g>
+ <path d="M1040 165H1110" stroke="#ff8a67" stroke-width="4" marker-end="url(#arr)"/>
+ <g transform="translate(1130 90)"><rect width="220" height="150" rx="18" fill="url(#panel)" stroke="#ff8a67" stroke-width="2"/><text x="110" y="48" fill="#ff9c73" font-size="17" text-anchor="middle" font-weight="700">APP</text><text x="110" y="88" fill="#fff" font-size="27" text-anchor="middle" font-weight="700">Tracker</text><text x="110" y="119" fill="#c9c1cb" font-size="16" text-anchor="middle">Search &amp; checklist</text></g>
+ <path d="M1240 250V285H700" fill="none" stroke="#8ccf9e" stroke-width="3" stroke-dasharray="8 7"/><path d="M700 285H520V250" fill="none" stroke="#8ccf9e" stroke-width="3" stroke-dasharray="8 7" marker-end="url(#arr)"/>
+ <text x="700" y="322" fill="#9fdaa9" font-size="18" text-anchor="middle" font-weight="700">Collection progress stays in your browser (local storage + JSON export/import)</text>
+</g></svg>

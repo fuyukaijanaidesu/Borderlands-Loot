@@ -148,9 +148,32 @@ test("collection styling never leaks onto the Copy Code action",async()=>{const 
  assert.ok(!updatedCopy.classList.contains("done"));
  assert.equal(updatedCopy.textContent,"Copy Code");
 }finally{x.close()}});
-test("filter controls use a stable grid and fixed search width",()=>{
+test("search has its own row and filters use a responsive grid",()=>{
  const styles=fs.readFileSync(path.join(root,"assets/styles.css"),"utf8");
- assert.match(styles,/\.filters\{display:grid;grid-template-columns:280px 150px minmax\(0,1fr\) 140px auto auto/);
- assert.match(styles,/\.filters #search\{width:280px;min-width:0;flex:none\}/);
- assert.match(styles,/\.filters \.dynamic-filters select\{width:145px;min-width:145px;max-width:145px;flex:0 0 145px\}/);
+ const searchRow=html.indexOf('class="search-row"'),filters=html.indexOf('class="filters"');
+ assert.ok(searchRow>=0&&searchRow<filters);
+ assert.match(styles,/\.filters\{display:grid;grid-template-columns:repeat\(auto-fit,minmax\(165px,1fr\)\)/);
+ assert.match(styles,/\.search-row #search\{display:block;width:100%;max-width:560px/);
+ assert.doesNotMatch(html,/move-collected/);
 });
+
+
+test("collected cards keep their position and use a single Collected label",async()=>{const x=await boot();try{
+ const before=[...x.doc.querySelectorAll("#items .item .name")].map(el=>el.textContent);
+ const firstCard=x.doc.querySelector('#items [data-id="weapon-1"]').closest(".item");
+ const secondCard=x.doc.querySelector('#items [data-id="weapon-2"]').closest(".item");
+ const firstImage=firstCard.querySelector("img");
+ const button=firstCard.querySelector(".collect-button");
+ button.click();
+ const after=[...x.doc.querySelectorAll("#items .item .name")].map(el=>el.textContent);
+ const collected=x.doc.querySelector('#items [data-id="weapon-1"]');
+ assert.equal(collected.closest(".item"),firstCard,"the clicked card should be updated in place");
+ assert.equal(x.doc.querySelector('#items [data-id="weapon-2"]').closest(".item"),secondCard,"other cards should not be recreated");
+ assert.equal(firstCard.querySelector("img"),firstImage,"the clicked card image should not be recreated");
+ assert.equal(x.doc.getElementById("game-count").textContent,"1 / 4 собрано");
+ assert.equal(x.doc.getElementById("all-count").textContent,"1 из 14 предметов");
+ assert.deepEqual(after,before);
+ assert.equal(collected.textContent,"Collected");
+ assert.equal(collected.textContent.includes("✓"),false);
+ assert.doesNotMatch(fs.readFileSync(path.join(root,"assets/styles.css"),"utf8"),/\.item\.collected \.item-foot \.collect-button::before\{content:"✓/);
+}finally{x.close()}});

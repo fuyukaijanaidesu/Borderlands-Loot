@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="520" viewBox="0 0 1600 520" role="img" aria-labelledby="title desc">
+<title id="title">Borderlands Loot Tracker</title><desc id="desc">A vault-inspired banner for a Borderlands collection tracker.</desc>
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#17151d"/><stop offset=".55" stop-color="#28202a"/><stop offset="1" stop-color="#111318"/></linearGradient>
+ <linearGradient id="hot" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#ff526e"/><stop offset="1" stop-color="#ff9c53"/></linearGradient>
+ <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse"><path d="M44 0H0V44" fill="none" stroke="#ffffff" stroke-opacity=".055"/></pattern>
+ <filter id="glow"><feGaussianBlur stdDeviation="18"/></filter>
+</defs>
+<rect width="1600" height="520" rx="28" fill="url(#bg)"/><rect width="1600" height="520" rx="28" fill="url(#grid)"/>
+<circle cx="1330" cy="245" r="170" fill="#ff526e" opacity=".12" filter="url(#glow)"/>
+<path d="M1110 90l90 34 36 92-36 92-90 34-90-34-36-92 36-92z" fill="none" stroke="#ff6576" stroke-opacity=".5" stroke-width="3"/>
+<path d="M1110 142l54 20 22 54-22 54-54 20-54-20-22-54 22-54z" fill="#ff6576" fill-opacity=".12" stroke="#ff9c53" stroke-width="3"/>
+<path d="M1110 184l32 32-32 32-32-32z" fill="#ff9c53"/>
+<g fill="none" stroke="#ff9c53" stroke-width="3" opacity=".8"><path d="M1300 112l30-30 30 30-30 30z"/><path d="M1390 340l22-22 22 22-22 22z"/><path d="M980 360l18-18 18 18-18 18z"/></g>
+<text x="112" y="130" fill="#ff9c53" font-family="Arial,sans-serif" font-size="22" font-weight="700" letter-spacing="7">YOUR PERSONAL VAULT</text>
+<text x="105" y="240" fill="#fff" font-family="Arial,sans-serif" font-size="76" font-weight="900" letter-spacing="-2">BORDERLANDS</text>
+<text x="105" y="328" fill="url(#hot)" font-family="Arial,sans-serif" font-size="88" font-weight="900" letter-spacing="-2">LOOT TRACKER</text>
+<text x="112" y="390" fill="#d5cbd3" font-family="Arial,sans-serif" font-size="25">Track every drop. Build your collection. Keep your progress.</text>
+<g transform="translate(112 435)" font-family="Arial,sans-serif" font-size="16" font-weight="700"><rect width="152" height="42" rx="21" fill="#ff526e"/><text x="76" y="27" text-anchor="middle" fill="#fff">6 GAMES</text><rect x="168" width="210" height="42" rx="21" fill="#ffffff" fill-opacity=".09" stroke="#ffffff" stroke-opacity=".18"/><text x="273" y="27" text-anchor="middle" fill="#f2eaf0">LOOTLEMON DATA</text><rect x="394" width="190" height="42" rx="21" fill="#ffffff" fill-opacity=".09" stroke="#ffffff" stroke-opacity=".18"/><text x="489" y="27" text-anchor="middle" fill="#f2eaf0">LOCAL PROGRESS</text></g>
+</svg>
