@@ -142,7 +142,7 @@
  function render(){
   let gs=games(),g=gs.find(x=>x.id===active)||gs[0];if(!g)return;
   let allGameItems=items(),st=stats(allGameItems),categories=uniqueValues(allGameItems.map(x=>x.category)).sort();
-  if(!categories.includes(settings.category))settings.category=categories[0]||"";
+  if(!categories.includes(settings.category))settings.category=categories.includes("Weapons")?"Weapons":(categories[0]||"");
   let a=allGameItems.filter(x=>x.category===settings.category);
   renderNewItemsNotice();
   $("game-title").textContent=g.name;$("game-label").textContent=g.name.toUpperCase();$("game-desc").textContent="Каталог предметов";
