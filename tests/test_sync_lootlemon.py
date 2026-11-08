@@ -164,7 +164,7 @@ class DynamicLootlemonMetadataTests(unittest.TestCase):
           <div class="db_cell large"><a class="link-overlay" href="/item/test-oz-kit">Test Oz Kit</a></div>
           <div class="db_cell">Survivability</div>
           <div class="db_cell"><span class="element-fire">Fire</span></div>
-          <div class="db_cell">Base Game</div>
+          <div class="db_cell content-cell"><span class="content-base-game-tps">Base Game</span></div>
           <div class="db_cell"><a href="/boss">CL4P-L3K</a></div>
         </div>
         """
