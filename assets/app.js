@@ -189,7 +189,7 @@
    const schema=schemaFor(active,x.category||""),fields=schema.fields.map(fieldDefinition);
    const details=fields.filter(f=>f.key!=="name").map(f=>renderValue(x,f)).join("");
    return '<article class="item '+(done[x.id]?"collected":"")+'"><div class="picture">'+(x.image?'<img loading="lazy" src="'+esc(x.image)+'" alt="'+esc(x.name)+'" onerror="this.remove()">':'<span class="placeholder">◇</span>')+'</div><div class="card-body"><div class="name '+rarityClass(x.rarity)+'">'+esc(x.name)+'</div>'+details+'<div class="item-foot">'+(x.url?'<a href="'+esc(x.url)+'" target="_blank" rel="noopener">Lootlemon ↗</a>':'<span></span>')+'<button data-id="'+esc(x.id)+'" class="'+(done[x.id]?"done":"")+'">'+(done[x.id]?"✓ Собрано":"+ Собрал")+'</button></div></div></article>';
-  }).join("")
+  }).join("");
   $("items").querySelectorAll("[data-id]").forEach(b=>b.onclick=()=>{let id=b.dataset.id;if(done[id])delete done[id];else done[id]=true;persist();render()});
   $("empty").hidden=shown.length>0;
   let all=db.items.filter(x=>!x.archived),total=stats(all),pct=total.t?Math.round(total.n/total.t*100):0;
