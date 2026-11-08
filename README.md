@@ -8,7 +8,6 @@
 A clean, browser-based loot checklist that helps you track collectible gear across the series, keep your collection organized, and stay up to date with Lootlemon.
 
 [![Live app](https://img.shields.io/badge/OPEN-LIVE_TRACKER-ff526e?style=for-the-badge&logo=github)](https://fuyukaijanaidesu.github.io/Borderlands-Loot/)
-[![Latest release](https://img.shields.io/github/v/release/fuyukaijanaidesu/Borderlands-Loot?style=for-the-badge&color=8b6cf6)](https://github.com/fuyukaijanaidesu/Borderlands-Loot/releases/latest)
 [![Pages](https://img.shields.io/github/actions/workflow/status/fuyukaijanaidesu/Borderlands-Loot/release.yml?label=release%20pipeline&logo=githubactions&style=for-the-badge)](https://github.com/fuyukaijanaidesu/Borderlands-Loot/actions)
 
 [Launch tracker](https://fuyukaijanaidesu.github.io/Borderlands-Loot/) · [Download latest release](https://github.com/fuyukaijanaidesu/Borderlands-Loot/releases/latest) · [Report a bug](https://github.com/fuyukaijanaidesu/Borderlands-Loot/issues)
