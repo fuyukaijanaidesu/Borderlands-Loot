@@ -254,5 +254,23 @@ class DynamicLootlemonMetadataTests(unittest.TestCase):
         self.assertIn("Real Skill", item["skills"])
         self.assertNotIn("Source Link", item["skills"])
 
+class LootlemonItemCodeTests(unittest.TestCase):
+    def test_extracts_copy_button_data_code_and_decodes_base85_entities(self):
+        detail = '<button data-code="@Uabc123&lt;sRHE&amp;%cxyz789">Copy Item Code</button>'
+        self.assertEqual(sync.extract_item_code(detail), "@Uabc123<sRHE&%cxyz789")
+
+    def test_ignores_empty_or_whitespace_only_codes(self):
+        self.assertIsNone(sync.extract_item_code('<button data-code=""></button>'))
+        self.assertIsNone(sync.extract_item_code('<button data-code="   "></button>'))
+
+    def test_missing_code_check_is_cached_for_thirty_days(self):
+        from datetime import datetime, timedelta, timezone
+        now = datetime(2026, 11, 8, tzinfo=timezone.utc)
+        recent = {"codeCheckedAt": (now - timedelta(days=2)).isoformat()}
+        stale = {"codeCheckedAt": (now - timedelta(days=31)).isoformat()}
+        self.assertTrue(sync.code_checked_recently(recent, now))
+        self.assertFalse(sync.code_checked_recently(stale, now))
+
+
 if __name__ == "__main__":
     unittest.main()
