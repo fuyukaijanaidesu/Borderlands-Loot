@@ -26,6 +26,23 @@ LABELS={"class-mods":"Class Mods","melee":"Melee Weapons","melee-weapons":"Melee
 def get(url):
  r=SESSION.get(url,timeout=45); r.raise_for_status(); return r.text
 
+def inspect_page(url,html):
+ soup=BeautifulSoup(html,"html.parser")
+ title=soup.title.get_text(" ",strip=True) if soup.title else "(no title)"
+ classes={}
+ for node in soup.find_all(True):
+  value=node.get("class")
+  if value:
+   key=".".join(value)
+   classes[key]=classes.get(key,0)+1
+ top=sorted(classes.items(),key=lambda x:x[1],reverse=True)[:12]
+ scripts=[x.get_text(" ",strip=True)[:180] for x in soup.find_all("script") if x.get_text(strip=True)]
+ print("DIAG",url,"title=",title[:120],"html_bytes=",len(html),
+       "tables=",len(soup.find_all("table")),"links=",len(soup.find_all("a",href=True)),
+       "images=",len(soup.find_all("img")),"top_classes=",top[:12],
+       "body_text=",(soup.body.get_text(" ",strip=True)[:260] if soup.body else soup.get_text(" ",strip=True)[:260]),
+       "script_samples=",scripts[:2],file=sys.stderr)
+
 def load():
  if not CATALOG.exists(): return {"schemaVersion":1,"updatedAt":None,"games":[],"items":[]}
  try: data=json.loads(CATALOG.read_text(encoding="utf-8"))
@@ -66,13 +83,14 @@ def discover():
   try:
    response=SESSION.get(sitemap,timeout=30)
    response.raise_for_status()
-   soup=BeautifulSoup(response.text,"xml")
-   locs=[node.get_text(strip=True) for node in soup.find_all("loc")]
+   # Parse sitemap locations without requiring an optional XML parser.
+   locs=re.findall(r"<loc[^>]*>\\s*(.*?)\\s*</loc>",response.text,re.I|re.S)
+   locs=[re.sub(r"&amp;","&",x.strip()) for x in locs]
    for loc in locs:
     if urlparse(loc).path.endswith(".xml"):
      try:
-      nested=BeautifulSoup(get(loc),"xml")
-      locs.extend(node.get_text(strip=True) for node in nested.find_all("loc"))
+      nested_html=get(loc)
+      locs.extend(re.findall(r"<loc[^>]*>\\s*(.*?)\\s*</loc>",nested_html,re.I|re.S))
      except Exception:
       continue
     match=re.fullmatch(r"/db/([^/]+)/([^/]+)/?",urlparse(loc).path)
@@ -88,7 +106,8 @@ def label(slug):
  return LABELS.get(slug,re.sub(r"[-_]+"," ",slug).title())
 
 def parse_page(url,game,category):
- soup=BeautifulSoup(get(url),"html.parser"); found=[]
+ html=get(url)
+ soup=BeautifulSoup(html,"html.parser"); found=[]
  for table in soup.find_all("table"):
   rows=table.find_all("tr")
   if len(rows)<2: continue
@@ -115,7 +134,9 @@ def parse_page(url,game,category):
     "type":val("weapon type","item type","type"),"rarity":val("rarity"),
     "manufacturer":val("manufacturer","manu-"),"content":val("content"),
     "image":image,"url":href,"archived":False})
- if not found: raise ValueError("No recognizable item rows")
+ if not found:
+  inspect_page(url,html)
+  raise ValueError("No recognizable item rows (see DIAG output above)")
  return found,soup
 
 def parse_route(url,game,category):
