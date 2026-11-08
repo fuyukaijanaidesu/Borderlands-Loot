@@ -42,7 +42,7 @@ test("Lootlemon item serials have a working copy button only when a code exists"
  const copy=x.doc.querySelector("#items [data-copy-code]");
  assert.ok(copy);assert.equal(copy.textContent,"Copy Code");
  assert.equal(x.doc.querySelectorAll("#items [data-copy-code]").length,1);
- copy.click();await Promise.resolve();
+ copy.click();await new Promise(resolve=>setTimeout(resolve,10));
  assert.deepEqual(x.copied,["@Uexample<serial>&value"]);
  assert.equal(copy.textContent,"Copied!");
 }finally{x.close()}});
