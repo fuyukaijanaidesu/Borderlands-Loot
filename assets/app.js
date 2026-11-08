@@ -3,7 +3,7 @@
  const KEYS={newItems:"bl-loot-new-items-v1",progress:"bl-loot-progress-v1",settings:"bl-loot-settings-v1",history:"bl-loot-backups-v1",lastCatalog:"bl-loot-last-catalog-v1",override:"bl-loot-catalog-override-v1",forceOverride:"bl-loot-force-catalog-override-v1"};
  const GAMES=[["borderlands-1","Borderlands"],["borderlands-2","Borderlands 2"],["borderlands-tps","The Pre-Sequel"],["borderlands-3","Borderlands 3"],["wonderlands","Tiny Tina's Wonderlands"],["borderlands-4","Borderlands 4"]];
  let db={games:[],items:[]},done={},active="borderlands-4";
- const defaults={search:"",filters:{},sort:"name",missing:false,moveCollectedToBottom:true};
+ const defaults={search:"",category:"",filters:{},sort:"name",missing:false,moveCollectedToBottom:true};
  let settings={...defaults},backupHistory=[];
  const read=(key,fallback)=>{try{return JSON.parse(localStorage.getItem(key)||"null")??fallback}catch{return fallback}};
  done=read(KEYS.progress,{});
@@ -141,14 +141,17 @@
  }
  function render(){
   let gs=games(),g=gs.find(x=>x.id===active)||gs[0];if(!g)return;
-  let a=items(),st=stats(a);
+  let allGameItems=items(),st=stats(allGameItems),categories=uniqueValues(allGameItems.map(x=>x.category)).sort();
+  if(!categories.includes(settings.category))settings.category=categories[0]||"";
+  let a=allGameItems.filter(x=>x.category===settings.category);
   renderNewItemsNotice();
   $("game-title").textContent=g.name;$("game-label").textContent=g.name.toUpperCase();$("game-desc").textContent="Каталог предметов";
   $("game-pct").textContent=(st.t?Math.round(st.n/st.t*100):0)+"%";$("game-count").textContent=st.n+" / "+st.t+" собрано";
   $("games").innerHTML=gs.map(x=>'<button data-game="'+esc(x.id)+'" class="'+(x.id===active?"active":"")+'">'+esc(x.name)+'</button>').join("");
   $("games").querySelectorAll("[data-game]").forEach(b=>b.onclick=()=>{active=b.dataset.game;render()});
 
-  const category=a[0]?.category||"",schema=schemaFor(active,category),filterDefs=schema.filters.map(key=>({key,label:fieldFilterLabel(key)}));
+  const category=settings.category||"",schema=schemaFor(active,category),filterDefs=schema.filters.map(key=>({key,label:fieldFilterLabel(key)}));
+  $("category").innerHTML=categories.map(value=>'<option value="'+esc(value)+'"'+(value===category?' selected':'')+'>'+esc(value)+'</option>').join("");
   const filtersState=settings.filters||(settings.filters={});
   const optionsFor=key=>uniqueValues(a.flatMap(item=>fieldValues(item,key))).sort((x,y)=>x.localeCompare(y));
   $("dynamic-filters").innerHTML=filterDefs.map(def=>{
@@ -204,6 +207,7 @@
  }
  function bindSettings(){
   $("search").addEventListener("input",()=>{settings.search=$("search").value;persist();render()});
+  $("category").addEventListener("change",()=>{settings.category=$("category").value;settings.filters={};persist();render()});
   $("dynamic-filters").addEventListener("change",event=>{const select=event.target.closest("[data-filter]");if(!select)return;settings.filters=settings.filters||{};settings.filters[select.dataset.filter]=select.value;persist();render()});
   ["sort","missing"].forEach(id=>$(id).addEventListener("change",()=>{settings[id]=id==="missing"?$("missing").checked:$(id).value;persist();render()}));
   $("move-collected").addEventListener("change",()=>{settings.moveCollectedToBottom=$("move-collected").checked;persist();render()});
