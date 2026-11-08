@@ -350,10 +350,11 @@ def parse_page(url,game,category):
     type_value=next((v for v in values if re.search(r"\b(assault rifle|pistol|shotgun|smg|sniper|launcher)\b",v,re.I)),None)
   # Prefer readable content labels from the visible Lootlemon content cell over
   # internal data-* slugs such as "base-game-tps".
-  if content and re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*",content):
+  if content and content.casefold().startswith("base game"):
+   content="Base Game"
+  elif content and re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*",content):
    content_cell=next((c for c in cells if "content" in " ".join(c.get("class") or []).lower() and text_of(c)),None)
    if content_cell: content=text_of(content_cell)
-   elif content.casefold().startswith("base-game"): content="Base Game"
   # Keep the old known-manufacturer fallback, but also accept unknown names from an explicit field.
   if not manufacturer:
    known={"daedalus","jakobs","maliwan","order","ripper","tediore","torgue","vladof","bandit","dahl","hyperion","s&s","atlas","cov","eridian","pangolin"}
