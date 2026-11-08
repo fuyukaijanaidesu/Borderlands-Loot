@@ -121,5 +121,115 @@ class DynamicLootlemonMetadataTests(unittest.TestCase):
         self.assertEqual(item["sources"], ["Boss B"])
 
 
+
+    def test_grenade_mods_use_their_own_category_fields(self):
+        html = """
+        <div class="db_item w-dyn-item">
+          <div class="db_cell large"><a class="link-overlay" href="/item/test-grenade">Test Grenade</a></div>
+          <div class="db_cell">MIRV</div>
+          <div class="db_cell">Torgue</div>
+          <div class="db_cell"><span class="element-shock">Shock</span></div>
+          <div class="db_cell">Base Game</div>
+          <div class="db_cell"><a href="/boss">Boss One</a></div>
+        </div>
+        """
+        item = self.parse(html, category="grenade-mods")
+        self.assertEqual(item["category"], "Grenade Mods")
+        self.assertEqual(item["type"], "MIRV")
+        self.assertEqual(item["manufacturer"], "Torgue")
+        self.assertIn("Shock", item["elements"])
+        self.assertEqual(item["content"], "Base Game")
+        self.assertEqual(item["sources"], ["Boss One"])
+
+    def test_wonderlands_armor_uses_manufacturer_not_class_or_type(self):
+        html = """
+        <div class="db_item w-dyn-item">
+          <div class="db_cell large"><a class="link-overlay" href="/item/test-armor">Test Armor</a></div>
+          <div class="db_cell">Swifft</div>
+          <div class="db_cell">Base Game</div>
+          <div class="db_cell"><a href="/boss">Monstrous Shroom</a></div>
+        </div>
+        """
+        item = self.parse(html, category="armor")
+        self.assertEqual(item["manufacturer"], "Swifft")
+        self.assertIsNone(item["type"])
+        self.assertIsNone(item["class"])
+        self.assertEqual(item["skills"], [])
+        self.assertEqual(item["content"], "Base Game")
+        self.assertEqual(item["sources"], ["Monstrous Shroom"])
+
+    def test_oz_kits_have_type_elements_content_and_sources(self):
+        html = """
+        <div class="db_item w-dyn-item">
+          <div class="db_cell large"><a class="link-overlay" href="/item/test-oz-kit">Test Oz Kit</a></div>
+          <div class="db_cell">Survivability</div>
+          <div class="db_cell"><span class="element-fire">Fire</span></div>
+          <div class="db_cell">Base Game</div>
+          <div class="db_cell"><a href="/boss">CL4P-L3K</a></div>
+        </div>
+        """
+        item = self.parse(html, category="oz-kits")
+        self.assertEqual(item["type"], "Survivability")
+        self.assertIn("Fire", item["elements"])
+        self.assertEqual(item["content"], "Base Game")
+        self.assertEqual(item["sources"], ["CL4P-L3K"])
+
+    def test_rings_and_amulets_keep_item_type_separate_from_category(self):
+        html = """
+        <div class="db_item w-dyn-item">
+          <div class="db_cell large"><a class="link-overlay" href="/item/test-ring">Test Ring</a></div>
+          <div class="db_cell">Ring</div>
+          <div class="db_cell">Offense</div>
+          <div class="db_cell">Base Game</div>
+          <div class="db_cell"><a href="/boss">Ring Pool</a></div>
+        </div>
+        """
+        item = self.parse(html, category="rings-amulets")
+        self.assertEqual(item["item_type"], "Ring")
+        self.assertEqual(item["item_category"], "Offense")
+        self.assertEqual(item["content"], "Base Game")
+        self.assertEqual(item["sources"], ["Ring Pool"])
+
+    def test_tree_indexes_are_normalized_per_game_filter_order(self):
+        html = """
+        <div class="db_item w-dyn-item">
+          <div class="db_cell large"><a class="link-overlay" href="/item/test-class-mod">Test Mod</a></div>
+          <div class="db_cell">Axton</div>
+          <div class="db_cell"><span data-tree="0"><img alt="Sentry" title="Sentry"></span></div>
+          <div class="db_cell">DAHL</div>
+          <div class="db_cell">Base Game</div>
+          <div class="db_cell"><a href="/boss">Boss One</a></div>
+        </div>
+        """
+        expected = {
+            "borderlands-1": "Blue",
+            "borderlands-2": "Green",
+            "borderlands-tps": "Green",
+            "borderlands-3": "Green",
+            "borderlands-4": "Green",
+        }
+        for game, label in expected.items():
+            with self.subTest(game=game), patch.object(sync, "get", return_value=html):
+                rows, _ = sync.parse_page(
+                    f"https://www.lootlemon.com/db/{game}/class-mods",
+                    game,
+                    "class-mods",
+                )
+                self.assertIn(label, rows[0]["attributes"]["tree"])
+
+    def test_generic_source_link_icon_is_not_a_skill(self):
+        html = """
+        <div class="db_item w-dyn-item">
+          <div class="db_cell large"><a class="link-overlay" href="/item/test-class-mod">Test Mod</a></div>
+          <div class="db_cell">Amon</div>
+          <div class="db_cell"><img alt="Real Skill" title="Real Skill"><img alt="Source Link" title="Source Link"></div>
+          <div class="db_cell">Base Game</div>
+          <div class="db_cell"><a href="/boss">Boss One</a></div>
+        </div>
+        """
+        item = self.parse(html, category="class-mods")
+        self.assertIn("Real Skill", item["skills"])
+        self.assertNotIn("Source Link", item["skills"])
+
 if __name__ == "__main__":
     unittest.main()
