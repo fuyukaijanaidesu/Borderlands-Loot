@@ -171,3 +171,27 @@ test("collected items always move to the bottom for every sort mode",async()=>{
   assert.equal(names().at(-1),"Alpha Rifle");
  }finally{x.close();}
 });
+
+test("element indicators show icon badges",async()=>{
+ const x=await boot();
+ try{
+  const alpha=x.doc.querySelector('#items [data-id="bl4-1"]').closest(".item");
+  const beta=x.doc.querySelector('#items [data-id="bl4-2"]').closest(".item");
+  assert.match(alpha.querySelector(".element-icon").textContent,/🔥/);
+  assert.match(alpha.querySelector(".element-icon").className,/element-fire/);
+  assert.match(beta.querySelector(".element-icon").textContent,/⚡/);
+ }finally{x.close();}
+});
+test("new catalog entries create a persistent dismissible notice",async()=>{
+ const previous={...catalog,items:catalog.items.filter(x=>x.id!=="bl4-2"),updatedAt:"2026-11-07T01:00:00.000Z"};
+ const x=await boot({"bl-loot-last-catalog-v1":previous});
+ try{
+  const notice=x.doc.getElementById("new-items-notice");
+  assert.equal(notice.hidden,false);
+  assert.match(notice.textContent,/Новый лут в каталоге: 1/);
+  assert.match(notice.textContent,/Beta Shield/);
+  x.doc.getElementById("dismiss-new-items").click();
+  assert.equal(notice.hidden,true);
+  assert.equal(x.w.localStorage.getItem("bl-loot-new-items-v1"),null);
+ }finally{x.close();}
+});
