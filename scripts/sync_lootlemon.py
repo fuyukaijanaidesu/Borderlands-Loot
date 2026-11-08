@@ -149,10 +149,10 @@ def parse_page(url,game,category):
     match=re.match(r"^(?:rarity|manufacturer|element|type|content)[-_](.+)$",cls,re.I)
     if match and match.group(1).lower() not in {"cell","field","wrapper","container","badge","label","value"}:
      out.append(re.sub(r"[-_]+"," ",match.group(1)).strip())
-    elif cls.lower() not in ignored and not re.match(r"^(?:w-|db_)",cls,re.I):
+    elif cls.lower() not in ignored and cls.lower() not in {"source-link","skill-link","tree-link"} and not re.match(r"^(?:w-|db_)",cls,re.I):
      if cls.lower() in {"legendary","epic","rare","common","uncommon","pearlescent","seraph","effervescent","glitch","e-tech"}:
       out.append(cls)
-  return [value for value in clean_values(out) if value.casefold() not in {"link","image","icon","skill link","tree link","link skill","skill icon","tree icon"}]
+  return [value for value in clean_values(out) if value.casefold() not in {"link","image","icon","skill link","tree link","link skill","skill icon","tree icon","source link","source-link"}]
  def split_values(node):
   if not node: return []
   linked=clean_values([text_of(a) for a in node.find_all("a")])
@@ -228,7 +228,7 @@ def parse_page(url,game,category):
      if match and match.group(2).lower() not in {"cell","field","wrapper","container","badge","label","value"}:
       field=match.group(1).lower()
       val=re.sub(r"[-_]+"," ",match.group(2)).strip()
-      if field in {"skill","tree"} and val.casefold() in {"link","icon","image","skill link","tree link","link skill","skill icon","tree icon","wrapper","container","badge","label","value"}:
+      if field in {"skill","tree"} and val.casefold() in {"link","icon","image","skill link","tree link","link skill","skill icon","tree icon","source link","source-link","wrapper","container","badge","label","value"}:
        continue
       semantic_values[field].append(val)
       add_attr(attributes,field,val)
@@ -278,6 +278,8 @@ def parse_page(url,game,category):
   # Semantic fields win; positional fallbacks preserve compatibility with current Lootlemon pages.
   manufacturer=next(iter(semantic_values["manufacturer"]),None)
   type_value=next(iter(semantic_values["type"]),None)
+  if cat=="Spells" and semantic_values["spell_cast"]:
+   type_value=semantic_values["spell_cast"][0]
   content=next(iter(semantic_values["content"]),None)
   elements=semantic_values["element"]
   sources=semantic_values["source"]
