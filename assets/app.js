@@ -3,7 +3,7 @@
  const KEYS={newItems:"bl-loot-new-items-v1",progress:"bl-loot-progress-v1",settings:"bl-loot-settings-v1",history:"bl-loot-backups-v1",lastCatalog:"bl-loot-last-catalog-v1",override:"bl-loot-catalog-override-v1",forceOverride:"bl-loot-force-catalog-override-v1"};
  const GAMES=[["borderlands-1","Borderlands"],["borderlands-2","Borderlands 2"],["borderlands-tps","The Pre-Sequel"],["borderlands-3","Borderlands 3"],["wonderlands","Tiny Tina's Wonderlands"],["borderlands-4","Borderlands 4"]];
  let db={games:[],items:[]},done={},active="borderlands-4";
- const defaults={search:"",category:"",rarity:"",manufacturer:"",type:"",element:"",sort:"name",missing:false,moveCollectedToBottom:true};
+ const defaults={search:"",category:"",rarity:"",manufacturer:"",type:"",element:"",content:"",sort:"name",missing:false,moveCollectedToBottom:true};
  let settings={...defaults},backupHistory=[];
  const read=(key,fallback)=>{try{return JSON.parse(localStorage.getItem(key)||"null")??fallback}catch{return fallback}};
  done=read(KEYS.progress,{});
@@ -41,6 +41,9 @@
  const games=()=>{let a=GAMES.map(([id,name])=>({id,name}));(db.games||[]).forEach(g=>{if(!a.some(x=>x.id===g.id))a.push(g)});return a};
  const items=()=>db.items.filter(x=>x.gameId===active&&!x.archived);
  const stats=a=>({n:a.filter(x=>done[x.id]).length,t:a.length});
+ const asList=value=>value==null?[]:(Array.isArray(value)?value:[value]).flat(Infinity).map(v=>String(v??"").trim()).filter(Boolean);
+ const contentOf=item=>asList(item.content)[0]||"Unknown";
+ const sourcesOf=item=>asList(item.sources);
  const persist=()=>{localStorage.setItem(KEYS.progress,JSON.stringify(done));localStorage.setItem(KEYS.settings,JSON.stringify(settings))};
  function snapshot(reason,catalog=null){
   const entry={version:2,at:new Date().toISOString(),reason,progress:{...done},settings:{...settings},catalogUpdatedAt:db.updatedAt||null,catalog:catalog||undefined};
@@ -92,14 +95,15 @@
   let cats=[...new Set(a.map(x=>x.category).filter(Boolean))].sort(),rs=[...new Set(a.map(x=>x.rarity).filter(Boolean))].sort();
   let makers=[...new Set(a.map(x=>x.manufacturer).filter(Boolean))].sort();
   let types=[...new Set(a.map(x=>x.type).filter(Boolean))].sort();
-  let elements=[...new Set(a.flatMap(x=>x.elements||[]).filter(Boolean))].sort();
+  let elements=[...new Set(a.flatMap(x=>asList(x.elements)))].sort();
+  let contents=[...new Set(a.map(contentOf).filter(x=>x!=="Unknown"))].sort((x,y)=>{const rank=v=>/^base game$/i.test(v)?0:/^event$/i.test(v)?1:2;return rank(x)-rank(y)||x.localeCompare(y)});
   const fillSelect=(id,values,placeholder)=>{const current=settings[id];$(id).innerHTML='<option value="">'+placeholder+'</option>'+values.map(x=>'<option value="'+esc(x)+'">'+esc(x)+'</option>').join("");$(id).value=values.includes(current)?current:"";};
   fillSelect("category",cats,"Все категории");fillSelect("rarity",rs,"Любая редкость");
-  fillSelect("manufacturer",makers,"Любой производитель");fillSelect("type",types,"Любой тип");fillSelect("element",elements,"Любой элемент");
+  fillSelect("manufacturer",makers,"Любой производитель");fillSelect("type",types,"Любой тип");fillSelect("element",elements,"Любой элемент");fillSelect("content",contents,"Весь контент");
   $("search").value=settings.search;$("sort").value=settings.sort;$("missing").checked=!!settings.missing;$("move-collected").checked=settings.moveCollectedToBottom!==false;
   let q=settings.search.toLowerCase().trim(),cat=$("category").value,rar=$("rarity").value;
-  let maker=$("manufacturer").value,type=$("type").value,element=$("element").value;
-  let shown=a.filter(x=>(!q||[x.name,x.category,x.manufacturer,x.type,x.description,(x.elements||[]).join(" "), (x.sources||[]).join(" "),...(x.tags||[]),...Object.values(x.attributes||{}).flat()].join(" ").toLowerCase().includes(q))&&(!cat||x.category===cat)&&(!rar||x.rarity===rar)&&(!maker||x.manufacturer===maker)&&(!type||x.type===type)&&(!element||(x.elements||[]).includes(element))&&(!settings.missing||!done[x.id]));
+  let maker=$("manufacturer").value,type=$("type").value,element=$("element").value,content=$("content").value;
+  let shown=a.filter(x=>(!q||[x.name,x.category,x.manufacturer,x.type,x.description,...asList(x.elements),...sourcesOf(x),contentOf(x),...(x.tags||[]),...Object.values(x.attributes||{}).flat()].join(" ").toLowerCase().includes(q))&&(!cat||x.category===cat)&&(!rar||x.rarity===rar)&&(!maker||x.manufacturer===maker)&&(!type||x.type===type)&&(!element||asList(x.elements).includes(element))&&(!content||contentOf(x)===content)&&(!settings.missing||!done[x.id]));
   shown.sort((x,y)=>{
    if(settings.moveCollectedToBottom){
     const collected=Number(!!done[x.id])-Number(!!done[y.id]);
@@ -107,10 +111,11 @@
    }
    if(settings.sort==="category")return (x.category||"").localeCompare(y.category||"")||x.name.localeCompare(y.name);
    if(settings.sort==="rarity")return (x.rarity||"").localeCompare(y.rarity||"")||x.name.localeCompare(y.name);
+   if(settings.sort==="content"){const rank=v=>/^base game$/i.test(v)?0:/^event$/i.test(v)?1:2;return rank(contentOf(x))-rank(contentOf(y))||contentOf(x).localeCompare(contentOf(y))||x.name.localeCompare(y.name)}
    return x.name.localeCompare(y.name);
   });
   $("shown").textContent=shown.length+" из "+a.length+" предметов";$("updated").textContent=db.updatedAt?"Обновлено: "+new Date(db.updatedAt).toLocaleDateString("ru-RU"):"Источник: Lootlemon";
-  $("items").innerHTML=shown.map(x=>'<article class="item '+(done[x.id]?"collected":"")+'"><div class="picture">'+(x.image?'<img loading="lazy" src="'+esc(x.image)+'" alt="'+esc(x.name)+'" onerror="this.remove()">':'<span class="placeholder">◇</span>')+'</div><div class="card-body"><div class="cat">'+esc(x.category||"Предмет")+'</div><div class="name '+rarityClass(x.rarity)+'">'+esc(x.name)+'</div><div class="tags">'+[x.rarity,x.manufacturer,x.type,x.content,...(x.tags||[]),...Object.values(x.attributes||{}).flat()].filter((v,i,a)=>a.indexOf(v)===i).filter(Boolean).map(v=>'<span class="tag">'+esc(v)+'</span>').join("")+'</div>'+(x.elements&&x.elements.length?'<div class="element-icons" aria-label="Стихии">'+x.elements.map(el=>{const info=elementInfo(el);return '<span class="element-icon element-'+esc(info.className)+'" title="'+esc(info.label)+'" aria-label="'+esc(info.label)+'"><i>'+info.icon+'</i><small>'+esc(el)+'</small></span>'}).join("")+'</div>':'')+'<div class="item-foot">'+(x.url?'<a href="'+esc(x.url)+'" target="_blank" rel="noopener">Lootlemon ↗</a>':'<span></span>')+'<button data-id="'+esc(x.id)+'" class="'+(done[x.id]?"done":"")+'">'+(done[x.id]?"✓ Собрано":"+ Собрал")+'</button></div></div></article>').join("");
+  $("items").innerHTML=shown.map(x=>'<article class="item '+(done[x.id]?"collected":"")+'"><div class="picture">'+(x.image?'<img loading="lazy" src="'+esc(x.image)+'" alt="'+esc(x.name)+'" onerror="this.remove()">':'<span class="placeholder">◇</span>')+'</div><div class="card-body"><div class="cat">'+esc(x.category||"Предмет")+'</div><div class="name '+rarityClass(x.rarity)+'">'+esc(x.name)+'</div><div class="tags">'+[x.rarity,x.manufacturer,x.type,x.content,...(x.tags||[]),...Object.values(x.attributes||{}).flat()].filter((v,i,a)=>a.indexOf(v)===i).filter(Boolean).map(v=>'<span class="tag">'+esc(v)+'</span>').join("")+'</div>'+(asList(x.elements).length?'<div class="element-icons" aria-label="Стихии">'+asList(x.elements).map(el=>{const info=elementInfo(el);return '<span class="element-icon element-'+esc(info.className)+'" title="'+esc(info.label)+'" aria-label="'+esc(info.label)+'"><i>'+info.icon+'</i><small>'+esc(el)+'</small></span>'}).join("")+'</div>':'')+(sourcesOf(x).length?'<div class="drop-sources"><div class="drop-sources-title">Источники выпадения</div><div class="drop-source-list">'+sourcesOf(x).map(source=>'<span class="drop-source">'+esc(source)+'</span>').join("")+'</div></div>':'')+'<div class="item-foot">'+(x.url?'<a href="'+esc(x.url)+'" target="_blank" rel="noopener">Lootlemon ↗</a>':'<span></span>')+'<button data-id="'+esc(x.id)+'" class="'+(done[x.id]?"done":"")+'">'+(done[x.id]?"✓ Собрано":"+ Собрал")+'</button></div></div></article>').join("");
   $("items").querySelectorAll("[data-id]").forEach(b=>b.onclick=()=>{let id=b.dataset.id;if(done[id])delete done[id];else done[id]=true;persist();render()});
   $("empty").hidden=shown.length>0;
   let all=db.items.filter(x=>!x.archived),total=stats(all),pct=total.t?Math.round(total.n/total.t*100):0;
@@ -128,7 +133,7 @@
  }
  function bindSettings(){
   $("search").addEventListener("input",()=>{settings.search=$("search").value;persist();render()});
-  ["category","rarity","manufacturer","type","element","sort","missing"].forEach(id=>$(id).addEventListener("change",()=>{settings[id]=id==="missing"?$("missing").checked:$(id).value;persist();render()}));
+  ["category","rarity","manufacturer","type","element","content","sort","missing"].forEach(id=>$(id).addEventListener("change",()=>{settings[id]=id==="missing"?$("missing").checked:$(id).value;persist();render()}));
   $("move-collected").addEventListener("change",()=>{settings.moveCollectedToBottom=$("move-collected").checked;persist();render()});
  }
  $("export").onclick=fullBackup;
