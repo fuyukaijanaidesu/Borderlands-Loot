@@ -227,14 +227,14 @@ def parse_page(url,game,category):
       semantic_values[field].extend(split_values(cell))
       add_attr(attributes,field,split_values(cell))
     # Explicit labels/data keys become generic structured attributes too.
-    for label in labels:
-     if label and label.lower() not in {"db_cell","cell","large"}:
-      if re.search(r"\b(rarity|manufacturer|element|type|content|source)\b",label,re.I):
-       field=re.search(r"(rarity|manufacturer|element|type|content|source)",label,re.I).group(1).lower()
+    for field_label in labels:
+     if field_label and field_label.lower() not in {"db_cell","cell","large"}:
+      if re.search(r"\b(rarity|manufacturer|element|type|content|source)\b",field_label,re.I):
+       field=re.search(r"(rarity|manufacturer|element|type|content|source)",field_label,re.I).group(1).lower()
        semantic_values[field].extend(split_values(cell))
        add_attr(attributes,field,split_values(cell))
-      elif label.startswith("data-"):
-       add_attr(attributes,label[5:],split_values(cell))
+      elif field_label.startswith("data-"):
+       add_attr(attributes,field_label[5:],split_values(cell))
   for field in semantic_values:
    semantic_values[field]=clean_values(semantic_values[field])
   # Rarity is no longer an allow-list: any explicit Lootlemon rarity value is valid.
