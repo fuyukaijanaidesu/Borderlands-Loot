@@ -4,7 +4,9 @@ on:
     paths:
       - 'index.html'
       - 'assets/**'
+      - 'scripts/**'
       - 'tests/**'
+      - 'requirements.txt'
       - '.github/workflows/test-ui.yml'
   workflow_dispatch:
 permissions:
@@ -19,5 +21,13 @@ jobs:
           node-version: "22"
       - name: Install DOM test environment
         run: npm install --no-save --no-package-lock jsdom@26
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install parser dependencies
+        run: pip install -r requirements.txt
+      - name: Run parser regression tests
+        run: python -m unittest tests.test_sync_lootlemon -v
       - name: Run UI smoke tests
         run: node --test tests/app.test.cjs
