@@ -12,8 +12,8 @@ const catalog={
  updatedAt:"2026-11-08T01:22:03.181332+00:00",
  games:[],
  items:[
-  {id:"bl4-1",gameId:"borderlands-4",category:"Weapons",name:"Alpha Rifle",rarity:"Legendary",manufacturer:"Dahl",type:"Assault Rifle",elements:["Fire"],sources:["Boss A"],image:"https://cdn.example/alpha.png",url:"https://www.lootlemon.com/alpha",archived:false},
-  {id:"bl4-2",gameId:"borderlands-4",category:"Shields",name:"Beta Shield",rarity:"Epic",manufacturer:"Maliwan",type:"Shield Generator",elements:["Shock"],sources:["Boss B"],image:null,url:"https://www.lootlemon.com/beta",archived:false},
+  {id:"bl4-1",gameId:"borderlands-4",category:"Weapons",name:"Alpha Rifle",rarity:"f-legendary",manufacturer:"Dahl",type:"Assault Rifle",elements:["Fire"],sources:["Boss A"],image:"https://cdn.example/alpha.png",url:"https://www.lootlemon.com/alpha",archived:false},
+  {id:"bl4-2",gameId:"borderlands-4",category:"Shields",name:"Beta Shield",rarity:"d-epic",manufacturer:"Maliwan",type:"Shield Generator",elements:["Shock"],sources:["Boss B"],image:null,url:"https://www.lootlemon.com/beta",archived:false},
   {id:"bl2-1",gameId:"borderlands-2",category:"Weapons",name:"Gamma Gun",rarity:"Pearlescent",archived:false}
  ]
 };
@@ -68,7 +68,7 @@ test("search, category, rarity and missing filters",async()=>{
   assert.equal(x.doc.querySelectorAll("#items .item").length,1);
   category.value="";category.dispatchEvent(new x.w.Event("change"));
   const rarity=x.doc.getElementById("rarity");
-  rarity.value="Legendary";rarity.dispatchEvent(new x.w.Event("change"));
+  rarity.value="f-legendary";rarity.dispatchEvent(new x.w.Event("change"));
   assert.equal(x.doc.querySelectorAll("#items .item").length,1);
   rarity.value="";rarity.dispatchEvent(new x.w.Event("change"));
   x.doc.querySelector('#items [data-id="bl4-1"]').click();
@@ -194,4 +194,29 @@ test("new catalog entries create a persistent dismissible notice",async()=>{
   assert.equal(notice.hidden,true);
   assert.equal(x.w.localStorage.getItem("bl-loot-new-items-v1"),null);
  }finally{x.close();}
+});
+
+test("Lootlemon coded rarity values map to visible rarity classes",async()=>{
+ const x=await boot();
+ try{
+  const alpha=x.doc.querySelector('#items [data-id="bl4-1"]').closest(".item");
+  const beta=x.doc.querySelector('#items [data-id="bl4-2"]').closest(".item");
+  assert.ok(alpha.querySelector(".name").classList.contains("rarity-legendary"));
+  assert.ok(beta.querySelector(".name").classList.contains("rarity-epic"));
+ }finally{x.close();}
+});
+test("Lootlemon elemental aliases render matching icon classes",async()=>{
+ const original=catalog.items[0].elements;
+ catalog.items[0].elements=["fire","lightning","poison","frost","dark-magic"];
+ const x=await boot();
+ try{
+  const badges=[...x.doc.querySelectorAll('#items [data-id="bl4-1"]')];
+  const card=x.doc.querySelector('#items [data-id="bl4-1"]').closest(".item");
+  const classes=[...card.querySelectorAll(".element-icon")].map(el=>el.className);
+  assert.equal(classes.length,5);
+  assert.ok(classes.some(c=>c.includes("element-shock")));
+  assert.ok(classes.some(c=>c.includes("element-corrosive")));
+  assert.ok(classes.some(c=>c.includes("element-cryo")));
+  assert.ok(classes.some(c=>c.includes("element-dark-magic")));
+ }finally{catalog.items[0].elements=original;x.close();}
 });
