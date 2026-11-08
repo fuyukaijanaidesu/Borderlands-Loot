@@ -547,21 +547,51 @@ def main():
    warnings.append(f"{url}: {e}"); print(f"WARN {url}: {e}",file=sys.stderr)
   time.sleep(.25)
  if not fresh: raise RuntimeError("No pages parsed successfully; original catalog retained")
+ # Keep previously discovered serials and their check timestamps when list cards are refreshed.
+ for ident,item in fresh.items():
+  previous=existing.get(ident)
+  if previous:
+   for field in ("code","codeCheckedAt"):
+    if previous.get(field) and not item.get(field): item[field]=previous[field]
  for ident,item in existing.items():
   if ident not in fresh:
    if (item.get("gameId"),item.get("category")) in successful: item["archived"]=True
    fresh[ident]=item
+
+ # Fetch item detail pages only for missing or stale serials; negative results are cached for 30 days.
+ code_now=datetime.now(timezone.utc); code_checked=0; codes_found=0; code_errors=0
+ for item in fresh.values():
+  item_url=item.get("url")
+  if item.get("archived") or not item_url or item.get("code") or code_checked_recently(item,code_now):
+   continue
+  try:
+   code=fetch_item_code(item_url)
+   if code:
+    item["code"]=code; codes_found+=1
+   item["codeCheckedAt"]=code_now.isoformat()
+   code_checked+=1
+  except Exception as exc:
+   code_errors+=1
+   warnings.append(f"{item_url}: item code fetch failed: {exc}")
+   print(f"WARN item code {item_url}: {exc}",file=sys.stderr)
+  time.sleep(CODE_FETCH_DELAY)
  for game,_,_ in routes:
   if game not in EXCLUDED and game not in old_games:
    old_games[game]={"id":game,"name":game.replace("-"," ").title(),"autoDiscovered":True}
  result={"schemaVersion":1,"updatedAt":datetime.now(timezone.utc).isoformat(),
   "games":sorted(old_games.values(),key=lambda x:x["name"].lower()),
   "items":sorted(fresh.values(),key=lambda x:(x.get("gameId",""),x.get("category",""),x.get("name","").lower())),
-  "sync":{"routesDiscovered":len(routes),"routesSucceeded":len(successful),"warnings":warnings}}
+  "sync":{"routesDiscovered":len(routes),"routesSucceeded":len(successful),
+          "itemCodesChecked":code_checked,"itemCodesFound":codes_found,"itemCodeErrors":code_errors,
+          "itemCodesAvailable":sum(bool(x.get("code")) for x in fresh.values()),
+          "itemCodesEligible":sum(bool(x.get("url")) and not x.get("archived") for x in fresh.values()),
+          "warnings":warnings}}
  DATA.mkdir(parents=True,exist_ok=True); tmp=CATALOG.with_suffix(".tmp")
  tmp.write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding="utf-8")
  json.loads(tmp.read_text(encoding="utf-8")); tmp.replace(CATALOG)
  print(f"Saved {len(result['items'])} items; {len(successful)}/{len(routes)} routes succeeded.")
+ print(f"Lootlemon item codes: {result['sync']['itemCodesAvailable']}/{result['sync']['itemCodesEligible']} available; "
+       f"checked {code_checked}, found {codes_found}, errors {code_errors}.")
 if __name__=="__main__":
  try: main()
  except Exception as exc:
