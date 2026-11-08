@@ -13,13 +13,13 @@
  backupHistory=read(KEYS.history,[]);
  const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
  const ELEMENTS={
-  fire:{icon:"🔥",label:"Огонь",className:"fire"},incendiary:{icon:"🔥",label:"Огонь",className:"fire"},
-  shock:{icon:"⚡",label:"Шок",className:"shock"},electric:{icon:"⚡",label:"Шок",className:"shock"},lightning:{icon:"⚡",label:"Шок",className:"shock"},
-  corrosive:{icon:"☣",label:"Коррозия",className:"corrosive"},poison:{icon:"☣",label:"Коррозия",className:"corrosive"},
-  cryo:{icon:"❄",label:"Крио",className:"cryo"},ice:{icon:"❄",label:"Крио",className:"cryo"},frost:{icon:"❄",label:"Крио",className:"cryo"},
-  radiation:{icon:"☢",label:"Радиация",className:"radiation"},
-  explosive:{icon:"💥",label:"Взрыв",className:"explosive"},kinetic:{icon:"◉",label:"Кинетика",className:"kinetic"},
-  slag:{icon:"✦",label:"Шлак",className:"slag"},"dark magic":{icon:"✧",label:"Тёмная магия",className:"dark-magic"}
+  fire:{icon:"🔥",label:"Fire",className:"fire"},incendiary:{icon:"🔥",label:"Fire",className:"fire"},
+  shock:{icon:"⚡",label:"Shock",className:"shock"},electric:{icon:"⚡",label:"Shock",className:"shock"},lightning:{icon:"⚡",label:"Shock",className:"shock"},
+  corrosive:{icon:"☣",label:"Corrosive",className:"corrosive"},poison:{icon:"☣",label:"Corrosive",className:"corrosive"},
+  cryo:{icon:"❄",label:"Cryo",className:"cryo"},ice:{icon:"❄",label:"Cryo",className:"cryo"},frost:{icon:"❄",label:"Cryo",className:"cryo"},
+  radiation:{icon:"☢",label:"Radiation",className:"radiation"},
+  explosive:{icon:"💥",label:"Explosive",className:"explosive"},kinetic:{icon:"◉",label:"Kinetic",className:"kinetic"},
+  slag:{icon:"✦",label:"Slag",className:"slag"},"dark magic":{icon:"✧",label:"Dark Magic",className:"dark-magic"}
  };
  const elementInfo=value=>ELEMENTS[String(value||"").toLowerCase().replace(/[-_]+/g," ").trim()]||{icon:"✧",label:value,className:"unknown"};
  const rarityClass=value=>{
