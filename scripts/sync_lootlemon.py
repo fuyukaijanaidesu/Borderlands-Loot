@@ -145,7 +145,7 @@ def parse_page(url,game,category):
     elif cls.lower() not in ignored and not re.match(r"^(?:w-|db_)",cls,re.I):
      if cls.lower() in {"legendary","epic","rare","common","uncommon","pearlescent","seraph","effervescent","glitch","e-tech"}:
       out.append(cls)
-  return clean_values(out)
+  return [value for value in clean_values(out) if value.casefold() not in {"link","image","icon"}]
  def split_values(node):
   if not node: return []
   linked=clean_values([text_of(a) for a in node.find_all("a")])
@@ -221,6 +221,8 @@ def parse_page(url,game,category):
      if match and match.group(2).lower() not in {"cell","field","wrapper","container","badge","label","value"}:
       field=match.group(1).lower()
       val=re.sub(r"[-_]+"," ",match.group(2)).strip()
+      if field in {"skill","tree"} and val.casefold() in {"link","icon","image","wrapper","container","badge","label","value"}:
+       continue
       semantic_values[field].append(val)
       add_attr(attributes,field,val)
    if value:
@@ -239,6 +241,11 @@ def parse_page(url,game,category):
        add_attr(attributes,field_label[5:],split_values(cell))
   for field in semantic_values:
    semantic_values[field]=clean_values(semantic_values[field])
+  # Remove generic layout markers from both structured values and raw attributes.
+  for field in ("skill","skills","tree","trees"):
+   if field in attributes:
+    attributes[field]=[value for value in attributes[field] if value.casefold() not in {"link","icon","image","wrapper","container","badge","label","value"}]
+    if not attributes[field]: attributes.pop(field)
   # Rarity is no longer an allow-list: any explicit Lootlemon rarity value is valid.
   rarity_candidates=[]
   for el in [card,*card.find_all(True)]:

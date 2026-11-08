@@ -87,7 +87,7 @@ class DynamicLootlemonMetadataTests(unittest.TestCase):
           <div class="db_cell image"><img src="/images/mod.png"></div>
           <div class="db_cell large"><a class="link-overlay" href="/item/class-mod">Artificer</a></div>
           <div class="db_cell">Amon</div>
-          <div class="db_cell"><span><img alt="Bullet Hail" title="Bullet Hail"><img alt="Wildfire" title="Wildfire"></span></div>
+          <div class="db_cell"><span><a class="skill-link" href="/skills/bullet-hail"><img alt="Bullet Hail" title="Bullet Hail"></a><a class="skill-link" href="/skills/wildfire"><img alt="Wildfire" title="Wildfire"></a></span></div>
           <div class="db_cell">Base Game</div>
           <div class="db_cell"><a href="/boss">Subjugator</a></div>
         </div>
@@ -97,6 +97,8 @@ class DynamicLootlemonMetadataTests(unittest.TestCase):
         self.assertEqual(item["class"], "Amon")
         self.assertIn("Bullet Hail", item["skills"])
         self.assertIn("Wildfire", item["skills"])
+        self.assertNotIn("link", [value.lower() for value in item["skills"]])
+        self.assertNotIn("link", [value.lower() for value in item["attributes"].get("skill", [])])
         self.assertEqual(item["content"], "Base Game")
         self.assertEqual(item["sources"], ["Subjugator"])
 
