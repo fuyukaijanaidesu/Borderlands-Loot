@@ -140,7 +140,8 @@ def parse_page(url,game,category):
    for cls in el.get("class") or []:
     # Preserve semantic value classes such as rarity-mythic and element-radiation.
     match=re.match(r"^(?:rarity|manufacturer|element|type|content)[-_](.+)$",cls,re.I)
-    if match: out.append(re.sub(r"[-_]+"," ",match.group(1)).strip())
+    if match and match.group(1).lower() not in {"cell","field","wrapper","container","badge","label","value"}:
+     out.append(re.sub(r"[-_]+"," ",match.group(1)).strip())
     elif cls.lower() not in ignored and not re.match(r"^(?:w-|db_)",cls,re.I):
      if cls.lower() in {"legendary","epic","rare","common","uncommon","pearlescent","seraph","effervescent","glitch","e-tech"}:
       out.append(cls)
@@ -216,7 +217,7 @@ def parse_page(url,game,category):
       if field in semantic_values: semantic_values[field].extend(clean_values([child.get(attr)]))
     for cls in child.get("class") or []:
      match=re.match(r"^(rarity|manufacturer|element|type|content)[-_](.+)$",cls,re.I)
-     if match:
+     if match and match.group(2).lower() not in {"cell","field","wrapper","container","badge","label","value"}:
       field=match.group(1).lower()
       val=re.sub(r"[-_]+"," ",match.group(2)).strip()
       semantic_values[field].append(val)
@@ -244,7 +245,8 @@ def parse_page(url,game,category):
     if el.get(key): rarity_candidates.extend(clean_values([el.get(key)]))
    for cls in el.get("class") or []:
     match=re.match(r"^rarity[-_](.+)$",cls,re.I)
-    if match: rarity_candidates.append(re.sub(r"[-_]+"," ",match.group(1)).strip())
+    if match and match.group(1).lower() not in {"cell","field","wrapper","container","badge","label","value"}:
+     rarity_candidates.append(re.sub(r"[-_]+"," ",match.group(1)).strip())
   rarity_candidates.extend(semantic_values["rarity"])
   if not rarity_candidates:
    # Legacy Lootlemon layouts: rarity is commonly a compact leading cell or a rarity CSS class.
