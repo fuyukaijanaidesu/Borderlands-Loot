@@ -146,6 +146,7 @@ CONTENT_LABELS={
  "fight-for-sanctuary-dlc":"Fight for Sanctuary",
  "general-knoxx-dlc":"General Knoxx",
  "gilded-glory-pack":"Gilded Glory Pack",
+ "gluttons-gamble-mini-dlc":"G. Gamble",
  "guns-love-and-tentacles-dlc":"Guns, Love, and Tentacles",
  "handsome-jackpot-dlc":"Handsome Jackpot",
  "horrors-of-kairos-event":"Horrors of Kairos",
