@@ -97,7 +97,6 @@
  };
  const fieldDefinition=value=>typeof value==="string"?{key:value,label:FIELD_LABELS[value]||value}:value;
  const fieldFilterLabel=key=>FILTER_LABELS[key]||("Any "+(FIELD_LABELS[key]||key).toLowerCase());
- const uniqueValues=values=>[...new Set(values.map(v=>String(v??"").trim()).filter(Boolean))];
 
  const persist=()=>{localStorage.setItem(KEYS.progress,JSON.stringify(done));localStorage.setItem(KEYS.settings,JSON.stringify(settings))};
  function snapshot(reason,catalog=null){
