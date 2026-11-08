@@ -132,3 +132,25 @@ test("search, missing-only and backup export remain functional",async()=>{const 
  x.doc.getElementById("export").click();
  assert.equal(JSON.parse(x.w.localStorage.getItem("bl-loot-backups-v1"))[0].reason,"manual-full-backup");
 }finally{x.close()}});
+
+test("collection styling never leaks onto the Copy Code action",async()=>{const x=await boot();try{
+ const card=x.doc.querySelector("#items .item");
+ const copy=card.querySelector(".copy-code");
+ const collect=card.querySelector(".collect-button");
+ assert.ok(copy);assert.ok(collect);
+ collect.click();
+ const updated=x.doc.querySelector("#items .item");
+ const updatedCopy=updated.querySelector(".copy-code");
+ const updatedCollect=updated.querySelector(".collect-button");
+ assert.ok(updated.classList.contains("collected"));
+ assert.ok(updatedCollect.classList.contains("done"));
+ assert.ok(updatedCopy.classList.contains("copy-code"));
+ assert.ok(!updatedCopy.classList.contains("done"));
+ assert.equal(updatedCopy.textContent,"Copy Code");
+}finally{x.close()}});
+test("filter controls use a stable grid and fixed search width",()=>{
+ const styles=fs.readFileSync(path.join(root,"assets/styles.css"),"utf8");
+ assert.match(styles,/\.filters\{display:grid;grid-template-columns:280px 150px minmax\(0,1fr\) 140px auto auto/);
+ assert.match(styles,/\.filters #search\{width:280px;min-width:0;flex:none\}/);
+ assert.match(styles,/\.filters \.dynamic-filters select\{width:145px;min-width:145px;max-width:145px;flex:0 0 145px\}/);
+});
