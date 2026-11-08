@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-08T16:46:00.025461+00:00",
+  "updatedAt": "2026-11-08T16:47:23.973594+00:00",
   "games": [
     {
       "id": "borderlands-1",
@@ -37,7 +37,6 @@
       "class": "Mordecai",
       "skills": [
         "Deadly",
-        "skill link",
         "Lethal Strike",
         "Killer"
       ],
@@ -89,7 +88,6 @@
       "class": "Brick",
       "skills": [
         "Endowed",
-        "skill link",
         "Heavy Handed",
         "Cast Iron"
       ],
@@ -141,7 +139,6 @@
       "class": "Brick",
       "skills": [
         "Endless Rage",
-        "skill link",
         "Heavy Handed",
         "Blood Sport"
       ],
@@ -191,7 +188,6 @@
       "class": "Brick",
       "skills": [
         "Liquidate",
-        "skill link",
         "Revenge",
         "Master Blaster"
       ],
@@ -241,7 +237,6 @@
       "class": "Brick",
       "skills": [
         "Endowed",
-        "skill link",
         "Rapid Reload",
         "Wide Load"
       ],
@@ -291,7 +286,6 @@
       "class": "Lilith",
       "skills": [
         "Phoenix",
-        "skill link",
         "Girl Power",
         "Intuition"
       ],
@@ -343,7 +337,6 @@
       "class": "Brick",
       "skills": [
         "Safeguard",
-        "skill link",
         "Hardened",
         "Diehard"
       ],
@@ -393,7 +386,6 @@
       "class": "Roland",
       "skills": [
         "Fitness",
-        "skill link",
         "Grit",
         "Impact"
       ],
@@ -445,7 +437,6 @@
       "class": "Roland",
       "skills": [
         "Scattershot",
-        "skill link",
         "Defense",
         "Quick Charge"
       ],
@@ -497,7 +488,6 @@
       "class": "Brick",
       "skills": [
         "Rapid Reload",
-        "skill link",
         "Short Fuse",
         "Diehard"
       ],
@@ -551,7 +541,6 @@
       "class": "Lilith",
       "skills": [
         "Resilience",
-        "skill link",
         "Diva",
         "Inner Glow"
       ],
@@ -603,7 +592,6 @@
       "class": "Lilith",
       "skills": [
         "Radiance",
-        "skill link",
         "Inner Glow",
         "Phoenix"
       ],
@@ -655,7 +643,6 @@
       "class": "Lilith",
       "skills": [
         "Spark",
-        "skill link",
         "Phoenix",
         "Diva"
       ],
@@ -707,7 +694,6 @@
       "class": "Mordecai",
       "skills": [
         "Gun Crazy",
-        "skill link",
         "Focus",
         "Deadly"
       ],
@@ -759,7 +745,6 @@
       "class": "Roland",
       "skills": [
         "Metal Storm",
-        "skill link",
         "Overload",
         "Assault"
       ],
@@ -811,7 +796,6 @@
       "class": "Mordecai",
       "skills": [
         "Deadly",
-        "skill link",
         "Loaded",
         "Relentless"
       ],
@@ -863,7 +847,6 @@
       "class": "Roland",
       "skills": [
         "Impact",
-        "skill link",
         "Overload",
         "Metal Storm"
       ],
@@ -915,7 +898,6 @@
       "class": "Mordecai",
       "skills": [
         "Aerial Impact",
-        "skill link",
         "Swift Strike",
         "Out For Blood"
       ],
@@ -965,7 +947,6 @@
       "class": "Roland",
       "skills": [
         "Deploy",
-        "skill link",
         "Grit",
         "Defense"
       ],
@@ -1017,7 +998,6 @@
       "class": "Roland",
       "skills": [
         "Overload",
-        "skill link",
         "Grenadier",
         "Cauterize"
       ],
@@ -1088,7 +1068,6 @@
       "class": "Lilith",
       "skills": [
         "Quicksilver",
-        "skill link",
         "High Velocity",
         "Girl Power"
       ],
@@ -1142,7 +1121,6 @@
       "class": "Brick",
       "skills": [
         "Rapid Reload",
-        "skill link",
         "Revenge",
         "Diehard"
       ],
@@ -1215,7 +1193,6 @@
       "class": "Roland",
       "skills": [
         "Cauterize",
-        "skill link",
         "Defense",
         "Grenadier"
       ],
@@ -1267,7 +1244,6 @@
       "class": "Mordecai",
       "skills": [
         "Out For Blood",
-        "skill link",
         "Trespass",
         "Riotous Remedy"
       ],
@@ -1321,7 +1297,6 @@
       "class": "Lilith",
       "skills": [
         "Venom",
-        "skill link",
         "Inner Glow",
         "Mind Games"
       ],
@@ -1373,7 +1348,6 @@
       "class": "Lilith",
       "skills": [
         "Quicksilver",
-        "skill link",
         "High Velocity",
         "Dramatic Entrance"
       ],
@@ -1427,7 +1401,6 @@
       "class": "Mordecai",
       "skills": [
         "Predator",
-        "skill link",
         "Bird of Prey",
         "Focus"
       ],
@@ -1481,7 +1454,6 @@
       "class": "Roland",
       "skills": [
         "Assault",
-        "skill link",
         "Overload",
         "Impact"
       ],
@@ -1533,7 +1505,6 @@
       "class": "Mordecai",
       "skills": [
         "Swipe",
-        "skill link",
         "Ransack",
         "Out For Blood"
       ],
@@ -1583,7 +1554,6 @@
       "class": "Mordecai",
       "skills": [
         "Focus",
-        "skill link",
         "Riotous Remedy",
         "Killer"
       ],
@@ -1635,7 +1605,6 @@
       "class": "Roland",
       "skills": [
         "Fitness",
-        "skill link",
         "Grenadier",
         "Refire"
       ],
@@ -1689,7 +1658,6 @@
       "class": "Brick",
       "skills": [
         "Short Fuse",
-        "skill link",
         "Sting Like a Bee",
         "Bash"
       ],
@@ -1741,7 +1709,6 @@
       "class": "Mordecai",
       "skills": [
         "Focus",
-        "skill link",
         "Caliber",
         "Carrion Call"
       ],
@@ -1791,7 +1758,6 @@
       "class": "Lilith",
       "skills": [
         "Spark",
-        "skill link",
         "Phoenix",
         "Radiance"
       ],
@@ -1841,7 +1807,6 @@
       "class": "Lilith",
       "skills": [
         "Slayer",
-        "skill link",
         "Enforcer",
         "High Velocity"
       ],
@@ -1912,7 +1877,6 @@
       "class": "Roland",
       "skills": [
         "Stockpile",
-        "skill link",
         "Impact",
         "Barrage"
       ],
@@ -1964,7 +1928,6 @@
       "class": "Mordecai",
       "skills": [
         "Fast Hands",
-        "skill link",
         "Riotous Remedy",
         "Swipe"
       ],
@@ -2016,7 +1979,6 @@
       "class": "Roland",
       "skills": [
         "Defense",
-        "skill link",
         "Aid Station",
         "Quick Charge"
       ],
@@ -2068,7 +2030,6 @@
       "class": "Brick",
       "skills": [
         "Safeguard",
-        "skill link",
         "Diehard",
         "Unbreakable"
       ],
@@ -2118,7 +2079,6 @@
       "class": "Lilith",
       "skills": [
         "Radiance",
-        "skill link",
         "Slayer",
         "Silent Resolve"
       ],
@@ -2170,7 +2130,6 @@
       "class": "Brick",
       "skills": [
         "Juggernaut",
-        "skill link",
         "Unbreakable",
         "Safeguard"
       ],
@@ -2220,7 +2179,6 @@
       "class": "Lilith",
       "skills": [
         "Spark",
-        "skill link",
         "Radiance",
         "Striking"
       ],
@@ -2272,7 +2230,6 @@
       "class": "Mordecai",
       "skills": [
         "Deadly",
-        "skill link",
         "Riotous Remedy",
         "Lethal Strike"
       ],
@@ -2343,7 +2300,6 @@
       "class": "Brick",
       "skills": [
         "Pay Back",
-        "skill link",
         "Hardened",
         "Revenge"
       ],
@@ -8792,7 +8748,6 @@
       "class": "Gaige",
       "skills": [
         "Annoyed Android",
-        "skill link",
         "Fancy Mathematics",
         "Death From Above"
       ],
@@ -8844,7 +8799,6 @@
       "class": "Maya",
       "skills": [
         "Immolate",
-        "skill link",
         "Fleet",
         "Backdraft"
       ],
@@ -8896,7 +8850,6 @@
       "class": "Krieg",
       "skills": [
         "Fire Fiend",
-        "skill link",
         "Blood Trance",
         "Salt the Wound"
       ],
@@ -8962,7 +8915,6 @@
       "class": "Salvador",
       "skills": [
         "Just Got Real",
-        "skill link",
         "Incite",
         "Sexual Tyrannosaurus"
       ],
@@ -9019,7 +8971,6 @@
       "class": "Salvador",
       "skills": [
         "Lay Waste",
-        "skill link",
         "Last Longer",
         "Yippee Ki Yay"
       ],
@@ -9078,7 +9029,6 @@
       "class": "Krieg",
       "skills": [
         "Fuel the Blood",
-        "skill link",
         "Blood Overdrive",
         "Blood Bath"
       ],
@@ -9128,7 +9078,6 @@
       "class": "Gaige",
       "skills": [
         "Wires Don't Talk",
-        "skill link",
         "Evil Enchantress",
         "Shock Storm"
       ],
@@ -9178,7 +9127,6 @@
       "class": "Maya",
       "skills": [
         "Suspension",
-        "skill link",
         "Restoration",
         "Life Tap"
       ],
@@ -9242,7 +9190,6 @@
       "class": "Krieg",
       "skills": [
         "Taste of Blood",
-        "skill link",
         "Blood Trance",
         "Strip the Flesh"
       ],
@@ -9294,7 +9241,6 @@
       "class": "Salvador",
       "skills": [
         "Filled to the Brim",
-        "skill link",
         "Just Got Real",
         "Divergent Likeness"
       ],
@@ -9348,7 +9294,6 @@
       "class": "Maya",
       "skills": [
         "Blight Phoenix",
-        "skill link",
         "Helios",
         "Reaper"
       ],
@@ -9398,7 +9343,6 @@
       "class": "Axton",
       "skills": [
         "Steady",
-        "skill link",
         "Impact",
         "Grenadier"
       ],
@@ -9457,7 +9401,6 @@
       "class": "Axton",
       "skills": [
         "Overload",
-        "skill link",
         "Steady",
         "Metal Storm"
       ],
@@ -9507,7 +9450,6 @@
       "class": "Zer0",
       "skills": [
         "Be Like Water",
-        "skill link",
         "Unf0reseen",
         "Ir0n Hand"
       ],
@@ -9559,7 +9501,6 @@
       "class": "Gaige",
       "skills": [
         "More Pep",
-        "skill link",
         "The Better Half",
         "Smaller",
         "Lighter",
@@ -9615,7 +9556,6 @@
       "class": "Zer0",
       "skills": [
         "Fearless",
-        "skill link",
         "Killer",
         "Ambush"
       ],
@@ -9667,7 +9607,6 @@
       "class": "Gaige",
       "skills": [
         "Unstoppable Force",
-        "skill link",
         "Myelin",
         "Strength of Five Gorillas",
         "Smaller",
@@ -9725,7 +9664,6 @@
       "class": "Salvador",
       "skills": [
         "Locked and Loaded",
-        "skill link",
         "Quick Draw",
         "Filled to the Brim",
         "Hard to Kill",
@@ -9796,7 +9734,6 @@
       "class": "Maya",
       "skills": [
         "Suspension",
-        "skill link",
         "Sweet Release",
         "Wreck",
         "Helios",
@@ -9852,7 +9789,6 @@
       "class": "Maya",
       "skills": [
         "Accelerate",
-        "skill link",
         "Mind's Eye",
         "Wreck",
         "Foresight",
@@ -9908,7 +9844,6 @@
       "class": "Gaige",
       "skills": [
         "More Pep",
-        "skill link",
         "Electrical Burn",
         "Evil Enchantress",
         "Wires Don't Talk",
@@ -9960,7 +9895,6 @@
       "class": "Axton",
       "skills": [
         "Battlefront",
-        "skill link",
         "Resourceful",
         "Sentry",
         "Impact",
@@ -10016,7 +9950,6 @@
       "class": "Salvador",
       "skills": [
         "Lay Waste",
-        "skill link",
         "All in the Reflexes",
         "Last Longer",
         "Yippee Ki Yay",
@@ -10072,7 +10005,6 @@
       "class": "Salvador",
       "skills": [
         "Lay Waste",
-        "skill link",
         "5 Shots or 6",
         "Filled to the Brim",
         "Locked and Loaded",
@@ -10128,7 +10060,6 @@
       "class": "Zer0",
       "skills": [
         "Headsh0t",
-        "skill link",
         "Fast Hands",
         "C0unter Strike",
         "Killing Bl0w",
@@ -10199,7 +10130,6 @@
       "class": "Zer0",
       "skills": [
         "Headsh0t",
-        "skill link",
         "Killer",
         "Vel0city",
         "Ambush",
@@ -10253,7 +10183,6 @@
       "class": "Gaige",
       "skills": [
         "More Pep",
-        "skill link",
         "Strength of Five Gorillas",
         "Cooking Up Trouble",
         "Smaller",
@@ -10319,7 +10248,6 @@
       "class": "Zer0",
       "skills": [
         "Backstab",
-        "skill link",
         "Resurgence",
         "Killing Bl0w",
         "Ambush",
@@ -10373,7 +10301,6 @@
       "class": "Maya",
       "skills": [
         "Restoration",
-        "skill link",
         "Elated",
         "Sweet Release",
         "Sustenance",
@@ -10427,7 +10354,6 @@
       "class": "Axton",
       "skills": [
         "Pressure",
-        "skill link",
         "Grit",
         "Last Ditch Effort",
         "Able",
@@ -10481,7 +10407,6 @@
       "class": "Krieg",
       "skills": [
         "Blood-Filled Guns",
-        "skill link",
         "Blood Twitch",
         "Empty the Rage",
         "Feed the Meat",
@@ -10546,7 +10471,6 @@
       "class": "Axton",
       "skills": [
         "Ranger",
-        "skill link",
         "Quick Charge",
         "Onslaught",
         "Impact",
@@ -10602,7 +10526,6 @@
       "class": "Krieg",
       "skills": [
         "Taste of Blood",
-        "skill link",
         "Blood Overdrive",
         "Blood Bath",
         "Thrill of the Kill",
@@ -10658,7 +10581,6 @@
       "class": "Gaige",
       "skills": [
         "Potent as a Pony",
-        "skill link",
         "Made of Sterner Stuff",
         "20% Cooler",
         "Strength of Five Gorillas",
@@ -10714,7 +10636,6 @@
       "class": "Krieg",
       "skills": [
         "Taste of Blood",
-        "skill link",
         "Fuel the Blood",
         "Empty the Rage",
         "Silence the Voices",
@@ -10770,7 +10691,6 @@
       "class": "Maya",
       "skills": [
         "Ward",
-        "skill link",
         "Accelerate",
         "Mind's Eye",
         "Foresight",
@@ -10841,7 +10761,6 @@
       "class": "Zer0",
       "skills": [
         "Precisi0n",
-        "skill link",
         "0ne Sh0t 0ne Kill",
         "Headsh0t",
         "Kill C0nfirmed",
@@ -10893,7 +10812,6 @@
       "class": "Axton",
       "skills": [
         "Sentry",
-        "skill link",
         "Ready",
         "Impact",
         "Expertise",
@@ -10965,7 +10883,6 @@
       "class": "Salvador",
       "skills": [
         "Hard to Kill",
-        "skill link",
         "Out of Bubblegum",
         "I'm the Juggernaut",
         "Locked and Loaded",
@@ -11019,7 +10936,6 @@
       "class": "Krieg",
       "skills": [
         "Embrace the Pain",
-        "skill link",
         "Burn",
         "Baby",
         "Fuel the Fire",
@@ -11074,7 +10990,6 @@
       "class": "Maya",
       "skills": [
         "Life Tap",
-        "skill link",
         "Sustenance",
         "Elated"
       ],
@@ -11124,7 +11039,6 @@
       "class": "Krieg",
       "skills": [
         "Empty the Rage",
-        "skill link",
         "Embrace the Pain",
         "Salt the Wound"
       ],
@@ -11174,7 +11088,6 @@
       "class": "Salvador",
       "skills": [
         "Money Shot",
-        "skill link",
         "Asbestos",
         "Sexual Tyrannosaurus"
       ],
@@ -11238,7 +11151,6 @@
       "class": "Gaige",
       "skills": [
         "Strength of Five Gorillas",
-        "skill link",
         "Wires Don't Talk",
         "Made of Sterner Stuff"
       ],
@@ -11302,7 +11214,6 @@
       "class": "Gaige",
       "skills": [
         "Cooking Up Trouble",
-        "skill link",
         "The Better Half",
         "More Pep"
       ],
@@ -11354,7 +11265,6 @@
       "class": "Zer0",
       "skills": [
         "Tw0 Fang",
-        "skill link",
         "Killer",
         "Ambush"
       ],
@@ -11406,7 +11316,6 @@
       "class": "Gaige",
       "skills": [
         "The Better Half",
-        "skill link",
         "Smaller",
         "Lighter",
         "Faster",
@@ -11460,7 +11369,6 @@
       "class": "Salvador",
       "skills": [
         "Locked and Loaded",
-        "skill link",
         "Money Shot",
         "Incite"
       ],
@@ -11512,7 +11420,6 @@
       "class": "Axton",
       "skills": [
         "Impact",
-        "skill link",
         "Ranger",
         "Grit"
       ],
@@ -11576,7 +11483,6 @@
       "class": "Krieg",
       "skills": [
         "Blood Twitch",
-        "skill link",
         "Fuel the Fire",
         "Blood Overdrive"
       ],
@@ -11628,7 +11534,6 @@
       "class": "Salvador",
       "skills": [
         "I'm Your Huckleberry",
-        "skill link",
         "Incite",
         "All I Need is One"
       ],
@@ -11680,7 +11585,6 @@
       "class": "Axton",
       "skills": [
         "Impact",
-        "skill link",
         "Onslaught",
         "Battlefront"
       ],
@@ -11732,7 +11636,6 @@
       "class": "Zer0",
       "skills": [
         "Vel0city",
-        "skill link",
         "Tw0 Fang",
         "Like The Wind"
       ],
@@ -11798,7 +11701,6 @@
       "class": "Axton",
       "skills": [
         "Quick Charge",
-        "skill link",
         "Onslaught",
         "Metal Storm"
       ],
@@ -11852,7 +11754,6 @@
       "class": "Zer0",
       "skills": [
         "0ptics",
-        "skill link",
         "Precisi0n",
         "Kill C0nfirmed"
       ],
@@ -11902,7 +11803,6 @@
       "class": "Krieg",
       "skills": [
         "Thrill of the Kill",
-        "skill link",
         "Fuel the Rampage",
         "Feed the Meat"
       ],
@@ -11952,7 +11852,6 @@
       "class": "Krieg",
       "skills": [
         "Blood Trance",
-        "skill link",
         "Thrill of the Kill",
         "Strip the Flesh",
         "Burn",
@@ -12009,7 +11908,6 @@
       "class": "Gaige",
       "skills": [
         "Fancy Mathematics",
-        "skill link",
         "Made of Sterner Stuff",
         "Evil Enchantress",
         "Interspersed Outburst",
@@ -12065,7 +11963,6 @@
       "class": "Zer0",
       "skills": [
         "Headsh0t",
-        "skill link",
         "0ptics",
         "Fast Hands",
         "C0unter Strike",
@@ -12121,7 +12018,6 @@
       "class": "Maya",
       "skills": [
         "Ward",
-        "skill link",
         "Accelerate",
         "Mind's Eye",
         "Sweet Release",
@@ -12177,7 +12073,6 @@
       "class": "Axton",
       "skills": [
         "Sentry",
-        "skill link",
         "Ready",
         "Impact",
         "Expertise",
@@ -12233,7 +12128,6 @@
       "class": "Salvador",
       "skills": [
         "Locked and Loaded",
-        "skill link",
         "Quick Draw",
         "Filled to the Brim",
         "Hard to Kill",
@@ -12289,7 +12183,6 @@
       "class": "Axton",
       "skills": [
         "Duty Calls",
-        "skill link",
         "Ready",
         "Forbearance"
       ],
@@ -12343,7 +12236,6 @@
       "class": "Zer0",
       "skills": [
         "Vel0city",
-        "skill link",
         "Ambush",
         "Unf0reseen"
       ],
@@ -12395,7 +12287,6 @@
       "class": "Zer0",
       "skills": [
         "Rising Sh0t",
-        "skill link",
         "F0ll0wthr0ugh",
         "C0unter Strike"
       ],
@@ -12447,7 +12338,6 @@
       "class": "Zer0",
       "skills": [
         "Ambush",
-        "skill link",
         "Rising Sh0t",
         "Resurgence"
       ],
@@ -12499,7 +12389,6 @@
       "class": "Gaige",
       "skills": [
         "More Pep",
-        "skill link",
         "Cooking Up Trouble",
         "The Better Half"
       ],
@@ -12551,7 +12440,6 @@
       "class": "Axton",
       "skills": [
         "Battlefront",
-        "skill link",
         "Resourceful",
         "Preparation"
       ],
@@ -12603,7 +12491,6 @@
       "class": "Salvador",
       "skills": [
         "I'm the Juggernaut",
-        "skill link",
         "Hard to Kill",
         "Asbestos"
       ],
@@ -12653,7 +12540,6 @@
       "class": "Gaige",
       "skills": [
         "Strength of Five Gorillas",
-        "skill link",
         "Fancy Mathematics",
         "Interspersed Outburst"
       ],
@@ -12705,7 +12591,6 @@
       "class": "Krieg",
       "skills": [
         "Pain is Power",
-        "skill link",
         "Fire Fiend",
         "Elemental Elation"
       ],
@@ -12755,7 +12640,6 @@
       "class": "Maya",
       "skills": [
         "Life Tap",
-        "skill link",
         "Kinetic Reflection",
         "Chain Reaction"
       ],
@@ -12809,7 +12693,6 @@
       "class": "Axton",
       "skills": [
         "Steady",
-        "skill link",
         "Pressure",
         "Last Ditch Effort"
       ],
@@ -12861,7 +12744,6 @@
       "class": "Salvador",
       "skills": [
         "5 Shots or 6",
-        "skill link",
         "Out of Bubblegum",
         "Filled to the Brim"
       ],
@@ -12913,7 +12795,6 @@
       "class": "Maya",
       "skills": [
         "Wreck",
-        "skill link",
         "Ward",
         "Recompense"
       ],
@@ -12965,7 +12846,6 @@
       "class": "Maya",
       "skills": [
         "Helios",
-        "skill link",
         "Flicker",
         "Kinetic Reflection"
       ],
@@ -13017,7 +12897,6 @@
       "class": "Krieg",
       "skills": [
         "Blood Twitch",
-        "skill link",
         "Taste of Blood",
         "Boiling Blood"
       ],
@@ -13067,7 +12946,6 @@
       "class": "Gaige",
       "skills": [
         "More Pep",
-        "skill link",
         "Wires Don't Talk",
         "Electrical Burn"
       ],
@@ -25176,7 +25054,6 @@
       "class": "Amara",
       "skills": [
         "Atman",
-        "skill link",
         "Burn Both Ends",
         "Body and Mind"
       ],
@@ -25225,7 +25102,6 @@
       "class": "Zane",
       "skills": [
         "Ready for Action",
-        "skill link",
         "Violent Momentum",
         "Synchronicity"
       ],
@@ -25278,7 +25154,6 @@
       "class": "Zane",
       "skills": [
         "Violent Speed",
-        "skill link",
         "Violent Momentum",
         "Supersonic Man"
       ],
@@ -25339,7 +25214,6 @@
       "class": "Amara",
       "skills": [
         "Fast Hand(s)",
-        "skill link",
         "Dread",
         "Deep Well"
       ],
@@ -25390,7 +25264,6 @@
       "class": "Amara",
       "skills": [
         "Illuminated Fist",
-        "skill link",
         "Vigor",
         "One With Nature"
       ],
@@ -25441,7 +25314,6 @@
       "class": "Moze",
       "skills": [
         "Means of Destruction",
-        "skill link",
         "Redistribution",
         "Torgue Cross-Promotion"
       ],
@@ -25492,7 +25364,6 @@
       "class": "Moze",
       "skills": [
         "Grizzled",
-        "skill link",
         "Stainless Steel Bear",
         "Explosive Punctuation"
       ],
@@ -25548,7 +25419,6 @@
       "class": "Moze",
       "skills": [
         "Pull the Holy Pin",
-        "skill link",
         "Vampyr",
         "Redistribution"
       ],
@@ -25606,7 +25476,6 @@
       "class": "Moze",
       "skills": [
         "Thin Red Line",
-        "skill link",
         "Desperate Measures",
         "Phalanx Doctrine"
       ],
@@ -25662,7 +25531,6 @@
       "class": "FL4K",
       "skills": [
         "Hunter's Eye",
-        "skill link",
         "The Most Dangerous Game",
         "Frenzy"
       ],
@@ -25720,7 +25588,6 @@
       "class": "Amara",
       "skills": [
         "Arms Deal",
-        "skill link",
         "Samsara",
         "Personal Space"
       ],
@@ -25769,7 +25636,6 @@
       "class": "Amara",
       "skills": [
         "Personal Space",
-        "skill link",
         "Find Your Center",
         "Jab Cross"
       ],
@@ -25825,7 +25691,6 @@
       "class": "Zane",
       "skills": [
         "Domino Effect",
-        "skill link",
         "The Art of War",
         "Sheer Will"
       ],
@@ -25874,7 +25739,6 @@
       "class": "FL4K",
       "skills": [
         "Leave No Trace",
-        "skill link",
         "Ambush Predator",
         "Turn Tail and Run"
       ],
@@ -25925,7 +25789,6 @@
       "class": "FL4K",
       "skills": [
         "Capacitance",
-        "skill link",
         "Better Toys",
         "Keep Them Safe"
       ],
@@ -25984,7 +25847,6 @@
       "class": "Zane",
       "skills": [
         "Synchronicity",
-        "skill link",
         "Trick of the Light",
         "Ready for Action"
       ],
@@ -26042,7 +25904,6 @@
       "class": "Moze",
       "skills": [
         "Some for the Road",
-        "skill link",
         "Deadlines",
         "Vampyr"
       ],
@@ -26093,7 +25954,6 @@
       "class": "Zane",
       "skills": [
         "Good Misfortune",
-        "skill link",
         "Borrowed Time",
         "Adrenaline"
       ],
@@ -26153,7 +26013,6 @@
       "class": "FL4K",
       "skills": [
         "Interplanetary Stalker",
-        "skill link",
         "Hunter's Eye",
         "Big Game"
       ],
@@ -26209,7 +26068,6 @@
       "class": "Zane",
       "skills": [
         "Déjà Vu",
-        "skill link",
         "Playing Dirty",
         "Domino Effect"
       ],
@@ -26267,7 +26125,6 @@
       "class": "FL4K",
       "skills": [
         "Self-Repairing System",
-        "skill link",
         "Ferocity",
         "Who Rescued Who?"
       ],
@@ -26318,7 +26175,6 @@
       "class": "FL4K",
       "skills": [
         "Two F4ng",
-        "skill link",
         "Go for the Eyes!",
         "The Fast and the Furryous"
       ],
@@ -26378,7 +26234,6 @@
       "class": "Amara",
       "skills": [
         "Remnant",
-        "skill link",
         "Wrath",
         "Atman"
       ],
@@ -26436,7 +26291,6 @@
       "class": "Zane",
       "skills": [
         "Praemunitus",
-        "skill link",
         "Trick of the Light",
         "Donnybrook"
       ],
@@ -26485,7 +26339,6 @@
       "class": "Zane",
       "skills": [
         "Violent Momentum",
-        "skill link",
         "Violent Violence",
         "Violent Speed"
       ],
@@ -26534,7 +26387,6 @@
       "class": "FL4K",
       "skills": [
         "Hive Mind",
-        "skill link",
         "Who Rescued Who?",
         "Eager to Impress"
       ],
@@ -26585,7 +26437,6 @@
       "class": "Amara",
       "skills": [
         "Do Harm",
-        "skill link",
         "Restless",
         "Remnant"
       ],
@@ -26641,7 +26492,6 @@
       "class": "Amara",
       "skills": [
         "Infusion",
-        "skill link",
         "Wildfire",
         "Violent Tapestry"
       ],
@@ -26699,7 +26549,6 @@
       "class": "Moze",
       "skills": [
         "Nitrotrinadium Engines",
-        "skill link",
         "Really Big Guns",
         "Running on Fumes"
       ],
@@ -26758,7 +26607,6 @@
       "class": "Zane",
       "skills": [
         "Good Misfortune",
-        "skill link",
         "Playing Dirty",
         "Violent Violence"
       ],
@@ -26814,7 +26662,6 @@
       "class": "Moze",
       "skills": [
         "Stoke the Embers",
-        "skill link",
         "Fire in the Skag Den",
         "Drowning in Brass"
       ],
@@ -26867,7 +26714,6 @@
       "class": "Moze",
       "skills": [
         "Means of Destruction",
-        "skill link",
         "Stainless Steel Bear",
         "Cloud of Lead"
       ],
@@ -26925,7 +26771,6 @@
       "class": "Zane",
       "skills": [
         "Adrenaline",
-        "skill link",
         "Duct Tape Mod",
         "Praemunitus"
       ],
@@ -26976,7 +26821,6 @@
       "class": "FL4K",
       "skills": [
         "Psycho Head on a Stick",
-        "skill link",
         "Barbaric Yawp",
         "All My BFF's"
       ],
@@ -27034,7 +26878,6 @@
       "class": "FL4K",
       "skills": [
         "Overclocked",
-        "skill link",
         "Second Intention",
         "Furious Attack"
       ],
@@ -27085,7 +26928,6 @@
       "class": "Zane",
       "skills": [
         "Adrenaline",
-        "skill link",
         "Ready for Action",
         "Borrowed Time"
       ],
@@ -27136,7 +26978,6 @@
       "class": "Amara",
       "skills": [
         "Mindfulness",
-        "skill link",
         "Laid Bare",
         "Helping Hand(s)"
       ],
@@ -27194,7 +27035,6 @@
       "class": "Moze",
       "skills": [
         "The Iron Bank",
-        "skill link",
         "\"Click",
         "Click...\"",
         "Scorching RPM's"
@@ -27251,7 +27091,6 @@
       "class": "Moze",
       "skills": [
         "Why Can't I Carry All These Grenades?",
-        "skill link",
         "Torgue Cross-Promotion",
         "Vampyr"
       ],
@@ -27300,7 +27139,6 @@
       "class": "Moze",
       "skills": [
         "Never Going to Give You Up",
-        "skill link",
         "Explosive Fury",
         "Biofuel"
       ],
@@ -27349,7 +27187,6 @@
       "class": "FL4K",
       "skills": [
         "Ambush Predator",
-        "skill link",
         "Leave No Trace",
         "The Fast and the Furryous"
       ],
@@ -27400,7 +27237,6 @@
       "class": "Moze",
       "skills": [
         "Scorching RPM's",
-        "skill link",
         "Feature Creep",
         "Really Big Guns"
       ],
@@ -27458,7 +27294,6 @@
       "class": "FL4K",
       "skills": [
         "Not Even a Challenge",
-        "skill link",
         "Throatripper",
         "Gotta Go Fast"
       ],
@@ -27507,7 +27342,6 @@
       "class": "Zane",
       "skills": [
         "Brain Freeze",
-        "skill link",
         "Like a Ghost",
         "Adrenaline"
       ],
@@ -27565,7 +27399,6 @@
       "class": "Zane",
       "skills": [
         "Violent Momentum",
-        "skill link",
         "Supersonic Man",
         "Like a Ghost"
       ],
@@ -27623,7 +27456,6 @@
       "class": "Amara",
       "skills": [
         "Unweave the Rainbow",
-        "skill link",
         "Joyful Freedom",
         "No Mistakes in Nature"
       ],
@@ -27682,7 +27514,6 @@
       "class": "Moze",
       "skills": [
         "Matched Set",
-        "skill link",
         "The Iron Bank",
         "\"Click",
         "Click...\""
@@ -27732,7 +27563,6 @@
       "class": "Moze",
       "skills": [
         "Desperate Measures",
-        "skill link",
         "\"Click",
         "Click...\"",
         "Thin Red Line"
@@ -27784,7 +27614,6 @@
       "class": "Amara",
       "skills": [
         "Transcend",
-        "skill link",
         "Steady Hand(s)",
         "Fast Hand(s)"
       ],
@@ -27835,7 +27664,6 @@
       "class": "Moze",
       "skills": [
         "Redistribution",
-        "skill link",
         "Scorching RPM's",
         "Experimental Munitions"
       ],
@@ -27886,7 +27714,6 @@
       "class": "Amara",
       "skills": [
         "Catharsis",
-        "skill link",
         "Conflux",
         "Personal Space"
       ],
@@ -27937,7 +27764,6 @@
       "class": "Moze",
       "skills": [
         "Fire in the Skag Den",
-        "skill link",
         "Torgue Cross-Promotion",
         "Redistribution"
       ],
@@ -27995,7 +27821,6 @@
       "class": "Amara",
       "skills": [
         "Laid Bare",
-        "skill link",
         "Jab Cross",
         "Illuminated Fist"
       ],
@@ -28055,7 +27880,6 @@
       "class": "Amara",
       "skills": [
         "Tempest",
-        "skill link",
         "Conflux",
         "Violent Tapestry"
       ],
@@ -28113,7 +27937,6 @@
       "class": "FL4K",
       "skills": [
         "The Fast and the Furryous",
-        "skill link",
         "Rage and Recover",
         "Who Rescued Who?"
       ],
@@ -28164,7 +27987,6 @@
       "class": "FL4K",
       "skills": [
         "Eager to Impress",
-        "skill link",
         "Interplanetary Stalker",
         "Ambush Predator"
       ],
@@ -28222,7 +28044,6 @@
       "class": "Amara",
       "skills": [
         "Anima",
-        "skill link",
         "Conflux",
         "Clarity"
       ],
@@ -28280,7 +28101,6 @@
       "class": "Amara",
       "skills": [
         "Clarity",
-        "skill link",
         "Do Harm",
         "Infusion"
       ],
@@ -28333,7 +28153,6 @@
       "class": "FL4K",
       "skills": [
         "Grim Harvest",
-        "skill link",
         "Pack Tactics",
         "Head Count"
       ],
@@ -28394,7 +28213,6 @@
       "class": "Amara",
       "skills": [
         "From Rest",
-        "skill link",
         "Mindfulness",
         "Alacrity"
       ],
@@ -28445,7 +28263,6 @@
       "class": "Zane",
       "skills": [
         "Good Misfortune",
-        "skill link",
         "Borrowed Time",
         "Synchronicity"
       ],
@@ -28496,7 +28313,6 @@
       "class": "Zane",
       "skills": [
         "Cold Bore",
-        "skill link",
         "Best Served Cold",
         "Cool Hand"
       ],
@@ -28547,7 +28363,6 @@
       "class": "Moze",
       "skills": [
         "Stoke the Embers",
-        "skill link",
         "Stainless Steel Bear",
         "Deadlines"
       ],
@@ -28608,7 +28423,6 @@
       "class": "FL4K",
       "skills": [
         "Ferocity",
-        "skill link",
         "He Bites!",
         "Eager to Impress"
       ],
@@ -28666,7 +28480,6 @@
       "class": "FL4K",
       "skills": [
         "Ferocity",
-        "skill link",
         "He Bites!",
         "Eager to Impress"
       ],
@@ -28724,7 +28537,6 @@
       "class": "Zane",
       "skills": [
         "Brain Freeze",
-        "skill link",
         "Best Served Cold",
         "Refreshment"
       ],
@@ -28773,7 +28585,6 @@
       "class": "Moze",
       "skills": [
         "Fire in the Skag Den",
-        "skill link",
         "Torgue Cross-Promotion",
         "Cloud of Lead"
       ],
@@ -28831,7 +28642,6 @@
       "class": "FL4K",
       "skills": [
         "Monkey Do!",
-        "skill link",
         "Eager to Impress",
         "Throatripper"
       ],
@@ -28889,7 +28699,6 @@
       "class": "Zane",
       "skills": [
         "Playing Dirty",
-        "skill link",
         "Ready for Action",
         "Hearty Stock"
       ],
@@ -28940,7 +28749,6 @@
       "class": "Moze",
       "skills": [
         "Means of Destruction",
-        "skill link",
         "The Iron Bank",
         "Matched Set"
       ],
@@ -28998,7 +28806,6 @@
       "class": "Zane",
       "skills": [
         "Violent Violence",
-        "skill link",
         "Donnybrook",
         "Playing Dirty"
       ],
@@ -29056,7 +28863,6 @@
       "class": "Moze",
       "skills": [
         "Armored Infantry",
-        "skill link",
         "Vladof Ingenuity",
         "Phalanx Doctrine"
       ],
@@ -29105,7 +28911,6 @@
       "class": "Zane",
       "skills": [
         "Duct Tape Mod",
-        "skill link",
         "Pocket Full of Grenades",
         "Best Served Cold"
       ],
@@ -29163,7 +28968,6 @@
       "class": "Amara",
       "skills": [
         "Helping Hand(s)",
-        "skill link",
         "Clarity",
         "Mindfulness"
       ],
@@ -29224,7 +29028,6 @@
       "class": "Zane",
       "skills": [
         "Headsman's Hand",
-        "skill link",
         "Our Man Flynt",
         "Commitment"
       ],
@@ -29283,7 +29086,6 @@
       "class": "FL4K",
       "skills": [
         "Hunter's Eye",
-        "skill link",
         "Pack Tactics",
         "The Fast and the Furryous"
       ],
@@ -29336,7 +29138,6 @@
       "class": "Amara",
       "skills": [
         "Do Harm",
-        "skill link",
         "Violent Tapestry",
         "Awakening"
       ],
@@ -29392,7 +29193,6 @@
       "class": "Amara",
       "skills": [
         "Infusion",
-        "skill link",
         "Tempest",
         "Anima"
       ],
@@ -29441,7 +29241,6 @@
       "class": "FL4K",
       "skills": [
         "All My BFF's",
-        "skill link",
         "Self-Repairing System",
         "Turn Tail and Run"
       ],
@@ -29490,7 +29289,6 @@
       "class": "FL4K",
       "skills": [
         "Go for the Eyes!",
-        "skill link",
         "Ferocity",
         "He Bites!"
       ],
@@ -29539,7 +29337,6 @@
       "class": "Moze",
       "skills": [
         "Scrappy",
-        "skill link",
         "Selfless Vengeance",
         "Phalanx Doctrine"
       ],
@@ -29590,7 +29387,6 @@
       "class": "Moze",
       "skills": [
         "Some for the Road",
-        "skill link",
         "Deadlines",
         "Stainless Steel Bear"
       ],
@@ -29641,7 +29437,6 @@
       "class": "Zane",
       "skills": [
         "Ready for Action",
-        "skill link",
         "Rise to the Occasion",
         "Really Expensive Jacket"
       ],
@@ -29697,7 +29492,6 @@
       "class": "FL4K",
       "skills": [
         "Big Game",
-        "skill link",
         "Hidden Machine",
         "The Most Dangerous Game"
       ],
@@ -29748,7 +29542,6 @@
       "class": "Amara",
       "skills": [
         "Restless",
-        "skill link",
         "Wrath",
         "Do Harm"
       ],
@@ -29797,7 +29590,6 @@
       "class": "FL4K",
       "skills": [
         "Grim Harvest",
-        "skill link",
         "Pack Tactics",
         "Ferocity"
       ],
@@ -29855,7 +29647,6 @@
       "class": "FL4K",
       "skills": [
         "Psycho Head on a Stick",
-        "skill link",
         "Sic 'Em",
         "Eager to Impress"
       ],
@@ -29906,7 +29697,6 @@
       "class": "Zane",
       "skills": [
         "Playing Dirty",
-        "skill link",
         "Salvation",
         "Donnybrook"
       ],
@@ -29957,7 +29747,6 @@
       "class": "Amara",
       "skills": [
         "Jab Cross",
-        "skill link",
         "Arms Deal",
         "Violent Tapestry"
       ],
@@ -43156,7 +42945,6 @@
       "class": "Amon",
       "skills": [
         "Bullet Hail",
-        "skill link",
         "Wildfire",
         "Discombobulate",
         "My Touch is Death"
@@ -43216,7 +43004,6 @@
       "class": "Vex",
       "skills": [
         "Leeching Attunement",
-        "skill link",
         "Radiant Attunement",
         "Burning Attunement",
         "Shocking Attunement"
@@ -43277,7 +43064,6 @@
       "class": "Harlowe",
       "skills": [
         "Confirmative Reality",
-        "skill link",
         "Feedback Loop",
         "Sustained Reaction",
         "Practical Applications"
@@ -43338,7 +43124,6 @@
       "class": "Amon",
       "skills": [
         "Tempered Pyre",
-        "skill link",
         "Tempered Ice",
         "Masterwork",
         "Tempered Lightning"
@@ -43395,7 +43180,6 @@
       "class": "Rafa",
       "skills": [
         "Cruel Accrual",
-        "skill link",
         "Al Centro",
         "Metal Management",
         "First Impression"
@@ -43455,7 +43239,6 @@
       "class": "Loveless",
       "skills": [
         "Contaminant",
-        "skill link",
         "Conservation of Life",
         "Conservation of Volatility",
         "Conservation of Malice"
@@ -43510,7 +43293,6 @@
       "class": "Rafa",
       "skills": [
         "Las Jaras",
-        "skill link",
         "Conductivo",
         "Awe",
         "Per my Last"
@@ -43567,7 +43349,6 @@
       "class": "Harlowe",
       "skills": [
         "Accretion",
-        "skill link",
         "Heat Sink",
         "Triple Point",
         "Core Sample"
@@ -43621,7 +43402,6 @@
       "class": "Vex",
       "skills": [
         "Volatile Essence",
-        "skill link",
         "Overspirited",
         "Blasted Fiends",
         "Deadwire"
@@ -43673,7 +43453,6 @@
       "class": "C4SH",
       "skills": [
         "Tormented",
-        "skill link",
         "Graveyard Shift",
         "Splash the Pot",
         "Double-Down"
@@ -43732,7 +43511,6 @@
       "class": "Amon",
       "skills": [
         "Executioner",
-        "skill link",
         "Destruction Engine",
         "Tritanium Knuckles",
         "Fists of Stone"
@@ -43784,7 +43562,6 @@
       "class": "Rafa",
       "skills": [
         "Sustainable Energy",
-        "skill link",
         "The Thrill",
         "Temerario",
         "Soltado"
@@ -43845,7 +43622,6 @@
       "class": "Loveless",
       "skills": [
         "Antivirus",
-        "skill link",
         "Fusion Friends-y",
         "In Memoriam",
         "Glass 'Em!"
@@ -43902,7 +43678,6 @@
       "class": "Harlowe",
       "skills": [
         "Mains Hum",
-        "skill link",
         "Keep Ice on That",
         "Dirty Bomb",
         "Highly Efficient"
@@ -43963,7 +43738,6 @@
       "class": "Amon",
       "skills": [
         "Freezer Burn",
-        "skill link",
         "Burning Rage",
         "Icy Rage",
         "Thunderous Rage"
@@ -44022,7 +43796,6 @@
       "class": "Rafa",
       "skills": [
         "Dial In",
-        "skill link",
         "Booming Business",
         "Empuje",
         "Cruel Accrual"
@@ -44079,7 +43852,6 @@
       "class": "Rafa",
       "skills": [
         "Booming Business",
-        "skill link",
         "Hemolitions",
         "Arriba",
         "Barrage"
@@ -44140,7 +43912,6 @@
       "class": "Amon",
       "skills": [
         "Cast Iron",
-        "skill link",
         "Bellows",
         "Smelter",
         "Metal Urge"
@@ -44201,7 +43972,6 @@
       "class": "Loveless",
       "skills": [
         "Depletion Load",
-        "skill link",
         "Death Begets Death",
         "Flow State",
         "Explosive Mindset"
@@ -44262,7 +44032,6 @@
       "class": "Amon",
       "skills": [
         "Raging Inferno",
-        "skill link",
         "Maiming Strike",
         "Mortal Flare",
         "Dragon's Breath"
@@ -44321,7 +44090,6 @@
       "class": "C4SH",
       "skills": [
         "Potent Posse",
-        "skill link",
         "Accursed Bones",
         "Tender Hearts",
         "Trick Shot"
@@ -44375,7 +44143,6 @@
       "class": "Harlowe",
       "skills": [
         "Neutron Decay",
-        "skill link",
         "Resonance Cascade",
         "Runaway Reaction",
         "Control Group"
@@ -44434,7 +44201,6 @@
       "class": "Vex",
       "skills": [
         "Keen Mind",
-        "skill link",
         "Ghasterbait",
         "Shot to Go!",
         "Sacrificial Essence"
@@ -44488,7 +44254,6 @@
       "class": "Rafa",
       "skills": [
         "Sinergia",
-        "skill link",
         "Arriba",
         "Abajo",
         "Confeti"
@@ -44549,7 +44314,6 @@
       "class": "Vex",
       "skills": [
         "Mortal Terror",
-        "skill link",
         "Essence Leech",
         "Grave Sustenance",
         "Shocking Attunement"
@@ -44609,7 +44373,6 @@
       "class": "C4SH",
       "skills": [
         "Before She Knows You're Dead",
-        "skill link",
         "Splash the Pot",
         "Sounds of Rain",
         "Truck Full of Nitro"
@@ -44668,7 +44431,6 @@
       "class": "C4SH",
       "skills": [
         "Tender Hearts",
-        "skill link",
         "Unleashed",
         "Hot Hand",
         "Bloodstained Moon"
@@ -44727,7 +44489,6 @@
       "class": "Vex",
       "skills": [
         "Sanguine Fiends",
-        "skill link",
         "Prismatic Weaponry",
         "Spirit Bomb",
         "Ancient Rites"
@@ -44784,7 +44545,6 @@
       "class": "Rafa",
       "skills": [
         "Deft Hands",
-        "skill link",
         "Lateral Plinking",
         "Concentrated Build Up",
         "El Alacrán"
@@ -44841,7 +44601,6 @@
       "class": "Vex",
       "skills": [
         "Obedient Fiends",
-        "skill link",
         "Grave Sustenance",
         "Grave Command",
         "Grave Current"
@@ -44900,7 +44659,6 @@
       "class": "Amon",
       "skills": [
         "Blast Furnace",
-        "skill link",
         "Eternal",
         "Northern Wind",
         "Metal Urge"
@@ -44959,7 +44717,6 @@
       "class": "Vex",
       "skills": [
         "Grave Power",
-        "skill link",
         "A Deeper Grave",
         "Grave Fiends",
         "Mourning"
@@ -45013,7 +44770,6 @@
       "class": "C4SH",
       "skills": [
         "Luck Be a Robot",
-        "skill link",
         "Ready to Roll",
         "High Roller",
         "Ante Up"
@@ -45072,7 +44828,6 @@
       "class": "Loveless",
       "skills": [
         "Third Party",
-        "skill link",
         "IDDQD",
         "IDKFA",
         "Pure Fusion"
@@ -45124,7 +44879,6 @@
       "class": "Rafa",
       "skills": [
         "Juerga",
-        "skill link",
         "CYA",
         "Errant Spark",
         "Hostile Acquisition"
@@ -45174,7 +44928,6 @@
       "class": "Loveless",
       "skills": [
         "Malware",
-        "skill link",
         "Wrap Around",
         "Storage Upgrade",
         "Power Overwhelming"
@@ -45235,7 +44988,6 @@
       "class": "Vex",
       "skills": [
         "Grave Sights",
-        "skill link",
         "Target Prescience",
         "Haruspex",
         "Reawakening"
@@ -45294,7 +45046,6 @@
       "class": "Loveless",
       "skills": [
         "notarget",
-        "skill link",
         "Methodical",
         "Infinite Murder Hack",
         "Refactored Damage Formula"
@@ -45351,7 +45102,6 @@
       "class": "Rafa",
       "skills": [
         "Collaborative Ignition",
-        "skill link",
         "El Catrín",
         "The Right Tools",
         "Devil-May-Care"
@@ -45410,7 +45160,6 @@
       "class": "Harlowe",
       "skills": [
         "Excited State",
-        "skill link",
         "Unstable Ice-otope",
         "Sustained Reaction",
         "Cyclotron"
@@ -45464,7 +45213,6 @@
       "class": "Loveless",
       "skills": [
         "Established Gameplay Loop",
-        "skill link",
         "Cat 5",
         "It's Super Effective",
         "When it Rains"
@@ -45522,7 +45270,6 @@
       "class": "Harlowe",
       "skills": [
         "Too Coolant for Schoolant",
-        "skill link",
         "Heat Sink",
         "Elementary",
         "Practical Applications"
@@ -45582,7 +45329,6 @@
       "class": "Rafa",
       "skills": [
         "El Paraguas",
-        "skill link",
         "Collaborative Ignition",
         "Sinergia",
         "El Diablito"
@@ -45632,7 +45378,6 @@
       "class": "C4SH",
       "skills": [
         "Tormented",
-        "skill link",
         "Tender Hearts",
         "Your Huckleberry",
         "Bloodstained Moon"
@@ -45694,7 +45439,6 @@
       "class": "Loveless",
       "skills": [
         "Turbo Button",
-        "skill link",
         "Hard Reset",
         "Finisher",
         "Optimization"
@@ -45748,7 +45492,6 @@
       "class": "Loveless",
       "skills": [
         "Merry Bandwidth",
-        "skill link",
         "Corrupted Path",
         "Overclock",
         "Critically Acclaimed"
@@ -45800,7 +45543,6 @@
       "class": "Harlowe",
       "skills": [
         "Decoherence",
-        "skill link",
         "Force of Will",
         "Elephant's Foot",
         "Fissile Launcher"
@@ -45861,7 +45603,6 @@
       "class": "Rafa",
       "skills": [
         "Midnight Oil",
-        "skill link",
         "Shock Market",
         "El Soldado",
         "Juerga"
@@ -45915,7 +45656,6 @@
       "class": "C4SH",
       "skills": [
         "Sounds of Rain",
-        "skill link",
         "Double-Down",
         "Tender Hearts",
         "Hot Streak"
@@ -45972,7 +45712,6 @@
       "class": "Harlowe",
       "skills": [
         "Action at a Distance",
-        "skill link",
         "Periodic Table Flip",
         "Ripple Effect",
         "Experimentation"
@@ -46031,7 +45770,6 @@
       "class": "Amon",
       "skills": [
         "Northern Wind",
-        "skill link",
         "Age of Ice",
         "Tactician",
         "Berserk"
@@ -46090,7 +45828,6 @@
       "class": "Harlowe",
       "skills": [
         "Bright Future",
-        "skill link",
         "Concurrence",
         "Stun Lock",
         "Indiscrete Math"
@@ -46147,7 +45884,6 @@
       "class": "C4SH",
       "skills": [
         "Can't Stop Winning",
-        "skill link",
         "Stack the Deck",
         "Hot Streak",
         "From Gloam To Glow"
@@ -46201,7 +45937,6 @@
       "class": "Vex",
       "skills": [
         "Restorative Tonic",
-        "skill link",
         "Full Moon",
         "Ars Arcana",
         "Blast Rites"
@@ -46260,7 +45995,6 @@
       "class": "Vex",
       "skills": [
         "Conjunction",
-        "skill link",
         "Blood is Magic",
         "Corporeal",
         "Grave Thirst"
@@ -46319,7 +46053,6 @@
       "class": "Amon",
       "skills": [
         "Vital Organs",
-        "skill link",
         "Lightning Rod",
         "Thunderous Rage",
         "Strike the Anvil"
@@ -46371,7 +46104,6 @@
       "class": "Loveless",
       "skills": [
         "Footwork",
-        "skill link",
         "Biathlon",
         "The Sweet Science",
         "Tripwire"
@@ -46428,7 +46160,6 @@
       "class": "C4SH",
       "skills": [
         "Charm Bracelet",
-        "skill link",
         "The Wilds",
         "Restless Remains",
         "Dealer's Bluff"
@@ -46480,7 +46211,6 @@
       "class": "Harlowe",
       "skills": [
         "Meltdown",
-        "skill link",
         "Refraction",
         "Bright Future",
         "Rounding Up"
@@ -46539,7 +46269,6 @@
       "class": "Harlowe",
       "skills": [
         "Neutron Decay",
-        "skill link",
         "Meltdown",
         "Cyclotron",
         "Rounding Up"
@@ -46591,7 +46320,6 @@
       "class": "Vex",
       "skills": [
         "Guns and Needles",
-        "skill link",
         "Grave Vitality",
         "Blood Shot",
         "Infernal Sum"
@@ -46650,7 +46378,6 @@
       "class": "Amon",
       "skills": [
         "Cacophany",
-        "skill link",
         "Blast Furnace",
         "Reactive Armor",
         "Fists of Stone"
@@ -46709,7 +46436,6 @@
       "class": "Loveless",
       "skills": [
         "Toxic Chat",
-        "skill link",
         "E2 Pulse",
         "System Restore",
         "Wide Net"
@@ -46766,7 +46492,6 @@
       "class": "Amon",
       "skills": [
         "Primal Surge",
-        "skill link",
         "Brimming Vigor",
         "Harbinger",
         "Crackling Aegis"
@@ -46818,7 +46543,6 @@
       "class": "C4SH",
       "skills": [
         "Turn of Fate",
-        "skill link",
         "High Stakes",
         "Payout",
         "Unshaken"
@@ -46879,7 +46603,6 @@
       "class": "C4SH",
       "skills": [
         "Dealer's Bluff",
-        "skill link",
         "A Blur of Fingers and Brass",
         "From Gloam To Glow",
         "Dusty Trail"
@@ -62595,7 +62318,6 @@
       "class": "Jack",
       "skills": [
         "Winning",
-        "skill link",
         "Collaborate",
         "Delegation"
       ],
@@ -62645,7 +62367,6 @@
       "class": "Jack",
       "skills": [
         "Just Compensation",
-        "skill link",
         "Lean On Me",
         "Marginal Benefits"
       ],
@@ -62697,7 +62418,6 @@
       "class": "Aurelia",
       "skills": [
         "Markswoman",
-        "skill link",
         "Culling the Herd",
         "I Never Miss"
       ],
@@ -62747,7 +62467,6 @@
       "class": "Athena",
       "skills": [
         "Gun Kata",
-        "skill link",
         "Clarity of Purpose",
         "Mercurial"
       ],
@@ -62797,7 +62516,6 @@
       "class": "Wilhelm",
       "skills": [
         "Laser Focus",
-        "skill link",
         "Welcome to the Gun Show",
         "Venom Bolts"
       ],
@@ -62849,7 +62567,6 @@
       "class": "Athena",
       "skills": [
         "Clarity of Purpose",
-        "skill link",
         "Fury of the Arena",
         "Omega-Senshu"
       ],
@@ -62899,7 +62616,6 @@
       "class": "Aurelia",
       "skills": [
         "Bitter Riposte",
-        "skill link",
         "Podsnappery",
         "Keep Your Chin Up"
       ],
@@ -62952,7 +62668,6 @@
       "skills": [
         "No Pain",
         "No Gain",
-        "skill link",
         "Wanted",
         "Ruthless"
       ],
@@ -63004,7 +62719,6 @@
       "class": "Claptrap",
       "skills": [
         "Best Buds 4 Life",
-        "skill link",
         "All The Things Are Awesome!",
         "Through Thick and Thin"
       ],
@@ -63054,7 +62768,6 @@
       "class": "Athena",
       "skills": [
         "Prepare for Glory",
-        "skill link",
         "Ephodos",
         "Omega-Senshu"
       ],
@@ -63106,7 +62819,6 @@
       "class": "Aurelia",
       "skills": [
         "Avalanche",
-        "skill link",
         "Bitter Riposte",
         "Markswoman",
         "Only the Best",
@@ -63168,7 +62880,6 @@
       "class": "Jack",
       "skills": [
         "Best Foot Forward",
-        "skill link",
         "Just Compensation",
         "Teamwork",
         "Collaborate",
@@ -63230,7 +62941,6 @@
       "class": "Wilhelm",
       "skills": [
         "Man and Machine",
-        "skill link",
         "Energize",
         "Fire Support",
         "Afterburner",
@@ -63292,7 +63002,6 @@
       "class": "Claptrap",
       "skills": [
         "Drop the Hammer",
-        "skill link",
         "Killbot",
         "Best Buds 4 Life",
         "Maniacal Laughter",
@@ -63354,7 +63063,6 @@
       "class": "Athena",
       "skills": [
         "Gathering Tempest",
-        "skill link",
         "Hold the Line",
         "Gun Kata",
         "Vanguard",
@@ -63416,7 +63124,6 @@
       "class": "Nisha",
       "skills": [
         "Bona Fide Grit",
-        "skill link",
         "Ruthless",
         "Law",
         "Bottled Courage",
@@ -63478,7 +63185,6 @@
       "class": "Jack",
       "skills": [
         "Synergy",
-        "skill link",
         "Marginal Benefits",
         "Absolute Advantage"
       ],
@@ -63530,7 +63236,6 @@
       "class": "Claptrap",
       "skills": [
         "Load 'n' Splode",
-        "skill link",
         "Start With a Bang",
         "Wax Off",
         "Wax On",
@@ -63592,7 +63297,6 @@
       "class": "Jack",
       "skills": [
         "Lean On Me",
-        "skill link",
         "Persistence",
         "Optimism",
         "Winning",
@@ -63653,7 +63357,6 @@
       "class": "Wilhelm",
       "skills": [
         "Rolling Thunder",
-        "skill link",
         "Escalation",
         "Emergency Response",
         "Divert Power",
@@ -63714,7 +63417,6 @@
       "class": "Aurelia",
       "skills": [
         "Large Caliber",
-        "skill link",
         "I Never Miss",
         "Cold Advance",
         "Frostbite",
@@ -63775,7 +63477,6 @@
       "class": "Athena",
       "skills": [
         "Stalwart",
-        "skill link",
         "Tear",
         "Bloodlust",
         "Unrelenting",
@@ -63837,7 +63538,6 @@
       "skills": [
         "No Pain",
         "No Gain",
-        "skill link",
         "Faster 'n You",
         "High Noon",
         "Tombstone",
@@ -63898,7 +63598,6 @@
       "class": "Nisha",
       "skills": [
         "Hell's Comin' With Me!",
-        "skill link",
         "Gunslinger",
         "Faster 'n You"
       ],
@@ -63948,7 +63647,6 @@
       "class": "Nisha",
       "skills": [
         "Tombstone",
-        "skill link",
         "Unchained",
         "Trick Shot"
       ],
@@ -63998,7 +63696,6 @@
       "class": "Aurelia",
       "skills": [
         "Bitter Riposte",
-        "skill link",
         "Frostbite",
         "Winter's Veil"
       ],
@@ -64048,7 +63745,6 @@
       "class": "Athena",
       "skills": [
         "United Front",
-        "skill link",
         "Superconductor",
         "Conduit"
       ],
@@ -64100,7 +63796,6 @@
       "class": "Nisha",
       "skills": [
         "Ruthless",
-        "skill link",
         "High Noon",
         "Bottled Courage"
       ],
@@ -64150,7 +63845,6 @@
       "class": "Athena",
       "skills": [
         "Mercurial",
-        "skill link",
         "Tear",
         "Gathering Tempest"
       ],
@@ -64202,7 +63896,6 @@
       "class": "Athena",
       "skills": [
         "Overload",
-        "skill link",
         "Gathering Tempest",
         "Omega-Senshu"
       ],
@@ -64254,7 +63947,6 @@
       "class": "Jack",
       "skills": [
         "Marginal Benefits",
-        "skill link",
         "Supply and Demand",
         "Incentives"
       ],
@@ -64304,7 +63996,6 @@
       "class": "Jack",
       "skills": [
         "Winning",
-        "skill link",
         "Believe",
         "Synergy"
       ],
@@ -64354,7 +64045,6 @@
       "class": "Wilhelm",
       "skills": [
         "Suppression",
-        "skill link",
         "Rolling Thunder",
         "Venom Bolts"
       ],
@@ -64404,7 +64094,6 @@
       "class": "Wilhelm",
       "skills": [
         "Man and Machine",
-        "skill link",
         "Fire Support",
         "Heatsinks",
         "Suppression",
@@ -64474,7 +64163,6 @@
       "class": "Aurelia",
       "skills": [
         "Avalanche",
-        "skill link",
         "Bitter Riposte",
         "Markswoman",
         "Only the Best",
@@ -64544,7 +64232,6 @@
       "class": "Athena",
       "skills": [
         "Invictus",
-        "skill link",
         "Unrelenting",
         "Mercurial",
         "Ephodos",
@@ -64614,7 +64301,6 @@
       "class": "Claptrap",
       "skills": [
         "Start With a Bang",
-        "skill link",
         "Killbot",
         "Maniacal Laughter",
         "All The Things Are Awesome!",
@@ -64684,7 +64370,6 @@
       "class": "Jack",
       "skills": [
         "Just Compensation",
-        "skill link",
         "Take Their Freedom",
         "Synergy",
         "Incentives",
@@ -64754,7 +64439,6 @@
       "class": "Nisha",
       "skills": [
         "Bona Fide Grit",
-        "skill link",
         "Law",
         "Ruthless",
         "Hell's Comin' With Me!",
@@ -64824,7 +64508,6 @@
       "class": "Claptrap",
       "skills": [
         "Fuzzy Logic",
-        "skill link",
         "Surprised? Stabilize!",
         "Death Machine"
       ],
@@ -64874,7 +64557,6 @@
       "class": "Athena",
       "skills": [
         "Unrelenting",
-        "skill link",
         "Mercurial",
         "Gathering Tempest"
       ],
@@ -64926,7 +64608,6 @@
       "class": "Wilhelm",
       "skills": [
         "Afterburner",
-        "skill link",
         "Rolling Thunder",
         "Venom Bolts"
       ],
@@ -64976,7 +64657,6 @@
       "class": "Aurelia",
       "skills": [
         "Short Summer",
-        "skill link",
         "Frostbite",
         "Cold Advance"
       ],
@@ -65026,7 +64706,6 @@
       "class": "Athena",
       "skills": [
         "Ephodos",
-        "skill link",
         "Return Fire",
         "Mercurial"
       ],
@@ -65078,7 +64757,6 @@
       "class": "Claptrap",
       "skills": [
         "Maniacal Laughter",
-        "skill link",
         "Cryogenic Exhaust Manifold",
         "Float like a Bee"
       ],
@@ -65135,7 +64813,6 @@
       "class": "Wilhelm",
       "skills": [
         "Emergency Response",
-        "skill link",
         "Heatsinks",
         "Man and Machine"
       ],
@@ -65187,7 +64864,6 @@
       "class": "Jack",
       "skills": [
         "Incentives",
-        "skill link",
         "Integrity",
         "Believe"
       ],
@@ -65239,7 +64915,6 @@
       "class": "Aurelia",
       "skills": [
         "Only the Best",
-        "skill link",
         "Quality Not Quantity",
         "Large Caliber"
       ],
@@ -65296,7 +64971,6 @@
       "class": "Athena",
       "skills": [
         "Overload",
-        "skill link",
         "Superconductor",
         "Flash Freeze"
       ],
@@ -65351,7 +65025,6 @@
       "class": "Wilhelm",
       "skills": [
         "Fire Support",
-        "skill link",
         "First to Fight",
         "Targeting Scope"
       ],
@@ -65403,7 +65076,6 @@
       "class": "Nisha",
       "skills": [
         "High Noon",
-        "skill link",
         "Gunslinger",
         "Due Process"
       ],
@@ -65460,7 +65132,6 @@
       "class": "Aurelia",
       "skills": [
         "Only the Best",
-        "skill link",
         "Quality Not Quantity",
         "Protect Your Assets"
       ],
@@ -65512,7 +65183,6 @@
       "class": "Nisha",
       "skills": [
         "The Third Degree",
-        "skill link",
         "Due Process",
         "Law"
       ],
@@ -65562,7 +65232,6 @@
       "class": "Nisha",
       "skills": [
         "Rarin' to Go",
-        "skill link",
         "Wanted",
         "Due Process"
       ],
@@ -65612,7 +65281,6 @@
       "class": "Claptrap",
       "skills": [
         "Drop the Hammer",
-        "skill link",
         "Load 'n' Splode",
         "Death Machine"
       ],
@@ -65664,7 +65332,6 @@
       "class": "Claptrap",
       "skills": [
         "Killbot",
-        "skill link",
         "Blue Shell",
         "Death Machine"
       ],
@@ -65716,7 +65383,6 @@
       "class": "Aurelia",
       "skills": [
         "Keep Your Chin Up",
-        "skill link",
         "Save the Queen",
         "Next to Cleanliness"
       ],
@@ -65766,7 +65432,6 @@
       "class": "Wilhelm",
       "skills": [
         "Auxiliary Tanks",
-        "skill link",
         "Rapid Reinforcement",
         "Emergency Response"
       ],
@@ -65818,7 +65483,6 @@
       "class": "Wilhelm",
       "skills": [
         "Rapid Reinforcement",
-        "skill link",
         "Targeting Scope",
         "Energize"
       ],
@@ -65870,7 +65534,6 @@
       "class": "Aurelia",
       "skills": [
         "Duchess",
-        "skill link",
         "Valet",
         "Next to Cleanliness"
       ],
@@ -65920,7 +65583,6 @@
       "class": "Wilhelm",
       "skills": [
         "Meteor Slam",
-        "skill link",
         "Fortify",
         "Man and Machine"
       ],
@@ -65972,7 +65634,6 @@
       "class": "Claptrap",
       "skills": [
         "Through Thick and Thin",
-        "skill link",
         "Grenade Vent",
         "Death Machine"
       ],
@@ -66024,7 +65685,6 @@
       "class": "Jack",
       "skills": [
         "Hero Pose",
-        "skill link",
         "Marginal Benefits",
         "Synergy"
       ],
@@ -66078,7 +65738,6 @@
       "class": "Claptrap",
       "skills": [
         "Repulsive",
-        "skill link",
         "Fuzzy Logic",
         "Best Buds 4 Life"
       ],
@@ -66132,7 +65791,6 @@
       "class": "Aurelia",
       "skills": [
         "Frigid Touch",
-        "skill link",
         "Culling the Herd",
         "Bitter Riposte"
       ],
@@ -66184,7 +65842,6 @@
       "class": "Jack",
       "skills": [
         "Company Man",
-        "skill link",
         "Absolute Advantage",
         "Best Foot Forward"
       ],
@@ -66241,7 +65898,6 @@
       "class": "Wilhelm",
       "skills": [
         "Emergency Response",
-        "skill link",
         "Divert Power",
         "Heatsinks"
       ],
@@ -66298,7 +65954,6 @@
       "class": "Jack",
       "skills": [
         "Bolster",
-        "skill link",
         "Take Their Freedom",
         "Hero Pose"
       ],
@@ -66348,7 +66003,6 @@
       "class": "Athena",
       "skills": [
         "United Front",
-        "skill link",
         "Hold the Line",
         "Vanguard"
       ],
@@ -66398,7 +66052,6 @@
       "class": "Aurelia",
       "skills": [
         "Avalanche",
-        "skill link",
         "Short Summer",
         "Whiteout"
       ],
@@ -66448,7 +66101,6 @@
       "class": "Claptrap",
       "skills": [
         "Float like a Bee",
-        "skill link",
         "All The Things Are Awesome!",
         "Repulsive"
       ],
@@ -66502,7 +66154,6 @@
       "class": "Jack",
       "skills": [
         "Resolute",
-        "skill link",
         "Persistence",
         "Lean On Me"
       ],
@@ -66552,7 +66203,6 @@
       "class": "Nisha",
       "skills": [
         "Snap Shot",
-        "skill link",
         "Quick Shot",
         "Unchained"
       ],
@@ -66602,7 +66252,6 @@
       "class": "Claptrap",
       "skills": [
         "Killbot",
-        "skill link",
         "Start With a Bang",
         "One Last Thing"
       ],
@@ -66652,7 +66301,6 @@
       "class": "Wilhelm",
       "skills": [
         "Suppression",
-        "skill link",
         "Fire Support",
         "Laser Focus"
       ],
@@ -66704,7 +66352,6 @@
       "class": "Nisha",
       "skills": [
         "Bona Fide Grit",
-        "skill link",
         "Law",
         "Unchained"
       ],
@@ -66756,7 +66403,6 @@
       "class": "Claptrap",
       "skills": [
         "Maniacal Laughter",
-        "skill link",
         "Wax Off",
         "Wax On",
         "Killbot"
@@ -66809,7 +66455,6 @@
       "class": "Nisha",
       "skills": [
         "Crack Shot",
-        "skill link",
         "Quick Shot",
         "Magnificent Six"
       ],
@@ -66861,7 +66506,6 @@
       "class": "Aurelia",
       "skills": [
         "Only the Best",
-        "skill link",
         "Warning Shot",
         "Wait for It..."
       ],
@@ -66911,7 +66555,6 @@
       "class": "Athena",
       "skills": [
         "Storm Weaving",
-        "skill link",
         "Unrelenting",
         "Flash Freeze"
       ],
@@ -66961,7 +66604,6 @@
       "class": "Claptrap",
       "skills": [
         "Hyperion Punch",
-        "skill link",
         "Float like a Bee",
         "Pain Simulator is Painful"
       ],
@@ -67015,7 +66657,6 @@
       "class": "Wilhelm",
       "skills": [
         "First to Fight",
-        "skill link",
         "Fortify",
         "Cold War"
       ],
@@ -67069,7 +66710,6 @@
       "class": "Nisha",
       "skills": [
         "Bona Fide Grit",
-        "skill link",
         "Faster 'n You",
         "Ruthless"
       ],
@@ -67121,7 +66761,6 @@
       "class": "Jack",
       "skills": [
         "Bolster",
-        "skill link",
         "Take Their Freedom",
         "Persistence"
       ],
