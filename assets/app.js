@@ -88,10 +88,12 @@
   const fields=["rarity","name"];
   if(category==="Weapons")fields.push({key:"type",label:"Weapon Type"},"manufacturer","elements","content","sources");
   else if(category==="Shields")fields.push({key:"type",label:"Shield Type"},"manufacturer","elements","content","sources");
-  else if(category==="Grenades"||category==="Ordnance")fields.push({key:"type",label:category==="Ordnance"?"Ordnance Type":"Grenade Type"},"manufacturer","elements","content","sources");
+  else if(["Grenades","Ordnance","Wards","Spells","Spellbooks","Melee Weapons"].includes(category))fields.push({key:"type",label:({Grenades:"Grenade Type",Ordnance:"Ordnance Type",Wards:"Ward Type",Spells:"Spell Type",Spellbooks:"Spell Type","Melee Weapons":"Weapon Type"})[category]},"manufacturer","elements","content","sources");
   else if(category==="Class Mods")fields.push("class","skills","content","sources");
   else if(category==="Artifacts"||category==="Relics")fields.push({key:"type",label:category==="Artifacts"?"Artifact Type":"Relic Type"},"content","sources");
-  else if(category==="Armor")fields.push({key:"type",label:"Armor Type"},"manufacturer","content","sources");
+  else if(category==="Armor")fields.push({key:"type",label:"Armor Type"},"class","skills","content","sources");
+  else if(category==="Rings & Amulets")fields.push({key:"type",label:"Item Type"},"content","sources");
+  else if(category==="Oz Kits"||category==="Repkits"||category==="Enhancements")fields.push("manufacturer","content","sources");
   else fields.push("manufacturer","content","sources");
   return {fields,filters:fields.map(f=>typeof f==="string"?f:f.key).filter(k=>!["name","skills","sources"].includes(k))};
  };
@@ -158,7 +160,7 @@
    filtersState[def.key]=selected;
    return '<select data-filter="'+esc(def.key)+'"><option value="">'+esc(def.label)+'</option>'+values.map(value=>'<option value="'+esc(value)+'"'+(value===selected?' selected':'')+'>'+esc(value)+'</option>').join("")+'</select>';
   }).join("");
-  $("sort").value=settings.sort;$("missing").checked=!!settings.missing;$("move-collected").checked=settings.moveCollectedToBottom!==false;
+  $("search").value=settings.search;$("sort").value=settings.sort;$("missing").checked=!!settings.missing;$("move-collected").checked=settings.moveCollectedToBottom!==false;
   const selectedFilters=Object.entries(filtersState).filter(([key,value])=>value&&filterDefs.some(def=>def.key===key));
   let q=settings.search.toLowerCase().trim();
   let shown=a.filter(x=>{
@@ -182,7 +184,7 @@
    if(key==="sources")return '<div class="loot-field"><span>'+esc(def.label)+'</span><div class="drop-source-list">'+values.map(value=>'<span class="drop-source">'+esc(value)+'</span>').join("")+'</div></div>';
    if(key==="skills")return '<div class="loot-field"><span>'+esc(def.label)+'</span><div class="skill-list">'+values.map(value=>'<span class="skill-chip">'+esc(value)+'</span>').join("")+'</div></div>';
    const value=key==="rarity"?rarityLabel(values[0]):values.join(", ");
-   return '<div class="loot-field"><span>'+esc(def.label)+'</span><b class="'+(key==="rarity"?rarityClass(item.rarity):"")+'">'+esc(value)+'</b></div>';
+   return '<div class="loot-field '+(key==="rarity"?"rarity-field":"")+'"><span>'+esc(def.label)+'</span><b class="'+(key==="rarity"?rarityClass(item.rarity):"")'">'+esc(value)+'</b></div>';
   };
   $("items").innerHTML=shown.map(x=>{
    const schema=schemaFor(active,x.category||""),fields=schema.fields.map(fieldDefinition);
