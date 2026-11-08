@@ -1,5 +1,9 @@
 name: Sync Lootlemon catalog
 on:
+  push:
+    paths:
+      - 'scripts/**'
+      - '.github/workflows/sync-lootlemon.yml'
   workflow_dispatch:
   schedule:
     - cron: "17 5 * * *"
