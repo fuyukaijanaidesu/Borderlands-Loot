@@ -194,7 +194,7 @@ def parse_page(url,game,category):
   before=cells[:idx] if idx>=0 else []
   after=cells[idx+1:] if idx>=0 else []
   attributes={}
-  semantic_values={"rarity":[],"manufacturer":[],"element":[],"type":[],"content":[],"source":[]}
+  semantic_values={"rarity":[],"manufacturer":[],"element":[],"type":[],"content":[],"source":[],"class":[],"skill":[],"tree":[],"weapon_type":[],"shield_type":[],"ordnance_type":[],"artifact_type":[]}
   rarity=None; manufacturer=type_value=content=None; elements=[]; sources=[]
   metadata=[]
   for cell in cells:
@@ -217,7 +217,7 @@ def parse_page(url,game,category):
       add_attr(attributes,field,val)
       if field in semantic_values: semantic_values[field].extend(clean_values(val if isinstance(val,list) else [val]))
     for cls in child.get("class") or []:
-     match=re.match(r"^(rarity|manufacturer|element|type|content)[-_](.+)$",cls,re.I)
+     match=re.match(r"^(rarity|manufacturer|element|type|content|class|skill|tree|weapon_type|shield_type|ordnance_type|artifact_type)[-_](.+)$",cls,re.I)
      if match and match.group(2).lower() not in {"cell","field","wrapper","container","badge","label","value"}:
       field=match.group(1).lower()
       val=re.sub(r"[-_]+"," ",match.group(2)).strip()
@@ -291,7 +291,12 @@ def parse_page(url,game,category):
   # IMPORTANT: identity formula intentionally unchanged to preserve existing collected progress.
   identity=f"{game}|{category}|{href}" if href else f"{game}|{category}|{clean_name}"
   ident=hashlib.sha1(identity.encode("utf-8")).hexdigest()[:20]
-  found.append({"id":ident,"gameId":game,"category":cat,"name":name,"type":type_value,
+  class_value=next(iter(semantic_values["class"]),None)
+  skills=clean_values(semantic_values["skill"])
+  if cat=="Class Mods":
+   if not class_value and len(after)>0: class_value=text_of(after[0]) or None
+   if not skills and len(after)>1: skills=labels_of(after[1])
+  found.append({"id":ident,"gameId":game,"category":cat,"name":name,"type":type_value,"class":class_value,"skills":skills,
    "rarity":rarity,"manufacturer":manufacturer,"content":content,"elements":elements,
    "sources":sources,"metadata":metadata,"attributes":attributes,"tags":tags,
    "image":image,"url":href,"archived":False})
