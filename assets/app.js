@@ -42,7 +42,8 @@
  const items=()=>db.items.filter(x=>x.gameId===active&&!x.archived);
  const stats=a=>({n:a.filter(x=>done[x.id]).length,t:a.length});
  const asList=value=>value==null?[]:(Array.isArray(value)?value:[value]).flat(Infinity).map(v=>String(v??"").trim()).filter(Boolean);
- const contentOf=item=>asList(item.content)[0]||"";
+ const contentValues=item=>asList(item.content);
+ const contentOf=item=>contentValues(item)[0]||"";
  const sourcesOf=item=>asList(item.sources);
  const rarityLabel=value=>{
   const raw=String(value&&typeof value==="object"?(value.name||value.label||value.value||""):value||"").trim();
@@ -101,10 +102,10 @@
   $("games").innerHTML=gs.map(x=>'<button data-game="'+esc(x.id)+'" class="'+(x.id===active?"active":"")+'">'+esc(x.name)+'</button>').join("");
   $("games").querySelectorAll("[data-game]").forEach(b=>b.onclick=()=>{active=b.dataset.game;render()});
   let rs=uniqueValues(a.map(x=>x.rarity)).sort((x,y)=>rarityLabel(x).localeCompare(rarityLabel(y)));
-  let makers=[...new Set(a.map(x=>x.manufacturer).filter(Boolean))].sort();
-  let types=[...new Set(a.map(x=>x.type).filter(Boolean))].sort();
+  let makers=uniqueValues(a.flatMap(x=>asList(x.manufacturer))).sort();
+  let types=uniqueValues(a.flatMap(x=>asList(x.type))).sort();
   let elements=[...new Set(a.flatMap(x=>asList(x.elements)))].sort();
-  let contents=uniqueValues(a.map(contentOf)).sort((x,y)=>{const rank=v=>/^base game$/i.test(v)?0:/^event$/i.test(v)?1:2;return rank(x)-rank(y)||x.localeCompare(y)});
+  let contents=uniqueValues(a.flatMap(contentValues)).sort((x,y)=>{const rank=v=>/^base game$/i.test(v)?0:/^event$/i.test(v)?1:2;return rank(x)-rank(y)||x.localeCompare(y)});
   let sources=uniqueValues(a.flatMap(sourcesOf)).sort((x,y)=>x.localeCompare(y));
   const fillSelect=(id,values,placeholder)=>{const current=settings[id];$(id).innerHTML='<option value="">'+placeholder+'</option>'+values.map(x=>'<option value="'+esc(x)+'">'+esc(x)+'</option>').join("");$(id).value=values.includes(current)?current:"";};
   fillSelect("rarity",rs,"Любая редкость");
@@ -112,7 +113,7 @@
   $("search").value=settings.search;$("sort").value=settings.sort;$("missing").checked=!!settings.missing;$("move-collected").checked=settings.moveCollectedToBottom!==false;
   let q=settings.search.toLowerCase().trim(),rar=$("rarity").value;
   let maker=$("manufacturer").value,type=$("type").value,element=$("element").value,content=$("content").value,source=$("source").value;
-  let shown=a.filter(x=>(!q||[x.name,x.category,x.manufacturer,x.type,x.description,...asList(x.elements),...sourcesOf(x),contentOf(x),...(x.tags||[]),...Object.values(x.attributes||{}).flat()].join(" ").toLowerCase().includes(q))&&(!rar||normalized(x.rarity)===normalized(rar))&&(!maker||normalized(x.manufacturer)===normalized(maker))&&(!type||normalized(x.type)===normalized(type))&&(!element||asList(x.elements).some(v=>normalized(v)===normalized(element)))&&(!content||normalized(contentOf(x))===normalized(content))&&(!source||sourcesOf(x).some(v=>normalized(v)===normalized(source)))&&(!settings.missing||!done[x.id]));
+  let shown=a.filter(x=>(!q||[x.name,x.category,x.manufacturer,x.type,x.description,...asList(x.elements),...sourcesOf(x),contentOf(x),...(x.tags||[]),...Object.values(x.attributes||{}).flat()].join(" ").toLowerCase().includes(q))&&(!rar||normalized(x.rarity)===normalized(rar))&&(!maker||normalized(x.manufacturer)===normalized(maker))&&(!type||normalized(x.type)===normalized(type))&&(!element||asList(x.elements).some(v=>normalized(v)===normalized(element)))&&(!content||contentValues(x).some(v=>normalized(v)===normalized(content)))&&(!source||sourcesOf(x).some(v=>normalized(v)===normalized(source)))&&(!settings.missing||!done[x.id]));
   shown.sort((x,y)=>{
    if(settings.moveCollectedToBottom){
     const collected=Number(!!done[x.id])-Number(!!done[y.id]);
@@ -124,7 +125,7 @@
    return x.name.localeCompare(y.name);
   });
   $("shown").textContent=shown.length+" из "+a.length+" предметов";$("updated").textContent=db.updatedAt?"Обновлено: "+new Date(db.updatedAt).toLocaleDateString("ru-RU"):"Источник: Lootlemon";
-  $("items").innerHTML=shown.map(x=>'<article class="item '+(done[x.id]?"collected":"")+'"><div class="picture">'+(x.image?'<img loading="lazy" src="'+esc(x.image)+'" alt="'+esc(x.name)+'" onerror="this.remove()">':'<span class="placeholder">◇</span>')+'</div><div class="card-body"><div class="loot-field rarity-field"><span>Rarity</span><b class="'+rarityClass(x.rarity)+'">'+esc(rarityLabel(x.rarity)||"—")+'</b></div><div class="name">'+esc(x.name)+'</div><div class="loot-field"><span>Weapon Type</span><b>'+esc(x.type||"—")+'</b></div><div class="loot-field"><span>Manufacturer</span><b>'+esc(x.manufacturer||"—")+'</b></div><div class="loot-field elements-field"><span>Elements</span><div class="element-icons" aria-label="Elements">'+(asList(x.elements).length?asList(x.elements).map(el=>{const info=elementInfo(el);return '<span class="element-icon element-'+esc(info.className)+'" title="'+esc(info.label)+'" aria-label="'+esc(info.label)+'"><i>'+info.icon+'</i><small>'+esc(info.label)+'</small></span>'}).join(""):'<b>—</b>')+'</div></div><div class="loot-field"><span>Content</span><b>'+esc(contentOf(x)||"—")+'</b></div><div class="loot-field sources-field"><span>Sources</span><div class="drop-source-list">'+(sourcesOf(x).length?sourcesOf(x).map(source=>'<span class="drop-source">'+esc(source)+'</span>').join(""):'<b>—</b>')+'</div></div><div class="item-foot">'+(x.url?'<a href="'+esc(x.url)+'" target="_blank" rel="noopener">Lootlemon ↗</a>':'<span></span>')+'<button data-id="'+esc(x.id)+'" class="'+(done[x.id]?"done":"")+'">'+(done[x.id]?"✓ Собрано":"+ Собрал")+'</button></div></div></article>').join("");
+  $("items").innerHTML=shown.map(x=>'<article class="item '+(done[x.id]?"collected":"")+'"><div class="picture">'+(x.image?'<img loading="lazy" src="'+esc(x.image)+'" alt="'+esc(x.name)+'" onerror="this.remove()">':'<span class="placeholder">◇</span>')+'</div><div class="card-body"><div class="loot-field rarity-field"><span>Rarity</span><b class="'+rarityClass(x.rarity)+'">'+esc(rarityLabel(x.rarity)||"—")+'</b></div><div class="name">'+esc(x.name)+'</div><div class="loot-field"><span>Weapon Type</span><b>'+esc(asList(x.type).join(", ")||"—")+'</b></div><div class="loot-field"><span>Manufacturer</span><b>'+esc(asList(x.manufacturer).join(", ")||"—")+'</b></div><div class="loot-field elements-field"><span>Elements</span><div class="element-icons" aria-label="Elements">'+(asList(x.elements).length?asList(x.elements).map(el=>{const info=elementInfo(el);return '<span class="element-icon element-'+esc(info.className)+'" title="'+esc(info.label)+'" aria-label="'+esc(info.label)+'"><i>'+info.icon+'</i><small>'+esc(info.label)+'</small></span>'}).join(""):'<b>—</b>')+'</div></div><div class="loot-field"><span>Content</span><b>'+esc(contentValues(x).join(", ")||"—")+'</b></div><div class="loot-field sources-field"><span>Sources</span><div class="drop-source-list">'+(sourcesOf(x).length?sourcesOf(x).map(source=>'<span class="drop-source">'+esc(source)+'</span>').join(""):'<b>—</b>')+'</div></div><div class="item-foot">'+(x.url?'<a href="'+esc(x.url)+'" target="_blank" rel="noopener">Lootlemon ↗</a>':'<span></span>')+'<button data-id="'+esc(x.id)+'" class="'+(done[x.id]?"done":"")+'">'+(done[x.id]?"✓ Собрано":"+ Собрал")+'</button></div></div></article>').join("");
   $("items").querySelectorAll("[data-id]").forEach(b=>b.onclick=()=>{let id=b.dataset.id;if(done[id])delete done[id];else done[id]=true;persist();render()});
   $("empty").hidden=shown.length>0;
   let all=db.items.filter(x=>!x.archived),total=stats(all),pct=total.t?Math.round(total.n/total.t*100):0;
