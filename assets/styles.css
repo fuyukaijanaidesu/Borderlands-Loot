@@ -159,3 +159,35 @@ button:active,.import:active{transform:scale(.97)}
  :root{scroll-behavior:auto}
  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
 }
+
+/* Keep collection state styling exclusive to the collection action. */
+.item-foot .collect-button{padding:6px 9px;color:#ff8ca0;background:#38232b;border-color:#65404a;white-space:nowrap}
+.item-foot .collect-button.done{color:#a5efbd;background:#28563a;border-color:#4d8c61}
+.item-foot .copy-code{color:#d8d3dc;background:#302f35;border-color:#4a4850}
+.item-foot .copy-code::before{content:none!important}
+.item.collected .item-foot .collect-button{color:#a5efbd;background:#28563a;border-color:#4d8c61}
+.item.collected .item-foot .collect-button::before{content:"✓ ";font-weight:900}
+.item.collected .item-foot .copy-code{color:#d8d3dc;background:#302f35;border-color:#4a4850}
+.item.collected .item-foot .copy-code::before{content:none!important}
+
+/* Stable filter layout: search and primary controls keep fixed widths;
+   category-specific filters wrap inside their own reserved area. */
+.filters{display:grid;grid-template-columns:280px 150px minmax(0,1fr) 140px auto auto;align-items:center;gap:8px}
+.filters #search{width:280px;min-width:0;flex:none}
+.filters #category{width:150px;min-width:0}
+.filters #sort{width:140px;min-width:0}
+.filters .dynamic-filters{display:flex;flex-wrap:wrap;align-items:center;gap:8px;min-width:0}
+.filters .dynamic-filters select{width:145px;min-width:145px;max-width:145px;flex:0 0 145px}
+.filters>label{white-space:nowrap}
+@media(max-width:1100px){
+ .filters{grid-template-columns:280px 150px minmax(0,1fr) 140px}
+ .filters>label{grid-column:auto}
+}
+@media(max-width:700px){
+ .filters{grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch}
+ .filters #search{grid-column:1/-1;width:100%}
+ .filters #category,.filters #sort{width:100%}
+ .filters .dynamic-filters{grid-column:1/-1;display:flex}
+ .filters .dynamic-filters select{width:calc(50% - 4px);min-width:0;max-width:none;flex:1 1 calc(50% - 4px)}
+ .filters>label{white-space:normal;align-self:center}
+}
