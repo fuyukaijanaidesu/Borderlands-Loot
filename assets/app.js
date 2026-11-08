@@ -56,9 +56,43 @@
  const uniqueValues=values=>[...new Set(values.map(v=>String(v??"").trim()).filter(Boolean))];
 
  const normalized=value=>String(value??"").trim().toLocaleLowerCase();
- const FIELD_LABELS={rarity:"Rarity",name:"Name",type:"Type",manufacturer:"Manufacturer",elements:"Elements",content:"Content",sources:"Sources",class:"Class",skills:"Skills",tree:"Trees"};
- const FILTER_LABELS={rarity:"Any rarity",manufacturer:"Any manufacturer",type:"Any type",elements:"Any element",content:"All content",class:"Any class",tree:"Any tree",sources:"Any source"};
+ const FIELD_LABELS={rarity:"Rarity",name:"Name",type:"Type",manufacturer:"Manufacturer",elements:"Elements",content:"Content",sources:"Sources",class:"Class",skills:"Skills",tree:"Trees",spell_cast:"Spell Cast",item_type:"Type",item_category:"Category"};
+ const FILTER_LABELS={rarity:"Any rarity",manufacturer:"Any manufacturer",type:"Any type",elements:"Any element",content:"All content",class:"Any class",tree:"Any tree",item_type:"Any item type",item_category:"Any category",spell_cast:"Any spell cast"};
  const SCHEMAS={
+  "borderlands-1":{
+   "Weapons":{fields:["rarity","name",{key:"type",label:"Weapon Type"},"manufacturer","elements","content","sources"],filters:["rarity","elements","type","manufacturer","content"]},
+   "Shields":{fields:["rarity","name",{key:"type",label:"Shield Type"},"manufacturer","elements","content","sources"],filters:["rarity","type","manufacturer","elements","content"]},
+   "Grenades":{fields:["rarity","name",{key:"type",label:"Grenade Type"},"manufacturer","elements","content","sources"],filters:["rarity","type","manufacturer"]},
+   "Class Mods":{fields:["rarity","name","class","skills","manufacturer","content","sources"],filters:["class","tree","content"]}
+  },
+  "borderlands-2":{
+   "Weapons":{fields:["rarity","name",{key:"type",label:"Weapon Type"},"manufacturer","elements","content","sources"],filters:["rarity","elements","type","manufacturer","content"]},
+   "Shields":{fields:["rarity","name",{key:"type",label:"Shield Type"},"manufacturer","elements","content","sources"],filters:["rarity","elements","type","manufacturer","content"]},
+   "Grenade Mods":{fields:["rarity","name",{key:"type",label:"Grenade Type"},"manufacturer","elements","content","sources"],filters:["rarity","elements","type","manufacturer","content"]},
+   "Class Mods":{fields:["rarity","name","class","skills","manufacturer","content","sources"],filters:["class","tree","rarity","content"]},
+   "Relics":{fields:["rarity","name",{key:"type",label:"Relic Type"},"content","sources"],filters:["rarity","type","content"]}
+  },
+  "borderlands-tps":{
+   "Weapons":{fields:["rarity","name",{key:"type",label:"Weapon Type"},"manufacturer","elements","content","sources"],filters:["rarity","elements","type","manufacturer","content"]},
+   "Shields":{fields:["rarity","name",{key:"type",label:"Shield Type"},"manufacturer","elements","content","sources"],filters:["rarity","elements","type","manufacturer","content"]},
+   "Grenades":{fields:["rarity","name",{key:"type",label:"Grenade Type"},"manufacturer","elements","content","sources"],filters:["rarity","elements","type","manufacturer","content"]},
+   "Class Mods":{fields:["rarity","name","class","skills","manufacturer","content","sources"],filters:["class","tree","rarity","content"]},
+   "Oz Kits":{fields:["rarity","name",{key:"type",label:"Oz Kit Type"},"elements","content","sources"],filters:["rarity","type","elements"]}
+  },
+  "borderlands-3":{
+   "Weapons":{fields:["rarity","name",{key:"type",label:"Weapon Type"},"manufacturer","elements","content","sources"],filters:["rarity","elements","type","manufacturer","content"]},
+   "Shields":{fields:["rarity","name",{key:"type",label:"Shield Type"},"manufacturer","elements","content","sources"],filters:["rarity","manufacturer","elements","type","content"]},
+   "Grenade Mods":{fields:["rarity","name",{key:"type",label:"Grenade Type"},"manufacturer","elements","content","sources"],filters:["rarity","elements","type","manufacturer","content"]},
+   "Class Mods":{fields:["rarity","name","class","skills","content","sources"],filters:["class","tree","rarity","content"]},
+   "Artifacts":{fields:["rarity","name",{key:"type",label:"Artifact Type"},"content","sources"],filters:["rarity","type","content"]}
+  },
+  "wonderlands":{
+   "Weapons":{fields:["rarity","name",{key:"type",label:"Weapon Type"},"manufacturer","elements","content","sources"],filters:["rarity","elements","type","manufacturer","content"]},
+   "Wards":{fields:["rarity","name",{key:"type",label:"Ward Type"},"manufacturer","elements","content","sources"],filters:["rarity","manufacturer","elements","type","content"]},
+   "Spells":{fields:["rarity","name","spell_cast","manufacturer","elements","content","sources"],filters:["rarity","elements","spell_cast","manufacturer","content"]},
+   "Armor":{fields:["rarity","name","manufacturer","content","sources"],filters:["rarity","manufacturer","content"]},
+   "Rings & Amulets":{fields:["rarity","name","item_category","content","sources"],filters:["rarity","item_type","item_category","content"]}
+  },
   "borderlands-4":{
    "Weapons":{fields:["rarity","name",{key:"type",label:"Weapon Type"},"manufacturer","elements","content","sources"],filters:["rarity","elements","type","manufacturer","content"]},
    "Shields":{fields:["rarity","name",{key:"type",label:"Shield Type"},"manufacturer","elements","content","sources"],filters:["type","elements","manufacturer","content"]},
@@ -66,8 +100,14 @@
    "Repkits":{fields:["rarity","name","manufacturer","content","sources"],filters:["manufacturer","content"]},
    "Class Mods":{fields:["rarity","name","class","skills","content","sources"],filters:["class","tree","content"]},
    "Enhancements":{fields:["rarity","name","manufacturer","content","sources"],filters:["manufacturer"]}
-  },
-  "borderlands-3":{"Artifacts":{fields:["rarity","name",{key:"type",label:"Artifact Type"},"content","sources"],filters:["rarity","type","content"]}}
+  }
+ };
+ const TREE_INDEX_LABELS={
+  "borderlands-1":{"0":"Blue","1":"Red","2":"Green"},
+  "borderlands-2":{"0":"Green","1":"Blue","2":"Red"},
+  "borderlands-tps":{"0":"Green","1":"Blue","2":"Red"},
+  "borderlands-3":{"0":"Green","1":"Blue","2":"Red","3":"Purple"},
+  "borderlands-4":{"0":"Green","1":"Blue","2":"Red"}
  };
  const attrValues=(item,key)=>asList(item?.attributes?.[key]??[]);
  const fieldValues=(item,key)=>{
@@ -80,7 +120,16 @@
   if(key==="type")return asList(item.type).length?asList(item.type):["weapon_type","shield_type","ordnance_type","artifact_type","type"].flatMap(k=>attrValues(item,k));
   if(key==="class")return asList(item.class).length?asList(item.class):attrValues(item,"class");
   if(key==="skills")return asList(item.skills).length?asList(item.skills):[...attrValues(item,"skill"),...attrValues(item,"skills")];
-  if(key==="tree")return [...attrValues(item,"tree"),...attrValues(item,"trees")];
+  if(key==="tree")return [...attrValues(item,"tree"),...attrValues(item,"trees")].map(value=>TREE_INDEX_LABELS[item.gameId]?.[value]||value);
+  if(key==="spell_cast")return asList(item.spell_cast).length?asList(item.spell_cast):(item.gameId==="wonderlands"?asList(item.type):attrValues(item,"spell_cast"));
+  if(key==="item_type"){
+   const values=asList(item.item_type).length?asList(item.item_type):attrValues(item,"item_type");
+   return values.length?values:asList(item.type).filter(value=>["Ring","Amulet"].includes(value));
+  }
+  if(key==="item_category"){
+   const values=asList(item.item_category).length?asList(item.item_category):attrValues(item,"item_category");
+   return values.length?values:(item.category==="Rings & Amulets"?asList(item.type).filter(value=>!["Ring","Amulet"].includes(value)):[]);
+  }
   return attrValues(item,key);
  };
  const schemaFor=(game,category)=>{
@@ -88,12 +137,13 @@
   const fields=["rarity","name"];
   if(category==="Weapons")fields.push({key:"type",label:"Weapon Type"},"manufacturer","elements","content","sources");
   else if(category==="Shields")fields.push({key:"type",label:"Shield Type"},"manufacturer","elements","content","sources");
-  else if(["Grenades","Ordnance","Wards","Spells","Spellbooks","Melee Weapons"].includes(category))fields.push({key:"type",label:({Grenades:"Grenade Type",Ordnance:"Ordnance Type",Wards:"Ward Type",Spells:"Spell Type",Spellbooks:"Spell Type","Melee Weapons":"Weapon Type"})[category]},"manufacturer","elements","content","sources");
+  else if(["Grenades","Grenade Mods","Ordnance","Wards","Spells","Spellbooks","Melee Weapons"].includes(category))fields.push({key:"type",label:({Grenades:"Grenade Type","Grenade Mods":"Grenade Type",Ordnance:"Ordnance Type",Wards:"Ward Type",Spells:"Spell Type",Spellbooks:"Spell Type","Melee Weapons":"Weapon Type"})[category]},"manufacturer","elements","content","sources");
   else if(category==="Class Mods")fields.push("class","skills","content","sources");
   else if(category==="Artifacts"||category==="Relics")fields.push({key:"type",label:category==="Artifacts"?"Artifact Type":"Relic Type"},"content","sources");
-  else if(category==="Armor")fields.push({key:"type",label:"Armor Type"},"class","skills","content","sources");
-  else if(category==="Rings & Amulets")fields.push({key:"type",label:"Item Type"},"content","sources");
-  else if(category==="Oz Kits"||category==="Repkits"||category==="Enhancements")fields.push("manufacturer","content","sources");
+  else if(category==="Armor")fields.push("manufacturer","content","sources");
+  else if(category==="Rings & Amulets")fields.push("item_category","content","sources");
+  else if(category==="Oz Kits")fields.push({key:"type",label:"Oz Kit Type"},"elements","content","sources");
+  else if(category==="Repkits"||category==="Enhancements")fields.push("manufacturer","content","sources");
   else fields.push("manufacturer","content","sources");
   return {fields,filters:fields.map(f=>typeof f==="string"?f:f.key).filter(k=>!["name","skills","sources"].includes(k))};
  };
