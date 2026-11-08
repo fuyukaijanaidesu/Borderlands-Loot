@@ -36,3 +36,23 @@
 .new-items-notice{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:15px 0;padding:12px 15px;border:1px solid #47795b;border-radius:9px;background:#20352a;color:#c8f0d4;font-size:12px;line-height:1.5}
 .new-items-notice[hidden]{display:none}
 .new-items-notice button{flex:0 0 auto;font-size:18px;line-height:1;padding:3px 8px;color:#c8f0d4;background:#294936;border-color:#47795b}
+
+/* Consistent card heights and a shared action baseline */
+#items{align-items:stretch;grid-auto-rows:1fr}
+.item{height:100%;display:flex;flex-direction:column;min-width:0}
+.item .picture{flex:0 0 145px}
+.item .card-body{display:flex;flex:1;flex-direction:column;min-width:0}
+.item .item-foot{margin-top:auto}
+/* Make rarity colour win over generic card/text rules */
+.name.rarity-common{color:#f0f0f0!important}
+.name.rarity-uncommon{color:#62d477!important}
+.name.rarity-rare{color:#58aaff!important}
+.name.rarity-epic,.name.rarity-very-rare{color:#c18aff!important}
+.name.rarity-legendary{color:#ff9b45!important;text-shadow:0 0 12px #ff9b4530}
+.name.rarity-e-tech,.name.rarity-etech{color:#df65ff!important}
+.name.rarity-pearlescent{color:#77e9ed!important;text-shadow:0 0 12px #77e9ed35}
+.name.rarity-seraph{color:#ff79c6!important}
+.name.rarity-effervescent{background:linear-gradient(90deg,#ff6464,#ffb45c,#f5e66b,#72df91,#68caff,#b28aff);background-clip:text;-webkit-background-clip:text;color:transparent!important}
+.name.rarity-glitch{color:#70e4cf!important}
+.name.rarity-radiant{color:#ffe36c!important}
+@media(max-width:700px){.item .picture{flex-basis:120px}}

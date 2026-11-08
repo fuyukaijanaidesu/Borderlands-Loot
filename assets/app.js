@@ -3,7 +3,7 @@
  const KEYS={newItems:"bl-loot-new-items-v1",progress:"bl-loot-progress-v1",settings:"bl-loot-settings-v1",history:"bl-loot-backups-v1",lastCatalog:"bl-loot-last-catalog-v1",override:"bl-loot-catalog-override-v1",forceOverride:"bl-loot-force-catalog-override-v1"};
  const GAMES=[["borderlands-1","Borderlands"],["borderlands-2","Borderlands 2"],["borderlands-tps","The Pre-Sequel"],["borderlands-3","Borderlands 3"],["wonderlands","Tiny Tina's Wonderlands"],["borderlands-4","Borderlands 4"]];
  let db={games:[],items:[]},done={},active="borderlands-4";
- const defaults={search:"",category:"",rarity:"",manufacturer:"",type:"",element:"",sort:"name",missing:false};
+ const defaults={search:"",category:"",rarity:"",manufacturer:"",type:"",element:"",sort:"name",missing:false,moveCollectedToBottom:true};
  let settings={...defaults},backupHistory=[];
  const read=(key,fallback)=>{try{return JSON.parse(localStorage.getItem(key)||"null")??fallback}catch{return fallback}};
  done=read(KEYS.progress,{});
@@ -21,10 +21,22 @@
  };
  const elementInfo=value=>ELEMENTS[String(value||"").toLowerCase().replace(/[-_]+/g," ").trim()]||{icon:"✧",label:value,className:"unknown"};
  const rarityClass=value=>{
-  const raw=String(value||"unknown").toLowerCase().trim();
-  const lootlemonCodes={"a-common":"common","b-uncommon":"uncommon","c-rare":"rare","d-epic":"epic","f-legendary":"legendary","g-seraph":"seraph","h-pearlescent":"pearlescent","i-effervescent":"effervescent","e-glitch":"glitch"};
-  const normalized=lootlemonCodes[raw]||raw;
-  return "rarity-"+normalized.replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+  const raw=String(value&&typeof value==="object"?(value.name||value.label||value.value||""):value||"").toLowerCase().trim();
+  const slug=raw.replaceAll("_","-").replaceAll(" ","-").replace(/-+/g,"-");
+  let rarity="unknown";
+  if(raw.includes("uncommon")||raw.includes("b-uncommon"))rarity="uncommon";
+  else if(raw.includes("common")||raw.includes("a-common"))rarity="common";
+  else if(raw.includes("legendary")||raw.includes("f-legendary"))rarity="legendary";
+  else if(raw.includes("pearlescent")||raw.includes("h-pearlescent"))rarity="pearlescent";
+  else if(raw.includes("effervescent")||raw.includes("i-effervescent"))rarity="effervescent";
+  else if(raw.includes("seraph")||raw.includes("g-seraph"))rarity="seraph";
+  else if(raw.includes("glitch")||raw.includes("e-glitch"))rarity="glitch";
+  else if(raw.includes("e-tech")||raw.includes("etech"))rarity="e-tech";
+  else if(raw.includes("epic")||raw.includes("d-epic"))rarity="epic";
+  else if(raw.includes("rare")||raw.includes("c-rare"))rarity="rare";
+  else if(raw.includes("radiant"))rarity="radiant";
+  else if(slug&&slug!=="unknown")rarity=slug;
+  return "rarity-"+rarity;
  };
  const games=()=>{let a=GAMES.map(([id,name])=>({id,name}));(db.games||[]).forEach(g=>{if(!a.some(x=>x.id===g.id))a.push(g)});return a};
  const items=()=>db.items.filter(x=>x.gameId===active&&!x.archived);
@@ -84,13 +96,15 @@
   const fillSelect=(id,values,placeholder)=>{const current=settings[id];$(id).innerHTML='<option value="">'+placeholder+'</option>'+values.map(x=>'<option value="'+esc(x)+'">'+esc(x)+'</option>').join("");$(id).value=values.includes(current)?current:"";};
   fillSelect("category",cats,"Все категории");fillSelect("rarity",rs,"Любая редкость");
   fillSelect("manufacturer",makers,"Любой производитель");fillSelect("type",types,"Любой тип");fillSelect("element",elements,"Любой элемент");
-  $("search").value=settings.search;$("sort").value=settings.sort;$("missing").checked=!!settings.missing;
+  $("search").value=settings.search;$("sort").value=settings.sort;$("missing").checked=!!settings.missing;$("move-collected").checked=settings.moveCollectedToBottom!==false;
   let q=settings.search.toLowerCase().trim(),cat=$("category").value,rar=$("rarity").value;
   let maker=$("manufacturer").value,type=$("type").value,element=$("element").value;
   let shown=a.filter(x=>(!q||[x.name,x.category,x.manufacturer,x.type,x.description,(x.elements||[]).join(" "), (x.sources||[]).join(" "),...(x.tags||[]),...Object.values(x.attributes||{}).flat()].join(" ").toLowerCase().includes(q))&&(!cat||x.category===cat)&&(!rar||x.rarity===rar)&&(!maker||x.manufacturer===maker)&&(!type||x.type===type)&&(!element||(x.elements||[]).includes(element))&&(!settings.missing||!done[x.id]));
   shown.sort((x,y)=>{
-   const collected=Number(!!done[x.id])-Number(!!done[y.id]);
-   if(collected)return collected;
+   if(settings.moveCollectedToBottom){
+    const collected=Number(!!done[x.id])-Number(!!done[y.id]);
+    if(collected)return collected;
+   }
    if(settings.sort==="category")return (x.category||"").localeCompare(y.category||"")||x.name.localeCompare(y.name);
    if(settings.sort==="rarity")return (x.rarity||"").localeCompare(y.rarity||"")||x.name.localeCompare(y.name);
    return x.name.localeCompare(y.name);
@@ -115,6 +129,7 @@
  function bindSettings(){
   $("search").addEventListener("input",()=>{settings.search=$("search").value;persist();render()});
   ["category","rarity","manufacturer","type","element","sort","missing"].forEach(id=>$(id).addEventListener("change",()=>{settings[id]=id==="missing"?$("missing").checked:$(id).value;persist();render()}));
+  $("move-collected").addEventListener("change",()=>{settings.moveCollectedToBottom=$("move-collected").checked;persist();render()});
  }
  $("export").onclick=fullBackup;
  $("restore-local").onclick=restoreLastLocal;
