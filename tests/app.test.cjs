@@ -134,12 +134,12 @@ test("search, missing-only and backup export remain functional",async()=>{const 
 }finally{x.close()}});
 
 test("collection styling never leaks onto the Copy Code action",async()=>{const x=await boot();try{
- const card=x.doc.querySelector("#items .item");
+ const card=x.doc.querySelector('#items [data-id="weapon-1"]').closest(".item");
  const copy=card.querySelector(".copy-code");
  const collect=card.querySelector(".collect-button");
  assert.ok(copy);assert.ok(collect);
  collect.click();
- const updated=x.doc.querySelector("#items .item");
+ const updated=x.doc.querySelector('#items [data-id="weapon-1"]').closest(".item");
  const updatedCopy=updated.querySelector(".copy-code");
  const updatedCollect=updated.querySelector(".collect-button");
  assert.ok(updated.classList.contains("collected"));
