@@ -179,7 +179,7 @@
   $("shown").textContent=shown.length+" из "+a.length+" предметов";$("updated").textContent=db.updatedAt?"Обновлено: "+new Date(db.updatedAt).toLocaleDateString("ru-RU"):"Источник: Lootlemon";
 
   const renderValue=(item,def)=>{
-   const key=def.key,values=fieldValues(item,key);if(!values.length)return "";
+   const key=def.key,values=fieldValues(item,key);if(!values.length)return '<div class="loot-field is-empty" aria-hidden="true"><span>'+esc(def.label)+'</span><b>—</b></div>';
    if(key==="elements")return '<div class="loot-field"><span>'+esc(def.label)+'</span><div class="element-icons">'+values.map(value=>{const info=elementInfo(value);return '<span class="element-icon element-'+esc(info.className)+'" title="'+esc(info.label)+'"><i>'+info.icon+'</i><small>'+esc(info.label)+'</small></span>'}).join("")+'</div></div>';
    if(key==="sources")return '<div class="loot-field"><span>'+esc(def.label)+'</span><div class="drop-source-list">'+values.map(value=>'<span class="drop-source">'+esc(value)+'</span>').join("")+'</div></div>';
    if(key==="skills")return '<div class="loot-field"><span>'+esc(def.label)+'</span><div class="skill-list">'+values.map(value=>'<span class="skill-chip">'+esc(value)+'</span>').join("")+'</div></div>';
