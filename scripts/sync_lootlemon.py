@@ -311,7 +311,7 @@ def parse_page(url,game,category):
    if not content and len(after)>1: content=text_of(after[1]) or None
    if not sources and len(after)>2: sources=split_values(after[2])
   elif cat=="Rings & Amulets":
-   explicit_item_type=next((value for value in [*semantic_values["item_type"],*semantic_values["type"],*attributes.get("item_type",[]),*attributes.get("type",[]),*(text_of(c) for c in after)] if value.casefold() in {"ring","amulet"}),None)
+   explicit_item_type=next((value for value in [*semantic_values["item_type"],*semantic_values["type"],*attributes.get("item_type",[]),*attributes.get("type",[]),*(text_of(c) for c in after)] if re.match(r"^(ring|amulet)(?:[-_].*)?$",value.casefold())),None)
    visible_item_type=any(text_of(c).casefold() in {"ring","amulet"} for c in after)
    content_index=2 if visible_item_type and len(after)>2 else 1
    if not content and len(after)>content_index: content=text_of(after[content_index]) or None
@@ -348,6 +348,10 @@ def parse_page(url,game,category):
     if not elements and "element" in cls: elements=labels_of(c)
    if not type_value:
     type_value=next((v for v in values if re.search(r"\b(assault rifle|pistol|shotgun|smg|sniper|launcher)\b",v,re.I)),None)
+  # Normalize internal content tokens like "base game tps" to Lootlemon's
+  # visible filter label. The category-specific parser still preserves other values.
+  if content and content.casefold().startswith("base game"):
+   content="Base Game"
   # Keep the old known-manufacturer fallback, but also accept unknown names from an explicit field.
   if not manufacturer:
    known={"daedalus","jakobs","maliwan","order","ripper","tediore","torgue","vladof","bandit","dahl","hyperion","s&s","atlas","cov","eridian","pangolin"}
@@ -367,8 +371,9 @@ def parse_page(url,game,category):
   item_type=next(iter(semantic_values["item_type"]),None)
   item_category=next(iter(semantic_values["item_category"]),None)
   if cat=="Rings & Amulets":
-   item_type=item_type or next((value for value in [*attributes.get("item_type",[]),*semantic_values["type"],*attributes.get("type",[]),*(text_of(c) for c in after)] if value.casefold() in {"ring","amulet"}),None)
-   item_category=item_category or next(iter(attributes.get("item_category",[])),None) or next(iter(attributes.get("category",[])),None) or next((value for value in semantic_values["type"] if value.casefold() not in {"ring","amulet"}),None) or (text_of(after[1]) if visible_item_type and len(after)>1 else (text_of(after[0]) if after else None))
+   ring_kind=next((value for value in [*attributes.get("item_type",[]),*semantic_values["type"],*attributes.get("type",[]),*(text_of(c) for c in after)] if re.match(r"^(ring|amulet)(?:[-_].*)?$",value.casefold())),None)
+   item_type=item_type or ("Ring" if ring_kind and ring_kind.casefold().startswith("ring") else "Amulet" if ring_kind else None)
+   item_category=item_category or next(iter(attributes.get("item_category",[])),None) or next(iter(attributes.get("category",[])),None) or next((value for value in semantic_values["type"] if not re.match(r"^(ring|amulet)(?:[-_].*)?$",value.casefold())),None) or (text_of(after[1]) if visible_item_type and len(after)>1 else (text_of(after[0]) if after else None))
    type_value=item_type
   if cat=="Class Mods":
    if not class_value and len(after)>0: class_value=text_of(after[0]) or None
