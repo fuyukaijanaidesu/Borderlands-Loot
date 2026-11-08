@@ -374,7 +374,7 @@ def parse_page(url,game,category):
    if content_slug.startswith("base-game"): content="Base Game"
    elif content_slug in content_labels: content=content_labels[content_slug]
    else:
-    dlc_match=re.fullmatch(r"dlc-?(\\d+)",content_slug)
+    dlc_match=re.fullmatch(r"dlc-?(\d+)",content_slug)
     if dlc_match: content=f"DLC {dlc_match.group(1)}"
   # Preserve unknown labeled fields, including fields introduced by future game releases.
   tags=[]
