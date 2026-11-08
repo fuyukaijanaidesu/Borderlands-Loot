@@ -52,7 +52,7 @@ def decode_item_code(value):
 
 def extract_item_code(detail_html):
  """Extract the exact serial attached to Lootlemon's Copy Code control."""
- pattern=re.compile(r"data-(?:code|clipboard-text)\\s*=\\s*(['\"])(.*?)\\1",re.I|re.S)
+ pattern=re.compile(r"data-(?:code|clipboard-text)\s*=\s*(['\"])(.*?)\1",re.I|re.S)
  for match in pattern.finditer(detail_html or ""):
   code=decode_item_code(match.group(2))
   if code and not any(char.isspace() for char in code): return code
