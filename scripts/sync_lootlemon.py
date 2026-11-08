@@ -23,7 +23,7 @@ GAMES={
 LABELS={"class-mods":"Class Mods","melee":"Melee Weapons","melee-weapons":"Melee Weapons",
  "repkits":"Repkits","ordnance":"Ordnance","enhancements":"Enhancements",
  "spellbooks":"Spellbooks","shields":"Shields","weapons":"Weapons",
- "grenades":"Grenades","relics":"Relics","artifacts":"Artifacts","armor":"Armor"}
+ "grenades":"Grenades","relics":"Relics","artifacts":"Artifacts","armor":"Armor","oz-kits":"Oz Kits","wards":"Wards","spells":"Spells","rings-amulets":"Rings & Amulets"}
 
 def get(url):
  r=SESSION.get(url,timeout=45); r.raise_for_status(); return r.text
@@ -194,7 +194,7 @@ def parse_page(url,game,category):
   before=cells[:idx] if idx>=0 else []
   after=cells[idx+1:] if idx>=0 else []
   attributes={}
-  semantic_values={"rarity":[],"manufacturer":[],"element":[],"type":[],"content":[],"source":[]}
+  semantic_values={"rarity":[],"manufacturer":[],"element":[],"type":[],"content":[],"source":[],"class":[],"skill":[],"tree":[],"weapon_type":[],"shield_type":[],"ordnance_type":[],"artifact_type":[]}
   rarity=None; manufacturer=type_value=content=None; elements=[]; sources=[]
   metadata=[]
   for cell in cells:
@@ -217,7 +217,7 @@ def parse_page(url,game,category):
       add_attr(attributes,field,val)
       if field in semantic_values: semantic_values[field].extend(clean_values(val if isinstance(val,list) else [val]))
     for cls in child.get("class") or []:
-     match=re.match(r"^(rarity|manufacturer|element|type|content)[-_](.+)$",cls,re.I)
+     match=re.match(r"^(rarity|manufacturer|element|type|content|class|skill|tree|weapon_type|shield_type|ordnance_type|artifact_type)[-_](.+)$",cls,re.I)
      if match and match.group(2).lower() not in {"cell","field","wrapper","container","badge","label","value"}:
       field=match.group(1).lower()
       val=re.sub(r"[-_]+"," ",match.group(2)).strip()
@@ -269,6 +269,31 @@ def parse_page(url,game,category):
    if not elements and len(after)>2: elements=labels_of(after[2])
    if not content and len(after)>3: content=text_of(after[3]) or None
    if not sources and len(after)>4: sources=split_values(after[4])
+  elif cat in {"Shields","Ordnance","Grenades","Wards","Spells","Spellbooks","Melee Weapons"}:
+   if not type_value and len(after)>0: type_value=text_of(after[0]) or None
+   if not manufacturer and len(after)>1: manufacturer=text_of(after[1]) or None
+   if not elements and len(after)>2: elements=labels_of(after[2])
+   if not content and len(after)>3: content=text_of(after[3]) or None
+   if not sources and len(after)>4: sources=split_values(after[4])
+  elif cat in {"Artifacts","Relics","Rings & Amulets"}:
+   if not type_value and len(after)>0: type_value=text_of(after[0]) or None
+   if not content and len(after)>1: content=text_of(after[1]) or None
+   if not sources and len(after)>2: sources=split_values(after[2])
+  elif cat=="Armor":
+   if not type_value and len(after)>0: type_value=text_of(after[0]) or None
+   if not semantic_values["class"] and len(after)>1: semantic_values["class"].extend(split_values(after[1]))
+   if not semantic_values["skill"] and len(after)>2: semantic_values["skill"].extend(labels_of(after[2]))
+   if not content and len(after)>3: content=text_of(after[3]) or None
+   if not sources and len(after)>4: sources=split_values(after[4])
+  elif cat in {"Oz Kits","Repkits","Enhancements"}:
+   if not manufacturer and len(after)>0: manufacturer=text_of(after[0]) or None
+   if not content and len(after)>1: content=text_of(after[1]) or None
+   if not sources and len(after)>2: sources=split_values(after[2])
+  elif cat=="Class Mods":
+   if not semantic_values["class"] and len(after)>0: semantic_values["class"].extend(split_values(after[0]))
+   if not semantic_values["skill"] and len(after)>1: semantic_values["skill"].extend(labels_of(after[1]))
+   if not content and len(after)>2: content=text_of(after[2]) or None
+   if not sources and len(after)>3: sources=split_values(after[3])
   else:
    for c in after:
     cls=" ".join(c.get("class") or []).lower(); v=text_of(c)
@@ -291,7 +316,12 @@ def parse_page(url,game,category):
   # IMPORTANT: identity formula intentionally unchanged to preserve existing collected progress.
   identity=f"{game}|{category}|{href}" if href else f"{game}|{category}|{clean_name}"
   ident=hashlib.sha1(identity.encode("utf-8")).hexdigest()[:20]
-  found.append({"id":ident,"gameId":game,"category":cat,"name":name,"type":type_value,
+  class_value=next(iter(semantic_values["class"]),None)
+  skills=clean_values(semantic_values["skill"])
+  if cat=="Class Mods":
+   if not class_value and len(after)>0: class_value=text_of(after[0]) or None
+   if not skills and len(after)>1: skills=labels_of(after[1])
+  found.append({"id":ident,"gameId":game,"category":cat,"name":name,"type":type_value,"class":class_value,"skills":skills,
    "rarity":rarity,"manufacturer":manufacturer,"content":content,"elements":elements,
    "sources":sources,"metadata":metadata,"attributes":attributes,"tags":tags,
    "image":image,"url":href,"archived":False})
