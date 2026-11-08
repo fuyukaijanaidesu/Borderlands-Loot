@@ -177,7 +177,7 @@ def content_label(value):
  slug=re.sub(r"[^a-z0-9]+","-",str(value).casefold()).strip("-")
  if slug.startswith("base-game"): return "Base Game"
  if slug in CONTENT_LABELS: return CONTENT_LABELS[slug]
- dlc_match=re.fullmatch(r"dlc-?(\\d+)",slug)
+ dlc_match=re.fullmatch(r"dlc-?(\d+)",slug)
  if dlc_match: return f"DLC {dlc_match.group(1)}"
  # Future content values stay readable even before an explicit Lootlemon alias is added.
  suffixes=("-mini-dlc","-dlc","-event","-promotion")
