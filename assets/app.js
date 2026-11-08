@@ -1,6 +1,6 @@
 (()=> {
  const $=id=>document.getElementById(id);
- const KEYS={progress:"bl-loot-progress-v1",settings:"bl-loot-settings-v1",history:"bl-loot-backups-v1",lastCatalog:"bl-loot-last-catalog-v1",override:"bl-loot-catalog-override-v1"};
+ const KEYS={progress:"bl-loot-progress-v1",settings:"bl-loot-settings-v1",history:"bl-loot-backups-v1",lastCatalog:"bl-loot-last-catalog-v1",override:"bl-loot-catalog-override-v1",forceOverride:"bl-loot-force-catalog-override-v1"};
  const GAMES=[["borderlands-1","Borderlands"],["borderlands-2","Borderlands 2"],["borderlands-tps","The Pre-Sequel"],["borderlands-3","Borderlands 3"],["wonderlands","Tiny Tina's Wonderlands"],["borderlands-4","Borderlands 4"]];
  let db={games:[],items:[]},done={},active="borderlands-4";
  const defaults={search:"",category:"",rarity:"",sort:"name",missing:false};
@@ -25,7 +25,7 @@
   const url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
  }
  function restoreLastLocal(){
-  const last=backupHistory.find(x=>x&&x.progress);
+  const last=backupHistory.find(x=>x&&x.progress&&!["before-local-rollback","before-restore"].includes(x.reason));
   if(!last){alert("Локальных резервных копий пока нет.");return;}
   if(!confirm("Восстановить прогресс и настройки из копии от "+new Date(last.at).toLocaleString("ru-RU")+"?"))return;
   snapshot("before-local-rollback");done={...last.progress};settings={...defaults,...(last.settings||{})};persist();render();alert("Локальная копия восстановлена.");
@@ -39,7 +39,7 @@
   persist();
  }
  function restoreBackup(data){
-  if(data.backupVersion===1&&data.catalog&&Array.isArray(data.catalog.items)){snapshot("before-catalog-rollback");db=data.catalog;try{localStorage.setItem(KEYS.override,JSON.stringify(db))}catch{}render();alert("Каталог из серверной резервной копии восстановлен. Прогресс и настройки сохранены.");return;}
+  if(data.backupVersion===1&&data.catalog&&Array.isArray(data.catalog.items)){snapshot("before-catalog-rollback");db=data.catalog;try{localStorage.setItem(KEYS.override,JSON.stringify(db));localStorage.setItem(KEYS.forceOverride,"true")}catch{}render();alert("Каталог из серверной резервной копии восстановлен. Прогресс и настройки сохранены.");return;}
   if(data.format==="borderlands-loot-progress"&&data.progress){
    snapshot("before-legacy-import");done={...data.progress};persist();render();alert("Прогресс импортирован.");return;
   }
@@ -47,7 +47,7 @@
   snapshot("before-restore");
   done={...data.progress};settings={...defaults,...(data.settings||{})};
   db=data.catalog;
-  try{localStorage.setItem(KEYS.override,JSON.stringify(db))}catch{alert("Каталог слишком большой для локального хранения. Прогресс и настройки восстановлены, каталог останется текущим.");}
+  try{localStorage.setItem(KEYS.override,JSON.stringify(db));localStorage.setItem(KEYS.forceOverride,"true")}catch{alert("Каталог слишком большой для локального хранения. Прогресс и настройки восстановлены, каталог останется текущим.");}
   backupHistory=Array.isArray(data.history)?data.history.slice(0,30):backupHistory;
   persist();render();alert("Полная резервная копия восстановлена.");
  }
@@ -88,11 +88,13 @@
    const response=await fetch("data/catalog.json",{cache:"no-store"});if(!response.ok)throw Error("catalog fetch failed");
    const fresh=await response.json();
    const previous=read(KEYS.lastCatalog,null);
-   if(previous&&previous.updatedAt&&fresh.updatedAt&&previous.updatedAt!==fresh.updatedAt){
-    snapshot("automatic-before-catalog-sync");
+   const forced=localStorage.getItem(KEYS.forceOverride)==="true";
+   if(forced&&previous&&fresh.updatedAt===previous.updatedAt&&localOverride){db=localOverride;}
+   else{
+    if(forced)localStorage.removeItem(KEYS.forceOverride);
+    if(previous&&previous.updatedAt&&fresh.updatedAt&&previous.updatedAt!==fresh.updatedAt)snapshot("automatic-before-catalog-sync");
+    db=fresh;
    }
-   if(!localOverride||!localOverride.updatedAt||!fresh.updatedAt||new Date(fresh.updatedAt)>new Date(localOverride.updatedAt))db=fresh;
-   else db=localOverride;
    try{localStorage.setItem(KEYS.lastCatalog,JSON.stringify(fresh))}catch{}
    $("status").textContent="Каталог загружен";
   }catch{
