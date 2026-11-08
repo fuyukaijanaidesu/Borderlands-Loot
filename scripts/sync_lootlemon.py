@@ -63,6 +63,7 @@ def backup(old_catalog=None, reason="before-sync"):
  tmp.replace(path)
  copies=sorted(BACKUPS.glob("backup-*.json"))
  for old_path in copies[:-30]: old_path.unlink()
+ for legacy in BACKUPS.glob("catalog-*.json"): legacy.unlink()
  print("Full catalog backup:",path.relative_to(ROOT))
 
 def discover():
