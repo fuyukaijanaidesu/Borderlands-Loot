@@ -298,47 +298,47 @@ def parse_page(url,game,category):
    if not type_value and len(after)>0: type_value=text_of(after[0]) or None
    if not manufacturer and len(after)>1: manufacturer=text_of(after[1]) or None
    if not elements and len(after)>2: elements=labels_of(after[2])
-   if not content and len(after)>3: content=text_of(after[3]) or None
+   if len(after)>3 and text_of(after[3]): content=text_of(after[3])
    if not sources and len(after)>4: sources=split_values(after[4])
   elif cat in {"Shields","Ordnance","Grenades","Grenade Mods","Wards","Spells","Spellbooks","Melee Weapons"}:
    if not type_value and len(after)>0: type_value=text_of(after[0]) or None
    if not manufacturer and len(after)>1: manufacturer=text_of(after[1]) or None
    if not elements and len(after)>2: elements=labels_of(after[2])
-   if not content and len(after)>3: content=text_of(after[3]) or None
+   if len(after)>3 and text_of(after[3]): content=text_of(after[3])
    if not sources and len(after)>4: sources=split_values(after[4])
   elif cat in {"Artifacts","Relics"}:
    if not type_value and len(after)>0: type_value=text_of(after[0]) or None
-   if not content and len(after)>1: content=text_of(after[1]) or None
+   if len(after)>1 and text_of(after[1]): content=text_of(after[1])
    if not sources and len(after)>2: sources=split_values(after[2])
   elif cat=="Rings & Amulets":
-   explicit_item_type=next((value for value in [*semantic_values["item_type"],*semantic_values["type"],*attributes.get("item_type",[]),*attributes.get("type",[]),*(text_of(c) for c in after)] if value.casefold() in {"ring","amulet"}),None)
+   explicit_item_type=next((value for value in [*semantic_values["item_type"],*semantic_values["type"],*attributes.get("item_type",[]),*attributes.get("type",[]),*(text_of(c) for c in after)] if re.match(r"^(ring|amulet)(?:[-_].*)?$",value.casefold())),None)
    visible_item_type=any(text_of(c).casefold() in {"ring","amulet"} for c in after)
    content_index=2 if visible_item_type and len(after)>2 else 1
-   if not content and len(after)>content_index: content=text_of(after[content_index]) or None
+   if len(after)>content_index and text_of(after[content_index]): content=text_of(after[content_index])
    if not sources and len(after)>content_index+1: sources=split_values(after[content_index+1])
   elif cat=="Armor":
    # Wonderlands Armor cards list manufacturer, content, and sources only.
    if not manufacturer and len(after)>0: manufacturer=text_of(after[0]) or None
-   if not content and len(after)>1: content=text_of(after[1]) or None
+   if len(after)>1 and text_of(after[1]): content=text_of(after[1])
    if not sources and len(after)>2: sources=split_values(after[2])
   elif cat=="Oz Kits":
    if not type_value and len(after)>0: type_value=text_of(after[0]) or None
    if not elements and len(after)>1: elements=labels_of(after[1])
-   if not content and len(after)>2: content=text_of(after[2]) or None
+   if len(after)>2 and text_of(after[2]): content=text_of(after[2])
    if not sources and len(after)>3: sources=split_values(after[3])
   elif cat in {"Repkits","Enhancements"}:
    if not manufacturer and len(after)>0: manufacturer=text_of(after[0]) or None
-   if not content and len(after)>1: content=text_of(after[1]) or None
+   if len(after)>1 and text_of(after[1]): content=text_of(after[1])
    if not sources and len(after)>2: sources=split_values(after[2])
   elif cat=="Class Mods":
    if not semantic_values["class"] and len(after)>0: semantic_values["class"].extend(split_values(after[0]))
    if not semantic_values["skill"] and len(after)>1: semantic_values["skill"].extend(labels_of(after[1]))
    if game in {"borderlands-1","borderlands-2","borderlands-tps"}:
     if not manufacturer and len(after)>2: manufacturer=text_of(after[2]) or None
-    if not content and len(after)>3: content=text_of(after[3]) or None
+    if len(after)>3 and text_of(after[3]): content=text_of(after[3])
     if not sources and len(after)>4: sources=split_values(after[4])
    else:
-    if not content and len(after)>2: content=text_of(after[2]) or None
+    if len(after)>2 and text_of(after[2]): content=text_of(after[2])
     if not sources and len(after)>3: sources=split_values(after[3])
   else:
    for c in after:
@@ -367,8 +367,9 @@ def parse_page(url,game,category):
   item_type=next(iter(semantic_values["item_type"]),None)
   item_category=next(iter(semantic_values["item_category"]),None)
   if cat=="Rings & Amulets":
-   item_type=item_type or next((value for value in [*attributes.get("item_type",[]),*semantic_values["type"],*attributes.get("type",[]),*(text_of(c) for c in after)] if value.casefold() in {"ring","amulet"}),None)
-   item_category=item_category or next(iter(attributes.get("item_category",[])),None) or next(iter(attributes.get("category",[])),None) or next((value for value in semantic_values["type"] if value.casefold() not in {"ring","amulet"}),None) or (text_of(after[1]) if visible_item_type and len(after)>1 else (text_of(after[0]) if after else None))
+   ring_kind=next((value for value in [*attributes.get("item_type",[]),*semantic_values["type"],*attributes.get("type",[]),*(text_of(c) for c in after)] if re.match(r"^(ring|amulet)(?:[-_].*)?$",value.casefold())),None)
+   item_type=item_type or ("Ring" if ring_kind and ring_kind.casefold().startswith("ring") else "Amulet" if ring_kind else None)
+   item_category=item_category or next(iter(attributes.get("item_category",[])),None) or next(iter(attributes.get("category",[])),None) or next((value for value in semantic_values["type"] if not re.match(r"^(ring|amulet)(?:[-_].*)?$",value.casefold())),None) or (text_of(after[1]) if visible_item_type and len(after)>1 else (text_of(after[0]) if after else None))
    type_value=item_type
   if cat=="Class Mods":
    if not class_value and len(after)>0: class_value=text_of(after[0]) or None
