@@ -96,3 +96,9 @@
 .loot-field.is-empty{visibility:hidden;}
 /* Make drop-source names easier to read. */
 .loot-field .drop-source{font-size:12px;line-height:1.5;}
+
+/* Lootlemon item serial copy action */
+.item-foot{gap:6px;flex-wrap:wrap}
+.item-foot .copy-code{padding:6px 9px;color:#d8d3dc;background:#302f35;border-color:#4a4850;white-space:nowrap}
+.item-foot .copy-code:hover{background:#3a3941;border-color:#6a6672}
+.item-foot .copy-code.copied{color:#a5efbd;background:#203b2c;border-color:#38664b}
