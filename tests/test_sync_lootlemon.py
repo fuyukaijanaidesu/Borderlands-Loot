@@ -98,6 +98,7 @@ class DynamicLootlemonMetadataTests(unittest.TestCase):
         self.assertIn("Bullet Hail", item["skills"])
         self.assertIn("Wildfire", item["skills"])
         self.assertNotIn("link", [value.lower() for value in item["skills"]])
+        self.assertNotIn("link", [value.lower() for value in item["attributes"].get("skill", [])])
         self.assertEqual(item["content"], "Base Game")
         self.assertEqual(item["sources"], ["Subjugator"])
 
