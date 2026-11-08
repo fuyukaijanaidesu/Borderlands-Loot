@@ -63,8 +63,8 @@
 .drop-source-list{display:flex;flex-direction:column;gap:4px}
 .drop-source{display:block;position:relative;padding-left:11px;color:#d0cbd4;font-size:10px;line-height:1.4;overflow-wrap:anywhere}
 .drop-source::before{content:"•";position:absolute;left:0;color:#f04b68}
-#content{min-width:145px}
-@media(max-width:700px){#content{flex:1;min-width:0}}
+.dynamic-filters select{min-width:135px}
+@media(max-width:700px){.dynamic-filters{display:contents}.dynamic-filters select{flex:1;min-width:0}}
 
 /* Lootlemon-style structured item fields */
 .loot-field{display:flex;flex-direction:column;gap:4px;padding:6px 0;border-bottom:1px solid #302f35;min-width:0}
@@ -87,3 +87,5 @@
 .sources-field .drop-source-list{gap:5px}
 .sources-field .drop-source{padding-left:10px;font-size:10px}
 .item .name{min-height:0;margin:9px 0 7px}
+
+.dynamic-filters{display:contents}.skill-list{display:flex;flex-wrap:wrap;gap:5px}.skill-chip{display:inline-block;padding:4px 7px;border:1px solid #51465a;border-radius:5px;background:#30283a;color:#dfc7f4;font-size:10px;line-height:1.3}
