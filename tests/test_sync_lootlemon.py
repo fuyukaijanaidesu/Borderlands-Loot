@@ -190,6 +190,21 @@ class DynamicLootlemonMetadataTests(unittest.TestCase):
         self.assertEqual(item["content"], "Base Game")
         self.assertEqual(item["sources"], ["Ring Pool"])
 
+    def test_ring_filter_type_and_category_can_be_read_from_card_attributes(self):
+        html = """
+        <div class="db_item w-dyn-item" data-type="Ring" data-category="Offense">
+          <div class="db_cell large"><a class="link-overlay" href="/item/hidden-ring">Hidden Ring</a></div>
+          <div class="db_cell">Offense</div>
+          <div class="db_cell">Base Game</div>
+          <div class="db_cell"><a href="/boss">Ring Pool</a></div>
+        </div>
+        """
+        item = self.parse(html, category="rings-amulets")
+        self.assertEqual(item["item_type"], "Ring")
+        self.assertEqual(item["item_category"], "Offense")
+        self.assertEqual(item["content"], "Base Game")
+        self.assertEqual(item["sources"], ["Ring Pool"])
+
     def test_tree_indexes_are_normalized_per_game_filter_order(self):
         html = """
         <div class="db_item w-dyn-item">
