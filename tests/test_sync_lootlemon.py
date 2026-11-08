@@ -185,7 +185,7 @@ class DynamicLootlemonMetadataTests(unittest.TestCase):
         </div>
         """
         item = self.parse(html, category="rings-amulets")
-        self.assertEqual(item["item_type"], "Amulet")
+        self.assertEqual(item["item_type"], "Ring")
         self.assertEqual(item["item_category"], "Offense")
         self.assertEqual(item["content"], "Base Game")
         self.assertEqual(item["sources"], ["Ring Pool"])
@@ -200,7 +200,7 @@ class DynamicLootlemonMetadataTests(unittest.TestCase):
         </div>
         """
         item = self.parse(html, category="rings-amulets")
-        self.assertEqual(item["item_type"], "Ring")
+        self.assertEqual(item["item_type"], "Amulet")
         self.assertEqual(item["item_category"], "Offense")
         self.assertEqual(item["content"], "Base Game")
         self.assertEqual(item["sources"], ["Ring Pool"])
