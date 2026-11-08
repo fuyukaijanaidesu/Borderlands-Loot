@@ -12,7 +12,16 @@ const catalog={updatedAt:"2026-11-08T01:22:03.181332+00:00",games:[],items:[
  {id:"weapon-2",gameId:"borderlands-4",category:"Weapons",name:"Second Shotgun",rarity:"d-epic",manufacturer:"Maliwan",type:"Shotgun",elements:["Shock"],content:"Base Game",sources:["Boss B"],archived:false},
  {id:"shield-1",gameId:"borderlands-4",category:"Shields",name:"Beta Shield",rarity:"d-epic",manufacturer:"Maliwan",type:"Shield Generator",elements:["Shock"],content:"Base Game",sources:["Boss C"],archived:false},
  {id:"classmod-1",gameId:"borderlands-4",category:"Class Mods",name:"Gamma Mod",rarity:"f-legendary",class:"Amon",skills:["Bullet Hail","Wildfire"],attributes:{tree:["Green"]},content:"Base Game",sources:["Boss D"],archived:false},
- {id:"artifact-1",gameId:"borderlands-3",category:"Artifacts",name:"Delta Artifact",rarity:"Pearlescent",type:"Artifact",content:"DLC 1",sources:["Boss E"],archived:false}
+ {id:"artifact-1",gameId:"borderlands-3",category:"Artifacts",name:"Delta Artifact",rarity:"Pearlescent",type:"Artifact",content:"DLC 1",sources:["Boss E"],archived:false},
+ {id:"bl1-grenade",gameId:"borderlands-1",category:"Grenades",name:"Bouncing Bettie",rarity:"Rare",type:"Bouncing Betty",manufacturer:"DAHL",elements:["Fire"],content:"Base Game",sources:["Grenade Pool"],archived:false},
+ {id:"bl1-class",gameId:"borderlands-1",category:"Class Mods",name:"Test BL1 Mod",rarity:"Epic",class:"Brick",skills:["Endowed"],manufacturer:"Torgue",content:"Base Game",sources:["Brick Pool"],attributes:{tree:["0","2"]},archived:false},
+ {id:"bl2-grenade",gameId:"borderlands-2",category:"Grenade Mods",name:"Bonus Package",rarity:"Legendary",type:"MIRV",manufacturer:"Torgue",elements:["Explosive"],content:"Base Game",sources:["Boom and Bewm"],archived:false},
+ {id:"bl2-relic",gameId:"borderlands-2",category:"Relics",name:"Blood of Terramorphous",rarity:"Legendary",type:"Survivability",content:"Base Game",sources:["Terramorphous"],archived:false},
+ {id:"tps-oz",gameId:"borderlands-tps",category:"Oz Kits",name:"3DD1.E",rarity:"Rare",type:"Survivability",elements:["Explosive"],content:"Base Game",sources:["CL4P-L3K"],archived:false},
+ {id:"wl-armor",gameId:"wonderlands",category:"Armor",name:"Amalgam",rarity:"Legendary",manufacturer:"Swifft",content:"Base Game",sources:["Monstrous Shroom"],archived:false},
+ {id:"wl-spell",gameId:"wonderlands",category:"Spells",name:"Arcane Bolt",rarity:"Legendary",type:"Simple",manufacturer:"Conjura",elements:["Lightning"],content:"Base Game",sources:["Chaos Chamber"],archived:false},
+ {id:"wl-ring",gameId:"wonderlands",category:"Rings & Amulets",name:"Test Ring",rarity:"Legendary",item_type:"Ring",item_category:"Offense",content:"Base Game",sources:["Ring Pool"],archived:false},
+ {id:"wl-amulet",gameId:"wonderlands",category:"Rings & Amulets",name:"Test Amulet",rarity:"Legendary",item_type:"Amulet",item_category:"Universal",content:"Base Game",sources:["Amulet Pool"],archived:false}
 ]};
 async function boot(seed={}){
  const dom=new JSDOM(html,{url:"https://tracker.test/",runScripts:"outside-only",pretendToBeVisual:true}),w=dom.window;
@@ -45,6 +54,41 @@ test("each category has its own fields and filters",async()=>{const x=await boot
  assert.match(x.doc.querySelector("#items").textContent,/Skills/);
  assert.match(x.doc.querySelector("#items").textContent,/Bullet Hail/);
  assert.match(x.doc.querySelector("#items").textContent,/Amon/);
+}finally{x.close()}});
+test("legacy games and Wonderlands use category-specific Lootlemon schemas",async()=>{const x=await boot();try{
+ x.doc.querySelector('#games [data-game="borderlands-1"]').click();
+ chooseCategory(x,"Grenades");
+ assert.deepEqual([...x.doc.querySelectorAll("#dynamic-filters select")].map(e=>e.dataset.filter),["rarity","type","manufacturer"]);
+ assert.match(x.doc.querySelector("#items").textContent,/Grenade Type/);
+ chooseCategory(x,"Class Mods");
+ assert.deepEqual([...x.doc.querySelectorAll("#dynamic-filters select")].map(e=>e.dataset.filter),["class","tree","content"]);
+ const tree=x.doc.querySelector('[data-filter="tree"]');
+ assert.ok([...tree.options].some(o=>o.value==="Blue"));
+ assert.ok([...tree.options].some(o=>o.value==="Green"));
+ x.doc.querySelector('#games [data-game="borderlands-2"]').click();
+ chooseCategory(x,"Grenade Mods");
+ assert.deepEqual([...x.doc.querySelectorAll("#dynamic-filters select")].map(e=>e.dataset.filter),["rarity","elements","type","manufacturer","content"]);
+ assert.match(x.doc.querySelector("#items").textContent,/Grenade Type/);
+ chooseCategory(x,"Relics");
+ assert.match(x.doc.querySelector("#items").textContent,/Relic Type/);
+ x.doc.querySelector('#games [data-game="borderlands-tps"]').click();
+ chooseCategory(x,"Oz Kits");
+ assert.match(x.doc.querySelector("#items").textContent,/Oz Kit Type/);
+ assert.match(x.doc.querySelector("#items").textContent,/Survivability/);
+ x.doc.querySelector('#games [data-game="wonderlands"]').click();
+ chooseCategory(x,"Armor");
+ assert.deepEqual([...x.doc.querySelectorAll("#dynamic-filters select")].map(e=>e.dataset.filter),["rarity","manufacturer","content"]);
+ assert.match(x.doc.querySelector("#items").textContent,/Swifft/);
+ assert.doesNotMatch(x.doc.querySelector("#items").textContent,/Skills/);
+ chooseCategory(x,"Spells");
+ assert.match(x.doc.querySelector("#items").textContent,/Spell Cast/);
+ assert.match(x.doc.querySelector("#items").textContent,/Simple/);
+ chooseCategory(x,"Rings & Amulets");
+ assert.deepEqual([...x.doc.querySelectorAll("#dynamic-filters select")].map(e=>e.dataset.filter),["rarity","item_type","item_category","content"]);
+ assert.match(x.doc.querySelector("#items").textContent,/Category/);
+ chooseFilter(x,"item_type","Amulet");
+ assert.equal(x.doc.querySelectorAll("#items .item").length,1);
+ assert.equal(x.doc.querySelector("#items .name").textContent,"Test Amulet");
 }finally{x.close()}});
 test("category filters combine with AND",async()=>{const x=await boot();try{
  chooseFilter(x,"manufacturer","Dahl");
