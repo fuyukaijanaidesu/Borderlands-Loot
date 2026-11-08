@@ -1,6 +1,8 @@
 name: Sync Lootlemon catalog
 on:
   push:
+    branches:
+      - main
     paths:
       - 'scripts/**'
       - '.github/workflows/sync-lootlemon.yml'
