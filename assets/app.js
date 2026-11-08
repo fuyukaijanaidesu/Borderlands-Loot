@@ -22,16 +22,21 @@
  const elementInfo=value=>ELEMENTS[String(value||"").toLowerCase().replace(/[-_]+/g," ").trim()]||{icon:"✧",label:value,className:"unknown"};
  const rarityClass=value=>{
   const raw=String(value&&typeof value==="object"?(value.name||value.label||value.value||""):value||"").toLowerCase().trim();
-  const slug=raw.replace(/[_\\s]+/g,"-").replace(/[^a-z0-9-]+/g,"-").replace(/-+/g,"-");
-  const aliases=[
-   ["common",/\\bcommon\\b|a-common/],["uncommon",/\\buncommon\\b|b-uncommon/],
-   ["rare",/\\brare\\b|c-rare/],["epic",/\\bepic\\b|d-epic/],
-   ["legendary",/\\blegendary\\b|f-legendary/],["seraph",/\\bseraph\\b|g-seraph/],
-   ["pearlescent",/\\bpearlescent\\b|h-pearlescent/],["effervescent",/\\beffervescent\\b|i-effervescent/],
-   ["glitch",/\\bglitch\\b|e-glitch/],["e-tech",/\\be[ -]?tech\\b/],["radiant",/\\bradiant\\b/]
-  ];
-  const match=aliases.find(([,pattern])=>pattern.test(raw));
-  return "rarity-"+(match?match[0]:slug||"unknown");
+  const slug=raw.replaceAll("_","-").replaceAll(" ","-").replace(/-+/g,"-");
+  let rarity="unknown";
+  if(raw.includes("uncommon")||raw.includes("b-uncommon"))rarity="uncommon";
+  else if(raw.includes("common")||raw.includes("a-common"))rarity="common";
+  else if(raw.includes("legendary")||raw.includes("f-legendary"))rarity="legendary";
+  else if(raw.includes("pearlescent")||raw.includes("h-pearlescent"))rarity="pearlescent";
+  else if(raw.includes("effervescent")||raw.includes("i-effervescent"))rarity="effervescent";
+  else if(raw.includes("seraph")||raw.includes("g-seraph"))rarity="seraph";
+  else if(raw.includes("glitch")||raw.includes("e-glitch"))rarity="glitch";
+  else if(raw.includes("e-tech")||raw.includes("etech"))rarity="e-tech";
+  else if(raw.includes("epic")||raw.includes("d-epic"))rarity="epic";
+  else if(raw.includes("rare")||raw.includes("c-rare"))rarity="rare";
+  else if(raw.includes("radiant"))rarity="radiant";
+  else if(slug&&slug!=="unknown")rarity=slug;
+  return "rarity-"+rarity;
  };
  const games=()=>{let a=GAMES.map(([id,name])=>({id,name}));(db.games||[]).forEach(g=>{if(!a.some(x=>x.id===g.id))a.push(g)});return a};
  const items=()=>db.items.filter(x=>x.gameId===active&&!x.archived);
