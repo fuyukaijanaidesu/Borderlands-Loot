@@ -12,8 +12,8 @@ const catalog={
  updatedAt:"2026-11-08T01:22:03.181332+00:00",
  games:[],
  items:[
-  {id:"bl4-1",gameId:"borderlands-4",category:"Weapons",name:"Alpha Rifle",rarity:"Legendary",manufacturer:"Dahl",elements:["Fire"],sources:["Boss A"],image:"https://cdn.example/alpha.png",url:"https://www.lootlemon.com/alpha",archived:false},
-  {id:"bl4-2",gameId:"borderlands-4",category:"Shields",name:"Beta Shield",rarity:"Epic",manufacturer:"Maliwan",elements:["Shock"],sources:["Boss B"],image:null,url:"https://www.lootlemon.com/beta",archived:false},
+  {id:"bl4-1",gameId:"borderlands-4",category:"Weapons",name:"Alpha Rifle",rarity:"Legendary",manufacturer:"Dahl",type:"Assault Rifle",elements:["Fire"],sources:["Boss A"],image:"https://cdn.example/alpha.png",url:"https://www.lootlemon.com/alpha",archived:false},
+  {id:"bl4-2",gameId:"borderlands-4",category:"Shields",name:"Beta Shield",rarity:"Epic",manufacturer:"Maliwan",type:"Shield Generator",elements:["Shock"],sources:["Boss B"],image:null,url:"https://www.lootlemon.com/beta",archived:false},
   {id:"bl2-1",gameId:"borderlands-2",category:"Weapons",name:"Gamma Gun",rarity:"Pearlescent",archived:false}
  ]
 };
@@ -76,6 +76,27 @@ test("search, category, rarity and missing filters",async()=>{
   x.doc.getElementById("missing").dispatchEvent(new x.w.Event("change"));
   assert.equal(x.doc.querySelectorAll("#items .item").length,1);
   assert.equal(x.doc.querySelector("#items [data-id='bl4-1']"),null);
+ }finally{x.close();}
+});
+
+
+test("manufacturer type and element filters adapt to catalog values",async()=>{
+ const x=await boot();
+ try{
+  assert.deepEqual([...x.doc.getElementById("manufacturer").options].map(o=>o.value).filter(Boolean),["Dahl","Maliwan"]);
+  assert.deepEqual([...x.doc.getElementById("type").options].map(o=>o.value).filter(Boolean),["Assault Rifle","Shield Generator"]);
+  assert.deepEqual([...x.doc.getElementById("element").options].map(o=>o.value).filter(Boolean),["Fire","Shock"]);
+  const manufacturer=x.doc.getElementById("manufacturer");
+  manufacturer.value="Dahl";manufacturer.dispatchEvent(new x.w.Event("change"));
+  assert.equal(x.doc.querySelectorAll("#items .item").length,1);
+  manufacturer.value="";manufacturer.dispatchEvent(new x.w.Event("change"));
+  const type=x.doc.getElementById("type");
+  type.value="Shield Generator";type.dispatchEvent(new x.w.Event("change"));
+  assert.equal(x.doc.querySelector("#items .name").textContent,"Beta Shield");
+  type.value="";type.dispatchEvent(new x.w.Event("change"));
+  const element=x.doc.getElementById("element");
+  element.value="Fire";element.dispatchEvent(new x.w.Event("change"));
+  assert.equal(x.doc.querySelector("#items .name").textContent,"Alpha Rifle");
  }finally{x.close();}
 });
 
