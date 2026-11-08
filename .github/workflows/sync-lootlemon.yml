@@ -27,5 +27,6 @@ jobs:
           git add data/catalog.json backups/
           if ! git diff --cached --quiet; then
             git commit -m "chore: sync Lootlemon catalog"
+            git pull --rebase origin main
             git push
           fi
