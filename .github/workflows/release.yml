@@ -4,35 +4,70 @@ on:
   workflow_dispatch:
     inputs:
       tag_name:
-        description: "Release tag (for example v1.0.0)"
+        description: "Release tag (for example v1.1.0)"
         required: true
-        default: "v1.0.0"
+        default: "v1.1.0"
         type: string
 
 permissions:
   contents: write
 
 jobs:
-  release:
+  validate:
+    name: Validate release candidate
     runs-on: ubuntu-latest
     steps:
       - name: Check out main
         uses: actions/checkout@v4
         with:
           ref: main
-      - name: Build portable source archive
+      - name: Validate release tag
+        env:
+          TAG_NAME: ${{ inputs.tag_name }}
+        run: |
+          if ! [[ "$TAG_NAME" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "Tag must use semantic versioning, for example v1.1.0"
+            exit 1
+          fi
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install UI test dependencies
+        run: npm install --no-save --no-package-lock jsdom@26
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install parser dependencies
+        run: pip install -r requirements.txt
+      - name: Run parser regression tests
+        run: python -m unittest tests.test_sync_lootlemon -v
+      - name: Run UI tests
+        run: node --test tests/app.test.cjs
+
+  release:
+    name: Package and publish
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Build portable ZIP
         env:
           TAG_NAME: ${{ inputs.tag_name }}
         run: |
           zip -r "Borderlands-Loot-${TAG_NAME}.zip" \
             index.html assets data/catalog.json start.bat START_HERE.md README.md \
-            scripts requirements.txt tests \
             -x "*/__pycache__/*" "*.pyc"
-      - name: Create GitHub release
+          unzip -t "Borderlands-Loot-${TAG_NAME}.zip"
+      - name: Publish GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ inputs.tag_name }}
           target_commitish: main
           name: Borderlands Loot ${{ inputs.tag_name }}
           generate_release_notes: true
-          files: Borderlands-Loot-${{ inputs.tag_name }}.zip
+          files: Borderlands-Loot-${TAG_NAME}.zip
