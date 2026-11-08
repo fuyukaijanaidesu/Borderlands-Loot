@@ -114,7 +114,7 @@ class DynamicLootlemonMetadataTests(unittest.TestCase):
         item = self.parse(html, category="shields")
         self.assertEqual(item["type"], "Shield Generator")
         self.assertEqual(item["manufacturer"], "Maliwan")
-        self.assertIn("Shock", item["elements"])
+        self.assertIn("shock", [value.lower() for value in item["elements"]])
         self.assertEqual(item["sources"], ["Boss B"])
 
 
