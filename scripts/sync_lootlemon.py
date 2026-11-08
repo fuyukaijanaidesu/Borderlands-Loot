@@ -121,31 +121,45 @@ def parse_page(url,game,category):
  if not cards:
   inspect_page(url,html)
   raise ValueError("No Lootlemon .db_item.w-dyn-item cards found")
- rarity_names={"common","uncommon","rare","very rare","epic","legendary","pearlescent"}
  def text_of(node):
   return " ".join(node.stripped_strings).strip() if node else ""
+ def clean_values(values):
+  result=[]
+  for value in values:
+   value=re.sub(r"\s+"," ",str(value or "")).strip()
+   if value and value not in result: result.append(value)
+  return result
  def labels_of(node):
   out=[]
   if not node: return out
-  ignored_classes={"db","cell","db cell","image","icon","round","icon round","icon grid",
-                   "w dyn item","w-dyn-item","w-dyn-list","w-dyn-items","element"}
+  ignored={"db","cell","image","icon","round","icon-grid","w-dyn-item","w-dyn-list","w-dyn-items","element"}
   for el in [node,*node.find_all(True)]:
-   for key in ("alt","title","aria-label","data-name","data-filter"):
+   for key in ("alt","title","aria-label","data-name","data-filter","data-value"):
     value=el.get(key)
-    if value and value.strip() not in out: out.append(value.strip())
+    if value: out.extend(re.split(r"\s*[•·,]\s*",str(value)))
    for cls in el.get("class") or []:
-    clean=re.sub(r"[-_]+"," ",cls).strip()
-    if clean and clean.lower() not in ignored_classes and clean not in out:
-     out.append(clean)
-  return out
+    # Preserve semantic value classes such as rarity-mythic and element-radiation.
+    match=re.match(r"^(?:rarity|manufacturer|element|type|content)[-_](.+)$",cls,re.I)
+    if match: out.append(re.sub(r"[-_]+"," ",match.group(1)).strip())
+    elif cls.lower() not in ignored and not re.match(r"^(?:w-|db_)",cls,re.I):
+     if cls.lower() in {"legendary","epic","rare","common","uncommon","pearlescent","seraph","effervescent","glitch","e-tech"}:
+      out.append(cls)
+  return clean_values(out)
  def split_values(node):
   if not node: return []
-  # Lootlemon often renders source names as individual links inside one cell.
-  linked=[text_of(a) for a in node.find_all("a") if text_of(a)]
-  linked=list(dict.fromkeys(linked))
+  linked=clean_values([text_of(a) for a in node.find_all("a")])
   if linked: return linked
-  value=text_of(node)
-  return [x.strip() for x in re.split(r"\s*[•·,]\s*",value) if x.strip()]
+  return clean_values(re.split(r"\s*[•·,]\s*",text_of(node)))
+ def key_name(value):
+  value=re.sub(r"([a-z0-9])([A-Z])",r"\1 \2",str(value or ""))
+  return re.sub(r"[^a-z0-9]+","_",value.lower()).strip("_")
+ def add_attr(attrs,key,values):
+  key=key_name(key)
+  vals=clean_values(values if isinstance(values,(list,tuple,set)) else [values])
+  if not key or not vals: return
+  current=attrs.setdefault(key,[])
+  for value in vals:
+   if value not in current: current.append(value)
  for card in cards:
   cells=[]
   for node in card.select(".db_cell"):
@@ -178,69 +192,106 @@ def parse_page(url,game,category):
   idx=cells.index(title_cell) if title_cell in cells else -1
   before=cells[:idx] if idx>=0 else []
   after=cells[idx+1:] if idx>=0 else []
-  # Rarity is often represented by a CSS class or an accessibility/data
-  # attribute rather than visible text. Inspect the complete card, not only
-  # cells preceding the name (the DOM column order can differ by game).
-  rarity=None
-  rarity_pattern=re.compile(
-   r"(?<![a-z])(effervescent|pearlescent|very[-_ ]?rare|legendary|seraph|e[-_ ]?tech|glitch|epic|uncommon|common|rare)(?![a-z])",
-   re.I
-  )
+  attributes={}
+  semantic_values={"rarity":[],"manufacturer":[],"element":[],"type":[],"content":[],"source":[]}
+  rarity=None; manufacturer=type_value=content=None; elements=[]; sources=[]
+  metadata=[]
+  for cell in cells:
+   if cell is title_cell or "image" in (cell.get("class") or []): continue
+   value=text_of(cell)
+   if value and value not in metadata: metadata.append(value)
+   classes=cell.get("class") or []
+   labels=[str(cell.get(k)) for k in ("data-label","data-field","data-type","aria-label","title") if cell.get(k)]
+   labels.extend(classes)
+   semantic=" ".join(labels).lower()
+   # Read all data attributes, retaining fields the scraper does not yet understand.
+   for attr,val in cell.attrs.items():
+    if attr.startswith("data-") and attr not in {"data-src","data-lazy-src","data-original","data-srcset"}:
+     add_attr(attributes,attr[5:],val if isinstance(val,list) else [val])
+   for child in [cell,*cell.find_all(True)]:
+    for attr in ("data-rarity","data-quality","data-tier","data-manufacturer","data-element","data-type","data-content","data-source"):
+     if child.get(attr):
+      field=attr[5:]
+      add_attr(attributes,field,child.get(attr))
+      if field in semantic_values: semantic_values[field].extend(clean_values([child.get(attr)]))
+    for cls in child.get("class") or []:
+     match=re.match(r"^(rarity|manufacturer|element|type|content)[-_](.+)$",cls,re.I)
+     if match:
+      field=match.group(1).lower()
+      val=re.sub(r"[-_]+"," ",match.group(2)).strip()
+      semantic_values[field].append(val)
+      add_attr(attributes,field,val)
+   if value:
+    for field in semantic_values:
+     if re.search(r"\b"+field+r"\b",semantic):
+      semantic_values[field].extend(split_values(cell))
+      add_attr(attributes,field,split_values(cell))
+    # Explicit labels/data keys become generic structured attributes too.
+    for label in labels:
+     if label and label.lower() not in {"db_cell","cell","large"}:
+      if re.search(r"\b(rarity|manufacturer|element|type|content|source)\b",label,re.I):
+       field=re.search(r"(rarity|manufacturer|element|type|content|source)",label,re.I).group(1).lower()
+       semantic_values[field].extend(split_values(cell))
+       add_attr(attributes,field,split_values(cell))
+      elif label.startswith("data-"):
+       add_attr(attributes,label[5:],split_values(cell))
+  for field in semantic_values:
+   semantic_values[field]=clean_values(semantic_values[field])
+  # Rarity is no longer an allow-list: any explicit Lootlemon rarity value is valid.
   rarity_candidates=[]
   for el in [card,*card.find_all(True)]:
-   for key in ("data-rarity","data-quality","data-tier","aria-label","title","alt","data-name","data-filter"):
-    value=el.get(key)
-    if value: rarity_candidates.append(str(value))
-   rarity_candidates.extend(el.get("class") or [])
-   style=el.get("style","")
-   if "rarity" in style.lower(): rarity_candidates.append(style)
-  # Prefer explicit rarity-labelled attributes/classes over incidental text.
-  for value in rarity_candidates:
-   match=rarity_pattern.search(str(value).replace("_"," ").replace("-"," "))
-   if match:
-    rarity=re.sub(r"\s+"," ",match.group(1).replace("-"," ")).title()
-    break
-  if rarity is None:
+   for key in ("data-rarity","data-quality","data-tier"):
+    if el.get(key): rarity_candidates.extend(clean_values([el.get(key)]))
+   for cls in el.get("class") or []:
+    match=re.match(r"^rarity[-_](.+)$",cls,re.I)
+    if match: rarity_candidates.append(re.sub(r"[-_]+"," ",match.group(1)).strip())
+  rarity_candidates.extend(semantic_values["rarity"])
+  if not rarity_candidates:
+   # Legacy Lootlemon layouts: rarity is commonly a compact leading cell or a rarity CSS class.
    for c in before:
-    for value in (text_of(c),*labels_of(c)):
-     match=rarity_pattern.search(value)
-     if match:
-      rarity=match.group(1).replace("-"," ").title()
-      break
-    if rarity: break
+    rarity_candidates.extend(labels_of(c))
+    if text_of(c): rarity_candidates.extend(re.split(r"\s*[•·]\s*",text_of(c)))
+  rarity=next((x for x in clean_values(rarity_candidates) if x.lower() not in {"rarity","quality","tier"}),None)
+  # Semantic fields win; positional fallbacks preserve compatibility with current Lootlemon pages.
+  manufacturer=next(iter(semantic_values["manufacturer"]),None)
+  type_value=next(iter(semantic_values["type"]),None)
+  content=next(iter(semantic_values["content"]),None)
+  elements=semantic_values["element"]
+  sources=semantic_values["source"]
   values=[text_of(c) for c in after if text_of(c)]
-  metadata=[]
-  for c in cells:
-   if c is title_cell or "image" in (c.get("class") or []): continue
-   v=text_of(c)
-   if v and v not in metadata: metadata.append(v)
-  cat=label(category); type_value=manufacturer=content=None; elements=[]; sources=[]
+  cat=label(category)
   if cat=="Weapons":
-   if len(after)>0: type_value=text_of(after[0]) or None
-   if len(after)>1: manufacturer=text_of(after[1]) or None
-   if len(after)>2: elements=labels_of(after[2])
-   if len(after)>3: content=text_of(after[3]) or None
-   if len(after)>4: sources=split_values(after[4])
+   if not type_value and len(after)>0: type_value=text_of(after[0]) or None
+   if not manufacturer and len(after)>1: manufacturer=text_of(after[1]) or None
+   if not elements and len(after)>2: elements=labels_of(after[2])
+   if not content and len(after)>3: content=text_of(after[3]) or None
+   if not sources and len(after)>4: sources=split_values(after[4])
   else:
    for c in after:
     cls=" ".join(c.get("class") or []).lower(); v=text_of(c)
-    if "content" in cls and v: content=v
-    if "source" in cls and v: sources=split_values(c)
-    if "element" in cls: elements=labels_of(c)
-   for v in values:
-    low=v.lower()
-    if not type_value and any(t in low for t in ("assault rifle","pistol","shotgun","smg","sniper","launcher")):
-     type_value=v
-  known={"daedalus","jakobs","maliwan","order","ripper","tediore","torgue","vladof","bandit","dahl","hyperion","s&s","atlas","cov","eridian","pangolin"}
+    if not content and "content" in cls and v: content=v
+    if not sources and "source" in cls and v: sources=split_values(c)
+    if not elements and "element" in cls: elements=labels_of(c)
+   if not type_value:
+    type_value=next((v for v in values if re.search(r"\b(assault rifle|pistol|shotgun|smg|sniper|launcher)\b",v,re.I)),None)
+  # Keep the old known-manufacturer fallback, but also accept unknown names from an explicit field.
   if not manufacturer:
+   known={"daedalus","jakobs","maliwan","order","ripper","tediore","torgue","vladof","bandit","dahl","hyperion","s&s","atlas","cov","eridian","pangolin"}
    manufacturer=next((v for v in values if any(part.strip().lower() in known for part in re.split(r"\s*[|,/]+\s*",v))),None)
   if not content: content=next((v for v in values if v.lower() in {"base game","dlc","vault card","gilded glory pack","vault of the damned"}),None)
+  # Preserve unknown labeled fields, including fields introduced by future game releases.
+  tags=[]
+  for field,vals in attributes.items():
+   tags.extend(vals)
+  tags=clean_values([*tags,*elements])
   clean_name=re.sub(r"\s+"," ",name).strip().casefold()
+  # IMPORTANT: identity formula intentionally unchanged to preserve existing collected progress.
   identity=f"{game}|{category}|{href}" if href else f"{game}|{category}|{clean_name}"
   ident=hashlib.sha1(identity.encode("utf-8")).hexdigest()[:20]
   found.append({"id":ident,"gameId":game,"category":cat,"name":name,"type":type_value,
    "rarity":rarity,"manufacturer":manufacturer,"content":content,"elements":elements,
-   "sources":sources,"metadata":metadata,"image":image,"url":href,"archived":False})
+   "sources":sources,"metadata":metadata,"attributes":attributes,"tags":tags,
+   "image":image,"url":href,"archived":False})
  if not found:
   inspect_page(url,html)
   print("DIAG first_card_html=",cards[0].prettify()[:3200],file=sys.stderr)
