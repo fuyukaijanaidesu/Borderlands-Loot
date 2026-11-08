@@ -24,7 +24,7 @@ The GitHub Actions workflow runs the scraper daily and can also be started manua
 
 The scraper is deliberately conservative: it only adds records it can identify, retains existing records when a page cannot be parsed, and writes a sync report. Lootlemon markup changes may require parser updates. Review the generated diff after the first run.
 
-## New loot notifications
+## Lootlemon rarity and element display\n\nLootlemon rarity codes (for example `d-epic` and `f-legendary`) are normalized to the corresponding title colors. Element aliases such as `lightning`, `poison`, and `frost` are displayed with their matching Shock, Corrosive, and Cryo badges.\n\n## New loot notifications
 
 When a refreshed catalog contains previously unseen items, the tracker displays a persistent in-app notice with the names of new entries. The notice can be dismissed; it does not request browser notification permissions. The first catalog load establishes a baseline and does not generate a false alert.
 
