@@ -269,6 +269,12 @@ def parse_page(url,game,category):
    if not elements and len(after)>2: elements=labels_of(after[2])
    if not content and len(after)>3: content=text_of(after[3]) or None
    if not sources and len(after)>4: sources=split_values(after[4])
+  elif cat in {"Shields","Ordnance"}:
+   if not type_value and len(after)>0: type_value=text_of(after[0]) or None
+   if not manufacturer and len(after)>1: manufacturer=text_of(after[1]) or None
+   if not elements and len(after)>2: elements=labels_of(after[2])
+   if not content and len(after)>3: content=text_of(after[3]) or None
+   if not sources and len(after)>4: sources=split_values(after[4])
   else:
    for c in after:
     cls=" ".join(c.get("class") or []).lower(); v=text_of(c)
