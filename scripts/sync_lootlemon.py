@@ -107,36 +107,105 @@ def label(slug):
 
 def parse_page(url,game,category):
  html=get(url)
- soup=BeautifulSoup(html,"html.parser"); found=[]
- for table in soup.find_all("table"):
-  rows=table.find_all("tr")
-  if len(rows)<2: continue
-  headers=[" ".join(c.stripped_strings).lower() for c in rows[0].find_all(["th","td"])]
-  if not any("name" in h for h in headers): continue
-  ni=next(i for i,h in enumerate(headers) if "name" in h)
-  for row in rows[1:]:
-   cells=row.find_all(["td","th"])
-   if len(cells)<=ni: continue
-   cell=cells[ni]; link=cell.find("a",href=True)
-   name=link.get_text(" ",strip=True) if link else cell.get_text(" ",strip=True)
-   if not name or name.lower()=="name": continue
-   vals={headers[i]:" ".join(c.stripped_strings) for i,c in enumerate(cells[:len(headers)])}
-   def val(*keys):
-    return next((v for k,v in vals.items() if any(x in k for x in keys) and v),None)
-   img=row.find("img"); image=None
-   if img:
-    image=img.get("data-src") or img.get("data-lazy-src") or img.get("data-original") or img.get("src")
-    if image and image.startswith("data:"): image=img.get("data-src") or img.get("data-lazy-src")
-    if image: image=urljoin(BASE,image)
-   href=urljoin(BASE,link["href"]) if link else url
-   ident=hashlib.sha1(f"{game}|{category}|{href}".encode()).hexdigest()[:20]
-   found.append({"id":ident,"gameId":game,"category":label(category),"name":name,
-    "type":val("weapon type","item type","type"),"rarity":val("rarity"),
-    "manufacturer":val("manufacturer","manu-"),"content":val("content"),
-    "image":image,"url":href,"archived":False})
+ soup=BeautifulSoup(html,"html.parser")
+ found=[]
+ cards=soup.select(".db_item.w-dyn-item")
+ if not cards:
+  inspect_page(url,html)
+  raise ValueError("No Lootlemon .db_item.w-dyn-item cards found")
+
+ for card in cards:
+  # Lootlemon uses Webflow collection cards, not HTML table rows.
+  # Keep only db_cell elements whose closest db_cell parent is the card.
+  cells=[]
+  for node in card.select(".db_cell"):
+   parent=node.parent
+   nested=False
+   while parent is not None and parent is not card:
+    if parent in cells:
+     nested=True
+     break
+    parent=parent.parent
+   if not nested:
+    cells.append(node)
+
+  def cell_text(node):
+   return " ".join(node.stripped_strings).strip()
+
+  # The item title is in the prominent large text cell; the overlay link
+  # on the same card carries the canonical item URL.
+  title_cell=next((c for c in cells if "large" in (c.get("class") or []) and
+                   "image" not in (c.get("class") or []) and cell_text(c)),None)
+  if title_cell is None:
+   title_cell=next((c for c in cells if cell_text(c) and
+                    not ({"image","icon-grid","sources-cell"} & set(c.get("class") or []))),None)
+  name=cell_text(title_cell) if title_cell else ""
+  if not name:
+   continue
+
+  item_link=None
+  for a in card.select("a[href]"):
+   href=urljoin(BASE,a.get("href",""))
+   path=urlparse(href).path
+   if path.startswith("/") and path != urlparse(url).path and "/db/" not in path:
+    item_link=a
+    break
+  if item_link is None:
+   # Most collection cards have an overlay link with the item's slug.
+   item_link=card.select_one("a.link-overlay[href]")
+  href=urljoin(BASE,item_link["href"]) if item_link else url
+
+  # Extract remaining cells in DOM order. The first prominent text cell is
+  # the name; other non-image cells contain type/manufacturer/content metadata.
+  metadata=[]
+  for c in cells:
+   classes=set(c.get("class") or [])
+   if c is title_cell or {"image","icon-grid","sources-cell"} & classes:
+    continue
+   value=cell_text(c)
+   if value and value != name and value not in metadata:
+    metadata.append(value)
+
+  image=None
+  image_node=card.select_one(".db_cell.image img, .db_cell.image source, img")
+  if image_node:
+   image=(image_node.get("src") or image_node.get("data-src") or
+          image_node.get("data-lazy-src") or image_node.get("data-original") or
+          image_node.get("srcset","").split(" ")[0])
+   if image and image.startswith("data:"):
+    image=(image_node.get("data-src") or image_node.get("data-lazy-src") or
+           image_node.get("data-original"))
+   if image:
+    image=urljoin(BASE,image)
+
+  rarity=None
+  rarity_node=card.select_one("[class*=rarity], [class*=legendary]")
+  if rarity_node:
+   rarity=cell_text(rarity_node) or next(iter(rarity_node.get("class") or []),None)
+
+  # Column positions vary by game/category. Preserve the source values while
+  # assigning the common weapon fields when their labels are recognizable.
+  type_value=None
+  manufacturer=None
+  for value in metadata:
+   low=value.lower()
+   if any(token in low for token in ("assault rifle","pistol","shotgun","smg","sniper","launcher")):
+    type_value=value
+   if value in {"Daedalus","Jakobs","Maliwan","Order","Ripper","Tediore","Torgue","Vladof",
+                "Bandit","Dahl","Hyperion","S&S","Tediore","Torgue","Vladof","Anshin",
+                "Atlas","COV","Eridian","Pangolin","Vladof"}:
+    manufacturer=value
+
+  ident=hashlib.sha1(f"{game}|{category}|{href}".encode()).hexdigest()[:20]
+  found.append({"id":ident,"gameId":game,"category":label(category),"name":name,
+   "type":type_value,"rarity":rarity,"manufacturer":manufacturer,
+   "content":None,"image":image,"url":href,"archived":False})
+
  if not found:
   inspect_page(url,html)
-  raise ValueError("No recognizable item rows (see DIAG output above)")
+  sample=cards[0].prettify()[:2400]
+  print("DIAG first_card_html=",sample,file=sys.stderr)
+  raise ValueError("Lootlemon cards found, but item names could not be extracted")
  return found,soup
 
 def parse_route(url,game,category):
