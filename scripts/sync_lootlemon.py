@@ -210,11 +210,12 @@ def parse_page(url,game,category):
     if attr.startswith("data-") and attr not in {"data-src","data-lazy-src","data-original","data-srcset"}:
      add_attr(attributes,attr[5:],val if isinstance(val,list) else [val])
    for child in [cell,*cell.find_all(True)]:
-    for attr in ("data-rarity","data-quality","data-tier","data-manufacturer","data-element","data-type","data-content","data-source"):
-     if child.get(attr):
+    # Preserve every data-* attribute, including new fields unknown to this scraper.
+    for attr,val in child.attrs.items():
+     if attr.startswith("data-") and attr not in {"data-src","data-lazy-src","data-original","data-srcset"}:
       field=attr[5:]
-      add_attr(attributes,field,child.get(attr))
-      if field in semantic_values: semantic_values[field].extend(clean_values([child.get(attr)]))
+      add_attr(attributes,field,val)
+      if field in semantic_values: semantic_values[field].extend(clean_values(val if isinstance(val,list) else [val]))
     for cls in child.get("class") or []:
      match=re.match(r"^(rarity|manufacturer|element|type|content)[-_](.+)$",cls,re.I)
      if match and match.group(2).lower() not in {"cell","field","wrapper","container","badge","label","value"}:
