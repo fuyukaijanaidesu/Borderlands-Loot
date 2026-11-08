@@ -298,7 +298,7 @@ def parse_page(url,game,category):
    if not type_value and len(after)>0: type_value=text_of(after[0]) or None
    if not manufacturer and len(after)>1: manufacturer=text_of(after[1]) or None
    if not elements and len(after)>2: elements=labels_of(after[2])
-   if len(after)>3 and text_of(after[3]): content=text_of(after[3])
+   if not content and len(after)>3: content=text_of(after[3]) or None
    if not sources and len(after)>4: sources=split_values(after[4])
   elif cat in {"Shields","Ordnance","Grenades","Grenade Mods","Wards","Spells","Spellbooks","Melee Weapons"}:
    if not type_value and len(after)>0: type_value=text_of(after[0]) or None
@@ -308,13 +308,13 @@ def parse_page(url,game,category):
    if not sources and len(after)>4: sources=split_values(after[4])
   elif cat in {"Artifacts","Relics"}:
    if not type_value and len(after)>0: type_value=text_of(after[0]) or None
-   if len(after)>1 and text_of(after[1]): content=text_of(after[1])
+   if not content and len(after)>1: content=text_of(after[1]) or None
    if not sources and len(after)>2: sources=split_values(after[2])
   elif cat=="Rings & Amulets":
    explicit_item_type=next((value for value in [*semantic_values["item_type"],*semantic_values["type"],*attributes.get("item_type",[]),*attributes.get("type",[]),*(text_of(c) for c in after)] if re.match(r"^(ring|amulet)(?:[-_].*)?$",value.casefold())),None)
    visible_item_type=any(text_of(c).casefold() in {"ring","amulet"} for c in after)
    content_index=2 if visible_item_type and len(after)>2 else 1
-   if len(after)>content_index and text_of(after[content_index]): content=text_of(after[content_index])
+   if not content and len(after)>content_index: content=text_of(after[content_index]) or None
    if not sources and len(after)>content_index+1: sources=split_values(after[content_index+1])
   elif cat=="Armor":
    # Wonderlands Armor cards list manufacturer, content, and sources only.
@@ -324,7 +324,7 @@ def parse_page(url,game,category):
   elif cat=="Oz Kits":
    if not type_value and len(after)>0: type_value=text_of(after[0]) or None
    if not elements and len(after)>1: elements=labels_of(after[1])
-   if len(after)>2 and text_of(after[2]): content=text_of(after[2])
+   if not content and len(after)>2: content=text_of(after[2]) or None
    if not sources and len(after)>3: sources=split_values(after[3])
   elif cat in {"Repkits","Enhancements"}:
    if not manufacturer and len(after)>0: manufacturer=text_of(after[0]) or None
@@ -348,6 +348,12 @@ def parse_page(url,game,category):
     if not elements and "element" in cls: elements=labels_of(c)
    if not type_value:
     type_value=next((v for v in values if re.search(r"\b(assault rifle|pistol|shotgun|smg|sniper|launcher)\b",v,re.I)),None)
+  # Prefer readable content labels from the visible Lootlemon content cell over
+  # internal data-* slugs such as "base-game-tps".
+  if content and re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*",content):
+   content_cell=next((c for c in cells if "content" in " ".join(c.get("class") or []).lower() and text_of(c)),None)
+   if content_cell: content=text_of(content_cell)
+   elif content.casefold().startswith("base-game"): content="Base Game"
   # Keep the old known-manufacturer fallback, but also accept unknown names from an explicit field.
   if not manufacturer:
    known={"daedalus","jakobs","maliwan","order","ripper","tediore","torgue","vladof","bandit","dahl","hyperion","s&s","atlas","cov","eridian","pangolin"}
