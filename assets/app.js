@@ -1,6 +1,6 @@
 (()=> {
  const $=id=>document.getElementById(id);
- const KEYS={progress:"bl-loot-progress-v1",settings:"bl-loot-settings-v1",history:"bl-loot-backups-v1",lastCatalog:"bl-loot-last-catalog-v1",override:"bl-loot-catalog-override-v1",forceOverride:"bl-loot-force-catalog-override-v1"};
+ const KEYS={newItems:"bl-loot-new-items-v1",progress:"bl-loot-progress-v1",settings:"bl-loot-settings-v1",history:"bl-loot-backups-v1",lastCatalog:"bl-loot-last-catalog-v1",override:"bl-loot-catalog-override-v1",forceOverride:"bl-loot-force-catalog-override-v1"};
  const GAMES=[["borderlands-1","Borderlands"],["borderlands-2","Borderlands 2"],["borderlands-tps","The Pre-Sequel"],["borderlands-3","Borderlands 3"],["wonderlands","Tiny Tina's Wonderlands"],["borderlands-4","Borderlands 4"]];
  let db={games:[],items:[]},done={},active="borderlands-4";
  const defaults={search:"",category:"",rarity:"",manufacturer:"",type:"",element:"",sort:"name",missing:false};
@@ -10,6 +10,16 @@
  settings={...defaults,...read(KEYS.settings,{})};
  backupHistory=read(KEYS.history,[]);
  const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+ const ELEMENTS={
+  fire:{icon:"🔥",label:"Огонь",className:"fire"},incendiary:{icon:"🔥",label:"Огонь",className:"fire"},
+  shock:{icon:"⚡",label:"Шок",className:"shock"},electric:{icon:"⚡",label:"Шок",className:"shock"},
+  corrosive:{icon:"☣",label:"Коррозия",className:"corrosive"},
+  cryo:{icon:"❄",label:"Крио",className:"cryo"},ice:{icon:"❄",label:"Крио",className:"cryo"},
+  radiation:{icon:"☢",label:"Радиация",className:"radiation"},
+  explosive:{icon:"💥",label:"Взрыв",className:"explosive"},kinetic:{icon:"◉",label:"Кинетика",className:"kinetic"},
+  slag:{icon:"✦",label:"Шлак",className:"slag"},"dark magic":{icon:"✧",label:"Тёмная магия",className:"dark-magic"}
+ };
+ const elementInfo=value=>ELEMENTS[String(value||"").toLowerCase().replace(/[-_]+/g," ").trim()]||{icon:"✧",label:value,className:"unknown"};
  const rarityClass=value=>"rarity-"+String(value||"unknown").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
  const games=()=>{let a=GAMES.map(([id,name])=>({id,name}));(db.games||[]).forEach(g=>{if(!a.some(x=>x.id===g.id))a.push(g)});return a};
  const items=()=>db.items.filter(x=>x.gameId===active&&!x.archived);
@@ -57,6 +67,7 @@
  function render(){
   let gs=games(),g=gs.find(x=>x.id===active)||gs[0];if(!g)return;
   let a=items(),st=stats(a);
+  renderNewItemsNotice();
   $("game-title").textContent=g.name;$("game-label").textContent=g.name.toUpperCase();$("game-desc").textContent="Каталог предметов";
   $("game-pct").textContent=(st.t?Math.round(st.n/st.t*100):0)+"%";$("game-count").textContent=st.n+" / "+st.t+" собрано";
   $("games").innerHTML=gs.map(x=>'<button data-game="'+esc(x.id)+'" class="'+(x.id===active?"active":"")+'">'+esc(x.name)+'</button>').join("");
@@ -80,11 +91,21 @@
    return x.name.localeCompare(y.name);
   });
   $("shown").textContent=shown.length+" из "+a.length+" предметов";$("updated").textContent=db.updatedAt?"Обновлено: "+new Date(db.updatedAt).toLocaleDateString("ru-RU"):"Источник: Lootlemon";
-  $("items").innerHTML=shown.map(x=>'<article class="item '+(done[x.id]?"collected":"")+'"><div class="picture">'+(x.image?'<img loading="lazy" src="'+esc(x.image)+'" alt="'+esc(x.name)+'" onerror="this.remove()">':'<span class="placeholder">◇</span>')+'</div><div class="card-body"><div class="cat">'+esc(x.category||"Предмет")+'</div><div class="name '+rarityClass(x.rarity)+'">'+esc(x.name)+'</div><div class="tags">'+[x.rarity,x.manufacturer,x.type,x.content,...(x.elements||[]),...(x.tags||[]),...Object.values(x.attributes||{}).flat()].filter((v,i,a)=>a.indexOf(v)===i).filter(Boolean).map(v=>'<span class="tag">'+esc(v)+'</span>').join("")+'</div><div class="item-foot">'+(x.url?'<a href="'+esc(x.url)+'" target="_blank" rel="noopener">Lootlemon ↗</a>':'<span></span>')+'<button data-id="'+esc(x.id)+'" class="'+(done[x.id]?"done":"")+'">'+(done[x.id]?"✓ Собрано":"+ Собрал")+'</button></div></div></article>').join("");
+  $("items").innerHTML=shown.map(x=>'<article class="item '+(done[x.id]?"collected":"")+'"><div class="picture">'+(x.image?'<img loading="lazy" src="'+esc(x.image)+'" alt="'+esc(x.name)+'" onerror="this.remove()">':'<span class="placeholder">◇</span>')+'</div><div class="card-body"><div class="cat">'+esc(x.category||"Предмет")+'</div><div class="name '+rarityClass(x.rarity)+'">'+esc(x.name)+'</div><div class="tags">'+[x.rarity,x.manufacturer,x.type,x.content,...(x.tags||[]),...Object.values(x.attributes||{}).flat()].filter((v,i,a)=>a.indexOf(v)===i).filter(Boolean).map(v=>'<span class="tag">'+esc(v)+'</span>').join("")+'</div>'+(x.elements&&x.elements.length?'<div class="element-icons" aria-label="Стихии">'+x.elements.map(el=>{const info=elementInfo(el);return '<span class="element-icon element-'+esc(info.className)+'" title="'+esc(info.label)+'" aria-label="'+esc(info.label)+'"><i>'+info.icon+'</i><small>'+esc(el)+'</small></span>'}).join("")+'</div>':'')+'<div class="item-foot">'+(x.url?'<a href="'+esc(x.url)+'" target="_blank" rel="noopener">Lootlemon ↗</a>':'<span></span>')+'<button data-id="'+esc(x.id)+'" class="'+(done[x.id]?"done":"")+'">'+(done[x.id]?"✓ Собрано":"+ Собрал")+'</button></div></div></article>').join("");
   $("items").querySelectorAll("[data-id]").forEach(b=>b.onclick=()=>{let id=b.dataset.id;if(done[id])delete done[id];else done[id]=true;persist();render()});
   $("empty").hidden=shown.length>0;
   let all=db.items.filter(x=>!x.archived),total=stats(all),pct=total.t?Math.round(total.n/total.t*100):0;
   $("all-pct").textContent=pct+"%";$("all-bar").style.width=pct+"%";$("all-count").textContent=total.n+" из "+total.t+" предметов";
+ }
+ function renderNewItemsNotice(){
+  const notice=$("new-items-notice");if(!notice)return;
+  const pending=read(KEYS.newItems,[]);
+  if(!pending.length){notice.hidden=true;return;}
+  notice.hidden=false;
+  const names=pending.slice(0,5).map(x=>x.name);
+  const rest=pending.length>5?" и ещё "+(pending.length-5):"";
+  notice.innerHTML='<span><b>Новый лут в каталоге: '+pending.length+'</b> — '+names.map(esc).join(", ")+rest+'</span><button type="button" id="dismiss-new-items" aria-label="Скрыть уведомление">×</button>';
+  $("dismiss-new-items").onclick=()=>{localStorage.removeItem(KEYS.newItems);notice.hidden=true;};
  }
  function bindSettings(){
   $("search").addEventListener("input",()=>{settings.search=$("search").value;persist();render()});
@@ -104,6 +125,11 @@
    if(forced&&previous&&fresh.updatedAt===previous.updatedAt&&localOverride){db=localOverride;}
    else{
     if(forced)localStorage.removeItem(KEYS.forceOverride);
+    if(previous&&Array.isArray(previous.items)){
+     const known=new Set(previous.items.map(x=>x.id));
+     const added=fresh.items.filter(x=>!known.has(x.id)&&!x.archived).map(x=>({id:x.id,name:x.name,gameId:x.gameId,category:x.category,rarity:x.rarity}));
+     if(added.length){const pending=read(KEYS.newItems,[]),pendingIds=new Set(pending.map(x=>x.id));localStorage.setItem(KEYS.newItems,JSON.stringify([...added.filter(x=>!pendingIds.has(x.id)),...pending].slice(0,100)));}
+    }
     if(previous&&previous.updatedAt&&fresh.updatedAt&&previous.updatedAt!==fresh.updatedAt)snapshot("automatic-before-catalog-sync");
     db=fresh;
    }
