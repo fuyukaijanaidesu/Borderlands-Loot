@@ -104,16 +104,17 @@
   let rs=uniqueValues(a.map(x=>x.rarity)).sort((x,y)=>rarityLabel(x).localeCompare(rarityLabel(y)));
   let makers=uniqueValues(a.flatMap(x=>asList(x.manufacturer))).sort();
   let types=uniqueValues(a.flatMap(x=>asList(x.type))).sort();
-  let elements=[...new Set(a.flatMap(x=>asList(x.elements)))].sort();
+  let elements=uniqueValues(a.flatMap(x=>asList(x.elements))).sort((x,y)=>elementInfo(x).label.localeCompare(elementInfo(y).label));
+  elements=elements.filter((value,index,list)=>list.findIndex(other=>normalized(elementInfo(other).label)===normalized(elementInfo(value).label))===index);
   let contents=uniqueValues(a.flatMap(contentValues)).sort((x,y)=>{const rank=v=>/^base game$/i.test(v)?0:/^event$/i.test(v)?1:2;return rank(x)-rank(y)||x.localeCompare(y)});
   let sources=uniqueValues(a.flatMap(sourcesOf)).sort((x,y)=>x.localeCompare(y));
-  const fillSelect=(id,values,placeholder)=>{const current=settings[id];$(id).innerHTML='<option value="">'+placeholder+'</option>'+values.map(x=>'<option value="'+esc(x)+'">'+esc(x)+'</option>').join("");$(id).value=values.includes(current)?current:"";};
-  fillSelect("rarity",rs,"Любая редкость");
-  fillSelect("manufacturer",makers,"Любой производитель");fillSelect("type",types,"Любой тип");fillSelect("element",elements,"Любой элемент");fillSelect("content",contents,"Весь контент");fillSelect("source",sources,"Любой источник");
+  const fillSelect=(id,values,placeholder,format=value=>value)=>{const current=settings[id],selected=values.includes(current)?current:"";$(id).innerHTML='<option value="">'+placeholder+'</option>'+values.map(x=>'<option value="'+esc(x)+'">'+esc(format(x))+'</option>').join("");$(id).value=selected;settings[id]=selected;};
+  fillSelect("rarity",rs,"Любая редкость",rarityLabel);
+  fillSelect("manufacturer",makers,"Любой производитель");fillSelect("type",types,"Любой тип");fillSelect("element",elements,"Любой элемент",value=>elementInfo(value).label);fillSelect("content",contents,"Весь контент");fillSelect("source",sources,"Любой источник");
   $("search").value=settings.search;$("sort").value=settings.sort;$("missing").checked=!!settings.missing;$("move-collected").checked=settings.moveCollectedToBottom!==false;
   let q=settings.search.toLowerCase().trim(),rar=$("rarity").value;
   let maker=$("manufacturer").value,type=$("type").value,element=$("element").value,content=$("content").value,source=$("source").value;
-  let shown=a.filter(x=>(!q||[x.name,x.category,x.manufacturer,x.type,x.description,...asList(x.elements),...sourcesOf(x),contentOf(x),...(x.tags||[]),...Object.values(x.attributes||{}).flat()].join(" ").toLowerCase().includes(q))&&(!rar||normalized(x.rarity)===normalized(rar))&&(!maker||normalized(x.manufacturer)===normalized(maker))&&(!type||normalized(x.type)===normalized(type))&&(!element||asList(x.elements).some(v=>normalized(v)===normalized(element)))&&(!content||contentValues(x).some(v=>normalized(v)===normalized(content)))&&(!source||sourcesOf(x).some(v=>normalized(v)===normalized(source)))&&(!settings.missing||!done[x.id]));
+  let shown=a.filter(x=>(!q||[x.name,x.category,x.manufacturer,x.type,x.description,...asList(x.elements),...sourcesOf(x),...contentValues(x),...asList(x.tags),...Object.values(x.attributes||{}).flat()].join(" ").toLowerCase().includes(q))&&(!rar||normalized(x.rarity)===normalized(rar))&&(!maker||normalized(x.manufacturer)===normalized(maker))&&(!type||normalized(x.type)===normalized(type))&&(!element||asList(x.elements).some(v=>normalized(elementInfo(v).label)===normalized(elementInfo(element).label)))&&(!content||contentValues(x).some(v=>normalized(v)===normalized(content)))&&(!source||sourcesOf(x).some(v=>normalized(v)===normalized(source)))&&(!settings.missing||!done[x.id]));
   shown.sort((x,y)=>{
    if(settings.moveCollectedToBottom){
     const collected=Number(!!done[x.id])-Number(!!done[y.id]);
