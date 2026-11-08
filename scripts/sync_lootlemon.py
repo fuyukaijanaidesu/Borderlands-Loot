@@ -357,6 +357,25 @@ def parse_page(url,game,category):
    known={"daedalus","jakobs","maliwan","order","ripper","tediore","torgue","vladof","bandit","dahl","hyperion","s&s","atlas","cov","eridian","pangolin"}
    manufacturer=next((v for v in values if any(part.strip().lower() in known for part in re.split(r"\s*[|,/]+\s*",v))),None)
   if not content: content=next((v for v in values if v.lower() in {"base game","dlc","vault card","gilded glory pack","vault of the damned"}),None)
+  if content:
+   content_slug=re.sub(r"[^a-z0-9]+","-",content.casefold()).strip("-")
+   content_labels={
+    "gluttons-gamble-mini-dlc":"G. Gamble",
+    "coiled-captors":"Coiled Captors",
+    "molten-mirrors":"Molten Mirrors",
+    "shattering-spectreglass":"Shattering Spectreglass",
+    "general-knoxx":"General Knoxx",
+    "digistruct-peak":"Digistruct Peak",
+    "dragon-keep":"Dragon Keep",
+    "gilded-glory-pack":"Gilded Glory Pack",
+    "vault-of-the-damned":"Vault of the Damned",
+    "holodome":"Holodome"
+   }
+   if content_slug.startswith("base-game"): content="Base Game"
+   elif content_slug in content_labels: content=content_labels[content_slug]
+   else:
+    dlc_match=re.fullmatch(r"dlc-?(\\d+)",content_slug)
+    if dlc_match: content=f"DLC {dlc_match.group(1)}"
   # Preserve unknown labeled fields, including fields introduced by future game releases.
   tags=[]
   for field,vals in attributes.items():
