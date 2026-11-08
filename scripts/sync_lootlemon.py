@@ -51,14 +51,19 @@ def load():
   raise RuntimeError("Unexpected catalog structure; refusing to overwrite")
  return data
 
-def backup():
+def backup(old_catalog=None, reason="before-sync"):
  if not CATALOG.exists(): return
  BACKUPS.mkdir(parents=True,exist_ok=True)
- path=BACKUPS/("catalog-"+datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ")+".json")
- path.write_bytes(CATALOG.read_bytes())
- copies=sorted(BACKUPS.glob("catalog-*.json"))
- for old in copies[:-30]: old.unlink()
- print("Backup:",path.relative_to(ROOT))
+ stamp=datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ")
+ path=BACKUPS/("backup-"+stamp+".json")
+ snapshot={"backupVersion":1,"createdAt":datetime.now(timezone.utc).isoformat(),
+           "reason":reason,"catalog":old_catalog if old_catalog is not None else load()}
+ tmp=path.with_suffix(".tmp")
+ tmp.write_text(json.dumps(snapshot,ensure_ascii=False,separators=(",",":")),encoding="utf-8")
+ tmp.replace(path)
+ copies=sorted(BACKUPS.glob("backup-*.json"))
+ for old_path in copies[:-30]: old_path.unlink()
+ print("Full catalog backup:",path.relative_to(ROOT))
 
 def discover():
  # Lootlemon's homepage contains the authoritative game/category navigation.
@@ -113,98 +118,101 @@ def parse_page(url,game,category):
  if not cards:
   inspect_page(url,html)
   raise ValueError("No Lootlemon .db_item.w-dyn-item cards found")
-
+ rarity_names={"common","uncommon","rare","very rare","epic","legendary","pearlescent"}
+ def text_of(node):
+  return " ".join(node.stripped_strings).strip() if node else ""
+ def labels_of(node):
+  out=[]
+  if not node: return out
+  for el in [node,*node.find_all(True)]:
+   for key in ("alt","title","aria-label","data-name","data-filter"):
+    value=el.get(key)
+    if value and value.strip() not in out: out.append(value.strip())
+   for cls in el.get("class") or []:
+    clean=re.sub(r"[-_]+"," ",cls).strip()
+    if clean and clean.lower() not in {"db cell","image","icon grid","w dyn item"} and clean not in out:
+     out.append(clean)
+  return out
+ def split_values(node):
+  value=text_of(node)
+  return [x.strip() for x in re.split(r"\s*[•·,]\s*",value) if x.strip()]
  for card in cards:
-  # Lootlemon uses Webflow collection cards, not HTML table rows.
-  # Keep only db_cell elements whose closest db_cell parent is the card.
   cells=[]
   for node in card.select(".db_cell"):
-   parent=node.parent
-   nested=False
+   parent=node.parent; nested=False
    while parent is not None and parent is not card:
-    if parent in cells:
-     nested=True
-     break
+    if parent in cells: nested=True; break
     parent=parent.parent
-   if not nested:
-    cells.append(node)
-
-  def cell_text(node):
-   return " ".join(node.stripped_strings).strip()
-
-  # The item title is in the prominent large text cell; the overlay link
-  # on the same card carries the canonical item URL.
-  title_cell=next((c for c in cells if "large" in (c.get("class") or []) and
-                   "image" not in (c.get("class") or []) and cell_text(c)),None)
+   if not nested: cells.append(node)
+  title_cell=next((c for c in cells if "large" in (c.get("class") or []) and "image" not in (c.get("class") or []) and text_of(c)),None)
   if title_cell is None:
-   title_cell=next((c for c in cells if cell_text(c) and
-                    not ({"image","icon-grid","sources-cell"} & set(c.get("class") or []))),None)
-  name=cell_text(title_cell) if title_cell else ""
-  if not name:
-   continue
-
-  # The overlay is the card's primary item link; other links may point to
-  # character skills, source locations, or filters.
+   title_cell=next((c for c in cells if text_of(c) and not ({"image","icon-grid","sources-cell"} & set(c.get("class") or []))),None)
+  name=text_of(title_cell)
+  if not name: continue
   item_link=card.select_one("a.link-overlay[href]")
   if item_link is None:
    for a in card.select("a[href]"):
-    href=urljoin(BASE,a.get("href",""))
-    path=urlparse(href).path
+    candidate=urljoin(BASE,a.get("href","")); path=urlparse(candidate).path
     if path.startswith("/") and path != urlparse(url).path and "/db/" not in path:
-     item_link=a
-     break
-  href=urljoin(BASE,item_link["href"]) if item_link else url
-
-  # Extract remaining cells in DOM order. The first prominent text cell is
-  # the name; other non-image cells contain type/manufacturer/content metadata.
-  metadata=[]
-  for c in cells:
-   classes=set(c.get("class") or [])
-   if c is title_cell or {"image","icon-grid","sources-cell"} & classes:
-    continue
-   value=cell_text(c)
-   if value and value != name and value not in metadata:
-    metadata.append(value)
-
+     item_link=a; break
+  href=urljoin(BASE,item_link["href"]) if item_link else None
   image=None
   image_node=card.select_one(".db_cell.image img, .db_cell.image source, img")
   if image_node:
-   image=(image_node.get("src") or image_node.get("data-src") or
-          image_node.get("data-lazy-src") or image_node.get("data-original") or
-          image_node.get("srcset","").split(" ")[0])
-   if image and image.startswith("data:"):
-    image=(image_node.get("data-src") or image_node.get("data-lazy-src") or
-           image_node.get("data-original"))
-   if image:
-    image=urljoin(BASE,image)
-
+   for key in ("data-src","data-lazy-src","data-original","src"):
+    value=image_node.get(key)
+    if value and not value.startswith("data:"):
+     image=urljoin(BASE,value); break
+   if not image and image_node.get("srcset"):
+    image=urljoin(BASE,image_node["srcset"].split(",")[0].strip().split(" ")[0])
+  idx=cells.index(title_cell) if title_cell in cells else -1
+  before=cells[:idx] if idx>=0 else []
+  after=cells[idx+1:] if idx>=0 else []
   rarity=None
-  rarity_node=card.select_one("[class*=rarity], [class*=legendary]")
-  if rarity_node:
-   rarity=cell_text(rarity_node) or next(iter(rarity_node.get("class") or []),None)
-
-  # Column positions vary by game/category. Preserve the source values while
-  # assigning the common weapon fields when their labels are recognizable.
-  type_value=None
-  manufacturer=None
-  for value in metadata:
-   low=value.lower()
-   if any(token in low for token in ("assault rifle","pistol","shotgun","smg","sniper","launcher")):
-    type_value=value
-   if value in {"Daedalus","Jakobs","Maliwan","Order","Ripper","Tediore","Torgue","Vladof",
-                "Bandit","Dahl","Hyperion","S&S","Tediore","Torgue","Vladof","Anshin",
-                "Atlas","COV","Eridian","Pangolin","Vladof"}:
-    manufacturer=value
-
-  ident=hashlib.sha1(f"{game}|{category}|{href}".encode()).hexdigest()[:20]
-  found.append({"id":ident,"gameId":game,"category":label(category),"name":name,
-   "type":type_value,"rarity":rarity,"manufacturer":manufacturer,
-   "content":None,"image":image,"url":href,"archived":False})
-
+  for c in before:
+   for value in [text_of(c),*labels_of(c)]:
+    low=value.lower().strip()
+    if low in rarity_names or any(x in low for x in ("legendary","pearlescent","very rare")):
+     rarity=value.strip().title(); break
+   if rarity: break
+  if rarity is None and before:
+   cls=" ".join(before[-1].get("class") or []).lower()
+   m=re.search(r"(legendary|pearlescent|very[-_ ]?rare|epic|rare|uncommon|common)",cls)
+   if m: rarity=m.group(1).replace("-"," ").title()
+  values=[text_of(c) for c in after if text_of(c)]
+  metadata=[]
+  for c in cells:
+   if c is title_cell or "image" in (c.get("class") or []): continue
+   v=text_of(c)
+   if v and v not in metadata: metadata.append(v)
+  cat=label(category); type_value=manufacturer=content=None; elements=[]; sources=[]
+  if cat=="Weapons":
+   if len(after)>0: type_value=text_of(after[0]) or None
+   if len(after)>1: manufacturer=text_of(after[1]) or None
+   if len(after)>2: elements=labels_of(after[2])
+   if len(after)>3: content=text_of(after[3]) or None
+   if len(after)>4: sources=split_values(after[4])
+  else:
+   for c in after:
+    cls=" ".join(c.get("class") or []).lower(); v=text_of(c)
+    if "content" in cls and v: content=v
+    if "source" in cls and v: sources=split_values(c)
+    if "element" in cls: elements=labels_of(c)
+   for v in values:
+    low=v.lower()
+    if not type_value and any(t in low for t in ("assault rifle","pistol","shotgun","smg","sniper","launcher")):
+     type_value=v
+  known={"daedalus","jakobs","maliwan","order","ripper","tediore","torgue","vladof","bandit","dahl","hyperion","s&s","atlas","cov","eridian","pangolin"}
+  if not manufacturer: manufacturer=next((v for v in values if v.lower() in known),None)
+  if not content: content=next((v for v in values if v.lower() in {"base game","dlc","vault card","gilded glory pack","vault of the damned"}),None)
+  clean_name=re.sub(r"\s+"," ",name).strip().casefold()
+  ident=hashlib.sha1((href or f"{game}|{category}|{clean_name}").encode("utf-8")).hexdigest()[:20]
+  found.append({"id":ident,"gameId":game,"category":cat,"name":name,"type":type_value,
+   "rarity":rarity,"manufacturer":manufacturer,"content":content,"elements":elements,
+   "sources":sources,"metadata":metadata,"image":image,"url":href,"archived":False})
  if not found:
   inspect_page(url,html)
-  sample=cards[0].prettify()[:2400]
-  print("DIAG first_card_html=",sample,file=sys.stderr)
+  print("DIAG first_card_html=",cards[0].prettify()[:3200],file=sys.stderr)
   raise ValueError("Lootlemon cards found, but item names could not be extracted")
  return found,soup
 
@@ -224,14 +232,18 @@ def parse_route(url,game,category):
 def main():
  old=load(); routes=discover()
  if not routes: raise RuntimeError("No database routes discovered in Lootlemon sitemaps; catalog unchanged")
- backup()
+ backup(old, reason='before-sync')
  old_games={g["id"]:g for g in old.get("games",[]) if isinstance(g,dict) and g.get("id")}
  for slug,name in GAMES.items(): old_games[slug]={"id":slug,"name":name}
  existing={x["id"]:x for x in old.get("items",[]) if isinstance(x,dict) and x.get("id")}
  fresh={}; successful=set(); warnings=[]
  for game,category,url in sorted(routes):
   try:
-   rows=parse_route(url,game,category); fresh.update({x["id"]:x for x in rows})
+   rows=parse_route(url,game,category)
+   previous=[x for x in existing.values() if x.get("gameId")==game and x.get("category")==label(category) and not x.get("archived")]
+   if previous and len(rows)<max(1,int(len(previous)*0.5)):
+    raise ValueError(f"Suspiciously low item count ({len(rows)} vs previous {len(previous)}); preserving previous category")
+   fresh.update({x["id"]:x for x in rows})
    successful.add((game,label(category))); print(f"OK {game}/{category}: {len(rows)}")
   except Exception as e:
    warnings.append(f"{url}: {e}"); print(f"WARN {url}: {e}",file=sys.stderr)
