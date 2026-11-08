@@ -3,12 +3,13 @@
  const KEYS={newItems:"bl-loot-new-items-v1",progress:"bl-loot-progress-v1",settings:"bl-loot-settings-v1",history:"bl-loot-backups-v1",lastCatalog:"bl-loot-last-catalog-v1",override:"bl-loot-catalog-override-v1",forceOverride:"bl-loot-force-catalog-override-v1"};
  const GAMES=[["borderlands-1","Borderlands"],["borderlands-2","Borderlands 2"],["borderlands-tps","The Pre-Sequel"],["borderlands-3","Borderlands 3"],["wonderlands","Tiny Tina's Wonderlands"],["borderlands-4","Borderlands 4"]];
  let db={games:[],items:[]},done={},active="borderlands-4";
- const defaults={search:"",rarity:"",manufacturer:"",type:"",element:"",content:"",source:"",sort:"name",missing:false,moveCollectedToBottom:true};
+ const defaults={search:"",filters:{},sort:"name",missing:false,moveCollectedToBottom:true};
  let settings={...defaults},backupHistory=[];
  const read=(key,fallback)=>{try{return JSON.parse(localStorage.getItem(key)||"null")??fallback}catch{return fallback}};
  done=read(KEYS.progress,{});
  settings={...defaults,...read(KEYS.settings,{})};
  if(!["name","rarity","content"].includes(settings.sort))settings.sort="name";
+ settings.filters=settings.filters||{};
  backupHistory=read(KEYS.history,[]);
  const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
  const ELEMENTS={
@@ -53,7 +54,51 @@
   return known[key]||raw.replace(/^[a-i]-/i,"").replace(/[-_]+/g," ").replace(/\b\w/g,c=>c.toUpperCase());
  };
  const uniqueValues=values=>[...new Set(values.map(v=>String(v??"").trim()).filter(Boolean))];
+
  const normalized=value=>String(value??"").trim().toLocaleLowerCase();
+ const FIELD_LABELS={rarity:"Rarity",name:"Name",type:"Type",manufacturer:"Manufacturer",elements:"Elements",content:"Content",sources:"Sources",class:"Class",skills:"Skills",tree:"Trees"};
+ const FILTER_LABELS={rarity:"Any rarity",manufacturer:"Any manufacturer",type:"Any type",elements:"Any element",content:"All content",class:"Any class",tree:"Any tree",sources:"Any source"};
+ const SCHEMAS={
+  "borderlands-4":{
+   "Weapons":{fields:["rarity","name",{key:"type",label:"Weapon Type"},"manufacturer","elements","content","sources"],filters:["rarity","elements","type","manufacturer","content"]},
+   "Shields":{fields:["rarity","name",{key:"type",label:"Shield Type"},"manufacturer","elements","content","sources"],filters:["type","elements","manufacturer","content"]},
+   "Ordnance":{fields:["rarity","name",{key:"type",label:"Ordnance Type"},"manufacturer","elements","content","sources"],filters:["type","elements","manufacturer","content"]},
+   "Repkits":{fields:["rarity","name","manufacturer","content","sources"],filters:["manufacturer","content"]},
+   "Class Mods":{fields:["rarity","name","class","skills","content","sources"],filters:["class","tree","content"]},
+   "Enhancements":{fields:["rarity","name","manufacturer","content","sources"],filters:["manufacturer"]}
+  },
+  "borderlands-3":{"Artifacts":{fields:["rarity","name",{key:"type",label:"Artifact Type"},"content","sources"],filters:["rarity","type","content"]}}
+ };
+ const attrValues=(item,key)=>asList(item?.attributes?.[key]??[]);
+ const fieldValues=(item,key)=>{
+  if(key==="rarity")return item.rarity?[rarityLabel(item.rarity)]:[];
+  if(key==="name")return asList(item.name);
+  if(key==="elements")return asList(item.elements);
+  if(key==="sources")return sourcesOf(item);
+  if(key==="content")return contentValues(item);
+  if(key==="manufacturer")return asList(item.manufacturer).length?asList(item.manufacturer):attrValues(item,"manufacturer");
+  if(key==="type")return asList(item.type).length?asList(item.type):["weapon_type","shield_type","ordnance_type","artifact_type","type"].flatMap(k=>attrValues(item,k));
+  if(key==="class")return asList(item.class).length?asList(item.class):attrValues(item,"class");
+  if(key==="skills")return asList(item.skills).length?asList(item.skills):[...attrValues(item,"skill"),...attrValues(item,"skills")];
+  if(key==="tree")return [...attrValues(item,"tree"),...attrValues(item,"trees")];
+  return attrValues(item,key);
+ };
+ const schemaFor=(game,category)=>{
+  const known=SCHEMAS[game]?.[category];if(known)return known;
+  const fields=["rarity","name"];
+  if(category==="Weapons")fields.push({key:"type",label:"Weapon Type"},"manufacturer","elements","content","sources");
+  else if(category==="Shields")fields.push({key:"type",label:"Shield Type"},"manufacturer","elements","content","sources");
+  else if(category==="Grenades"||category==="Ordnance")fields.push({key:"type",label:category==="Ordnance"?"Ordnance Type":"Grenade Type"},"manufacturer","elements","content","sources");
+  else if(category==="Class Mods")fields.push("class","skills","content","sources");
+  else if(category==="Artifacts"||category==="Relics")fields.push({key:"type",label:category==="Artifacts"?"Artifact Type":"Relic Type"},"content","sources");
+  else if(category==="Armor")fields.push({key:"type",label:"Armor Type"},"manufacturer","content","sources");
+  else fields.push("manufacturer","content","sources");
+  return {fields,filters:fields.map(f=>typeof f==="string"?f:f.key).filter(k=>!["name","skills","sources"].includes(k))};
+ };
+ const fieldDefinition=value=>typeof value==="string"?{key:value,label:FIELD_LABELS[value]||value}:value;
+ const fieldFilterLabel=key=>FILTER_LABELS[key]||("Any "+(FIELD_LABELS[key]||key).toLowerCase());
+ const uniqueValues=values=>[...new Set(values.map(v=>String(v??"").trim()).filter(Boolean))];
+
  const persist=()=>{localStorage.setItem(KEYS.progress,JSON.stringify(done));localStorage.setItem(KEYS.settings,JSON.stringify(settings))};
  function snapshot(reason,catalog=null){
   const entry={version:2,at:new Date().toISOString(),reason,progress:{...done},settings:{...settings},catalogUpdatedAt:db.updatedAt||null,catalog:catalog||undefined};
@@ -102,20 +147,22 @@
   $("game-pct").textContent=(st.t?Math.round(st.n/st.t*100):0)+"%";$("game-count").textContent=st.n+" / "+st.t+" собрано";
   $("games").innerHTML=gs.map(x=>'<button data-game="'+esc(x.id)+'" class="'+(x.id===active?"active":"")+'">'+esc(x.name)+'</button>').join("");
   $("games").querySelectorAll("[data-game]").forEach(b=>b.onclick=()=>{active=b.dataset.game;render()});
-  let rs=uniqueValues(a.map(x=>x.rarity)).sort((x,y)=>rarityLabel(x).localeCompare(rarityLabel(y)));
-  let makers=uniqueValues(a.flatMap(x=>asList(x.manufacturer))).sort();
-  let types=uniqueValues(a.flatMap(x=>asList(x.type))).sort();
-  let elements=uniqueValues(a.flatMap(x=>asList(x.elements))).sort((x,y)=>elementInfo(x).label.localeCompare(elementInfo(y).label));
-  elements=elements.filter((value,index,list)=>list.findIndex(other=>normalized(elementInfo(other).label)===normalized(elementInfo(value).label))===index);
-  let contents=uniqueValues(a.flatMap(contentValues)).sort((x,y)=>{const rank=v=>/^base game$/i.test(v)?0:/^event$/i.test(v)?1:2;return rank(x)-rank(y)||x.localeCompare(y)});
-  let sources=uniqueValues(a.flatMap(sourcesOf)).sort((x,y)=>x.localeCompare(y));
-  const fillSelect=(id,values,placeholder,format=value=>value)=>{const current=settings[id],selected=values.includes(current)?current:"";$(id).innerHTML='<option value="">'+placeholder+'</option>'+values.map(x=>'<option value="'+esc(x)+'">'+esc(format(x))+'</option>').join("");$(id).value=selected;settings[id]=selected;};
-  fillSelect("rarity",rs,"Любая редкость",rarityLabel);
-  fillSelect("manufacturer",makers,"Любой производитель");fillSelect("type",types,"Любой тип");fillSelect("element",elements,"Любой элемент",value=>elementInfo(value).label);fillSelect("content",contents,"Весь контент");fillSelect("source",sources,"Любой источник");
-  $("search").value=settings.search;$("sort").value=settings.sort;$("missing").checked=!!settings.missing;$("move-collected").checked=settings.moveCollectedToBottom!==false;
-  let q=settings.search.toLowerCase().trim(),rar=$("rarity").value;
-  let maker=$("manufacturer").value,type=$("type").value,element=$("element").value,content=$("content").value,source=$("source").value;
-  let shown=a.filter(x=>(!q||[x.name,x.category,x.manufacturer,x.type,x.description,...asList(x.elements),...sourcesOf(x),...contentValues(x),...asList(x.tags),...Object.values(x.attributes||{}).flat()].join(" ").toLowerCase().includes(q))&&(!rar||normalized(x.rarity)===normalized(rar))&&(!maker||asList(x.manufacturer).some(v=>normalized(v)===normalized(maker)))&&(!type||asList(x.type).some(v=>normalized(v)===normalized(type)))&&(!element||asList(x.elements).some(v=>normalized(elementInfo(v).label)===normalized(elementInfo(element).label)))&&(!content||contentValues(x).some(v=>normalized(v)===normalized(content)))&&(!source||sourcesOf(x).some(v=>normalized(v)===normalized(source)))&&(!settings.missing||!done[x.id]));
+
+  const category=a[0]?.category||"",schema=schemaFor(active,category),filterDefs=schema.filters.map(key=>({key,label:fieldFilterLabel(key)}));
+  const filtersState=settings.filters||(settings.filters={});
+  const optionsFor=key=>uniqueValues(a.flatMap(item=>fieldValues(item,key))).sort((x,y)=>x.localeCompare(y));
+  $("dynamic-filters").innerHTML=filterDefs.map(def=>{
+   const values=optionsFor(def.key),current=filtersState[def.key]||"",selected=values.includes(current)?current:"";
+   filtersState[def.key]=selected;
+   return '<select data-filter="'+esc(def.key)+'"><option value="">'+esc(def.label)+'</option>'+values.map(value=>'<option value="'+esc(value)+'"'+(value===selected?' selected':'')+'>'+esc(value)+'</option>').join("")+'</select>';
+  }).join("");
+  $("sort").value=settings.sort;$("missing").checked=!!settings.missing;$("move-collected").checked=settings.moveCollectedToBottom!==false;
+  const selectedFilters=Object.entries(filtersState).filter(([key,value])=>value&&filterDefs.some(def=>def.key===key));
+  let q=settings.search.toLowerCase().trim();
+  let shown=a.filter(x=>{
+   const searchable=[x.name,x.category,x.description,...schema.fields.flatMap(f=>fieldValues(x,fieldDefinition(f).key)),...asList(x.tags),...Object.values(x.attributes||{}).flat()].join(" ").toLowerCase();
+   return (!q||searchable.includes(q))&&selectedFilters.every(([key,value])=>fieldValues(x,key).some(v=>normalized(v)===normalized(value)))&&(!settings.missing||!done[x.id]);
+  });
   shown.sort((x,y)=>{
    if(settings.moveCollectedToBottom){
     const collected=Number(!!done[x.id])-Number(!!done[y.id]);
@@ -126,7 +173,20 @@
    return x.name.localeCompare(y.name);
   });
   $("shown").textContent=shown.length+" из "+a.length+" предметов";$("updated").textContent=db.updatedAt?"Обновлено: "+new Date(db.updatedAt).toLocaleDateString("ru-RU"):"Источник: Lootlemon";
-  $("items").innerHTML=shown.map(x=>'<article class="item '+(done[x.id]?"collected":"")+'"><div class="picture">'+(x.image?'<img loading="lazy" src="'+esc(x.image)+'" alt="'+esc(x.name)+'" onerror="this.remove()">':'<span class="placeholder">◇</span>')+'</div><div class="card-body"><div class="loot-field rarity-field"><span>Rarity</span><b class="'+rarityClass(x.rarity)+'">'+esc(rarityLabel(x.rarity)||"—")+'</b></div><div class="name">'+esc(x.name)+'</div><div class="loot-field"><span>Weapon Type</span><b>'+esc(asList(x.type).join(", ")||"—")+'</b></div><div class="loot-field"><span>Manufacturer</span><b>'+esc(asList(x.manufacturer).join(", ")||"—")+'</b></div><div class="loot-field elements-field"><span>Elements</span><div class="element-icons" aria-label="Elements">'+(asList(x.elements).length?asList(x.elements).map(el=>{const info=elementInfo(el);return '<span class="element-icon element-'+esc(info.className)+'" title="'+esc(info.label)+'" aria-label="'+esc(info.label)+'"><i>'+info.icon+'</i><small>'+esc(info.label)+'</small></span>'}).join(""):'<b>—</b>')+'</div></div><div class="loot-field"><span>Content</span><b>'+esc(contentValues(x).join(", ")||"—")+'</b></div><div class="loot-field sources-field"><span>Sources</span><div class="drop-source-list">'+(sourcesOf(x).length?sourcesOf(x).map(source=>'<span class="drop-source">'+esc(source)+'</span>').join(""):'<b>—</b>')+'</div></div><div class="item-foot">'+(x.url?'<a href="'+esc(x.url)+'" target="_blank" rel="noopener">Lootlemon ↗</a>':'<span></span>')+'<button data-id="'+esc(x.id)+'" class="'+(done[x.id]?"done":"")+'">'+(done[x.id]?"✓ Собрано":"+ Собрал")+'</button></div></div></article>').join("");
+
+  const renderValue=(item,def)=>{
+   const key=def.key,values=fieldValues(item,key);if(!values.length)return "";
+   if(key==="elements")return '<div class="loot-field"><span>'+esc(def.label)+'</span><div class="element-icons">'+values.map(value=>{const info=elementInfo(value);return '<span class="element-icon element-'+esc(info.className)+'" title="'+esc(info.label)+'"><i>'+info.icon+'</i><small>'+esc(info.label)+'</small></span>'}).join("")+'</div></div>';
+   if(key==="sources")return '<div class="loot-field"><span>'+esc(def.label)+'</span><div class="drop-source-list">'+values.map(value=>'<span class="drop-source">'+esc(value)+'</span>').join("")+'</div></div>';
+   if(key==="skills")return '<div class="loot-field"><span>'+esc(def.label)+'</span><div class="skill-list">'+values.map(value=>'<span class="skill-chip">'+esc(value)+'</span>').join("")+'</div></div>';
+   const value=key==="rarity"?rarityLabel(values[0]):values.join(", ");
+   return '<div class="loot-field"><span>'+esc(def.label)+'</span><b class="'+(key==="rarity"?rarityClass(item.rarity):"")+'">'+esc(value)+'</b></div>';
+  };
+  $("items").innerHTML=shown.map(x=>{
+   const schema=schemaFor(active,x.category||""),fields=schema.fields.map(fieldDefinition);
+   const details=fields.filter(f=>f.key!=="name").map(f=>renderValue(x,f)).join("");
+   return '<article class="item '+(done[x.id]?"collected":"")+'"><div class="picture">'+(x.image?'<img loading="lazy" src="'+esc(x.image)+'" alt="'+esc(x.name)+'" onerror="this.remove()">':'<span class="placeholder">◇</span>')+'</div><div class="card-body"><div class="name '+rarityClass(x.rarity)+'">'+esc(x.name)+'</div>'+details+'<div class="item-foot">'+(x.url?'<a href="'+esc(x.url)+'" target="_blank" rel="noopener">Lootlemon ↗</a>':'<span></span>')+'<button data-id="'+esc(x.id)+'" class="'+(done[x.id]?"done":"")+'">'+(done[x.id]?"✓ Собрано":"+ Собрал")+'</button></div></div></article>';
+  }).join("")
   $("items").querySelectorAll("[data-id]").forEach(b=>b.onclick=()=>{let id=b.dataset.id;if(done[id])delete done[id];else done[id]=true;persist();render()});
   $("empty").hidden=shown.length>0;
   let all=db.items.filter(x=>!x.archived),total=stats(all),pct=total.t?Math.round(total.n/total.t*100):0;
@@ -144,7 +204,8 @@
  }
  function bindSettings(){
   $("search").addEventListener("input",()=>{settings.search=$("search").value;persist();render()});
-  ["rarity","manufacturer","type","element","content","source","sort","missing"].forEach(id=>$(id).addEventListener("change",()=>{settings[id]=id==="missing"?$("missing").checked:$(id).value;persist();render()}));
+  $("dynamic-filters").addEventListener("change",event=>{const select=event.target.closest("[data-filter]");if(!select)return;settings.filters=settings.filters||{};settings.filters[select.dataset.filter]=select.value;persist();render()});
+  ["sort","missing"].forEach(id=>$(id).addEventListener("change",()=>{settings[id]=id==="missing"?$("missing").checked:$(id).value;persist();render()}));
   $("move-collected").addEventListener("change",()=>{settings.moveCollectedToBottom=$("move-collected").checked;persist();render()});
  }
  $("export").onclick=fullBackup;
