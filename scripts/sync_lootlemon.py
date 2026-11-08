@@ -44,23 +44,44 @@ def backup():
  print("Backup:",path.relative_to(ROOT))
 
 def discover():
- pending=[BASE+"/sitemap.xml",BASE+"/sitemap_index.xml"]; seen=set(); routes=set()
- while pending:
-  url=pending.pop(0)
-  if url in seen: continue
-  seen.add(url)
-  try: soup=BeautifulSoup(get(url),"xml")
-  except Exception: continue
-  for node in soup.find_all("loc"):
-   loc=node.get_text(strip=True)
-   if not loc: continue
-   if urlparse(loc).path.endswith(".xml"):
-    if loc not in seen: pending.append(loc)
-    continue
-   match=re.fullmatch(r"/db/([^/]+)/([^/]+)/?",urlparse(loc).path)
+ # Lootlemon's homepage contains the authoritative game/category navigation.
+ # The sitemap endpoint may respond with an RSS content type and is not reliable
+ # for database routes, so discover links from the rendered site's source first.
+ routes=set()
+ try:
+  home=BeautifulSoup(get(BASE+"/"),"html.parser")
+  for anchor in home.find_all("a",href=True):
+   href=urljoin(BASE,anchor["href"])
+   path=urlparse(href).path.rstrip("/")
+   match=re.fullmatch(r"/db/([^/]+)/([^/]+)",path)
    if match:
     game,category=match.groups()
-    if game not in EXCLUDED: routes.add((game,category,loc))
+    if game not in EXCLUDED:
+     routes.add((game,category,BASE+path))
+ except Exception as exc:
+  print(f"WARN homepage navigation unavailable: {exc}",file=sys.stderr)
+
+ # Sitemaps remain a supplemental source; do not make their availability mandatory.
+ for sitemap in (BASE+"/sitemap.xml",BASE+"/sitemap_index.xml"):
+  try:
+   response=SESSION.get(sitemap,timeout=30)
+   response.raise_for_status()
+   soup=BeautifulSoup(response.text,"xml")
+   locs=[node.get_text(strip=True) for node in soup.find_all("loc")]
+   for loc in locs:
+    if urlparse(loc).path.endswith(".xml"):
+     try:
+      nested=BeautifulSoup(get(loc),"xml")
+      locs.extend(node.get_text(strip=True) for node in nested.find_all("loc"))
+     except Exception:
+      continue
+    match=re.fullmatch(r"/db/([^/]+)/([^/]+)/?",urlparse(loc).path)
+    if match:
+     game,category=match.groups()
+     if game not in EXCLUDED:
+      routes.add((game,category,loc))
+  except Exception as exc:
+   print(f"INFO sitemap skipped ({sitemap}): {exc}",file=sys.stderr)
  return routes
 
 def label(slug):
