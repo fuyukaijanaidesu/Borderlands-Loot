@@ -171,17 +171,36 @@ def parse_page(url,game,category):
   idx=cells.index(title_cell) if title_cell in cells else -1
   before=cells[:idx] if idx>=0 else []
   after=cells[idx+1:] if idx>=0 else []
+  # Rarity is often represented by a CSS class or an accessibility/data
+  # attribute rather than visible text. Inspect the complete card, not only
+  # cells preceding the name (the DOM column order can differ by game).
   rarity=None
-  for c in before:
-   for value in [text_of(c),*labels_of(c)]:
-    low=value.lower().strip()
-    if low in rarity_names or any(x in low for x in ("legendary","pearlescent","very rare")):
-     rarity=value.strip().title(); break
-   if rarity: break
-  if rarity is None and before:
-   cls=" ".join(before[-1].get("class") or []).lower()
-   m=re.search(r"(legendary|pearlescent|very[-_ ]?rare|epic|rare|uncommon|common)",cls)
-   if m: rarity=m.group(1).replace("-"," ").title()
+  rarity_pattern=re.compile(
+   r"(?<![a-z])(pearlescent|very[-_ ]?rare|legendary|epic|uncommon|common|rare)(?![a-z])",
+   re.I
+  )
+  rarity_candidates=[]
+  for el in [card,*card.find_all(True)]:
+   for key in ("data-rarity","data-quality","data-tier","aria-label","title","alt","data-name","data-filter"):
+    value=el.get(key)
+    if value: rarity_candidates.append(str(value))
+   rarity_candidates.extend(el.get("class") or [])
+   style=el.get("style","")
+   if "rarity" in style.lower(): rarity_candidates.append(style)
+  # Prefer explicit rarity-labelled attributes/classes over incidental text.
+  for value in rarity_candidates:
+   match=rarity_pattern.search(str(value).replace("_"," ").replace("-"," "))
+   if match:
+    rarity=re.sub(r"\\s+"," ",match.group(1).replace("-"," ")).title()
+    break
+  if rarity is None:
+   for c in before:
+    for value in (text_of(c),*labels_of(c)):
+     match=rarity_pattern.search(value)
+     if match:
+      rarity=match.group(1).replace("-"," ").title()
+      break
+    if rarity: break
   values=[text_of(c) for c in after if text_of(c)]
   metadata=[]
   for c in cells:
