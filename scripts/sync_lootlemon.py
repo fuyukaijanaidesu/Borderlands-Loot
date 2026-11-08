@@ -3,7 +3,7 @@
 # Scraper updates are validated automatically by GitHub Actions on push.
 # IDs retain the original game/category/URL hash to preserve collected-state links.
 import hashlib, json, re, sys, time
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
 import requests
@@ -34,6 +34,42 @@ LABELS={"class-mods":"Class Mods","melee":"Melee Weapons","melee-weapons":"Melee
 
 def get(url):
  r=SESSION.get(url,timeout=45); r.raise_for_status(); return r.text
+
+CODE_RECHECK_DAYS=30
+CODE_FETCH_DELAY=0.2
+
+def decode_item_code(value):
+ code=str(value or "")
+ for _ in range(3):
+  decoded=re.sub(r"&amp;","&",code,flags=re.I)
+  if decoded==code: break
+  code=decoded
+ replacements={"&lt;":"<","&LT;":"<","&gt;":">","&GT;":">",
+  "&quot;":'"',"&QUOT;":'"',"&apos;":"'","&APOS;":"'",
+  "&#x27;":"'","&#X27;":"'","&#39;":"'","&#x2F;":"/","&#X2F;":"/","&#47;":"/"}
+ for encoded,plain in replacements.items(): code=code.replace(encoded,plain)
+ return code.strip()
+
+def extract_item_code(detail_html):
+ """Extract the exact serial attached to Lootlemon's Copy Code control."""
+ pattern=re.compile(r"data-(?:code|clipboard-text)\\s*=\\s*(['\"])(.*?)\\1",re.I|re.S)
+ for match in pattern.finditer(detail_html or ""):
+  code=decode_item_code(match.group(2))
+  if code and not any(char.isspace() for char in code): return code
+ return None
+
+def code_checked_recently(item,now):
+ stamp=item.get("codeCheckedAt")
+ if not stamp: return False
+ try:
+  checked=datetime.fromisoformat(str(stamp).replace("Z","+00:00"))
+  if checked.tzinfo is None: checked=checked.replace(tzinfo=timezone.utc)
+  return now-checked<timedelta(days=CODE_RECHECK_DAYS)
+ except (TypeError,ValueError):
+  return False
+
+def fetch_item_code(url):
+ return extract_item_code(get(url))
 
 def inspect_page(url,html):
  soup=BeautifulSoup(html,"html.parser")
