@@ -275,6 +275,11 @@ def parse_page(url,game,category):
    if not elements and len(after)>2: elements=labels_of(after[2])
    if not content and len(after)>3: content=text_of(after[3]) or None
    if not sources and len(after)>4: sources=split_values(after[4])
+  elif cat=="Class Mods":
+   if not semantic_values["class"] and len(after)>0: semantic_values["class"].extend(split_values(after[0]))
+   if not semantic_values["skill"] and len(after)>1: semantic_values["skill"].extend(labels_of(after[1]))
+   if not content and len(after)>2: content=text_of(after[2]) or None
+   if not sources and len(after)>3: sources=split_values(after[3])
   else:
    for c in after:
     cls=" ".join(c.get("class") or []).lower(); v=text_of(c)
