@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-08T17:02:42.356554+00:00",
+  "updatedAt": "2026-11-08T17:05:29.358368+00:00",
   "games": [
     {
       "id": "borderlands-1",
@@ -117,7 +117,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Torgue",
-      "content": "general-knoxx-dlc",
+      "content": "General Knoxx",
       "elements": [],
       "sources": [
         "Crawmerax"
@@ -547,7 +547,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Atlas",
-      "content": "general-knoxx-dlc",
+      "content": "General Knoxx",
       "elements": [],
       "sources": [
         "Crawmerax"
@@ -693,7 +693,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Tediore",
-      "content": "general-knoxx-dlc",
+      "content": "General Knoxx",
       "elements": [],
       "sources": [
         "Crawmerax"
@@ -841,7 +841,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Eridian",
-      "content": "general-knoxx-dlc",
+      "content": "General Knoxx",
       "elements": [],
       "sources": [
         "Crawmerax"
@@ -987,7 +987,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Jakobs",
-      "content": "general-knoxx-dlc",
+      "content": "General Knoxx",
       "elements": [],
       "sources": [
         "Crawmerax"
@@ -1060,7 +1060,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "S&S Munitions",
-      "content": "general-knoxx-dlc",
+      "content": "General Knoxx",
       "elements": [],
       "sources": [
         "Crawmerax"
@@ -1423,7 +1423,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "DAHL",
-      "content": "general-knoxx-dlc",
+      "content": "General Knoxx",
       "elements": [],
       "sources": [
         "CoD: Corporal",
@@ -1590,7 +1590,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Torgue",
-      "content": "general-knoxx-dlc",
+      "content": "General Knoxx",
       "elements": [],
       "sources": [
         "CoD: Corporal",
@@ -1684,7 +1684,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Vladof",
-      "content": "general-knoxx-dlc",
+      "content": "General Knoxx",
       "elements": [],
       "sources": [
         "Crawmerax"
@@ -1757,7 +1757,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Anshin",
-      "content": "general-knoxx-dlc",
+      "content": "General Knoxx",
       "elements": [],
       "sources": [
         "Crawmerax"
@@ -1905,7 +1905,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "DAHL",
-      "content": "general-knoxx-dlc",
+      "content": "General Knoxx",
       "elements": [],
       "sources": [
         "Crawmerax"
@@ -2199,7 +2199,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Hyperion",
-      "content": "general-knoxx-dlc",
+      "content": "General Knoxx",
       "elements": [],
       "sources": [
         "Crawmerax"
@@ -2491,7 +2491,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Maliwan",
-      "content": "general-knoxx-dlc",
+      "content": "General Knoxx",
       "elements": [],
       "sources": [
         "Crawmerax"
@@ -2562,7 +2562,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Hyperion",
-      "content": "general-knoxx-dlc",
+      "content": "General Knoxx",
       "elements": [],
       "sources": [
         "CoD: Corporal",
@@ -2873,7 +2873,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Pangolin",
-      "content": "general-knoxx-dlc",
+      "content": "General Knoxx",
       "elements": [],
       "sources": [
         "Crawmerax"
@@ -3161,7 +3161,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "S&S Munitions",
-      "content": "general-knoxx-dlc",
+      "content": "General Knoxx",
       "elements": [],
       "sources": [
         "CoD: Corporal",
@@ -4525,7 +4525,7 @@
       "item_category": null,
       "rarity": "h-pearlescent",
       "manufacturer": "pangolin",
-      "content": "general-knoxx-dlc",
+      "content": "General Knoxx",
       "elements": [
         "kinetic"
       ],
@@ -4670,7 +4670,7 @@
       "item_category": null,
       "rarity": "h-pearlescent",
       "manufacturer": "atlas",
-      "content": "general-knoxx-dlc",
+      "content": "General Knoxx",
       "elements": [
         "kinetic"
       ],
@@ -4815,7 +4815,7 @@
       "item_category": null,
       "rarity": "h-pearlescent",
       "manufacturer": "anshin",
-      "content": "general-knoxx-dlc",
+      "content": "General Knoxx",
       "elements": [
         "kinetic"
       ],
@@ -5026,7 +5026,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "atlas",
-      "content": "general-knoxx-dlc",
+      "content": "General Knoxx",
       "elements": [
         "kinetic",
         "fire",
@@ -5174,7 +5174,7 @@
       "item_category": null,
       "rarity": "h-pearlescent",
       "manufacturer": "atlas",
-      "content": "general-knoxx-dlc",
+      "content": "General Knoxx",
       "elements": [
         "shock"
       ],
@@ -5254,7 +5254,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "hyperion",
-      "content": "general-knoxx-dlc",
+      "content": "General Knoxx",
       "elements": [
         "kinetic",
         "fire",
@@ -5328,7 +5328,7 @@
       "item_category": null,
       "rarity": "h-pearlescent",
       "manufacturer": "tediore",
-      "content": "general-knoxx-dlc",
+      "content": "General Knoxx",
       "elements": [
         "kinetic"
       ],
@@ -5409,7 +5409,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "gearbox",
-      "content": "enhanced",
+      "content": "Enhanced",
       "elements": [
         "kinetic"
       ],
@@ -5563,7 +5563,7 @@
       "item_category": null,
       "rarity": "h-pearlescent",
       "manufacturer": "jakobs",
-      "content": "general-knoxx-dlc",
+      "content": "General Knoxx",
       "elements": [
         "kinetic"
       ],
@@ -6211,7 +6211,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "tediore",
-      "content": "general-knoxx-dlc",
+      "content": "General Knoxx",
       "elements": [
         "kinetic",
         "fire",
@@ -6911,7 +6911,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "eridian",
-      "content": "general-knoxx-dlc",
+      "content": "General Knoxx",
       "elements": [
         "fire"
       ],
@@ -6976,7 +6976,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "eridian",
-      "content": "general-knoxx-dlc",
+      "content": "General Knoxx",
       "elements": [
         "fire"
       ],
@@ -7124,7 +7124,7 @@
       "item_category": null,
       "rarity": "b-uncommon",
       "manufacturer": "eridian",
-      "content": "general-knoxx-dlc",
+      "content": "General Knoxx",
       "elements": [
         "fire"
       ],
@@ -7395,7 +7395,7 @@
       "item_category": null,
       "rarity": "b-uncommon",
       "manufacturer": "eridian",
-      "content": "general-knoxx-dlc",
+      "content": "General Knoxx",
       "elements": [
         "corrosive"
       ],
@@ -7666,7 +7666,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "gearbox",
-      "content": "enhanced",
+      "content": "Enhanced",
       "elements": [
         "kinetic"
       ],
@@ -8026,7 +8026,7 @@
       "item_category": null,
       "rarity": "h-pearlescent",
       "manufacturer": "dahl",
-      "content": "general-knoxx-dlc",
+      "content": "General Knoxx",
       "elements": [
         "kinetic",
         "fire",
@@ -8115,7 +8115,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "ss-munitions",
-      "content": "general-knoxx-dlc",
+      "content": "General Knoxx",
       "elements": [
         "kinetic",
         "fire",
@@ -8255,7 +8255,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "atlas",
-      "content": "general-knoxx-dlc",
+      "content": "General Knoxx",
       "elements": [
         "explosive"
       ],
@@ -8611,7 +8611,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "eridian",
-      "content": "general-knoxx-dlc",
+      "content": "General Knoxx",
       "elements": [
         "kinetic"
       ],
@@ -8765,7 +8765,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "gearbox",
-      "content": "enhanced",
+      "content": "Enhanced",
       "elements": [
         "explosive"
       ],
@@ -8918,7 +8918,7 @@
       "item_category": null,
       "rarity": "h-pearlescent",
       "manufacturer": "hyperion",
-      "content": "general-knoxx-dlc",
+      "content": "General Knoxx",
       "elements": [
         "shock"
       ],
@@ -10004,7 +10004,7 @@
       "item_category": null,
       "rarity": "b-uncommon",
       "manufacturer": "eridian",
-      "content": "general-knoxx-dlc",
+      "content": "General Knoxx",
       "elements": [
         "kinetic"
       ],
@@ -10069,7 +10069,7 @@
       "item_category": null,
       "rarity": "b-uncommon",
       "manufacturer": "eridian",
-      "content": "general-knoxx-dlc",
+      "content": "General Knoxx",
       "elements": [
         "corrosive"
       ],
@@ -10208,7 +10208,7 @@
       "item_category": null,
       "rarity": "h-pearlescent",
       "manufacturer": "ss-munitions",
-      "content": "general-knoxx-dlc",
+      "content": "General Knoxx",
       "elements": [
         "corrosive"
       ],
@@ -10293,7 +10293,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "gearbox",
-      "content": "enhanced",
+      "content": "Enhanced",
       "elements": [
         "kinetic"
       ],
@@ -10505,7 +10505,7 @@
       "item_category": null,
       "rarity": "b-uncommon",
       "manufacturer": "eridian",
-      "content": "general-knoxx-dlc",
+      "content": "General Knoxx",
       "elements": [
         "corrosive"
       ],
@@ -10570,7 +10570,7 @@
       "item_category": null,
       "rarity": "h-pearlescent",
       "manufacturer": "vladof",
-      "content": "general-knoxx-dlc",
+      "content": "General Knoxx",
       "elements": [
         "kinetic"
       ],
@@ -10653,7 +10653,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "eridian",
-      "content": "general-knoxx-dlc",
+      "content": "General Knoxx",
       "elements": [
         "corrosive"
       ],
@@ -10801,7 +10801,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "gearbox",
-      "content": "enhanced",
+      "content": "Enhanced",
       "elements": [
         "kinetic"
       ],
@@ -11175,7 +11175,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "vladof",
-      "content": "general-knoxx-dlc",
+      "content": "General Knoxx",
       "elements": [
         "kinetic"
       ],
@@ -11795,7 +11795,7 @@
       "item_category": null,
       "rarity": "h-pearlescent",
       "manufacturer": "maliwan",
-      "content": "general-knoxx-dlc",
+      "content": "General Knoxx",
       "elements": [
         "shock"
       ],
@@ -11876,7 +11876,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "dahl",
-      "content": "general-knoxx-dlc",
+      "content": "General Knoxx",
       "elements": [
         "kinetic"
       ],
@@ -11942,7 +11942,7 @@
       "item_category": null,
       "rarity": "h-pearlescent",
       "manufacturer": "torgue",
-      "content": "general-knoxx-dlc",
+      "content": "General Knoxx",
       "elements": [
         "kinetic",
         "fire",
@@ -12241,7 +12241,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "gearbox",
-      "content": "enhanced",
+      "content": "Enhanced",
       "elements": [
         "explosive"
       ],
@@ -12536,7 +12536,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Vladof",
-      "content": "mechromancer-feature-pack",
+      "content": "Mechromancer",
       "elements": [],
       "sources": [
         "Gaige Pool"
@@ -12682,7 +12682,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Bandit",
-      "content": "dragon-keep-dlc",
+      "content": "Dragon Keep",
       "elements": [],
       "sources": [
         "Mimic Chest",
@@ -12927,7 +12927,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Bandit",
-      "content": "psycho-feature-pack",
+      "content": "Psycho",
       "elements": [],
       "sources": [
         "Krieg Pool"
@@ -12998,7 +12998,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Maliwan",
-      "content": "mechromancer-feature-pack",
+      "content": "Mechromancer",
       "elements": [],
       "sources": [
         "Gaige Pool"
@@ -13069,7 +13069,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Bandit",
-      "content": "dragon-keep-dlc",
+      "content": "Dragon Keep",
       "elements": [],
       "sources": [
         "Mimic Chest",
@@ -13154,7 +13154,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Bandit",
-      "content": "psycho-feature-pack",
+      "content": "Psycho",
       "elements": [],
       "sources": [
         "Krieg Pool"
@@ -13599,7 +13599,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Tediore",
-      "content": "mechromancer-feature-pack",
+      "content": "Mechromancer",
       "elements": [],
       "sources": [
         "Gaige Pool"
@@ -13751,7 +13751,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Vladof",
-      "content": "digistruct-peak-feature-pack",
+      "content": "Digistruct Peak",
       "elements": [],
       "sources": [
         "Chubby"
@@ -13920,7 +13920,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Maliwan",
-      "content": "digistruct-peak-feature-pack",
+      "content": "Digistruct Peak",
       "elements": [],
       "sources": [
         "Chubby"
@@ -13997,7 +13997,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Hyperion",
-      "content": "digistruct-peak-feature-pack",
+      "content": "Digistruct Peak",
       "elements": [],
       "sources": [
         "Chubby"
@@ -14074,7 +14074,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Maliwan",
-      "content": "digistruct-peak-feature-pack",
+      "content": "Digistruct Peak",
       "elements": [],
       "sources": [
         "Chubby"
@@ -14147,7 +14147,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "DAHL",
-      "content": "digistruct-peak-feature-pack",
+      "content": "Digistruct Peak",
       "elements": [],
       "sources": [
         "Chubby"
@@ -14224,7 +14224,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Torgue",
-      "content": "digistruct-peak-feature-pack",
+      "content": "Digistruct Peak",
       "elements": [],
       "sources": [
         "Chubby"
@@ -14301,7 +14301,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Vladof",
-      "content": "digistruct-peak-feature-pack",
+      "content": "Digistruct Peak",
       "elements": [],
       "sources": [
         "Chubby"
@@ -14470,7 +14470,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Hyperion",
-      "content": "digistruct-peak-feature-pack",
+      "content": "Digistruct Peak",
       "elements": [],
       "sources": [
         "Chubby"
@@ -14548,7 +14548,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Hyperion",
-      "content": "mechromancer-feature-pack",
+      "content": "Mechromancer",
       "elements": [],
       "sources": [
         "Vermivorous",
@@ -14632,7 +14632,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Maliwan",
-      "content": "digistruct-peak-feature-pack",
+      "content": "Digistruct Peak",
       "elements": [],
       "sources": [
         "Chubby"
@@ -14707,7 +14707,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Anshin",
-      "content": "digistruct-peak-feature-pack",
+      "content": "Digistruct Peak",
       "elements": [],
       "sources": [
         "Chubby"
@@ -14782,7 +14782,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Pangolin",
-      "content": "digistruct-peak-feature-pack",
+      "content": "Digistruct Peak",
       "elements": [],
       "sources": [
         "Chubby"
@@ -14859,7 +14859,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Bandit",
-      "content": "psycho-feature-pack",
+      "content": "Psycho",
       "elements": [],
       "sources": [
         "Vermivorous",
@@ -14943,7 +14943,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Anshin",
-      "content": "digistruct-peak-feature-pack",
+      "content": "Digistruct Peak",
       "elements": [],
       "sources": [
         "Chubby"
@@ -15020,7 +15020,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Bandit",
-      "content": "digistruct-peak-feature-pack",
+      "content": "Digistruct Peak",
       "elements": [],
       "sources": [
         "Chubby"
@@ -15097,7 +15097,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Hyperion",
-      "content": "digistruct-peak-feature-pack",
+      "content": "Digistruct Peak",
       "elements": [],
       "sources": [
         "Chubby"
@@ -15174,7 +15174,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Bandit",
-      "content": "digistruct-peak-feature-pack",
+      "content": "Digistruct Peak",
       "elements": [],
       "sources": [
         "Chubby"
@@ -15343,7 +15343,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Jakobs",
-      "content": "digistruct-peak-feature-pack",
+      "content": "Digistruct Peak",
       "elements": [],
       "sources": [
         "Chubby"
@@ -15509,7 +15509,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Anshin",
-      "content": "digistruct-peak-feature-pack",
+      "content": "Digistruct Peak",
       "elements": [],
       "sources": [
         "Chubby"
@@ -15585,7 +15585,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Bandit",
-      "content": "digistruct-peak-feature-pack",
+      "content": "Digistruct Peak",
       "elements": [],
       "sources": [
         "Chubby"
@@ -15729,7 +15729,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Bandit",
-      "content": "psycho-feature-pack",
+      "content": "Psycho",
       "elements": [],
       "sources": [
         "Krieg Pool"
@@ -15800,7 +15800,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Vladof",
-      "content": "dragon-keep-dlc",
+      "content": "Dragon Keep",
       "elements": [],
       "sources": [
         "Mimic Chest",
@@ -15885,7 +15885,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Tediore",
-      "content": "dragon-keep-dlc",
+      "content": "Dragon Keep",
       "elements": [],
       "sources": [
         "Mimic Chest",
@@ -15970,7 +15970,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "DAHL",
-      "content": "mechromancer-feature-pack",
+      "content": "Mechromancer",
       "elements": [],
       "sources": [
         "Gaige Pool"
@@ -16118,7 +16118,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Bandit",
-      "content": "mechromancer-feature-pack",
+      "content": "Mechromancer",
       "elements": [],
       "sources": [
         "Gaige Pool"
@@ -16264,7 +16264,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "DAHL",
-      "content": "dragon-keep-dlc",
+      "content": "Dragon Keep",
       "elements": [],
       "sources": [
         "Mimic Chest",
@@ -16349,7 +16349,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Bandit",
-      "content": "psycho-feature-pack",
+      "content": "Psycho",
       "elements": [],
       "sources": [
         "Krieg Pool"
@@ -16568,7 +16568,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Maliwan",
-      "content": "dragon-keep-dlc",
+      "content": "Dragon Keep",
       "elements": [],
       "sources": [
         "Mimic Chest",
@@ -16801,7 +16801,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Bandit",
-      "content": "psycho-feature-pack",
+      "content": "Psycho",
       "elements": [],
       "sources": [
         "Krieg Pool"
@@ -16875,7 +16875,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Maliwan",
-      "content": "psycho-feature-pack",
+      "content": "Psycho",
       "elements": [],
       "sources": [
         "Terramorphous"
@@ -16952,7 +16952,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Maliwan",
-      "content": "mechromancer-feature-pack",
+      "content": "Mechromancer",
       "elements": [],
       "sources": [
         "Terramorphous"
@@ -17629,7 +17629,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Anshin",
-      "content": "mechromancer-feature-pack",
+      "content": "Mechromancer",
       "elements": [],
       "sources": [
         "Gaige Pool"
@@ -17846,7 +17846,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Pangolin",
-      "content": "mechromancer-feature-pack",
+      "content": "Mechromancer",
       "elements": [],
       "sources": [
         "Gaige Pool"
@@ -17919,7 +17919,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Bandit",
-      "content": "psycho-feature-pack",
+      "content": "Psycho",
       "elements": [],
       "sources": [
         "Krieg Pool"
@@ -18357,7 +18357,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Bandit",
-      "content": "psycho-feature-pack",
+      "content": "Psycho",
       "elements": [],
       "sources": [
         "Krieg Pool"
@@ -18428,7 +18428,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Maliwan",
-      "content": "mechromancer-feature-pack",
+      "content": "Mechromancer",
       "elements": [],
       "sources": [
         "Gaige Pool"
@@ -18495,7 +18495,7 @@
       "item_category": null,
       "rarity": "i-effervescent",
       "manufacturer": "Vladof",
-      "content": "fight-for-sanctuary-dlc",
+      "content": "Fight for Sanctuary",
       "elements": [
         "fire"
       ],
@@ -18781,7 +18781,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Maliwan",
-      "content": "dragon-keep-dlc",
+      "content": "Dragon Keep",
       "elements": [
         "shock"
       ],
@@ -18859,7 +18859,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "Bandit",
-      "content": "collectors-edition-cosmetic-pack",
+      "content": "Collector's Edition Cosmetic Pack",
       "elements": [
         "fire"
       ],
@@ -18910,7 +18910,7 @@
       "item_category": null,
       "rarity": "g-seraph",
       "manufacturer": "DAHL",
-      "content": "campaign-of-carnage-dlc",
+      "content": "Campaign of Carnage",
       "elements": [
         "explosive",
         "fire",
@@ -19129,7 +19129,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Maliwan",
-      "content": "dragon-keep-dlc",
+      "content": "Dragon Keep",
       "elements": [
         "fire"
       ],
@@ -19207,7 +19207,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "Maliwan",
-      "content": "dragon-keep-dlc",
+      "content": "Dragon Keep",
       "elements": [
         "fire"
       ],
@@ -19523,7 +19523,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "Maliwan",
-      "content": "dragon-keep-dlc",
+      "content": "Dragon Keep",
       "elements": [
         "shock"
       ],
@@ -19604,7 +19604,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Maliwan",
-      "content": "dragon-keep-dlc",
+      "content": "Dragon Keep",
       "elements": [
         "slag"
       ],
@@ -19670,7 +19670,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "Maliwan",
-      "content": "dragon-keep-dlc",
+      "content": "Dragon Keep",
       "elements": [
         "slag"
       ],
@@ -19753,7 +19753,7 @@
       "item_category": null,
       "rarity": "g-seraph",
       "manufacturer": "Torgue",
-      "content": "campaign-of-carnage-dlc",
+      "content": "Campaign of Carnage",
       "elements": [
         "explosive"
       ],
@@ -19819,7 +19819,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "Torgue",
-      "content": "pirates-booty-dlc",
+      "content": "Pirate's Booty",
       "elements": [
         "explosive"
       ],
@@ -19966,7 +19966,7 @@
       "item_category": null,
       "rarity": "g-seraph",
       "manufacturer": "Maliwan",
-      "content": "campaign-of-carnage-dlc",
+      "content": "Campaign of Carnage",
       "elements": [
         "explosive",
         "fire",
@@ -20353,7 +20353,7 @@
       "item_category": null,
       "rarity": "i-effervescent",
       "manufacturer": "Vladof",
-      "content": "fight-for-sanctuary-dlc",
+      "content": "Fight for Sanctuary",
       "elements": [
         "shock"
       ],
@@ -20477,7 +20477,7 @@
       "item_category": null,
       "rarity": "e-tech",
       "manufacturer": null,
-      "content": "ultimate-upgrade-feature-pack",
+      "content": "Ultimate Upgrade",
       "elements": [],
       "sources": [
         "Loot Midget"
@@ -20535,7 +20535,7 @@
       "item_category": null,
       "rarity": "g-seraph",
       "manufacturer": null,
-      "content": "pirates-booty-dlc",
+      "content": "Pirate's Booty",
       "elements": [],
       "sources": [
         "Oasis Seraph Shop"
@@ -20593,7 +20593,7 @@
       "item_category": null,
       "rarity": "e-tech",
       "manufacturer": null,
-      "content": "ultimate-upgrade-feature-pack",
+      "content": "Ultimate Upgrade",
       "elements": [],
       "sources": [
         "Loot Midget"
@@ -20651,7 +20651,7 @@
       "item_category": null,
       "rarity": "g-seraph",
       "manufacturer": null,
-      "content": "big-game-hunt-dlc",
+      "content": "Big Game Hunt",
       "elements": [],
       "sources": [
         "Grotto Seraph Shop"
@@ -20767,7 +20767,7 @@
       "item_category": null,
       "rarity": "i-effervescent",
       "manufacturer": null,
-      "content": "fight-for-sanctuary-dlc",
+      "content": "Fight for Sanctuary",
       "elements": [],
       "sources": [
         "Haderax"
@@ -20825,7 +20825,7 @@
       "item_category": null,
       "rarity": "e-tech",
       "manufacturer": null,
-      "content": "ultimate-upgrade-feature-pack",
+      "content": "Ultimate Upgrade",
       "elements": [],
       "sources": [
         "Loot Midget"
@@ -20941,7 +20941,7 @@
       "item_category": null,
       "rarity": "g-seraph",
       "manufacturer": null,
-      "content": "campaign-of-carnage-dlc",
+      "content": "Campaign of Carnage",
       "elements": [],
       "sources": [
         "Crater Seraph Shop"
@@ -20999,7 +20999,7 @@
       "item_category": null,
       "rarity": "i-effervescent",
       "manufacturer": null,
-      "content": "fight-for-sanctuary-dlc",
+      "content": "Fight for Sanctuary",
       "elements": [],
       "sources": [
         "Paradise Found"
@@ -21115,7 +21115,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": null,
-      "content": "dragon-keep-dlc",
+      "content": "Dragon Keep",
       "elements": [],
       "sources": [
         "The Amulet"
@@ -21173,7 +21173,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": null,
-      "content": "pirates-booty-dlc",
+      "content": "Pirate's Booty",
       "elements": [],
       "sources": [
         "Message in a Bottle: The Rustyards"
@@ -21231,7 +21231,7 @@
       "item_category": null,
       "rarity": "g-seraph",
       "manufacturer": null,
-      "content": "dragon-keep-dlc",
+      "content": "Dragon Keep",
       "elements": [],
       "sources": [
         "Refuge Seraph Shop"
@@ -21347,7 +21347,7 @@
       "item_category": null,
       "rarity": "e-tech",
       "manufacturer": null,
-      "content": "ultimate-upgrade-feature-pack",
+      "content": "Ultimate Upgrade",
       "elements": [],
       "sources": [
         "Loot Midget"
@@ -21463,7 +21463,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": null,
-      "content": "premiere-club-bl2",
+      "content": "Premiere Club",
       "elements": [],
       "sources": [],
       "metadata": [
@@ -21506,7 +21506,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": null,
-      "content": "fight-for-sanctuary-dlc",
+      "content": "Fight for Sanctuary",
       "elements": [],
       "sources": [
         "Ghost"
@@ -21712,7 +21712,7 @@
       "item_category": null,
       "rarity": "g-seraph",
       "manufacturer": "maliwan",
-      "content": "dragon-keep-dlc",
+      "content": "Dragon Keep",
       "elements": [
         "kinetic"
       ],
@@ -21778,7 +21778,7 @@
       "item_category": null,
       "rarity": "g-seraph",
       "manufacturer": "torgue",
-      "content": "campaign-of-carnage-dlc",
+      "content": "Campaign of Carnage",
       "elements": [
         "kinetic",
         "fire",
@@ -21934,7 +21934,7 @@
       "item_category": null,
       "rarity": "g-seraph",
       "manufacturer": "anshin",
-      "content": "dragon-keep-dlc",
+      "content": "Dragon Keep",
       "elements": [
         "kinetic"
       ],
@@ -22141,7 +22141,7 @@
       "item_category": null,
       "rarity": "i-effervescent",
       "manufacturer": "maliwan",
-      "content": "fight-for-sanctuary-dlc",
+      "content": "Fight for Sanctuary",
       "elements": [
         "kinetic",
         "shock"
@@ -22209,7 +22209,7 @@
       "item_category": null,
       "rarity": "g-seraph",
       "manufacturer": "anshin",
-      "content": "pirates-booty-dlc",
+      "content": "Pirate's Booty",
       "elements": [
         "kinetic"
       ],
@@ -22496,7 +22496,7 @@
       "item_category": null,
       "rarity": "g-seraph",
       "manufacturer": "pangolin",
-      "content": "campaign-of-carnage-dlc",
+      "content": "Campaign of Carnage",
       "elements": [
         "kinetic",
         "explosive"
@@ -22725,7 +22725,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "torgue",
-      "content": "pirates-booty-dlc",
+      "content": "Pirate's Booty",
       "elements": [
         "kinetic"
       ],
@@ -23007,7 +23007,7 @@
       "item_category": null,
       "rarity": "g-seraph",
       "manufacturer": "bandit",
-      "content": "campaign-of-carnage-dlc",
+      "content": "Campaign of Carnage",
       "elements": [
         "kinetic",
         "fire",
@@ -23081,7 +23081,7 @@
       "item_category": null,
       "rarity": "i-effervescent",
       "manufacturer": "hyperion",
-      "content": "fight-for-sanctuary-dlc",
+      "content": "Fight for Sanctuary",
       "elements": [
         "corrosive"
       ],
@@ -23150,7 +23150,7 @@
       "item_category": null,
       "rarity": "g-seraph",
       "manufacturer": "vladof",
-      "content": "campaign-of-carnage-dlc",
+      "content": "Campaign of Carnage",
       "elements": [
         "kinetic",
         "fire",
@@ -23400,7 +23400,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "jakobs",
-      "content": "big-game-hunt-dlc",
+      "content": "Big Game Hunt",
       "elements": [
         "kinetic"
       ],
@@ -23696,7 +23696,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "torgue",
-      "content": "pirates-booty-dlc",
+      "content": "Pirate's Booty",
       "elements": [
         "explosive"
       ],
@@ -23766,7 +23766,7 @@
       "item_category": null,
       "rarity": "g-seraph",
       "manufacturer": "hyperion",
-      "content": "pirates-booty-dlc",
+      "content": "Pirate's Booty",
       "elements": [
         "kinetic",
         "fire",
@@ -23847,7 +23847,7 @@
       "item_category": null,
       "rarity": "g-seraph",
       "manufacturer": "torgue",
-      "content": "pirates-booty-dlc",
+      "content": "Pirate's Booty",
       "elements": [
         "explosive"
       ],
@@ -23924,7 +23924,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "jakobs",
-      "content": "fight-for-sanctuary-dlc",
+      "content": "Fight for Sanctuary",
       "elements": [
         "kinetic"
       ],
@@ -23990,7 +23990,7 @@
       "item_category": null,
       "rarity": "h-pearlescent",
       "manufacturer": "tediore",
-      "content": "ultimate-upgrade-feature-pack",
+      "content": "Ultimate Upgrade",
       "elements": [
         "kinetic",
         "fire",
@@ -24393,7 +24393,7 @@
       "item_category": null,
       "rarity": "h-pearlescent",
       "manufacturer": "dahl",
-      "content": "ultimate-upgrade-feature-pack",
+      "content": "Ultimate Upgrade",
       "elements": [
         "kinetic",
         "fire",
@@ -24488,7 +24488,7 @@
       "item_category": null,
       "rarity": "h-pearlescent",
       "manufacturer": "jakobs",
-      "content": "digistruct-peak-feature-pack",
+      "content": "Digistruct Peak",
       "elements": [
         "kinetic"
       ],
@@ -24798,7 +24798,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "torgue",
-      "content": "campaign-of-carnage-dlc",
+      "content": "Campaign of Carnage",
       "elements": [
         "explosive"
       ],
@@ -25017,7 +25017,7 @@
       "item_category": null,
       "rarity": "h-pearlescent",
       "manufacturer": "hyperion",
-      "content": "ultimate-upgrade-feature-pack",
+      "content": "Ultimate Upgrade",
       "elements": [
         "kinetic",
         "fire",
@@ -25108,7 +25108,7 @@
       "item_category": null,
       "rarity": "h-pearlescent",
       "manufacturer": "torgue",
-      "content": "digistruct-peak-feature-pack",
+      "content": "Digistruct Peak",
       "elements": [
         "explosive"
       ],
@@ -25178,7 +25178,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "bandit",
-      "content": "big-game-hunt-dlc",
+      "content": "Big Game Hunt",
       "elements": [
         "kinetic",
         "fire",
@@ -25394,7 +25394,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "jakobs",
-      "content": "campaign-of-carnage-dlc",
+      "content": "Campaign of Carnage",
       "elements": [
         "kinetic"
       ],
@@ -25623,7 +25623,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "torgue",
-      "content": "slaughterdome-mini-dlc",
+      "content": "Slaughterdome",
       "elements": [
         "explosive"
       ],
@@ -25693,7 +25693,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "maliwan",
-      "content": "dragon-keep-dlc",
+      "content": "Dragon Keep",
       "elements": [
         "shock"
       ],
@@ -25829,7 +25829,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "jakobs",
-      "content": "big-game-hunt-dlc",
+      "content": "Big Game Hunt",
       "elements": [
         "kinetic"
       ],
@@ -25987,7 +25987,7 @@
       "item_category": null,
       "rarity": "g-seraph",
       "manufacturer": "torgue",
-      "content": "pirates-booty-dlc",
+      "content": "Pirate's Booty",
       "elements": [
         "explosive"
       ],
@@ -26150,7 +26150,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "jakobs",
-      "content": "big-game-hunt-dlc",
+      "content": "Big Game Hunt",
       "elements": [
         "kinetic"
       ],
@@ -26532,7 +26532,7 @@
       "item_category": null,
       "rarity": "g-seraph",
       "manufacturer": "maliwan",
-      "content": "dragon-keep-dlc",
+      "content": "Dragon Keep",
       "elements": [
         "slag"
       ],
@@ -26683,7 +26683,7 @@
       "item_category": null,
       "rarity": "h-pearlescent",
       "manufacturer": "jakobs",
-      "content": "digistruct-peak-feature-pack",
+      "content": "Digistruct Peak",
       "elements": [
         "kinetic"
       ],
@@ -26815,7 +26815,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "jakobs",
-      "content": "pirates-booty-dlc",
+      "content": "Pirate's Booty",
       "elements": [
         "fire"
       ],
@@ -26881,7 +26881,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "maliwan",
-      "content": "dragon-keep-dlc",
+      "content": "Dragon Keep",
       "elements": [
         "slag"
       ],
@@ -27339,7 +27339,7 @@
       "item_category": null,
       "rarity": "g-seraph",
       "manufacturer": "jakobs",
-      "content": "big-game-hunt-dlc",
+      "content": "Big Game Hunt",
       "elements": [
         "kinetic"
       ],
@@ -27486,7 +27486,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "dahl",
-      "content": "fight-for-sanctuary-dlc",
+      "content": "Fight for Sanctuary",
       "elements": [
         "shock"
       ],
@@ -27806,7 +27806,7 @@
       "item_category": null,
       "rarity": "i-effervescent",
       "manufacturer": "jakobs",
-      "content": "fight-for-sanctuary-dlc",
+      "content": "Fight for Sanctuary",
       "elements": [
         "fire"
       ],
@@ -27872,7 +27872,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "jakobs",
-      "content": "big-game-hunt-dlc",
+      "content": "Big Game Hunt",
       "elements": [
         "kinetic"
       ],
@@ -27938,7 +27938,7 @@
       "item_category": null,
       "rarity": "g-seraph",
       "manufacturer": "maliwan",
-      "content": "big-game-hunt-dlc",
+      "content": "Big Game Hunt",
       "elements": [
         "corrosive"
       ],
@@ -28023,7 +28023,7 @@
       "item_category": null,
       "rarity": "i-effervescent",
       "manufacturer": "tediore",
-      "content": "fight-for-sanctuary-dlc",
+      "content": "Fight for Sanctuary",
       "elements": [
         "fire"
       ],
@@ -28196,7 +28196,7 @@
       "item_category": null,
       "rarity": "g-seraph",
       "manufacturer": "hyperion",
-      "content": "big-game-hunt-dlc",
+      "content": "Big Game Hunt",
       "elements": [
         "kinetic",
         "fire",
@@ -28373,7 +28373,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "bandit",
-      "content": "pirates-booty-dlc",
+      "content": "Pirate's Booty",
       "elements": [
         "kinetic",
         "fire",
@@ -28611,7 +28611,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "vladof",
-      "content": "campaign-of-carnage-dlc",
+      "content": "Campaign of Carnage",
       "elements": [
         "fire",
         "shock",
@@ -28966,7 +28966,7 @@
       "item_category": null,
       "rarity": "g-seraph",
       "manufacturer": "vladof",
-      "content": "big-game-hunt-dlc",
+      "content": "Big Game Hunt",
       "elements": [
         "kinetic",
         "fire",
@@ -29055,7 +29055,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "maliwan",
-      "content": "pirates-booty-dlc",
+      "content": "Pirate's Booty",
       "elements": [
         "shock"
       ],
@@ -29349,7 +29349,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "jakobs",
-      "content": "fight-for-sanctuary-dlc",
+      "content": "Fight for Sanctuary",
       "elements": [
         "kinetic"
       ],
@@ -29735,7 +29735,7 @@
       "item_category": null,
       "rarity": "i-effervescent",
       "manufacturer": "maliwan",
-      "content": "fight-for-sanctuary-dlc",
+      "content": "Fight for Sanctuary",
       "elements": [
         "fire"
       ],
@@ -30055,7 +30055,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "torgue",
-      "content": "dragon-keep-dlc",
+      "content": "Dragon Keep",
       "elements": [
         "explosive"
       ],
@@ -30125,7 +30125,7 @@
       "item_category": null,
       "rarity": "g-seraph",
       "manufacturer": "tediore",
-      "content": "dragon-keep-dlc",
+      "content": "Dragon Keep",
       "elements": [
         "kinetic",
         "fire",
@@ -30203,7 +30203,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "bandit",
-      "content": "dragon-keep-dlc",
+      "content": "Dragon Keep",
       "elements": [
         "kinetic",
         "fire",
@@ -30277,7 +30277,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "jakobs",
-      "content": "pirates-booty-dlc",
+      "content": "Pirate's Booty",
       "elements": [
         "kinetic"
       ],
@@ -30343,7 +30343,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "hyperion",
-      "content": "fight-for-sanctuary-dlc",
+      "content": "Fight for Sanctuary",
       "elements": [
         "kinetic",
         "fire",
@@ -30417,7 +30417,7 @@
       "item_category": null,
       "rarity": "g-seraph",
       "manufacturer": "vladof",
-      "content": "pirates-booty-dlc",
+      "content": "Pirate's Booty",
       "elements": [
         "kinetic",
         "fire",
@@ -30498,7 +30498,7 @@
       "item_category": null,
       "rarity": "i-effervescent",
       "manufacturer": "torgue",
-      "content": "fight-for-sanctuary-dlc",
+      "content": "Fight for Sanctuary",
       "elements": [
         "shock"
       ],
@@ -30568,7 +30568,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "maliwan",
-      "content": "pirates-booty-dlc",
+      "content": "Pirate's Booty",
       "elements": [
         "fire",
         "shock",
@@ -30730,7 +30730,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "torgue",
-      "content": "campaign-of-carnage-dlc",
+      "content": "Campaign of Carnage",
       "elements": [
         "explosive"
       ],
@@ -30891,7 +30891,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "vladof",
-      "content": "pirates-booty-dlc",
+      "content": "Pirate's Booty",
       "elements": [
         "kinetic",
         "fire",
@@ -30965,7 +30965,7 @@
       "item_category": null,
       "rarity": "g-seraph",
       "manufacturer": "tediore",
-      "content": "pirates-booty-dlc",
+      "content": "Pirate's Booty",
       "elements": [
         "corrosive"
       ],
@@ -31042,7 +31042,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "jakobs",
-      "content": "big-game-hunt-dlc",
+      "content": "Big Game Hunt",
       "elements": [
         "kinetic"
       ],
@@ -31336,7 +31336,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "dahl",
-      "content": "pirates-booty-dlc",
+      "content": "Pirate's Booty",
       "elements": [
         "kinetic",
         "fire",
@@ -31410,7 +31410,7 @@
       "item_category": null,
       "rarity": "h-pearlescent",
       "manufacturer": "bandit",
-      "content": "ultimate-upgrade-feature-pack",
+      "content": "Ultimate Upgrade",
       "elements": [
         "fire"
       ],
@@ -31571,7 +31571,7 @@
       "item_category": null,
       "rarity": "g-seraph",
       "manufacturer": "torgue",
-      "content": "dragon-keep-dlc",
+      "content": "Dragon Keep",
       "elements": [
         "explosive"
       ],
@@ -31641,7 +31641,7 @@
       "item_category": null,
       "rarity": "g-seraph",
       "manufacturer": "dahl",
-      "content": "pirates-booty-dlc",
+      "content": "Pirate's Booty",
       "elements": [
         "fire"
       ],
@@ -32190,7 +32190,7 @@
       "item_category": null,
       "rarity": "e-tech",
       "manufacturer": "hyperion",
-      "content": "campaign-of-carnage-dlc",
+      "content": "Campaign of Carnage",
       "elements": [
         "fire",
         "shock",
@@ -32266,7 +32266,7 @@
       "item_category": null,
       "rarity": "h-pearlescent",
       "manufacturer": "vladof",
-      "content": "ultimate-upgrade-feature-pack",
+      "content": "Ultimate Upgrade",
       "elements": [
         "kinetic",
         "fire",
@@ -32357,7 +32357,7 @@
       "item_category": null,
       "rarity": "g-seraph",
       "manufacturer": "vladof",
-      "content": "dragon-keep-dlc",
+      "content": "Dragon Keep",
       "elements": [
         "kinetic",
         "fire",
@@ -32431,7 +32431,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "jakobs",
-      "content": "pirates-booty-dlc",
+      "content": "Pirate's Booty",
       "elements": [
         "corrosive"
       ],
@@ -32567,7 +32567,7 @@
       "item_category": null,
       "rarity": "h-pearlescent",
       "manufacturer": "maliwan",
-      "content": "ultimate-upgrade-feature-pack",
+      "content": "Ultimate Upgrade",
       "elements": [
         "shock"
       ],
@@ -32734,7 +32734,7 @@
       "item_category": null,
       "rarity": "e-tech",
       "manufacturer": "torgue",
-      "content": "dragon-keep-dlc",
+      "content": "Dragon Keep",
       "elements": [
         "explosive"
       ],
@@ -32804,7 +32804,7 @@
       "item_category": null,
       "rarity": "g-seraph",
       "manufacturer": "bandit",
-      "content": "pirates-booty-dlc",
+      "content": "Pirate's Booty",
       "elements": [
         "kinetic",
         "fire",
@@ -33259,7 +33259,7 @@
       "item_category": null,
       "rarity": "i-effervescent",
       "manufacturer": "dahl",
-      "content": "fight-for-sanctuary-dlc",
+      "content": "Fight for Sanctuary",
       "elements": [
         "fire"
       ],
@@ -33460,7 +33460,7 @@
       "item_category": null,
       "rarity": "h-pearlescent",
       "manufacturer": "torgue",
-      "content": "ultimate-upgrade-feature-pack",
+      "content": "Ultimate Upgrade",
       "elements": [
         "explosive"
       ],
@@ -33547,7 +33547,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "jakobs",
-      "content": "big-game-hunt-dlc",
+      "content": "Big Game Hunt",
       "elements": [
         "shock"
       ],
@@ -33617,7 +33617,7 @@
       "item_category": null,
       "rarity": "h-pearlescent",
       "manufacturer": "jakobs",
-      "content": "ultimate-upgrade-feature-pack",
+      "content": "Ultimate Upgrade",
       "elements": [
         "kinetic"
       ],
@@ -33700,7 +33700,7 @@
       "item_category": null,
       "rarity": "i-effervescent",
       "manufacturer": "torgue",
-      "content": "fight-for-sanctuary-dlc",
+      "content": "Fight for Sanctuary",
       "elements": [
         "explosive"
       ],
@@ -34098,7 +34098,7 @@
       "item_category": null,
       "rarity": "h-pearlescent",
       "manufacturer": "maliwan",
-      "content": "digistruct-peak-feature-pack",
+      "content": "Digistruct Peak",
       "elements": [
         "fire",
         "shock",
@@ -34174,7 +34174,7 @@
       "item_category": null,
       "rarity": "i-effervescent",
       "manufacturer": "torgue",
-      "content": "fight-for-sanctuary-dlc",
+      "content": "Fight for Sanctuary",
       "elements": [
         "fire"
       ],
@@ -34244,7 +34244,7 @@
       "item_category": null,
       "rarity": "e-tech",
       "manufacturer": "hyperion",
-      "content": "big-game-hunt-dlc",
+      "content": "Big Game Hunt",
       "elements": [
         "shock"
       ],
@@ -34379,7 +34379,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": null,
-      "content": "directors-cut-feature-pack",
+      "content": "Director's Cut",
       "elements": [],
       "sources": [
         "Hemovorous",
@@ -34574,7 +34574,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": null,
-      "content": "designers-cut-feature-pack",
+      "content": "Designer's Cut",
       "elements": [],
       "sources": [
         "Dreadnought Drydock",
@@ -34758,7 +34758,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": null,
-      "content": "designers-cut-feature-pack",
+      "content": "Designer's Cut",
       "elements": [],
       "sources": [
         "Dreadnought Drydock",
@@ -34956,7 +34956,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": null,
-      "content": "guns-love-and-tentacles-dlc",
+      "content": "Guns, Love, and Tentacles",
       "elements": [],
       "sources": [
         "Empowered Grawn"
@@ -35079,7 +35079,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": null,
-      "content": "directors-cut-feature-pack",
+      "content": "Director's Cut",
       "elements": [],
       "sources": [
         "Horror at Scryer's Crypt"
@@ -35520,7 +35520,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": null,
-      "content": "directors-cut-feature-pack",
+      "content": "Director's Cut",
       "elements": [],
       "sources": [
         "Vault Card #2"
@@ -35708,7 +35708,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": null,
-      "content": "guns-love-and-tentacles-dlc",
+      "content": "Guns, Love, and Tentacles",
       "elements": [],
       "sources": [
         "The Call of Gythian"
@@ -35766,7 +35766,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": null,
-      "content": "designers-cut-feature-pack",
+      "content": "Designer's Cut",
       "elements": [],
       "sources": [
         "Plunderdome",
@@ -35892,7 +35892,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": null,
-      "content": "bounty-of-blood-dlc",
+      "content": "Bounty of Blood",
       "elements": [],
       "sources": [
         "The Name of the Law"
@@ -36084,7 +36084,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": null,
-      "content": "directors-cut-feature-pack",
+      "content": "Director's Cut",
       "elements": [],
       "sources": [
         "Director's Pool"
@@ -36937,7 +36937,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": null,
-      "content": "directors-cut-feature-pack",
+      "content": "Director's Cut",
       "elements": [],
       "sources": [
         "Director's Pool"
@@ -37071,7 +37071,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": null,
-      "content": "designers-cut-feature-pack",
+      "content": "Designer's Cut",
       "elements": [],
       "sources": [
         "The Hunker Bunker",
@@ -37290,7 +37290,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": null,
-      "content": "guns-love-and-tentacles-dlc",
+      "content": "Guns, Love, and Tentacles",
       "elements": [],
       "sources": [
         "Voltborn",
@@ -37440,7 +37440,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": null,
-      "content": "directors-cut-feature-pack",
+      "content": "Director's Cut",
       "elements": [],
       "sources": [
         "The Seer",
@@ -37660,7 +37660,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": null,
-      "content": "directors-cut-feature-pack",
+      "content": "Director's Cut",
       "elements": [],
       "sources": [
         "The Seer",
@@ -38083,7 +38083,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": null,
-      "content": "designers-cut-feature-pack",
+      "content": "Designer's Cut",
       "elements": [],
       "sources": [
         "Dam, WTF",
@@ -38302,7 +38302,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": null,
-      "content": "fantastic-fustercluck-dlc",
+      "content": "Fantastic Fustercluck",
       "elements": [],
       "sources": [
         "Evil Mordecai",
@@ -38656,7 +38656,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": null,
-      "content": "handsome-jackpot-dlc",
+      "content": "Handsome Jackpot",
       "elements": [],
       "sources": [
         "Jackpot",
@@ -38732,7 +38732,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": null,
-      "content": "handsome-jackpot-dlc",
+      "content": "Handsome Jackpot",
       "elements": [],
       "sources": [
         "Jackpot",
@@ -38871,7 +38871,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": null,
-      "content": "directors-cut-feature-pack",
+      "content": "Director's Cut",
       "elements": [],
       "sources": [
         "Director's Pool"
@@ -39005,7 +39005,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": null,
-      "content": "directors-cut-feature-pack",
+      "content": "Director's Cut",
       "elements": [],
       "sources": [
         "The Seer",
@@ -39080,7 +39080,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": null,
-      "content": "directors-cut-feature-pack",
+      "content": "Director's Cut",
       "elements": [],
       "sources": [
         "Director's Pool"
@@ -39146,7 +39146,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": null,
-      "content": "fantastic-fustercluck-dlc",
+      "content": "Fantastic Fustercluck",
       "elements": [],
       "sources": [
         "Locomöbius",
@@ -39296,7 +39296,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": null,
-      "content": "designers-cut-feature-pack",
+      "content": "Designer's Cut",
       "elements": [],
       "sources": [
         "Dreadnought Drydock",
@@ -39787,7 +39787,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": null,
-      "content": "fantastic-fustercluck-dlc",
+      "content": "Fantastic Fustercluck",
       "elements": [],
       "sources": [
         "Evil Lilith",
@@ -40007,7 +40007,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": null,
-      "content": "fantastic-fustercluck-dlc",
+      "content": "Fantastic Fustercluck",
       "elements": [],
       "sources": [
         "Dr. Benedict",
@@ -40878,7 +40878,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": null,
-      "content": "directors-cut-feature-pack",
+      "content": "Director's Cut",
       "elements": [],
       "sources": [
         "The Seer",
@@ -41021,7 +41021,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": null,
-      "content": "guns-love-and-tentacles-dlc",
+      "content": "Guns, Love, and Tentacles",
       "elements": [],
       "sources": [
         "Empowered Grawn",
@@ -41096,7 +41096,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": null,
-      "content": "handsome-jackpot-dlc",
+      "content": "Handsome Jackpot",
       "elements": [],
       "sources": [
         "Jackpot",
@@ -41390,7 +41390,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": null,
-      "content": "designers-cut-feature-pack",
+      "content": "Designer's Cut",
       "elements": [],
       "sources": [
         "Madwidth Power",
@@ -41466,7 +41466,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": null,
-      "content": "handsome-jackpot-dlc",
+      "content": "Handsome Jackpot",
       "elements": [],
       "sources": [
         "Jackpot Pool"
@@ -41536,7 +41536,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": null,
-      "content": "guns-love-and-tentacles-dlc",
+      "content": "Guns, Love, and Tentacles",
       "elements": [],
       "sources": [
         "Fungal Gorger",
@@ -42150,7 +42150,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": null,
-      "content": "guns-love-and-tentacles-dlc",
+      "content": "Guns, Love, and Tentacles",
       "elements": [],
       "sources": [
         "Shiverous the Unscathed",
@@ -42425,7 +42425,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "Hyperion",
-      "content": "handsome-jackpot-dlc",
+      "content": "Handsome Jackpot",
       "elements": [
         "corrosive"
       ],
@@ -42557,7 +42557,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Tediore",
-      "content": "boost-mods-cosmetic-pack",
+      "content": "Boost Mods Cosmetic Pack",
       "elements": [
         "kinetic"
       ],
@@ -42747,7 +42747,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Vladof",
-      "content": "bounty-of-blood-dlc",
+      "content": "Bounty of Blood",
       "elements": [
         "kinetic"
       ],
@@ -42813,7 +42813,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Vladof",
-      "content": "butt-stallion-cosmetic-pack",
+      "content": "Butt Stallion Cosmetic Pack",
       "elements": [
         "kinetic"
       ],
@@ -42864,7 +42864,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Torgue",
-      "content": "bounty-of-blood-dlc",
+      "content": "Bounty of Blood",
       "elements": [
         "fire"
       ],
@@ -43371,7 +43371,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Pangolin",
-      "content": "revenge-of-the-cartels-event",
+      "content": "Revenge of the Cartels",
       "elements": [
         "kinetic",
         "fire",
@@ -43528,7 +43528,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Torgue",
-      "content": "bloody-harvest-event-bl3",
+      "content": "Bloody Harvest Event",
       "elements": [
         "corrosive"
       ],
@@ -43678,7 +43678,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Hyperion",
-      "content": "designers-cut-feature-pack",
+      "content": "Designer's Cut",
       "elements": [
         "kinetic"
       ],
@@ -43979,7 +43979,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Vladof",
-      "content": "directors-cut-feature-pack",
+      "content": "Director's Cut",
       "elements": [
         "kinetic"
       ],
@@ -44342,7 +44342,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Torgue",
-      "content": "directors-cut-feature-pack",
+      "content": "Director's Cut",
       "elements": [
         "kinetic"
       ],
@@ -44554,7 +44554,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Torgue",
-      "content": "directors-cut-feature-pack",
+      "content": "Director's Cut",
       "elements": [
         "kinetic"
       ],
@@ -44627,7 +44627,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Torgue",
-      "content": "directors-cut-feature-pack",
+      "content": "Director's Cut",
       "elements": [
         "kinetic"
       ],
@@ -45015,7 +45015,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Torgue",
-      "content": "toy-box-cosmetic-pack",
+      "content": "Toy Box Cosmetic Pack",
       "elements": [
         "kinetic"
       ],
@@ -45222,7 +45222,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "anshin",
-      "content": "handsome-jackpot-dlc",
+      "content": "Handsome Jackpot",
       "elements": [
         "shock"
       ],
@@ -45513,7 +45513,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "anshin",
-      "content": "designers-cut-feature-pack",
+      "content": "Designer's Cut",
       "elements": [
         "kinetic"
       ],
@@ -45745,7 +45745,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "anshin",
-      "content": "boost-mods-cosmetic-pack",
+      "content": "Boost Mods Cosmetic Pack",
       "elements": [
         "fire"
       ],
@@ -45796,7 +45796,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "hyperion",
-      "content": "handsome-jackpot-dlc",
+      "content": "Handsome Jackpot",
       "elements": [
         "shock"
       ],
@@ -45862,7 +45862,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "hyperion",
-      "content": "handsome-jackpot-dlc",
+      "content": "Handsome Jackpot",
       "elements": [
         "fire"
       ],
@@ -45928,7 +45928,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "hyperion",
-      "content": "fantastic-fustercluck-dlc",
+      "content": "Fantastic Fustercluck",
       "elements": [
         "kinetic",
         "fire",
@@ -46011,7 +46011,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "hyperion",
-      "content": "revenge-of-the-cartels-event",
+      "content": "Revenge of the Cartels",
       "elements": [
         "kinetic"
       ],
@@ -46234,7 +46234,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "hyperion",
-      "content": "designers-cut-feature-pack",
+      "content": "Designer's Cut",
       "elements": [
         "corrosive"
       ],
@@ -46383,7 +46383,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "hyperion",
-      "content": "fantastic-fustercluck-dlc",
+      "content": "Fantastic Fustercluck",
       "elements": [
         "shock"
       ],
@@ -46522,7 +46522,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "anshin",
-      "content": "designers-cut-feature-pack",
+      "content": "Designer's Cut",
       "elements": [
         "kinetic"
       ],
@@ -46598,7 +46598,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "anshin",
-      "content": "guns-love-and-tentacles-dlc",
+      "content": "Guns, Love, and Tentacles",
       "elements": [
         "kinetic"
       ],
@@ -46664,7 +46664,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "pangolin",
-      "content": "fantastic-fustercluck-dlc",
+      "content": "Fantastic Fustercluck",
       "elements": [
         "kinetic",
         "fire",
@@ -46820,7 +46820,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "anshin",
-      "content": "designers-cut-feature-pack",
+      "content": "Designer's Cut",
       "elements": [
         "kinetic",
         "fire",
@@ -46906,7 +46906,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "pangolin",
-      "content": "directors-cut-feature-pack",
+      "content": "Director's Cut",
       "elements": [
         "kinetic",
         "fire",
@@ -47415,7 +47415,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "hyperion",
-      "content": "guns-love-and-tentacles-dlc",
+      "content": "Guns, Love, and Tentacles",
       "elements": [
         "fire",
         "shock",
@@ -47496,7 +47496,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "pangolin",
-      "content": "fantastic-fustercluck-dlc",
+      "content": "Fantastic Fustercluck",
       "elements": [
         "kinetic",
         "fire",
@@ -47822,7 +47822,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "hyperion",
-      "content": "directors-cut-feature-pack",
+      "content": "Director's Cut",
       "elements": [
         "shock"
       ],
@@ -48276,7 +48276,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "anshin",
-      "content": "handsome-jackpot-dlc",
+      "content": "Handsome Jackpot",
       "elements": [
         "kinetic"
       ],
@@ -48425,7 +48425,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "anshin",
-      "content": "bloody-harvest-event-bl3",
+      "content": "Bloody Harvest Event",
       "elements": [
         "cryo"
       ],
@@ -48799,7 +48799,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "anshin",
-      "content": "directors-cut-feature-pack",
+      "content": "Director's Cut",
       "elements": [
         "kinetic"
       ],
@@ -48945,7 +48945,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "pangolin",
-      "content": "guns-love-and-tentacles-dlc",
+      "content": "Guns, Love, and Tentacles",
       "elements": [
         "fire"
       ],
@@ -49167,7 +49167,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "pangolin",
-      "content": "guns-love-and-tentacles-dlc",
+      "content": "Guns, Love, and Tentacles",
       "elements": [
         "cryo"
       ],
@@ -49309,7 +49309,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "anshin",
-      "content": "revenge-of-the-cartels-event",
+      "content": "Revenge of the Cartels",
       "elements": [
         "kinetic"
       ],
@@ -49896,7 +49896,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "tediore",
-      "content": "guns-love-and-tentacles-dlc",
+      "content": "Guns, Love, and Tentacles",
       "elements": [
         "kinetic",
         "fire",
@@ -49983,7 +49983,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "dahl",
-      "content": "fantastic-fustercluck-dlc",
+      "content": "Fantastic Fustercluck",
       "elements": [
         "fire"
       ],
@@ -50126,7 +50126,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "atlas",
-      "content": "directors-cut-feature-pack",
+      "content": "Director's Cut",
       "elements": [
         "kinetic"
       ],
@@ -50210,7 +50210,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "dahl",
-      "content": "handsome-jackpot-dlc",
+      "content": "Handsome Jackpot",
       "elements": [
         "kinetic",
         "fire",
@@ -50645,7 +50645,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "maliwan",
-      "content": "bounty-of-blood-dlc",
+      "content": "Bounty of Blood",
       "elements": [
         "fire",
         "shock",
@@ -50883,7 +50883,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "maliwan",
-      "content": "designers-cut-feature-pack",
+      "content": "Designer's Cut",
       "elements": [
         "kinetic"
       ],
@@ -50959,7 +50959,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "jakobs",
-      "content": "directors-cut-feature-pack",
+      "content": "Director's Cut",
       "elements": [
         "kinetic"
       ],
@@ -51185,7 +51185,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "jakobs",
-      "content": "directors-cut-feature-pack",
+      "content": "Director's Cut",
       "elements": [
         "kinetic"
       ],
@@ -51255,7 +51255,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "maliwan",
-      "content": "fantastic-fustercluck-dlc",
+      "content": "Fantastic Fustercluck",
       "elements": [
         "corrosive",
         "radiation"
@@ -51327,7 +51327,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "maliwan",
-      "content": "fantastic-fustercluck-dlc",
+      "content": "Fantastic Fustercluck",
       "elements": [
         "fire",
         "shock",
@@ -51412,7 +51412,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "dahl",
-      "content": "fantastic-fustercluck-dlc",
+      "content": "Fantastic Fustercluck",
       "elements": [
         "fire",
         "shock",
@@ -51490,7 +51490,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "jakobs",
-      "content": "bounty-of-blood-dlc",
+      "content": "Bounty of Blood",
       "elements": [
         "kinetic"
       ],
@@ -51636,7 +51636,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "vladof",
-      "content": "designers-cut-feature-pack",
+      "content": "Designer's Cut",
       "elements": [
         "fire",
         "shock",
@@ -51724,7 +51724,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "dahl",
-      "content": "handsome-jackpot-dlc",
+      "content": "Handsome Jackpot",
       "elements": [
         "kinetic",
         "fire"
@@ -51803,7 +51803,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "cov",
-      "content": "handsome-jackpot-dlc",
+      "content": "Handsome Jackpot",
       "elements": [
         "cryo"
       ],
@@ -52181,7 +52181,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "tediore",
-      "content": "bounty-of-blood-dlc",
+      "content": "Bounty of Blood",
       "elements": [
         "kinetic",
         "fire",
@@ -52268,7 +52268,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "maliwan",
-      "content": "bounty-of-blood-dlc",
+      "content": "Bounty of Blood",
       "elements": [
         "radiation"
       ],
@@ -52484,7 +52484,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "maliwan",
-      "content": "bounty-of-blood-dlc",
+      "content": "Bounty of Blood",
       "elements": [
         "fire",
         "shock",
@@ -52562,7 +52562,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "hyperion",
-      "content": "handsome-jackpot-dlc",
+      "content": "Handsome Jackpot",
       "elements": [
         "kinetic",
         "fire",
@@ -52727,7 +52727,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "jakobs",
-      "content": "guns-love-and-tentacles-dlc",
+      "content": "Guns, Love, and Tentacles",
       "elements": [
         "cryo"
       ],
@@ -52859,7 +52859,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "jakobs",
-      "content": "guns-love-and-tentacles-dlc",
+      "content": "Guns, Love, and Tentacles",
       "elements": [
         "kinetic"
       ],
@@ -53007,7 +53007,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "maliwan",
-      "content": "bounty-of-blood-dlc",
+      "content": "Bounty of Blood",
       "elements": [
         "fire",
         "shock",
@@ -53175,7 +53175,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "torgue",
-      "content": "bounty-of-blood-dlc",
+      "content": "Bounty of Blood",
       "elements": [
         "kinetic",
         "fire",
@@ -53262,7 +53262,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "hyperion",
-      "content": "fantastic-fustercluck-dlc",
+      "content": "Fantastic Fustercluck",
       "elements": [
         "kinetic",
         "fire",
@@ -53426,7 +53426,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "torgue",
-      "content": "handsome-jackpot-dlc",
+      "content": "Handsome Jackpot",
       "elements": [
         "kinetic",
         "fire",
@@ -53513,7 +53513,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "torgue",
-      "content": "handsome-jackpot-dlc",
+      "content": "Handsome Jackpot",
       "elements": [
         "kinetic"
       ],
@@ -53590,7 +53590,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "dahl",
-      "content": "directors-cut-feature-pack",
+      "content": "Director's Cut",
       "elements": [
         "kinetic"
       ],
@@ -53792,7 +53792,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "torgue",
-      "content": "fantastic-fustercluck-dlc",
+      "content": "Fantastic Fustercluck",
       "elements": [
         "radiation"
       ],
@@ -53862,7 +53862,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "torgue",
-      "content": "designers-cut-feature-pack",
+      "content": "Designer's Cut",
       "elements": [
         "kinetic"
       ],
@@ -54184,7 +54184,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "jakobs",
-      "content": "bounty-of-blood-dlc",
+      "content": "Bounty of Blood",
       "elements": [
         "kinetic"
       ],
@@ -54337,7 +54337,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "tediore",
-      "content": "designers-cut-feature-pack",
+      "content": "Designer's Cut",
       "elements": [
         "fire",
         "shock",
@@ -54831,7 +54831,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "dahl",
-      "content": "handsome-jackpot-dlc",
+      "content": "Handsome Jackpot",
       "elements": [
         "cryo"
       ],
@@ -54897,7 +54897,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "vladof",
-      "content": "bounty-of-blood-dlc",
+      "content": "Bounty of Blood",
       "elements": [
         "kinetic",
         "fire",
@@ -55057,7 +55057,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "dahl",
-      "content": "anniversary-events",
+      "content": "Anniversary Events",
       "elements": [
         "kinetic"
       ],
@@ -55195,7 +55195,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "maliwan",
-      "content": "handsome-jackpot-dlc",
+      "content": "Handsome Jackpot",
       "elements": [
         "fire"
       ],
@@ -55631,7 +55631,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "hyperion",
-      "content": "bloody-harvest-event-bl3",
+      "content": "Bloody Harvest Event",
       "elements": [
         "fire",
         "shock",
@@ -55789,7 +55789,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "hyperion",
-      "content": "guns-love-and-tentacles-dlc",
+      "content": "Guns, Love, and Tentacles",
       "elements": [
         "fire"
       ],
@@ -55859,7 +55859,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "vladof",
-      "content": "designers-cut-feature-pack",
+      "content": "Designer's Cut",
       "elements": [
         "fire"
       ],
@@ -56100,7 +56100,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "tediore",
-      "content": "guns-love-and-tentacles-dlc",
+      "content": "Guns, Love, and Tentacles",
       "elements": [
         "fire"
       ],
@@ -56177,7 +56177,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "maliwan",
-      "content": "bounty-of-blood-dlc",
+      "content": "Bounty of Blood",
       "elements": [
         "fire",
         "shock",
@@ -56269,7 +56269,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "maliwan",
-      "content": "directors-cut-feature-pack",
+      "content": "Director's Cut",
       "elements": [
         "shock"
       ],
@@ -56416,7 +56416,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "maliwan",
-      "content": "bounty-of-blood-dlc",
+      "content": "Bounty of Blood",
       "elements": [
         "fire",
         "shock",
@@ -56497,7 +56497,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "maliwan",
-      "content": "guns-love-and-tentacles-dlc",
+      "content": "Guns, Love, and Tentacles",
       "elements": [
         "cryo"
       ],
@@ -56567,7 +56567,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "cov",
-      "content": "bounty-of-blood-dlc",
+      "content": "Bounty of Blood",
       "elements": [
         "corrosive"
       ],
@@ -56794,7 +56794,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "torgue",
-      "content": "toy-box-cosmetic-pack",
+      "content": "Toy Box Cosmetic Pack",
       "elements": [
         "kinetic"
       ],
@@ -56923,7 +56923,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "hyperion",
-      "content": "directors-cut-feature-pack",
+      "content": "Director's Cut",
       "elements": [
         "corrosive"
       ],
@@ -57075,7 +57075,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "maliwan",
-      "content": "revenge-of-the-cartels-event",
+      "content": "Revenge of the Cartels",
       "elements": [
         "fire"
       ],
@@ -57153,7 +57153,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "hyperion",
-      "content": "directors-cut-feature-pack",
+      "content": "Director's Cut",
       "elements": [
         "shock"
       ],
@@ -57609,7 +57609,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "hyperion",
-      "content": "handsome-jackpot-dlc",
+      "content": "Handsome Jackpot",
       "elements": [
         "fire",
         "shock",
@@ -58125,7 +58125,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "torgue",
-      "content": "designers-cut-feature-pack",
+      "content": "Designer's Cut",
       "elements": [
         "fire"
       ],
@@ -58201,7 +58201,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "cov",
-      "content": "guns-love-and-tentacles-dlc",
+      "content": "Guns, Love, and Tentacles",
       "elements": [
         "cryo"
       ],
@@ -58267,7 +58267,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "maliwan",
-      "content": "toy-box-cosmetic-pack",
+      "content": "Toy Box Cosmetic Pack",
       "elements": [
         "shock"
       ],
@@ -58405,7 +58405,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "jakobs",
-      "content": "bounty-of-blood-dlc",
+      "content": "Bounty of Blood",
       "elements": [
         "cryo"
       ],
@@ -58471,7 +58471,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "hyperion",
-      "content": "revenge-of-the-cartels-event",
+      "content": "Revenge of the Cartels",
       "elements": [
         "fire"
       ],
@@ -58632,7 +58632,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "maliwan",
-      "content": "guns-love-and-tentacles-dlc",
+      "content": "Guns, Love, and Tentacles",
       "elements": [
         "fire",
         "shock",
@@ -58717,7 +58717,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "vladof",
-      "content": "handsome-jackpot-dlc",
+      "content": "Handsome Jackpot",
       "elements": [
         "kinetic",
         "fire",
@@ -58797,7 +58797,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "maliwan",
-      "content": "handsome-jackpot-dlc",
+      "content": "Handsome Jackpot",
       "elements": [
         "fire",
         "shock",
@@ -58882,7 +58882,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "jakobs",
-      "content": "directors-cut-feature-pack",
+      "content": "Director's Cut",
       "elements": [
         "kinetic"
       ],
@@ -59114,7 +59114,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "hyperion",
-      "content": "handsome-jackpot-dlc",
+      "content": "Handsome Jackpot",
       "elements": [
         "corrosive"
       ],
@@ -59180,7 +59180,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "dahl",
-      "content": "guns-love-and-tentacles-dlc",
+      "content": "Guns, Love, and Tentacles",
       "elements": [
         "kinetic"
       ],
@@ -59563,7 +59563,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "vladof",
-      "content": "designers-cut-feature-pack",
+      "content": "Designer's Cut",
       "elements": [
         "fire",
         "shock",
@@ -60026,7 +60026,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "torgue",
-      "content": "handsome-jackpot-dlc",
+      "content": "Handsome Jackpot",
       "elements": [
         "kinetic"
       ],
@@ -60258,7 +60258,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "vladof",
-      "content": "bounty-of-blood-dlc",
+      "content": "Bounty of Blood",
       "elements": [
         "kinetic",
         "fire",
@@ -60341,7 +60341,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "torgue",
-      "content": "fantastic-fustercluck-dlc",
+      "content": "Fantastic Fustercluck",
       "elements": [
         "shock"
       ],
@@ -60552,7 +60552,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "jakobs",
-      "content": "guns-love-and-tentacles-dlc",
+      "content": "Guns, Love, and Tentacles",
       "elements": [
         "kinetic"
       ],
@@ -60695,7 +60695,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "torgue",
-      "content": "fantastic-fustercluck-dlc",
+      "content": "Fantastic Fustercluck",
       "elements": [
         "shock"
       ],
@@ -60772,7 +60772,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "jakobs",
-      "content": "guns-love-and-tentacles-dlc",
+      "content": "Guns, Love, and Tentacles",
       "elements": [
         "kinetic"
       ],
@@ -60838,7 +60838,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "jakobs",
-      "content": "guns-love-and-tentacles-dlc",
+      "content": "Guns, Love, and Tentacles",
       "elements": [
         "kinetic"
       ],
@@ -60988,7 +60988,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "jakobs",
-      "content": "handsome-jackpot-dlc",
+      "content": "Handsome Jackpot",
       "elements": [
         "kinetic"
       ],
@@ -61315,7 +61315,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "cov",
-      "content": "fantastic-fustercluck-dlc",
+      "content": "Fantastic Fustercluck",
       "elements": [
         "kinetic",
         "fire",
@@ -61536,7 +61536,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "cov",
-      "content": "directors-cut-feature-pack",
+      "content": "Director's Cut",
       "elements": [
         "kinetic"
       ],
@@ -61606,7 +61606,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "hyperion",
-      "content": "handsome-jackpot-dlc",
+      "content": "Handsome Jackpot",
       "elements": [
         "corrosive"
       ],
@@ -61738,7 +61738,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "cov",
-      "content": "fantastic-fustercluck-dlc",
+      "content": "Fantastic Fustercluck",
       "elements": [
         "fire"
       ],
@@ -62414,7 +62414,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": null,
-      "content": "vault-of-the-damned-dlc",
+      "content": "Vault of the Damned",
       "elements": [],
       "sources": [
         "Nightmare Rift"
@@ -63318,7 +63318,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": null,
-      "content": "vault-of-the-damned-dlc",
+      "content": "Vault of the Damned",
       "elements": [],
       "sources": [
         "Nightmare Rift"
@@ -63465,7 +63465,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": null,
-      "content": "the-last-resort-dlc",
+      "content": "The Last Resort",
       "elements": [],
       "sources": [
         "DLC 2 Boss Pool"
@@ -64290,7 +64290,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": null,
-      "content": "vault-of-the-damned-dlc",
+      "content": "Vault of the Damned",
       "elements": [],
       "sources": [
         "Nightmare Rift"
@@ -64359,7 +64359,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": null,
-      "content": "the-last-resort-dlc",
+      "content": "The Last Resort",
       "elements": [],
       "sources": [
         "DLC 2 Boss Pool"
@@ -64730,7 +64730,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": null,
-      "content": "vault-of-the-damned-dlc",
+      "content": "Vault of the Damned",
       "elements": [],
       "sources": [
         "Nightmare Rift"
@@ -65099,7 +65099,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": null,
-      "content": "the-last-resort-dlc",
+      "content": "The Last Resort",
       "elements": [],
       "sources": [
         "DLC 2 Boss Pool"
@@ -65317,7 +65317,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": null,
-      "content": "vault-of-the-damned-dlc",
+      "content": "Vault of the Damned",
       "elements": [],
       "sources": [
         "Nightmare Rift"
@@ -65688,7 +65688,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": null,
-      "content": "the-last-resort-dlc",
+      "content": "The Last Resort",
       "elements": [],
       "sources": [
         "DLC 2 Boss Pool"
@@ -65911,7 +65911,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": null,
-      "content": "vault-of-the-damned-dlc",
+      "content": "Vault of the Damned",
       "elements": [],
       "sources": [
         "Nightmare Rift"
@@ -66199,7 +66199,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": null,
-      "content": "the-last-resort-dlc",
+      "content": "The Last Resort",
       "elements": [],
       "sources": [
         "DLC 2 Boss Pool"
@@ -66494,7 +66494,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": null,
-      "content": "the-last-resort-dlc",
+      "content": "The Last Resort",
       "elements": [],
       "sources": [
         "DLC 2 Boss Pool"
@@ -70076,7 +70076,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Order",
-      "content": "the-vile-shadows",
+      "content": "The Vile Shadows",
       "elements": [
         "fire",
         "shock",
@@ -70150,7 +70150,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Ripper",
-      "content": "a-zane-to-kill-for",
+      "content": "A Zane to Kill For",
       "elements": [
         "fire",
         "shock",
@@ -70307,7 +70307,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Vladof",
-      "content": "vault-of-the-damned-dlc",
+      "content": "Vault of the Damned",
       "elements": [
         "kinetic",
         "fire",
@@ -70383,7 +70383,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Jakobs",
-      "content": "vault-of-the-damned-dlc",
+      "content": "Vault of the Damned",
       "elements": [
         "fire",
         "shock",
@@ -70842,7 +70842,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Maliwan",
-      "content": "a-zane-to-kill-for",
+      "content": "A Zane to Kill For",
       "elements": [
         "fire",
         "shock",
@@ -70916,7 +70916,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Torgue",
-      "content": "stone-demon",
+      "content": "Stone Demon",
       "elements": [
         "kinetic",
         "fire",
@@ -71627,7 +71627,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Torgue",
-      "content": "vault-of-the-damned-dlc",
+      "content": "Vault of the Damned",
       "elements": [
         "kinetic",
         "fire",
@@ -71703,7 +71703,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Maliwan",
-      "content": "vault-of-the-damned-dlc",
+      "content": "Vault of the Damned",
       "elements": [
         "fire"
       ],
@@ -72007,7 +72007,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Maliwan",
-      "content": "the-last-resort-dlc",
+      "content": "The Last Resort",
       "elements": [
         "fire",
         "shock",
@@ -72081,7 +72081,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Torgue",
-      "content": "murders-and-acquisitions",
+      "content": "Murders & Acquisitions",
       "elements": [
         "kinetic",
         "fire",
@@ -72233,7 +72233,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Daedalus",
-      "content": "murders-and-acquisitions",
+      "content": "Murders & Acquisitions",
       "elements": [
         "kinetic",
         "fire",
@@ -72309,7 +72309,7 @@
       "item_category": null,
       "rarity": "h-pearlescent",
       "manufacturer": "Vladof",
-      "content": "the-last-resort-dlc",
+      "content": "The Last Resort",
       "elements": [
         "kinetic",
         "fire",
@@ -72673,7 +72673,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Order",
-      "content": "horrors-of-kairos-event",
+      "content": "Horrors of Kairos",
       "elements": [
         "kinetic"
       ],
@@ -73615,7 +73615,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "order",
-      "content": "vault-of-the-damned-dlc",
+      "content": "Vault of the Damned",
       "elements": [],
       "sources": [
         "Colonel Crash"
@@ -73738,7 +73738,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "tediore",
-      "content": "the-last-resort-dlc",
+      "content": "The Last Resort",
       "elements": [],
       "sources": [
         "Volcanus"
@@ -73796,7 +73796,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "maliwan",
-      "content": "vault-of-the-damned-dlc",
+      "content": "Vault of the Damned",
       "elements": [],
       "sources": [
         "The Penitent Steel"
@@ -73854,7 +73854,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "daedalus",
-      "content": "mercenary-day",
+      "content": "Mercenary Day",
       "elements": [],
       "sources": [
         "Minister Screw & Donk"
@@ -73912,7 +73912,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "ripper",
-      "content": "a-zane-to-kill-for",
+      "content": "A Zane to Kill For",
       "elements": [],
       "sources": [
         "F1x.R"
@@ -74035,7 +74035,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "torgue",
-      "content": "the-vile-shadows",
+      "content": "The Vile Shadows",
       "elements": [],
       "sources": [
         "Vile Grasp"
@@ -74093,7 +74093,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "vladof",
-      "content": "murders-and-acquisitions",
+      "content": "Murders & Acquisitions",
       "elements": [],
       "sources": [
         "BETAMAXXX"
@@ -74636,7 +74636,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "maliwan",
-      "content": "vault-of-the-damned-dlc",
+      "content": "Vault of the Damned",
       "elements": [
         "kinetic",
         "fire",
@@ -74712,7 +74712,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "jakobs",
-      "content": "the-last-resort-dlc",
+      "content": "The Last Resort",
       "elements": [
         "kinetic",
         "fire",
@@ -75264,7 +75264,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "daedalus",
-      "content": "vault-of-the-damned-dlc",
+      "content": "Vault of the Damned",
       "elements": [
         "kinetic",
         "fire",
@@ -75340,7 +75340,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "tediore",
-      "content": "stone-demon",
+      "content": "Stone Demon",
       "elements": [
         "kinetic",
         "fire",
@@ -75416,7 +75416,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "torgue",
-      "content": "murders-and-acquisitions",
+      "content": "Murders & Acquisitions",
       "elements": [
         "kinetic",
         "fire",
@@ -75729,7 +75729,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "ripper",
-      "content": "a-zane-to-kill-for",
+      "content": "A Zane to Kill For",
       "elements": [
         "kinetic",
         "fire",
@@ -76664,7 +76664,7 @@
       "item_category": null,
       "rarity": "h-pearlescent",
       "manufacturer": "torgue",
-      "content": "the-vile-shadows",
+      "content": "The Vile Shadows",
       "elements": [
         "kinetic",
         "fire",
@@ -76831,7 +76831,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "torgue",
-      "content": "stone-demon",
+      "content": "Stone Demon",
       "elements": [
         "kinetic",
         "fire",
@@ -76994,7 +76994,7 @@
       "item_category": null,
       "rarity": "h-pearlescent",
       "manufacturer": "ripper",
-      "content": "the-last-resort-dlc",
+      "content": "The Last Resort",
       "elements": [
         "kinetic",
         "fire",
@@ -77070,7 +77070,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "order",
-      "content": "the-last-resort-dlc",
+      "content": "The Last Resort",
       "elements": [
         "kinetic"
       ],
@@ -77608,7 +77608,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "vladof",
-      "content": "a-zane-to-kill-for",
+      "content": "A Zane to Kill For",
       "elements": [
         "kinetic",
         "fire",
@@ -77684,7 +77684,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "maliwan",
-      "content": "stone-demon",
+      "content": "Stone Demon",
       "elements": [
         "fire",
         "shock",
@@ -77762,7 +77762,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "vladof",
-      "content": "stone-demon",
+      "content": "Stone Demon",
       "elements": [
         "fire",
         "shock",
@@ -78164,7 +78164,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "maliwan",
-      "content": "the-vile-shadows",
+      "content": "The Vile Shadows",
       "elements": [
         "fire",
         "shock",
@@ -78642,7 +78642,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "torgue",
-      "content": "a-zane-to-kill-for",
+      "content": "A Zane to Kill For",
       "elements": [
         "kinetic",
         "fire",
@@ -78722,7 +78722,7 @@
       "item_category": null,
       "rarity": "h-pearlescent",
       "manufacturer": "ripper",
-      "content": "vault-of-the-damned-dlc",
+      "content": "Vault of the Damned",
       "elements": [
         "kinetic",
         "fire",
@@ -78801,7 +78801,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "torgue",
-      "content": "the-last-resort-dlc",
+      "content": "The Last Resort",
       "elements": [
         "radiation"
       ],
@@ -78871,7 +78871,7 @@
       "item_category": null,
       "rarity": "h-pearlescent",
       "manufacturer": "order",
-      "content": "vault-of-the-damned-dlc",
+      "content": "Vault of the Damned",
       "elements": [
         "kinetic"
       ],
@@ -79010,7 +79010,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "maliwan",
-      "content": "the-last-resort-dlc",
+      "content": "The Last Resort",
       "elements": [
         "fire",
         "shock",
@@ -79088,7 +79088,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "ripper",
-      "content": "the-last-resort-dlc",
+      "content": "The Last Resort",
       "elements": [
         "fire",
         "shock",
@@ -79164,7 +79164,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "maliwan",
-      "content": "a-zane-to-kill-for",
+      "content": "A Zane to Kill For",
       "elements": [
         "fire",
         "shock",
@@ -79319,7 +79319,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "order",
-      "content": "murders-and-acquisitions",
+      "content": "Murders & Acquisitions",
       "elements": [
         "radiation"
       ],
@@ -79385,7 +79385,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "jakobs",
-      "content": "stone-demon",
+      "content": "Stone Demon",
       "elements": [
         "kinetic"
       ],
@@ -79527,7 +79527,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "ripper",
-      "content": "the-vile-shadows",
+      "content": "The Vile Shadows",
       "elements": [
         "kinetic",
         "fire",
@@ -79607,7 +79607,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "vladof",
-      "content": "murders-and-acquisitions",
+      "content": "Murders & Acquisitions",
       "elements": [
         "kinetic",
         "fire",
@@ -79683,7 +79683,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "vladof",
-      "content": "the-last-resort-dlc",
+      "content": "The Last Resort",
       "elements": [
         "fire",
         "shock",
@@ -79761,7 +79761,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "ripper",
-      "content": "vault-of-the-damned-dlc",
+      "content": "Vault of the Damned",
       "elements": [
         "kinetic",
         "fire",
@@ -79841,7 +79841,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "jakobs",
-      "content": "vault-of-the-damned-dlc",
+      "content": "Vault of the Damned",
       "elements": [
         "kinetic"
       ],
@@ -80170,7 +80170,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "maliwan",
-      "content": "vault-of-the-damned-dlc",
+      "content": "Vault of the Damned",
       "elements": [
         "cryo"
       ],
@@ -80240,7 +80240,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "jakobs",
-      "content": "the-vile-shadows",
+      "content": "The Vile Shadows",
       "elements": [
         "kinetic"
       ],
@@ -80306,7 +80306,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "torgue",
-      "content": "stone-demon",
+      "content": "Stone Demon",
       "elements": [
         "kinetic"
       ],
@@ -80376,7 +80376,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "tediore",
-      "content": "twitch-drops-bl4",
+      "content": "Twitch Drops",
       "elements": [
         "kinetic"
       ],
@@ -80446,7 +80446,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "tediore",
-      "content": "the-last-resort-dlc",
+      "content": "The Last Resort",
       "elements": [
         "kinetic",
         "fire",
@@ -80908,7 +80908,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "ripper",
-      "content": "stone-demon",
+      "content": "Stone Demon",
       "elements": [
         "kinetic",
         "fire",
@@ -80988,7 +80988,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "daedalus",
-      "content": "the-last-resort-dlc",
+      "content": "The Last Resort",
       "elements": [
         "kinetic",
         "fire",
@@ -81068,7 +81068,7 @@
       "item_category": null,
       "rarity": "h-pearlescent",
       "manufacturer": "torgue",
-      "content": "stone-demon",
+      "content": "Stone Demon",
       "elements": [
         "kinetic",
         "fire",
@@ -81153,7 +81153,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "daedalus",
-      "content": "a-zane-to-kill-for",
+      "content": "A Zane to Kill For",
       "elements": [
         "kinetic",
         "fire",
@@ -81229,7 +81229,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "torgue",
-      "content": "mercenary-day",
+      "content": "Mercenary Day",
       "elements": [
         "kinetic",
         "fire",
@@ -81455,7 +81455,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "vladof",
-      "content": "vault-of-the-damned-dlc",
+      "content": "Vault of the Damned",
       "elements": [
         "kinetic"
       ],
@@ -81608,7 +81608,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "jakobs",
-      "content": "the-last-resort-dlc",
+      "content": "The Last Resort",
       "elements": [
         "kinetic"
       ],
@@ -81674,7 +81674,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "maliwan",
-      "content": "the-last-resort-dlc",
+      "content": "The Last Resort",
       "elements": [
         "fire",
         "shock",
@@ -81916,7 +81916,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "jakobs",
-      "content": "the-last-resort-dlc",
+      "content": "The Last Resort",
       "elements": [
         "kinetic"
       ],
@@ -81982,7 +81982,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "tediore",
-      "content": "mercenary-day",
+      "content": "Mercenary Day",
       "elements": [
         "kinetic",
         "fire",
@@ -82773,7 +82773,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "tediore",
-      "content": "stone-demon",
+      "content": "Stone Demon",
       "elements": [
         "fire",
         "shock",
@@ -82851,7 +82851,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "vladof",
-      "content": "vault-of-the-damned-dlc",
+      "content": "Vault of the Damned",
       "elements": [
         "fire",
         "shock",
@@ -83012,7 +83012,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "vladof",
-      "content": "a-zane-to-kill-for",
+      "content": "A Zane to Kill For",
       "elements": [
         "fire",
         "shock",
@@ -83253,7 +83253,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "tediore",
-      "content": "the-last-resort-dlc",
+      "content": "The Last Resort",
       "elements": [
         "kinetic",
         "fire",
@@ -83778,7 +83778,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "daedalus",
-      "content": "stone-demon",
+      "content": "Stone Demon",
       "elements": [
         "kinetic",
         "fire",
@@ -83854,7 +83854,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "vladof",
-      "content": "stone-demon",
+      "content": "Stone Demon",
       "elements": [
         "kinetic",
         "fire",
@@ -83930,7 +83930,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "vladof",
-      "content": "twitch-drops-bl4",
+      "content": "Twitch Drops",
       "elements": [
         "kinetic"
       ],
@@ -83981,7 +83981,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "daedalus",
-      "content": "mercenary-day",
+      "content": "Mercenary Day",
       "elements": [
         "kinetic",
         "fire",
@@ -84057,7 +84057,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "tediore",
-      "content": "horrors-of-kairos-event",
+      "content": "Horrors of Kairos",
       "elements": [
         "kinetic",
         "fire",
@@ -84447,7 +84447,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "tediore",
-      "content": "murders-and-acquisitions",
+      "content": "Murders & Acquisitions",
       "elements": [
         "kinetic",
         "fire",
@@ -84589,7 +84589,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "tediore",
-      "content": "the-last-resort-dlc",
+      "content": "The Last Resort",
       "elements": [
         "kinetic"
       ],
@@ -84740,7 +84740,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "order",
-      "content": "the-last-resort-dlc",
+      "content": "The Last Resort",
       "elements": [
         "kinetic"
       ],
@@ -84962,7 +84962,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "ripper",
-      "content": "murders-and-acquisitions",
+      "content": "Murders & Acquisitions",
       "elements": [
         "kinetic",
         "fire",
@@ -85134,7 +85134,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "daedalus",
-      "content": "the-vile-shadows",
+      "content": "The Vile Shadows",
       "elements": [
         "kinetic",
         "fire",
@@ -85293,7 +85293,7 @@
       "item_category": null,
       "rarity": "h-pearlescent",
       "manufacturer": "jakobs",
-      "content": "murders-and-acquisitions",
+      "content": "Murders & Acquisitions",
       "elements": [
         "kinetic"
       ],
@@ -85359,7 +85359,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "daedalus",
-      "content": "vault-of-the-damned-dlc",
+      "content": "Vault of the Damned",
       "elements": [
         "kinetic"
       ],
@@ -85516,7 +85516,7 @@
       "item_category": null,
       "rarity": "h-pearlescent",
       "manufacturer": "daedalus",
-      "content": "a-zane-to-kill-for",
+      "content": "A Zane to Kill For",
       "elements": [
         "kinetic"
       ],
@@ -85820,7 +85820,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "maliwan",
-      "content": "vault-of-the-damned-dlc",
+      "content": "Vault of the Damned",
       "elements": [
         "fire",
         "shock",
@@ -85898,7 +85898,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "order",
-      "content": "a-zane-to-kill-for",
+      "content": "A Zane to Kill For",
       "elements": [
         "kinetic"
       ],
@@ -85964,7 +85964,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "torgue",
-      "content": "the-last-resort-dlc",
+      "content": "The Last Resort",
       "elements": [
         "corrosive"
       ],
@@ -86121,7 +86121,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "ripper",
-      "content": "mercenary-day",
+      "content": "Mercenary Day",
       "elements": [
         "kinetic",
         "fire",
@@ -86201,7 +86201,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "order",
-      "content": "mercenary-day",
+      "content": "Mercenary Day",
       "elements": [
         "kinetic"
       ],
@@ -86267,7 +86267,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "order",
-      "content": "stone-demon",
+      "content": "Stone Demon",
       "elements": [
         "kinetic"
       ],
@@ -86410,7 +86410,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "jakobs",
-      "content": "mercenary-day",
+      "content": "Mercenary Day",
       "elements": [
         "cryo"
       ],
@@ -86622,7 +86622,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "torgue",
-      "content": "vault-of-the-damned-dlc",
+      "content": "Vault of the Damned",
       "elements": [
         "kinetic",
         "fire",
@@ -86787,7 +86787,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "tediore",
-      "content": "the-last-resort-dlc",
+      "content": "The Last Resort",
       "elements": [
         "kinetic"
       ],
@@ -87068,7 +87068,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "daedalus",
-      "content": "the-last-resort-dlc",
+      "content": "The Last Resort",
       "elements": [
         "cryo"
       ],
@@ -87223,7 +87223,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "daedalus",
-      "content": "the-vile-shadows",
+      "content": "The Vile Shadows",
       "elements": [
         "kinetic",
         "fire",
@@ -87451,7 +87451,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "daedalus",
-      "content": "murders-and-acquisitions",
+      "content": "Murders & Acquisitions",
       "elements": [
         "kinetic",
         "fire",
@@ -87604,7 +87604,7 @@
       "item_category": null,
       "rarity": "h-pearlescent",
       "manufacturer": "daedalus",
-      "content": "vault-of-the-damned-dlc",
+      "content": "Vault of the Damned",
       "elements": [
         "kinetic",
         "fire",
@@ -87763,7 +87763,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "maliwan",
-      "content": "murders-and-acquisitions",
+      "content": "Murders & Acquisitions",
       "elements": [
         "fire",
         "shock",
@@ -88005,7 +88005,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "order",
-      "content": "vault-of-the-damned-dlc",
+      "content": "Vault of the Damned",
       "elements": [
         "kinetic"
       ],
@@ -88387,7 +88387,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "ripper",
-      "content": "stone-demon",
+      "content": "Stone Demon",
       "elements": [
         "kinetic",
         "fire",
@@ -88463,7 +88463,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "vladof",
-      "content": "the-vile-shadows",
+      "content": "The Vile Shadows",
       "elements": [
         "fire",
         "shock",
@@ -88537,7 +88537,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "vladof",
-      "content": "the-vile-shadows",
+      "content": "The Vile Shadows",
       "elements": [
         "kinetic",
         "fire",
@@ -88686,7 +88686,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "torgue",
-      "content": "vault-of-the-damned-dlc",
+      "content": "Vault of the Damned",
       "elements": [
         "kinetic",
         "fire",
@@ -88915,7 +88915,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "order",
-      "content": "the-last-resort-dlc",
+      "content": "The Last Resort",
       "elements": [
         "kinetic"
       ],
@@ -89068,7 +89068,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "jakobs",
-      "content": "the-vile-shadows",
+      "content": "The Vile Shadows",
       "elements": [
         "kinetic"
       ],
@@ -89296,7 +89296,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "SCAV",
-      "content": "doppelganger-feature-pack",
+      "content": "Doppelganger",
       "elements": [],
       "sources": [
         "Jack Pool"
@@ -89367,7 +89367,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Torgue",
-      "content": "doppelganger-feature-pack",
+      "content": "Doppelganger",
       "elements": [],
       "sources": [
         "Jack Pool"
@@ -89440,7 +89440,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Jakobs",
-      "content": "baroness-feature-pack",
+      "content": "Baroness Feature Pack",
       "elements": [],
       "sources": [
         "Aurelia Pool"
@@ -89726,7 +89726,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "DAHL",
-      "content": "baroness-feature-pack",
+      "content": "Baroness Feature Pack",
       "elements": [],
       "sources": [
         "Aurelia Pool"
@@ -90020,7 +90020,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Hyperion",
-      "content": "baroness-feature-pack",
+      "content": "Baroness Feature Pack",
       "elements": [],
       "sources": [
         "Legendary Pool",
@@ -90103,7 +90103,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Hyperion",
-      "content": "doppelganger-feature-pack",
+      "content": "Doppelganger",
       "elements": [],
       "sources": [
         "Legendary Pool",
@@ -90515,7 +90515,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Hyperion",
-      "content": "doppelganger-feature-pack",
+      "content": "Doppelganger",
       "elements": [],
       "sources": [
         "Jack Pool"
@@ -90591,7 +90591,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "DAHL",
-      "content": "the-holodome-onslaught-mini-dlc",
+      "content": "Holodome Onslaught",
       "elements": [],
       "sources": [
         "Digistructed Madness",
@@ -90673,7 +90673,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Hyperion",
-      "content": "the-holodome-onslaught-mini-dlc",
+      "content": "Holodome Onslaught",
       "elements": [],
       "sources": [
         "Digistructed Madness",
@@ -90755,7 +90755,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "DAHL",
-      "content": "the-holodome-onslaught-mini-dlc",
+      "content": "Holodome Onslaught",
       "elements": [],
       "sources": [
         "Digistructed Madness",
@@ -90837,7 +90837,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Maliwan",
-      "content": "the-holodome-onslaught-mini-dlc",
+      "content": "Holodome Onslaught",
       "elements": [],
       "sources": [
         "Digistructed Madness",
@@ -90919,7 +90919,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "DAHL",
-      "content": "the-holodome-onslaught-mini-dlc",
+      "content": "Holodome Onslaught",
       "elements": [],
       "sources": [
         "Digistructed Madness",
@@ -91002,7 +91002,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "DAHL",
-      "content": "the-holodome-onslaught-mini-dlc",
+      "content": "Holodome Onslaught",
       "elements": [],
       "sources": [
         "Digistructed Madness",
@@ -91224,7 +91224,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Maliwan",
-      "content": "baroness-feature-pack",
+      "content": "Baroness Feature Pack",
       "elements": [],
       "sources": [
         "Aurelia Pool"
@@ -91585,7 +91585,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Hyperion",
-      "content": "doppelganger-feature-pack",
+      "content": "Doppelganger",
       "elements": [],
       "sources": [
         "Jack Pool"
@@ -91656,7 +91656,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Hyperion",
-      "content": "doppelganger-feature-pack",
+      "content": "Doppelganger",
       "elements": [],
       "sources": [
         "Jack Pool"
@@ -91891,7 +91891,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Hyperion",
-      "content": "baroness-feature-pack",
+      "content": "Baroness Feature Pack",
       "elements": [],
       "sources": [
         "The Sentinel",
@@ -92164,7 +92164,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Hyperion",
-      "content": "doppelganger-feature-pack",
+      "content": "Doppelganger",
       "elements": [],
       "sources": [
         "The Sentinel",
@@ -92559,7 +92559,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Maliwan",
-      "content": "baroness-feature-pack",
+      "content": "Baroness Feature Pack",
       "elements": [],
       "sources": [
         "Aurelia Pool"
@@ -92703,7 +92703,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "DAHL",
-      "content": "the-holodome-onslaught-mini-dlc",
+      "content": "Holodome Onslaught",
       "elements": [],
       "sources": [
         "Digistructed Madness",
@@ -92854,7 +92854,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Hyperion",
-      "content": "doppelganger-feature-pack",
+      "content": "Doppelganger",
       "elements": [],
       "sources": [
         "Jack Pool"
@@ -92927,7 +92927,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "DAHL",
-      "content": "the-holodome-onslaught-mini-dlc",
+      "content": "Holodome Onslaught",
       "elements": [],
       "sources": [
         "Digistructed Madness",
@@ -93005,7 +93005,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "DAHL",
-      "content": "the-holodome-onslaught-mini-dlc",
+      "content": "Holodome Onslaught",
       "elements": [],
       "sources": [
         "Digistructed Madness",
@@ -93154,7 +93154,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "DAHL",
-      "content": "the-holodome-onslaught-mini-dlc",
+      "content": "Holodome Onslaught",
       "elements": [],
       "sources": [
         "Digistructed Madness",
@@ -93232,7 +93232,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "DAHL",
-      "content": "baroness-feature-pack",
+      "content": "Baroness Feature Pack",
       "elements": [],
       "sources": [
         "Aurelia Pool"
@@ -93593,7 +93593,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Pangolin",
-      "content": "baroness-feature-pack",
+      "content": "Baroness Feature Pack",
       "elements": [],
       "sources": [
         "Aurelia Pool"
@@ -93810,7 +93810,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Vladof",
-      "content": "baroness-feature-pack",
+      "content": "Baroness Feature Pack",
       "elements": [],
       "sources": [
         "Aurelia Pool"
@@ -94027,7 +94027,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Vladof",
-      "content": "doppelganger-feature-pack",
+      "content": "Doppelganger",
       "elements": [],
       "sources": [
         "Jack Pool"
@@ -94177,7 +94177,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Hyperion",
-      "content": "baroness-feature-pack",
+      "content": "Baroness Feature Pack",
       "elements": [],
       "sources": [
         "Aurelia Pool"
@@ -94250,7 +94250,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Hyperion",
-      "content": "the-holodome-onslaught-mini-dlc",
+      "content": "Holodome Onslaught",
       "elements": [],
       "sources": [
         "Digistructed Madness",
@@ -94328,7 +94328,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "DAHL",
-      "content": "the-holodome-onslaught-mini-dlc",
+      "content": "Holodome Onslaught",
       "elements": [],
       "sources": [
         "Digistructed Madness",
@@ -94406,7 +94406,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Hyperion",
-      "content": "doppelganger-feature-pack",
+      "content": "Doppelganger",
       "elements": [],
       "sources": [
         "Jack Pool"
@@ -94548,7 +94548,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Hyperion",
-      "content": "baroness-feature-pack",
+      "content": "Baroness Feature Pack",
       "elements": [],
       "sources": [
         "Aurelia Pool"
@@ -94694,7 +94694,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Jakobs",
-      "content": "doppelganger-feature-pack",
+      "content": "Doppelganger",
       "elements": [],
       "sources": [
         "Jack Pool"
@@ -95200,7 +95200,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Jakobs",
-      "content": "baroness-feature-pack",
+      "content": "Baroness Feature Pack",
       "elements": [],
       "sources": [
         "Aurelia Pool"
@@ -95565,7 +95565,7 @@
       "item_category": null,
       "rarity": "d-epic",
       "manufacturer": "Maliwan",
-      "content": "doppelganger-feature-pack",
+      "content": "Doppelganger",
       "elements": [],
       "sources": [
         "Jack Pool"
@@ -95845,7 +95845,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "Scav",
-      "content": "veterans-day-event",
+      "content": "Veterans Day Event",
       "elements": [
         "fire"
       ],
@@ -95896,7 +95896,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "Maliwan",
-      "content": "claptastic-voyage-dlc",
+      "content": "Claptastic Voyage",
       "elements": [
         "shock"
       ],
@@ -96247,7 +96247,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Vladof",
-      "content": "claptastic-voyage-dlc",
+      "content": "Claptastic Voyage",
       "elements": [
         "fire",
         "shock",
@@ -97864,7 +97864,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "dahl",
-      "content": "slaughter-pit-mini-dlc",
+      "content": "Slaughter Pit",
       "elements": [
         "kinetic"
       ],
@@ -97996,7 +97996,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "anshin",
-      "content": "claptastic-voyage-dlc",
+      "content": "Claptastic Voyage",
       "elements": [
         "kinetic"
       ],
@@ -98069,7 +98069,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "tediore",
-      "content": "tales-promotion",
+      "content": "Tales Promotion",
       "elements": [
         "kinetic"
       ],
@@ -98338,7 +98338,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "hyperion",
-      "content": "claptastic-voyage-dlc",
+      "content": "Claptastic Voyage",
       "elements": [
         "kinetic",
         "fire",
@@ -98419,7 +98419,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "hyperion",
-      "content": "claptastic-voyage-dlc",
+      "content": "Claptastic Voyage",
       "elements": [
         "kinetic"
       ],
@@ -98999,7 +98999,7 @@
       "item_category": null,
       "rarity": "e-glitch",
       "manufacturer": "scav",
-      "content": "claptastic-voyage-dlc",
+      "content": "Claptastic Voyage",
       "elements": [
         "fire"
       ],
@@ -99065,7 +99065,7 @@
       "item_category": null,
       "rarity": "e-glitch",
       "manufacturer": "dahl",
-      "content": "claptastic-voyage-dlc",
+      "content": "Claptastic Voyage",
       "elements": [
         "corrosive"
       ],
@@ -99201,7 +99201,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "maliwan",
-      "content": "claptastic-voyage-dlc",
+      "content": "Claptastic Voyage",
       "elements": [
         "cryo"
       ],
@@ -99352,7 +99352,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "vladof",
-      "content": "the-holodome-onslaught-mini-dlc",
+      "content": "Holodome Onslaught",
       "elements": [
         "fire",
         "shock",
@@ -99717,7 +99717,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "scav",
-      "content": "tales-promotion",
+      "content": "Tales Promotion",
       "elements": [
         "fire",
         "shock",
@@ -99778,7 +99778,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "tediore",
-      "content": "the-holodome-onslaught-mini-dlc",
+      "content": "Holodome Onslaught",
       "elements": [
         "shock"
       ],
@@ -99853,7 +99853,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "hyperion",
-      "content": "bl1-promotion",
+      "content": "BL1 Promotion",
       "elements": [
         "kinetic",
         "fire",
@@ -99978,7 +99978,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "hyperion",
-      "content": "claptastic-voyage-dlc",
+      "content": "Claptastic Voyage",
       "elements": [
         "kinetic",
         "fire",
@@ -100059,7 +100059,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "hyperion",
-      "content": "tales-promotion",
+      "content": "Tales Promotion",
       "elements": [
         "kinetic",
         "fire",
@@ -100118,7 +100118,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "scav",
-      "content": "the-holodome-onslaught-mini-dlc",
+      "content": "Holodome Onslaught",
       "elements": [
         "kinetic",
         "corrosive",
@@ -100475,7 +100475,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "scav",
-      "content": "tales-promotion",
+      "content": "Tales Promotion",
       "elements": [
         "kinetic",
         "fire",
@@ -100750,7 +100750,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "jakobs",
-      "content": "claptastic-voyage-dlc",
+      "content": "Claptastic Voyage",
       "elements": [
         "kinetic"
       ],
@@ -101036,7 +101036,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "scav",
-      "content": "claptastic-voyage-dlc",
+      "content": "Claptastic Voyage",
       "elements": [
         "kinetic",
         "fire",
@@ -101414,7 +101414,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "maliwan",
-      "content": "claptastic-voyage-dlc",
+      "content": "Claptastic Voyage",
       "elements": [
         "shock"
       ],
@@ -101484,7 +101484,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "hyperion",
-      "content": "pandoras-box-promotion",
+      "content": "Pandora's Box",
       "elements": [
         "fire"
       ],
@@ -101900,7 +101900,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "tediore",
-      "content": "claptastic-voyage-dlc",
+      "content": "Claptastic Voyage",
       "elements": [
         "explosive"
       ],
@@ -102054,7 +102054,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "tediore",
-      "content": "claptastic-voyage-dlc",
+      "content": "Claptastic Voyage",
       "elements": [
         "explosive"
       ],
@@ -102272,7 +102272,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "hyperion",
-      "content": "claptastic-voyage-dlc",
+      "content": "Claptastic Voyage",
       "elements": [
         "fire",
         "shock",
@@ -102439,7 +102439,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "jakobs",
-      "content": "claptastic-voyage-dlc",
+      "content": "Claptastic Voyage",
       "elements": [
         "kinetic"
       ],
@@ -102941,7 +102941,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "maliwan",
-      "content": "claptastic-voyage-dlc",
+      "content": "Claptastic Voyage",
       "elements": [
         "kinetic"
       ],
@@ -103231,7 +103231,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "torgue",
-      "content": "tales-promotion",
+      "content": "Tales Promotion",
       "elements": [
         "explosive"
       ],
@@ -103583,7 +103583,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "hyperion",
-      "content": "claptastic-voyage-dlc",
+      "content": "Claptastic Voyage",
       "elements": [
         "kinetic"
       ],
@@ -103667,7 +103667,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "tediore",
-      "content": "the-holodome-onslaught-mini-dlc",
+      "content": "Holodome Onslaught",
       "elements": [
         "fire"
       ],
@@ -103742,7 +103742,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "scav",
-      "content": "claptastic-voyage-dlc",
+      "content": "Claptastic Voyage",
       "elements": [
         "kinetic"
       ],
@@ -103882,7 +103882,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "jakobs",
-      "content": "the-holodome-onslaught-mini-dlc",
+      "content": "Holodome Onslaught",
       "elements": [
         "kinetic"
       ],
@@ -104029,7 +104029,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "vladof",
-      "content": "claptastic-voyage-dlc",
+      "content": "Claptastic Voyage",
       "elements": [
         "kinetic",
         "fire",
@@ -104478,7 +104478,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "jakobs",
-      "content": "bl2-promotion",
+      "content": "BL2 Promotion",
       "elements": [
         "kinetic"
       ],
@@ -104602,7 +104602,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "hyperion",
-      "content": "the-holodome-onslaught-mini-dlc",
+      "content": "Holodome Onslaught",
       "elements": [
         "fire",
         "shock",
@@ -104679,7 +104679,7 @@
       "item_category": null,
       "rarity": "c-rare",
       "manufacturer": "maliwan",
-      "content": "claptastic-voyage-dlc",
+      "content": "Claptastic Voyage",
       "elements": [
         "fire"
       ],
@@ -104974,7 +104974,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "maliwan",
-      "content": "claptastic-voyage-dlc",
+      "content": "Claptastic Voyage",
       "elements": [
         "shock"
       ],
@@ -106160,7 +106160,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Kleave",
-      "content": "shattering-spectreglass-mini-dlc",
+      "content": "Shattering Spectreglass",
       "elements": [],
       "sources": [
         "Redmourne",
@@ -106288,7 +106288,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Valora",
-      "content": "coiled-captors-mini-dlc",
+      "content": "Coiled Captors",
       "elements": [],
       "sources": [
         "\"Chums\" the Old God",
@@ -106741,7 +106741,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Kleave",
-      "content": "shattering-spectreglass-mini-dlc",
+      "content": "Shattering Spectreglass",
       "elements": [],
       "sources": [
         "Mirrors Pool"
@@ -107064,7 +107064,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Kleave",
-      "content": "molten-mirrors-mini-dlc",
+      "content": "Molten Mirrors",
       "elements": [],
       "sources": [
         "Fyodor the Soul Warden",
@@ -107502,7 +107502,7 @@
       "item_category": "Offense",
       "rarity": "f-legendary",
       "manufacturer": null,
-      "content": "shattering-spectreglass-mini-dlc",
+      "content": "Shattering Spectreglass",
       "elements": [],
       "sources": [
         "Mirrors Pool"
@@ -107695,7 +107695,7 @@
       "item_category": "Universal",
       "rarity": "f-legendary",
       "manufacturer": null,
-      "content": "molten-mirrors-mini-dlc",
+      "content": "Molten Mirrors",
       "elements": [],
       "sources": [
         "Fyodor the Soul Warden",
@@ -108224,7 +108224,7 @@
       "item_category": "Universal",
       "rarity": "f-legendary",
       "manufacturer": null,
-      "content": "coiled-captors-mini-dlc",
+      "content": "Coiled Captors",
       "elements": [],
       "sources": [
         "\"Chums\" the Old God",
@@ -108760,7 +108760,7 @@
       "item_category": "Universal",
       "rarity": "f-legendary",
       "manufacturer": null,
-      "content": "coiled-captors-mini-dlc",
+      "content": "Coiled Captors",
       "elements": [],
       "sources": [
         "Ring Pool"
@@ -108946,7 +108946,7 @@
       "item_category": "Offense",
       "rarity": "f-legendary",
       "manufacturer": null,
-      "content": "coiled-captors-mini-dlc",
+      "content": "Coiled Captors",
       "elements": [],
       "sources": [
         "Amulet Pool"
@@ -109008,7 +109008,7 @@
       "item_category": "Offense",
       "rarity": "f-legendary",
       "manufacturer": null,
-      "content": "molten-mirrors-mini-dlc",
+      "content": "Molten Mirrors",
       "elements": [],
       "sources": [
         "Mirrors Pool"
@@ -109643,7 +109643,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Conjura",
-      "content": "shattering-spectreglass-mini-dlc",
+      "content": "Shattering Spectreglass",
       "elements": [
         "dark-magic"
       ],
@@ -109780,7 +109780,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Arken",
-      "content": "coiled-captors-mini-dlc",
+      "content": "Coiled Captors",
       "elements": [
         "fire"
       ],
@@ -110633,7 +110633,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Conjura",
-      "content": "molten-mirrors-mini-dlc",
+      "content": "Molten Mirrors",
       "elements": [
         "fire",
         "lightning",
@@ -110773,7 +110773,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Wyrdweaver",
-      "content": "coiled-captors-mini-dlc",
+      "content": "Coiled Captors",
       "elements": [
         "fire",
         "lightning",
@@ -110986,7 +110986,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Conjura",
-      "content": "dragon-lord-cosmetic-pack",
+      "content": "Dragon Lord Cosmetic Pack",
       "elements": [
         "dark-magic"
       ],
@@ -111037,7 +111037,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Arken",
-      "content": "molten-mirrors-mini-dlc",
+      "content": "Molten Mirrors",
       "elements": [
         "fire"
       ],
@@ -111188,7 +111188,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Miraculum",
-      "content": "coiled-captors-mini-dlc",
+      "content": "Coiled Captors",
       "elements": [
         "frost"
       ],
@@ -111408,7 +111408,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "Conjura",
-      "content": "shattering-spectreglass-mini-dlc",
+      "content": "Shattering Spectreglass",
       "elements": [
         "poison"
       ],
@@ -111853,7 +111853,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "ashen",
-      "content": "coiled-captors-mini-dlc",
+      "content": "Coiled Captors",
       "elements": [
         "kinetic",
         "fire",
@@ -113574,7 +113574,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "dahlia",
-      "content": "dragon-lord-cosmetic-pack",
+      "content": "Dragon Lord Cosmetic Pack",
       "elements": [
         "dark-magic"
       ],
@@ -114847,7 +114847,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "feriore",
-      "content": "coiled-captors-mini-dlc",
+      "content": "Coiled Captors",
       "elements": [
         "fire",
         "lightning",
@@ -115225,7 +115225,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "blackpowder",
-      "content": "molten-mirrors-mini-dlc",
+      "content": "Molten Mirrors",
       "elements": [
         "fire"
       ],
@@ -116065,7 +116065,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "bonk",
-      "content": "molten-mirrors-mini-dlc",
+      "content": "Molten Mirrors",
       "elements": [
         "kinetic",
         "fire",
@@ -117204,7 +117204,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "blackpowder",
-      "content": "shattering-spectreglass-mini-dlc",
+      "content": "Shattering Spectreglass",
       "elements": [
         "fire",
         "lightning",
@@ -117962,7 +117962,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "bonk",
-      "content": "molten-mirrors-mini-dlc",
+      "content": "Molten Mirrors",
       "elements": [
         "kinetic"
       ],
@@ -118414,7 +118414,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "kleave",
-      "content": "shattering-spectreglass-mini-dlc",
+      "content": "Shattering Spectreglass",
       "elements": [
         "kinetic",
         "fire",
@@ -119192,7 +119192,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "dahlia",
-      "content": "shattering-spectreglass-mini-dlc",
+      "content": "Shattering Spectreglass",
       "elements": [
         "fire",
         "lightning",
@@ -119430,7 +119430,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "hyperius",
-      "content": "molten-mirrors-mini-dlc",
+      "content": "Molten Mirrors",
       "elements": [
         "kinetic"
       ],
@@ -120103,7 +120103,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "stoker",
-      "content": "coiled-captors-mini-dlc",
+      "content": "Coiled Captors",
       "elements": [
         "lightning"
       ],
@@ -120180,7 +120180,7 @@
       "item_category": null,
       "rarity": "f-legendary",
       "manufacturer": "torgue",
-      "content": "shattering-spectreglass-mini-dlc",
+      "content": "Shattering Spectreglass",
       "elements": [
         "dark-magic"
       ],
