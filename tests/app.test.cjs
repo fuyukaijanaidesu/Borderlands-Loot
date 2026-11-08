@@ -67,6 +67,7 @@ test("rarity codes are displayed as labels, not technical slugs",async()=>{const
  assert.doesNotMatch(card.textContent,/f-legendary/);
  assert.ok(card.querySelector(".name").classList.contains("rarity-legendary"));
 }finally{x.close()}});
+test("element names are displayed in English",async()=>{const x=await boot();try{const labels=[...x.doc.querySelectorAll("#items .element-icon small")].map(el=>el.textContent);assert.ok(labels.includes("Fire"));assert.ok(labels.includes("Shock"));assert.ok(!labels.includes("Огонь"));}finally{x.close()}});
 test("search, missing-only and backup export remain functional",async()=>{const x=await boot();try{
  const search=x.doc.getElementById("search");search.value="Alpha";search.dispatchEvent(new x.w.Event("input"));
  assert.equal(x.doc.querySelectorAll("#items .item").length,1);
