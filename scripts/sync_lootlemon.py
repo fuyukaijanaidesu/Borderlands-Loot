@@ -20,6 +20,13 @@ GAMES={
  "borderlands-tps":"Borderlands: The Pre-Sequel","borderlands-3":"Borderlands 3",
  "wonderlands":"Tiny Tina's Wonderlands","borderlands-4":"Borderlands 4"
 }
+TREE_INDEX_LABELS={
+ "borderlands-1":{"0":"Blue","1":"Red","2":"Green"},
+ "borderlands-2":{"0":"Green","1":"Blue","2":"Red"},
+ "borderlands-tps":{"0":"Green","1":"Blue","2":"Red"},
+ "borderlands-3":{"0":"Green","1":"Blue","2":"Red","3":"Purple"},
+ "borderlands-4":{"0":"Green","1":"Blue","2":"Red"}
+}
 LABELS={"class-mods":"Class Mods","melee":"Melee Weapons","melee-weapons":"Melee Weapons",
  "repkits":"Repkits","ordnance":"Ordnance","enhancements":"Enhancements",
  "spellbooks":"Spellbooks","shields":"Shields","weapons":"Weapons",
@@ -142,10 +149,10 @@ def parse_page(url,game,category):
     match=re.match(r"^(?:rarity|manufacturer|element|type|content)[-_](.+)$",cls,re.I)
     if match and match.group(1).lower() not in {"cell","field","wrapper","container","badge","label","value"}:
      out.append(re.sub(r"[-_]+"," ",match.group(1)).strip())
-    elif cls.lower() not in ignored and not re.match(r"^(?:w-|db_)",cls,re.I):
+    elif cls.lower() not in ignored and cls.lower() not in {"source-link","skill-link","tree-link"} and not re.match(r"^(?:w-|db_)",cls,re.I):
      if cls.lower() in {"legendary","epic","rare","common","uncommon","pearlescent","seraph","effervescent","glitch","e-tech"}:
       out.append(cls)
-  return [value for value in clean_values(out) if value.casefold() not in {"link","image","icon","skill link","tree link","link skill","skill icon","tree icon"}]
+  return [value for value in clean_values(out) if value.casefold() not in {"link","image","icon","skill link","tree link","link skill","skill icon","tree icon","source link","source-link"}]
  def split_values(node):
   if not node: return []
   linked=clean_values([text_of(a) for a in node.find_all("a")])
@@ -194,7 +201,16 @@ def parse_page(url,game,category):
   before=cells[:idx] if idx>=0 else []
   after=cells[idx+1:] if idx>=0 else []
   attributes={}
-  semantic_values={"rarity":[],"manufacturer":[],"element":[],"type":[],"content":[],"source":[],"class":[],"skill":[],"tree":[],"weapon_type":[],"shield_type":[],"ordnance_type":[],"artifact_type":[]}
+  semantic_values={"rarity":[],"manufacturer":[],"element":[],"type":[],"content":[],"source":[],"class":[],"skill":[],"tree":[],"weapon_type":[],"shield_type":[],"ordnance_type":[],"artifact_type":[],"spell_cast":[],"item_type":[],"item_category":[]}
+  # Some Lootlemon filters (notably Ring/Amulet) are stored on the item card
+  # itself rather than in a visible table cell.
+  for attr,val in card.attrs.items():
+   if attr.startswith("data-") and attr not in {"data-src","data-lazy-src","data-original","data-srcset"}:
+    field=attr[5:]; vals=clean_values(val if isinstance(val,list) else [val])
+    add_attr(attributes,field,vals)
+    normalized_field=key_name(field)
+    target_field="item_category" if normalized_field=="category" else normalized_field
+    if target_field in semantic_values: semantic_values[target_field].extend(vals)
   rarity=None; manufacturer=type_value=content=None; elements=[]; sources=[]
   metadata=[]
   for cell in cells:
@@ -217,11 +233,11 @@ def parse_page(url,game,category):
       add_attr(attributes,field,val)
       if field in semantic_values: semantic_values[field].extend(clean_values(val if isinstance(val,list) else [val]))
     for cls in child.get("class") or []:
-     match=re.match(r"^(rarity|manufacturer|element|type|content|class|skill|tree|weapon_type|shield_type|ordnance_type|artifact_type)[-_](.+)$",cls,re.I)
+     match=re.match(r"^(rarity|manufacturer|element|type|content|class|skill|tree|weapon_type|shield_type|ordnance_type|artifact_type|spell_cast|item_type|item_category)[-_](.+)$",cls,re.I)
      if match and match.group(2).lower() not in {"cell","field","wrapper","container","badge","label","value"}:
       field=match.group(1).lower()
       val=re.sub(r"[-_]+"," ",match.group(2)).strip()
-      if field in {"skill","tree"} and val.casefold() in {"link","icon","image","skill link","tree link","link skill","skill icon","tree icon","wrapper","container","badge","label","value"}:
+      if field in {"skill","tree"} and val.casefold() in {"link","icon","image","skill link","tree link","link skill","skill icon","tree icon","source link","source-link","wrapper","container","badge","label","value"}:
        continue
       semantic_values[field].append(val)
       add_attr(attributes,field,val)
@@ -241,6 +257,12 @@ def parse_page(url,game,category):
        add_attr(attributes,field_label[5:],split_values(cell))
   for field in semantic_values:
    semantic_values[field]=clean_values(semantic_values[field])
+  # Lootlemon stores class-mod tree indexes in item metadata; map them to the
+  # color names shown by each game's Trees filter.
+  tree_labels=TREE_INDEX_LABELS.get(game,{})
+  semantic_values["tree"]=[tree_labels.get(value,value) for value in semantic_values["tree"]]
+  if "tree" in attributes:
+   attributes["tree"]=[tree_labels.get(value,value) for value in attributes["tree"]]
   # Remove generic layout markers from both structured values and raw attributes.
   for field in ("skill","skills","tree","trees"):
    if field in attributes:
@@ -263,44 +285,61 @@ def parse_page(url,game,category):
     if text_of(c): rarity_candidates.extend(re.split(r"\s*[•·]\s*",text_of(c)))
   rarity=next((x for x in clean_values(rarity_candidates) if x.lower() not in {"rarity","quality","tier"}),None)
   # Semantic fields win; positional fallbacks preserve compatibility with current Lootlemon pages.
+  cat=label(category)
   manufacturer=next(iter(semantic_values["manufacturer"]),None)
   type_value=next(iter(semantic_values["type"]),None)
+  if cat=="Spells" and semantic_values["spell_cast"]:
+   type_value=semantic_values["spell_cast"][0]
   content=next(iter(semantic_values["content"]),None)
   elements=semantic_values["element"]
   sources=semantic_values["source"]
   values=[text_of(c) for c in after if text_of(c)]
-  cat=label(category)
   if cat=="Weapons":
    if not type_value and len(after)>0: type_value=text_of(after[0]) or None
    if not manufacturer and len(after)>1: manufacturer=text_of(after[1]) or None
    if not elements and len(after)>2: elements=labels_of(after[2])
    if not content and len(after)>3: content=text_of(after[3]) or None
    if not sources and len(after)>4: sources=split_values(after[4])
-  elif cat in {"Shields","Ordnance","Grenades","Wards","Spells","Spellbooks","Melee Weapons"}:
+  elif cat in {"Shields","Ordnance","Grenades","Grenade Mods","Wards","Spells","Spellbooks","Melee Weapons"}:
    if not type_value and len(after)>0: type_value=text_of(after[0]) or None
    if not manufacturer and len(after)>1: manufacturer=text_of(after[1]) or None
    if not elements and len(after)>2: elements=labels_of(after[2])
    if not content and len(after)>3: content=text_of(after[3]) or None
    if not sources and len(after)>4: sources=split_values(after[4])
-  elif cat in {"Artifacts","Relics","Rings & Amulets"}:
+  elif cat in {"Artifacts","Relics"}:
    if not type_value and len(after)>0: type_value=text_of(after[0]) or None
    if not content and len(after)>1: content=text_of(after[1]) or None
    if not sources and len(after)>2: sources=split_values(after[2])
+  elif cat=="Rings & Amulets":
+   explicit_item_type=next((value for value in [*semantic_values["item_type"],*semantic_values["type"],*attributes.get("item_type",[]),*attributes.get("type",[]),*(text_of(c) for c in after)] if value.casefold() in {"ring","amulet"}),None)
+   visible_item_type=any(text_of(c).casefold() in {"ring","amulet"} for c in after)
+   content_index=2 if visible_item_type and len(after)>2 else 1
+   if not content and len(after)>content_index: content=text_of(after[content_index]) or None
+   if not sources and len(after)>content_index+1: sources=split_values(after[content_index+1])
   elif cat=="Armor":
+   # Wonderlands Armor cards list manufacturer, content, and sources only.
+   if not manufacturer and len(after)>0: manufacturer=text_of(after[0]) or None
+   if not content and len(after)>1: content=text_of(after[1]) or None
+   if not sources and len(after)>2: sources=split_values(after[2])
+  elif cat=="Oz Kits":
    if not type_value and len(after)>0: type_value=text_of(after[0]) or None
-   if not semantic_values["class"] and len(after)>1: semantic_values["class"].extend(split_values(after[1]))
-   if not semantic_values["skill"] and len(after)>2: semantic_values["skill"].extend(labels_of(after[2]))
-   if not content and len(after)>3: content=text_of(after[3]) or None
-   if not sources and len(after)>4: sources=split_values(after[4])
-  elif cat in {"Oz Kits","Repkits","Enhancements"}:
+   if not elements and len(after)>1: elements=labels_of(after[1])
+   if not content and len(after)>2: content=text_of(after[2]) or None
+   if not sources and len(after)>3: sources=split_values(after[3])
+  elif cat in {"Repkits","Enhancements"}:
    if not manufacturer and len(after)>0: manufacturer=text_of(after[0]) or None
    if not content and len(after)>1: content=text_of(after[1]) or None
    if not sources and len(after)>2: sources=split_values(after[2])
   elif cat=="Class Mods":
    if not semantic_values["class"] and len(after)>0: semantic_values["class"].extend(split_values(after[0]))
    if not semantic_values["skill"] and len(after)>1: semantic_values["skill"].extend(labels_of(after[1]))
-   if not content and len(after)>2: content=text_of(after[2]) or None
-   if not sources and len(after)>3: sources=split_values(after[3])
+   if game in {"borderlands-1","borderlands-2","borderlands-tps"}:
+    if not manufacturer and len(after)>2: manufacturer=text_of(after[2]) or None
+    if not content and len(after)>3: content=text_of(after[3]) or None
+    if not sources and len(after)>4: sources=split_values(after[4])
+   else:
+    if not content and len(after)>2: content=text_of(after[2]) or None
+    if not sources and len(after)>3: sources=split_values(after[3])
   else:
    for c in after:
     cls=" ".join(c.get("class") or []).lower(); v=text_of(c)
@@ -325,10 +364,16 @@ def parse_page(url,game,category):
   ident=hashlib.sha1(identity.encode("utf-8")).hexdigest()[:20]
   class_value=next(iter(semantic_values["class"]),None)
   skills=clean_values(semantic_values["skill"])
+  item_type=next(iter(semantic_values["item_type"]),None)
+  item_category=next(iter(semantic_values["item_category"]),None)
+  if cat=="Rings & Amulets":
+   item_type=item_type or next((value for value in [*attributes.get("item_type",[]),*semantic_values["type"],*attributes.get("type",[]),*(text_of(c) for c in after)] if value.casefold() in {"ring","amulet"}),None)
+   item_category=item_category or next(iter(attributes.get("item_category",[])),None) or next(iter(attributes.get("category",[])),None) or next((value for value in semantic_values["type"] if value.casefold() not in {"ring","amulet"}),None) or (text_of(after[1]) if visible_item_type and len(after)>1 else (text_of(after[0]) if after else None))
+   type_value=item_type
   if cat=="Class Mods":
    if not class_value and len(after)>0: class_value=text_of(after[0]) or None
    if not skills and len(after)>1: skills=labels_of(after[1])
-  found.append({"id":ident,"gameId":game,"category":cat,"name":name,"type":type_value,"class":class_value,"skills":skills,
+  found.append({"id":ident,"gameId":game,"category":cat,"name":name,"type":type_value,"class":class_value,"skills":skills,"item_type":item_type,"item_category":item_category,
    "rarity":rarity,"manufacturer":manufacturer,"content":content,"elements":elements,
    "sources":sources,"metadata":metadata,"attributes":attributes,"tags":tags,
    "image":image,"url":href,"archived":False})
