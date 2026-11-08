@@ -3,7 +3,7 @@
  const KEYS={newItems:"bl-loot-new-items-v1",progress:"bl-loot-progress-v1",settings:"bl-loot-settings-v1",history:"bl-loot-backups-v1",lastCatalog:"bl-loot-last-catalog-v1",override:"bl-loot-catalog-override-v1",forceOverride:"bl-loot-force-catalog-override-v1"};
  const GAMES=[["borderlands-1","Borderlands"],["borderlands-2","Borderlands 2"],["borderlands-tps","The Pre-Sequel"],["borderlands-3","Borderlands 3"],["wonderlands","Tiny Tina's Wonderlands"],["borderlands-4","Borderlands 4"]];
  let db={games:[],items:[]},done={},active="borderlands-4";
- const defaults={search:"",category:"",filters:{},sort:"name",missing:false,moveCollectedToBottom:true};
+ const defaults={search:"",category:"",filters:{},sort:"name",missing:false};
  let settings={...defaults},backupHistory=[];
  const read=(key,fallback)=>{try{return JSON.parse(localStorage.getItem(key)||"null")??fallback}catch{return fallback}};
  done=read(KEYS.progress,{});
@@ -210,7 +210,7 @@
    filtersState[def.key]=selected;
    return '<select data-filter="'+esc(def.key)+'"><option value="">'+esc(def.label)+'</option>'+values.map(value=>'<option value="'+esc(value)+'"'+(value===selected?' selected':'')+'>'+esc(value)+'</option>').join("")+'</select>';
   }).join("");
-  $("search").value=settings.search;$("sort").value=settings.sort;$("missing").checked=!!settings.missing;$("move-collected").checked=settings.moveCollectedToBottom!==false;
+  $("search").value=settings.search;$("sort").value=settings.sort;$("missing").checked=!!settings.missing;
   const selectedFilters=Object.entries(filtersState).filter(([key,value])=>value&&filterDefs.some(def=>def.key===key));
   let q=settings.search.toLowerCase().trim();
   let shown=a.filter(x=>{
@@ -218,10 +218,6 @@
    return (!q||searchable.includes(q))&&selectedFilters.every(([key,value])=>fieldValues(x,key).some(v=>normalized(v)===normalized(value)))&&(!settings.missing||!done[x.id]);
   });
   shown.sort((x,y)=>{
-   if(settings.moveCollectedToBottom){
-    const collected=Number(!!done[x.id])-Number(!!done[y.id]);
-    if(collected)return collected;
-   }
    if(settings.sort==="rarity")return rarityLabel(x.rarity).localeCompare(rarityLabel(y.rarity))||x.name.localeCompare(y.name);
    if(settings.sort==="content"){const rank=v=>/^base game$/i.test(v)?0:/^event$/i.test(v)?1:2;return rank(contentOf(x))-rank(contentOf(y))||contentOf(x).localeCompare(contentOf(y))||x.name.localeCompare(y.name)}
    return x.name.localeCompare(y.name);
@@ -239,7 +235,7 @@
   $("items").innerHTML=shown.map(x=>{
    const schema=schemaFor(active,x.category||""),fields=schema.fields.map(fieldDefinition);
    const details=fields.filter(f=>f.key!=="name").map(f=>renderValue(x,f)).join("");
-   return '<article class="item '+(done[x.id]?"collected":"")+'"><div class="picture">'+(x.image?'<img loading="lazy" src="'+esc(x.image)+'" alt="'+esc(x.name)+'" onerror="this.remove()">':'<span class="placeholder">◇</span>')+'</div><div class="card-body"><div class="name '+rarityClass(x.rarity)+'">'+esc(x.name)+'</div>'+details+'<div class="item-foot">'+(x.url?'<a href="'+esc(x.url)+'" target="_blank" rel="noopener">Lootlemon ↗</a>':'<span></span>')+(x.code?'<button type="button" class="copy-code" data-copy-code="'+esc(x.code)+'">Copy Code</button>':'')+'<button type="button" data-id="'+esc(x.id)+'" class="collect-button '+(done[x.id]?"done":"")+'">'+(done[x.id]?"✓ Собрано":"+ Собрал")+'</button></div></div></article>';
+   return '<article class="item '+(done[x.id]?"collected":"")+'"><div class="picture">'+(x.image?'<img loading="lazy" src="'+esc(x.image)+'" alt="'+esc(x.name)+'" onerror="this.remove()">':'<span class="placeholder">◇</span>')+'</div><div class="card-body"><div class="name '+rarityClass(x.rarity)+'">'+esc(x.name)+'</div>'+details+'<div class="item-foot">'+(x.url?'<a href="'+esc(x.url)+'" target="_blank" rel="noopener">Lootlemon ↗</a>':'<span></span>')+(x.code?'<button type="button" class="copy-code" data-copy-code="'+esc(x.code)+'">Copy Code</button>':'')+'<button type="button" data-id="'+esc(x.id)+'" class="collect-button '+(done[x.id]?"done":"")+'">'+(done[x.id]?"Collected":"Collect")+'</button></div></div></article>';
   }).join("");
   $("items").querySelectorAll(".collect-button[data-id]").forEach(b=>b.onclick=()=>{let id=b.dataset.id;if(done[id])delete done[id];else done[id]=true;persist();render()});
   $("items").querySelectorAll("[data-copy-code]").forEach(button=>button.addEventListener("click",event=>{event.stopPropagation();copyItemCode(button)}));
@@ -283,7 +279,6 @@
   $("category").addEventListener("change",()=>{settings.category=$("category").value;settings.filters={};persist();render()});
   $("dynamic-filters").addEventListener("change",event=>{const select=event.target.closest("[data-filter]");if(!select)return;settings.filters=settings.filters||{};settings.filters[select.dataset.filter]=select.value;persist();render()});
   ["sort","missing"].forEach(id=>$(id).addEventListener("change",()=>{settings[id]=id==="missing"?$("missing").checked:$(id).value;persist();render()}));
-  $("move-collected").addEventListener("change",()=>{settings.moveCollectedToBottom=$("move-collected").checked;persist();render()});
  }
  $("export").onclick=fullBackup;
  $("restore-local").onclick=restoreLastLocal;
