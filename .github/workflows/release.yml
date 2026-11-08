@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
     inputs:
       tag_name:
-        description: "Release tag (for example v1.1.0)"
+        description: "Release tag (for example v1.3.0)"
         required: true
         default: "v1.3.0"
         type: string
@@ -19,20 +19,27 @@ permissions:
 jobs:
   validate:
     name: Validate release candidate
+    runs-on: ubuntu-latest
     outputs:
       tag_name: ${{ steps.release_tag.outputs.tag_name }}
-    runs-on: ubuntu-latest
     steps:
       - name: Check out main
         uses: actions/checkout@v4
         with:
           ref: main
-      - name: Validate release tag
+      - name: Resolve release tag
+        id: release_tag
         env:
-          TAG_NAME: ${{ needs.validate.outputs.tag_name }}
+          INPUT_TAG_NAME: ${{ inputs.tag_name }}
         run: |
-          if ! [[ "$TAG_NAME" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-            echo "Tag must use semantic versioning, for example v1.1.0"
+          if [ -n "$INPUT_TAG_NAME" ]; then
+            TAG_NAME="$INPUT_TAG_NAME"
+          else
+            TAG_NAME="v$(tr -d '[:space:]' < VERSION)"
+          fi
+          echo "tag_name=$TAG_NAME" >> "$GITHUB_OUTPUT"
+          if ! [[ "$TAG_NAME" =~ ^v[0-9]+\\.[0-9]+\\.[0-9]+$ ]]; then
+            echo "Tag must use semantic versioning, for example v1.3.0"
             exit 1
           fi
       - name: Set up Node.js
@@ -63,10 +70,10 @@ jobs:
           ref: main
       - name: Build portable ZIP
         env:
-          TAG_NAME: ${{ inputs.tag_name }}
+          TAG_NAME: ${{ needs.validate.outputs.tag_name }}
         run: |
-          zip -r "Borderlands-Loot-${TAG_NAME}.zip" \
-            index.html assets data/catalog.json start.bat START_HERE.md README.md \
+          zip -r "Borderlands-Loot-${TAG_NAME}.zip" \\
+            index.html assets data/catalog.json start.bat START_HERE.md README.md \\
             -x "*/__pycache__/*" "*.pyc"
           unzip -t "Borderlands-Loot-${TAG_NAME}.zip"
       - name: Publish GitHub Release
@@ -74,6 +81,6 @@ jobs:
         with:
           tag_name: ${{ needs.validate.outputs.tag_name }}
           target_commitish: main
-          name: Borderlands Loot ${{ inputs.tag_name }}
+          name: Borderlands Loot ${{ needs.validate.outputs.tag_name }}
           generate_release_notes: true
-          files: Borderlands-Loot-${{ inputs.tag_name }}.zip
+          files: Borderlands-Loot-${{ needs.validate.outputs.tag_name }}.zip
