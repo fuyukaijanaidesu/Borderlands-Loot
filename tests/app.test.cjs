@@ -24,7 +24,8 @@ const catalog={updatedAt:"2026-11-08T01:22:03.181332+00:00",games:[],items:[
  {id:"wl-amulet",gameId:"wonderlands",category:"Rings & Amulets",name:"Test Amulet",rarity:"Legendary",item_type:"Amulet",item_category:"Universal",content:"Base Game",sources:["Amulet Pool"],archived:false}
 ]};
 async function boot(seed={}){
- const dom=new JSDOM(html,{url:"https://tracker.test/",runScripts:"outside-only",pretendToBeVisual:true}),w=dom.window,copied=[];\n Object.defineProperty(w.navigator,"clipboard",{value:{writeText:async value=>{copied.push(value)}},configurable:true});
+ const dom=new JSDOM(html,{url:"https://tracker.test/",runScripts:"outside-only",pretendToBeVisual:true}),w=dom.window,copied=[];
+ Object.defineProperty(w.navigator,"clipboard",{value:{writeText:async value=>{copied.push(value)}},configurable:true});
  w.fetch=async()=>({ok:true,json:async()=>structuredClone(catalog)});w.confirm=()=>true;w.alert=()=>{};
  w.URL.createObjectURL=()=>"blob:test";w.URL.revokeObjectURL=()=>{};w.HTMLAnchorElement.prototype.click=function(){};
  for(const [key,value] of Object.entries(seed))w.localStorage.setItem(key,JSON.stringify(value));
