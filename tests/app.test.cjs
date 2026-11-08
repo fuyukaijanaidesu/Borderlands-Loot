@@ -41,7 +41,7 @@ test("initial view selects Weapons and keeps game-wide counters",async()=>{const
  assert.equal(x.doc.getElementById("category").value,"Weapons");
  assert.equal(x.doc.querySelectorAll("#items .item").length,2);
  assert.equal(x.doc.getElementById("game-count").textContent,"0 / 4 собрано");
- assert.equal(x.doc.getElementById("all-count").textContent,"0 из 5 предметов");
+ assert.equal(x.doc.getElementById("all-count").textContent,"0 из 14 предметов");
  assert.deepEqual([...x.doc.querySelectorAll("#dynamic-filters select")].map(e=>e.dataset.filter),["rarity","elements","type","manufacturer","content"]);
 }finally{x.close()}});
 test("each category has its own fields and filters",async()=>{const x=await boot();try{
