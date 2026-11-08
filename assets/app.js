@@ -12,15 +12,20 @@
  const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
  const ELEMENTS={
   fire:{icon:"🔥",label:"Огонь",className:"fire"},incendiary:{icon:"🔥",label:"Огонь",className:"fire"},
-  shock:{icon:"⚡",label:"Шок",className:"shock"},electric:{icon:"⚡",label:"Шок",className:"shock"},
-  corrosive:{icon:"☣",label:"Коррозия",className:"corrosive"},
-  cryo:{icon:"❄",label:"Крио",className:"cryo"},ice:{icon:"❄",label:"Крио",className:"cryo"},
+  shock:{icon:"⚡",label:"Шок",className:"shock"},electric:{icon:"⚡",label:"Шок",className:"shock"},lightning:{icon:"⚡",label:"Шок",className:"shock"},
+  corrosive:{icon:"☣",label:"Коррозия",className:"corrosive"},poison:{icon:"☣",label:"Коррозия",className:"corrosive"},
+  cryo:{icon:"❄",label:"Крио",className:"cryo"},ice:{icon:"❄",label:"Крио",className:"cryo"},frost:{icon:"❄",label:"Крио",className:"cryo"},
   radiation:{icon:"☢",label:"Радиация",className:"radiation"},
   explosive:{icon:"💥",label:"Взрыв",className:"explosive"},kinetic:{icon:"◉",label:"Кинетика",className:"kinetic"},
   slag:{icon:"✦",label:"Шлак",className:"slag"},"dark magic":{icon:"✧",label:"Тёмная магия",className:"dark-magic"}
  };
  const elementInfo=value=>ELEMENTS[String(value||"").toLowerCase().replace(/[-_]+/g," ").trim()]||{icon:"✧",label:value,className:"unknown"};
- const rarityClass=value=>"rarity-"+String(value||"unknown").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+ const rarityClass=value=>{
+  const raw=String(value||"unknown").toLowerCase().trim();
+  const lootlemonCodes={"a-common":"common","b-uncommon":"uncommon","c-rare":"rare","d-epic":"epic","f-legendary":"legendary","g-seraph":"seraph","h-pearlescent":"pearlescent","i-effervescent":"effervescent","e-glitch":"glitch"};
+  const normalized=lootlemonCodes[raw]||raw;
+  return "rarity-"+normalized.replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+ };
  const games=()=>{let a=GAMES.map(([id,name])=>({id,name}));(db.games||[]).forEach(g=>{if(!a.some(x=>x.id===g.id))a.push(g)});return a};
  const items=()=>db.items.filter(x=>x.gameId===active&&!x.archived);
  const stats=a=>({n:a.filter(x=>done[x.id]).length,t:a.length});
