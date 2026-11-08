@@ -24,7 +24,7 @@ jobs:
         env:
           TAG_NAME: ${{ inputs.tag_name }}
         run: |
-          zip -r "Borderlands-Loot-\${TAG_NAME}.zip" \
+          zip -r "Borderlands-Loot-${TAG_NAME}.zip" \
             index.html assets data/catalog.json start.bat START_HERE.md README.md \
             scripts requirements.txt tests \
             -x "*/__pycache__/*" "*.pyc"
