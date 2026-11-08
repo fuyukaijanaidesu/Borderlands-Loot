@@ -17,3 +17,22 @@
 .item.collected .item-foot{border-color:#3b6249}
 .item.collected .item-foot button{color:#a5efbd;background:#28563a;border-color:#4d8c61}
 .item.collected .item-foot button::before{content:"✓ ";font-weight:900}
+
+/* Compact elemental indicators inspired by Lootlemon */
+.element-icons{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px;min-height:24px}
+.element-icon{display:inline-flex;align-items:center;gap:5px;min-height:24px;padding:3px 7px;border:1px solid var(--element-border,#555);border-radius:6px;background:var(--element-bg,#29292e);color:var(--element-color,#ddd);font-size:10px;font-weight:700}
+.element-icon i{font-style:normal;font-size:14px;line-height:1}
+.element-icon small{font-size:9px;color:inherit}
+.element-fire{--element-color:#ff9b55;--element-border:#a95734;--element-bg:#492b25}
+.element-shock{--element-color:#ffe16a;--element-border:#9d8537;--element-bg:#40391f}
+.element-corrosive{--element-color:#8ee17d;--element-border:#548f49;--element-bg:#263b27}
+.element-cryo{--element-color:#8bdfff;--element-border:#4e91b2;--element-bg:#203844}
+.element-radiation{--element-color:#d6a1ff;--element-border:#8752a8;--element-bg:#392644}
+.element-explosive{--element-color:#ff9b79;--element-border:#a65c43;--element-bg:#442b27}
+.element-kinetic{--element-color:#d0d0d0;--element-border:#777;--element-bg:#303035}
+.element-slag{--element-color:#d6a1ff;--element-border:#8752a8;--element-bg:#392644}
+.element-dark-magic{--element-color:#e5a5ff;--element-border:#9857aa;--element-bg:#3d2646}
+.element-unknown{--element-color:#d8d0e4;--element-border:#655d70;--element-bg:#302b36}
+.new-items-notice{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:15px 0;padding:12px 15px;border:1px solid #47795b;border-radius:9px;background:#20352a;color:#c8f0d4;font-size:12px;line-height:1.5}
+.new-items-notice[hidden]{display:none}
+.new-items-notice button{flex:0 0 auto;font-size:18px;line-height:1;padding:3px 8px;color:#c8f0d4;background:#294936;border-color:#47795b}
