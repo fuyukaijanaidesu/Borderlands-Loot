@@ -246,7 +246,7 @@ def parse_page(url,game,category):
    for cls in el.get("class") or []:
     match=re.match(r"^rarity[-_](.+)$",cls,re.I)
     if match and match.group(1).lower() not in {"cell","field","wrapper","container","badge","label","value"}:
-     rarity_candidates.append(re.sub(r"[-_]+"," ",match.group(1)).strip())
+     rarity_candidates.append(re.sub(r"[-_]+"," ",match.group(1)).strip().title())
   rarity_candidates.extend(semantic_values["rarity"])
   if not rarity_candidates:
    # Legacy Lootlemon layouts: rarity is commonly a compact leading cell or a rarity CSS class.
