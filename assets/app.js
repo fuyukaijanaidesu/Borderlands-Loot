@@ -1,1 +1,96 @@
-(()=>{const $=id=>document.getElementById(id),KEY="bl-loot-progress-v1",GAMES=[["borderlands-1","Borderlands"],["borderlands-2","Borderlands 2"],["borderlands-tps","The Pre-Sequel"],["borderlands-3","Borderlands 3"],["wonderlands","Tiny Tina's Wonderlands"],["borderlands-4","Borderlands 4"]];let db={games:[],items:[]},done={};try{done=JSON.parse(localStorage.getItem(KEY)||"{}")}catch{}let active="borderlands-4";const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])),games=()=>{let a=GAMES.map(([id,name])=>({id,name}));(db.games||[]).forEach(g=>{if(!a.some(x=>x.id===g.id))a.push(g)});return a},items=()=>db.items.filter(x=>x.gameId===active&&!x.archived),stats=a=>({n:a.filter(x=>done[x.id]).length,t:a.length}),save=()=>localStorage.setItem(KEY,JSON.stringify(done));function render(){let gs=games(),g=gs.find(x=>x.id===active)||gs[0];if(!g)return;let a=items(),st=stats(a);$('game-title').textContent=g.name;$('game-label').textContent=g.name.toUpperCase();$('game-desc').textContent='Каталог предметов';$('game-pct').textContent=(st.t?Math.round(st.n/st.t*100):0)+'%';$('game-count').textContent=st.n+' / '+st.t+' собрано';$('games').innerHTML=gs.map(x=>'<button data-game="'+esc(x.id)+'" class="'+(x.id===active?'active':'')+'">'+esc(x.name)+'</button>').join('');$('games').querySelectorAll('[data-game]').forEach(b=>b.onclick=()=>{active=b.dataset.game;render()});let cats=[...new Set(a.map(x=>x.category).filter(Boolean))].sort(),rs=[...new Set(a.map(x=>x.rarity).filter(Boolean))].sort(),oldc=$('category').value,oldr=$('rarity').value;$('category').innerHTML='<option value="">Все категории</option>'+cats.map(x=>'<option>'+esc(x)+'</option>').join('');$('rarity').innerHTML='<option value="">Любая редкость</option>'+rs.map(x=>'<option>'+esc(x)+'</option>').join('');$('category').value=cats.includes(oldc)?oldc:'';$('rarity').value=rs.includes(oldr)?oldr:'';let q=$('search').value.toLowerCase().trim(),cat=$('category').value,rar=$('rarity').value,missing=$('missing').checked,shown=a.filter(x=>(!q||[x.name,x.category,x.manufacturer,x.description].join(' ').toLowerCase().includes(q))&&(!cat||x.category===cat)&&(!rar||x.rarity===rar)&&(!missing||!done[x.id]));let sort=$('sort').value;shown.sort((x,y)=>sort==='done'?(Number(!!done[y.id])-Number(!!done[x.id])||x.name.localeCompare(y.name)):sort==='category'?(x.category||'').localeCompare(y.category||'')||x.name.localeCompare(y.name):sort==='rarity'?(x.rarity||'').localeCompare(y.rarity||'')||x.name.localeCompare(y.name):x.name.localeCompare(y.name));$('shown').textContent=shown.length+' из '+a.length+' предметов';$('updated').textContent=db.updatedAt?'Обновлено: '+new Date(db.updatedAt).toLocaleDateString('ru-RU'):'Источник: Lootlemon';$('items').innerHTML=shown.map(x=>'<article class="item"><div class="picture">'+(x.image?'<img loading="lazy" src="'+esc(x.image)+'" alt="'+esc(x.name)+'" onerror="this.remove()">':'<span class="placeholder">◇</span>')+'</div><div class="card-body"><div class="cat">'+esc(x.category||'Предмет')+'</div><div class="name">'+esc(x.name)+'</div><div class="tags">'+[x.rarity,x.manufacturer,x.content].filter(Boolean).map(v=>'<span class="tag">'+esc(v)+'</span>').join('')+'</div><div class="item-foot">'+(x.url?'<a href="'+esc(x.url)+'" target="_blank" rel="noopener">Lootlemon ↗</a>':'<span></span>')+'<button data-id="'+esc(x.id)+'" class="'+(done[x.id]?'done':'')+'">'+(done[x.id]?'✓ Собрано':'+ Собрал')+'</button></div></div></article>').join('');$('items').querySelectorAll('[data-id]').forEach(b=>b.onclick=()=>{let id=b.dataset.id;if(done[id])delete done[id];else done[id]=true;save();render()});$('empty').hidden=shown.length>0;let all=db.items.filter(x=>!x.archived),total=stats(all),pct=total.t?Math.round(total.n/total.t*100):0;$('all-pct').textContent=pct+'%';$('all-bar').style.width=pct+'%';$('all-count').textContent=total.n+' из '+total.t+' предметов'}['search','category','rarity','sort','missing'].forEach(id=>$(id).addEventListener(id==='search'?'input':'change',render));$('export').onclick=()=>{let blob=new Blob([JSON.stringify({format:'borderlands-loot-progress',version:1,progress:done},null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='borderlands-loot-progress.json';a.click();URL.revokeObjectURL(a.href)};$('import').onchange=async e=>{try{let x=JSON.parse(await e.target.files[0].text());if(x.format!=='borderlands-loot-progress'||!x.progress)throw Error('Неверный формат');done={...done,...x.progress};save();render();alert('Прогресс импортирован')}catch(err){alert(err.message)}e.target.value=''};fetch('data/catalog.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error();return r.json()}).then(x=>{db=x;$('status').textContent='Каталог загружен';render()}).catch(()=>{$('status').textContent='Каталог ещё не синхронизирован';db={games:GAMES.map(([id,name])=>({id,name})),items:[]};render()})})();
+(()=> {
+ const $=id=>document.getElementById(id);
+ const KEYS={progress:"bl-loot-progress-v1",settings:"bl-loot-settings-v1",history:"bl-loot-backups-v1",lastCatalog:"bl-loot-last-catalog-v1",override:"bl-loot-catalog-override-v1"};
+ const GAMES=[["borderlands-1","Borderlands"],["borderlands-2","Borderlands 2"],["borderlands-tps","The Pre-Sequel"],["borderlands-3","Borderlands 3"],["wonderlands","Tiny Tina's Wonderlands"],["borderlands-4","Borderlands 4"]];
+ let db={games:[],items:[]},done={},active="borderlands-4";
+ const defaults={search:"",category:"",rarity:"",sort:"name",missing:false};
+ let settings={...defaults},backupHistory=[];
+ const read=(key,fallback)=>{try{return JSON.parse(localStorage.getItem(key)||"null")??fallback}catch{return fallback}};
+ done=read(KEYS.progress,{});
+ settings={...defaults,...read(KEYS.settings,{})};
+ backupHistory=read(KEYS.history,[]);
+ const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+ const games=()=>{let a=GAMES.map(([id,name])=>({id,name}));(db.games||[]).forEach(g=>{if(!a.some(x=>x.id===g.id))a.push(g)});return a};
+ const items=()=>db.items.filter(x=>x.gameId===active&&!x.archived);
+ const stats=a=>({n:a.filter(x=>done[x.id]).length,t:a.length});
+ const persist=()=>{localStorage.setItem(KEYS.progress,JSON.stringify(done));localStorage.setItem(KEYS.settings,JSON.stringify(settings))};
+ function snapshot(reason,catalog=null){
+  const entry={version:2,at:new Date().toISOString(),reason,progress:{...done},settings:{...settings},catalogUpdatedAt:db.updatedAt||null,catalog:catalog||undefined};
+  backupHistory.unshift(entry);backupHistory=backupHistory.slice(0,30);
+  try{localStorage.setItem(KEYS.history,JSON.stringify(backupHistory))}catch(e){backupHistory=backupHistory.slice(0,10);try{localStorage.setItem(KEYS.history,JSON.stringify(backupHistory))}catch{}}
+  return entry;
+ }
+ function download(name,data){
+  const blob=new Blob([JSON.stringify(data,null,2)],{type:"application/json"});
+  const url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+ }
+ function fullBackup(){
+  snapshot("manual-full-backup");
+  download("borderlands-loot-full-backup-"+new Date().toISOString().slice(0,10)+".json",{
+   format:"borderlands-loot-full-backup",version:2,createdAt:new Date().toISOString(),
+   catalog:db,progress:done,settings,history:backupHistory
+  });
+  persist();
+ }
+ function restoreBackup(data){
+  if(data.format==="borderlands-loot-progress"&&data.progress){
+   snapshot("before-legacy-import");done={...data.progress};persist();render();alert("Прогресс импортирован.");return;
+  }
+  if(data.format!=="borderlands-loot-full-backup"||!data.progress||!data.catalog||!Array.isArray(data.catalog.items))throw Error("Файл не является полной резервной копией Borderlands Loot Tracker.");
+  snapshot("before-restore");
+  done={...data.progress};settings={...defaults,...(data.settings||{})};
+  db=data.catalog;
+  try{localStorage.setItem(KEYS.override,JSON.stringify(db))}catch{alert("Каталог слишком большой для локального хранения. Прогресс и настройки восстановлены, каталог останется текущим.");}
+  backupHistory=Array.isArray(data.history)?data.history.slice(0,30):backupHistory;
+  persist();render();alert("Полная резервная копия восстановлена.");
+ }
+ function render(){
+  let gs=games(),g=gs.find(x=>x.id===active)||gs[0];if(!g)return;
+  let a=items(),st=stats(a);
+  $("game-title").textContent=g.name;$("game-label").textContent=g.name.toUpperCase();$("game-desc").textContent="Каталог предметов";
+  $("game-pct").textContent=(st.t?Math.round(st.n/st.t*100):0)+"%";$("game-count").textContent=st.n+" / "+st.t+" собрано";
+  $("games").innerHTML=gs.map(x=>'<button data-game="'+esc(x.id)+'" class="'+(x.id===active?"active":"")+'">'+esc(x.name)+'</button>').join("");
+  $("games").querySelectorAll("[data-game]").forEach(b=>b.onclick=()=>{active=b.dataset.game;render()});
+  let cats=[...new Set(a.map(x=>x.category).filter(Boolean))].sort(),rs=[...new Set(a.map(x=>x.rarity).filter(Boolean))].sort();
+  let oldc=settings.category,oldr=settings.rarity;
+  $("category").innerHTML='<option value="">Все категории</option>'+cats.map(x=>'<option value="'+esc(x)+'">'+esc(x)+'</option>').join("");
+  $("rarity").innerHTML='<option value="">Любая редкость</option>'+rs.map(x=>'<option value="'+esc(x)+'">'+esc(x)+'</option>').join("");
+  $("category").value=cats.includes(oldc)?oldc:"";$("rarity").value=rs.includes(oldr)?oldr:"";
+  $("search").value=settings.search;$("sort").value=settings.sort;$("missing").checked=!!settings.missing;
+  let q=settings.search.toLowerCase().trim(),cat=$("category").value,rar=$("rarity").value;
+  let shown=a.filter(x=>(!q||[x.name,x.category,x.manufacturer,x.description,(x.elements||[]).join(" "), (x.sources||[]).join(" ")].join(" ").toLowerCase().includes(q))&&(!cat||x.category===cat)&&(!rar||x.rarity===rar)&&(!settings.missing||!done[x.id]));
+  shown.sort((x,y)=>settings.sort==="done"?(Number(!!done[y.id])-Number(!!done[x.id])||x.name.localeCompare(y.name)):settings.sort==="category"?(x.category||"").localeCompare(y.category||"")||x.name.localeCompare(y.name):settings.sort==="rarity"?(x.rarity||"").localeCompare(y.rarity||"")||x.name.localeCompare(y.name):x.name.localeCompare(y.name));
+  $("shown").textContent=shown.length+" из "+a.length+" предметов";$("updated").textContent=db.updatedAt?"Обновлено: "+new Date(db.updatedAt).toLocaleDateString("ru-RU"):"Источник: Lootlemon";
+  $("items").innerHTML=shown.map(x=>'<article class="item"><div class="picture">'+(x.image?'<img loading="lazy" src="'+esc(x.image)+'" alt="'+esc(x.name)+'" onerror="this.remove()">':'<span class="placeholder">◇</span>')+'</div><div class="card-body"><div class="cat">'+esc(x.category||"Предмет")+'</div><div class="name">'+esc(x.name)+'</div><div class="tags">'+[x.rarity,x.manufacturer,x.type,x.content,...(x.elements||[])].filter(Boolean).map(v=>'<span class="tag">'+esc(v)+'</span>').join("")+'</div><div class="item-foot">'+(x.url?'<a href="'+esc(x.url)+'" target="_blank" rel="noopener">Lootlemon ↗</a>':'<span></span>')+'<button data-id="'+esc(x.id)+'" class="'+(done[x.id]?"done":"")+'">'+(done[x.id]?"✓ Собрано":"+ Собрал")+'</button></div></div></article>').join("");
+  $("items").querySelectorAll("[data-id]").forEach(b=>b.onclick=()=>{let id=b.dataset.id;if(done[id])delete done[id];else done[id]=true;persist();render()});
+  $("empty").hidden=shown.length>0;
+  let all=db.items.filter(x=>!x.archived),total=stats(all),pct=total.t?Math.round(total.n/total.t*100):0;
+  $("all-pct").textContent=pct+"%";$("all-bar").style.width=pct+"%";$("all-count").textContent=total.n+" из "+total.t+" предметов";
+ }
+ function bindSettings(){
+  $("search").addEventListener("input",()=>{settings.search=$("search").value;persist();render()});
+  ["category","rarity","sort","missing"].forEach(id=>$(id).addEventListener("change",()=>{settings[id]=id==="missing"?$("missing").checked:$(id).value;persist();render()}));
+ }
+ $("export").onclick=fullBackup;
+ $("import").onchange=async e=>{try{const f=e.target.files[0];if(!f)return;restoreBackup(JSON.parse(await f.text()))}catch(err){alert(err.message)}e.target.value="";};
+ bindSettings();
+ (async()=>{
+  try{
+   const localOverride=read(KEYS.override,null);
+   const response=await fetch("data/catalog.json",{cache:"no-store"});if(!response.ok)throw Error("catalog fetch failed");
+   const fresh=await response.json();
+   const previous=read(KEYS.lastCatalog,null);
+   if(previous&&previous.updatedAt&&fresh.updatedAt&&previous.updatedAt!==fresh.updatedAt){
+    snapshot("automatic-before-catalog-sync",previous);
+   }
+   if(!localOverride||!localOverride.updatedAt||!fresh.updatedAt||new Date(fresh.updatedAt)>new Date(localOverride.updatedAt))db=fresh;
+   else db=localOverride;
+   try{localStorage.setItem(KEYS.lastCatalog,JSON.stringify(fresh))}catch{}
+   $("status").textContent="Каталог загружен";
+  }catch{
+   db=read(KEYS.override,null)||{games:GAMES.map(([id,name])=>({id,name})),items:[]};
+   $("status").textContent="Не удалось обновить каталог";
+  }
+  persist();render();
+ })();
+})();
