@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-08T01:20:59.820426+00:00",
+  "updatedAt": "2026-11-08T01:22:03.181332+00:00",
   "games": [
     {
       "id": "borderlands-1",
@@ -35,7 +35,7 @@
       "name": "Assassin",
       "type": null,
       "rarity": "Epic",
-      "manufacturer": null,
+      "manufacturer": "Hyperion | Maliwan",
       "content": "Base Game",
       "elements": [],
       "sources": [
@@ -81,7 +81,7 @@
       "name": "Berserker",
       "type": null,
       "rarity": "Epic",
-      "manufacturer": null,
+      "manufacturer": "Tediore | Vladof",
       "content": "Base Game",
       "elements": [],
       "sources": [
@@ -104,7 +104,7 @@
       "name": "Blast Master",
       "type": null,
       "rarity": "Epic",
-      "manufacturer": null,
+      "manufacturer": "DAHL | Torgue",
       "content": "Base Game",
       "elements": [],
       "sources": [
@@ -127,7 +127,7 @@
       "name": "Bombardier",
       "type": null,
       "rarity": "Epic",
-      "manufacturer": null,
+      "manufacturer": "DAHL | Tediore",
       "content": "Base Game",
       "elements": [],
       "sources": [
@@ -150,7 +150,7 @@
       "name": "Catalyst",
       "type": null,
       "rarity": "Epic",
-      "manufacturer": null,
+      "manufacturer": "Anshin | Maliwan",
       "content": "Base Game",
       "elements": [],
       "sources": [
@@ -173,7 +173,7 @@
       "name": "Centurion",
       "type": null,
       "rarity": "Epic",
-      "manufacturer": null,
+      "manufacturer": "Atlas | Pangolin",
       "content": "Base Game",
       "elements": [],
       "sources": [
@@ -219,7 +219,7 @@
       "name": "Commando",
       "type": null,
       "rarity": "Epic",
-      "manufacturer": null,
+      "manufacturer": "Jakobs | S&S Munitions",
       "content": "Base Game",
       "elements": [],
       "sources": [
@@ -265,7 +265,7 @@
       "name": "Defender",
       "type": null,
       "rarity": "Epic",
-      "manufacturer": null,
+      "manufacturer": "Anshin | Pangolin",
       "content": "Base Game",
       "elements": [],
       "sources": [
@@ -311,7 +311,7 @@
       "name": "Firefly",
       "type": null,
       "rarity": "Epic",
-      "manufacturer": null,
+      "manufacturer": "DAHL | Maliwan",
       "content": "Base Game",
       "elements": [],
       "sources": [
@@ -380,7 +380,7 @@
       "name": "Gunslinger",
       "type": null,
       "rarity": "Epic",
-      "manufacturer": null,
+      "manufacturer": "S&S Munitions | Vladof",
       "content": "Base Game",
       "elements": [],
       "sources": [
@@ -403,7 +403,7 @@
       "name": "Heavy Gunner",
       "type": null,
       "rarity": "Epic",
-      "manufacturer": null,
+      "manufacturer": "Torgue | Dahl",
       "content": "Base Game",
       "elements": [],
       "sources": [
@@ -426,7 +426,7 @@
       "name": "Hunter",
       "type": null,
       "rarity": "Epic",
-      "manufacturer": null,
+      "manufacturer": "Jakobs | Vladof",
       "content": "Base Game",
       "elements": [],
       "sources": [
@@ -449,7 +449,7 @@
       "name": "Leader",
       "type": null,
       "rarity": "Epic",
-      "manufacturer": null,
+      "manufacturer": "DAHL | Jakobs",
       "content": "Base Game",
       "elements": [],
       "sources": [
@@ -495,7 +495,7 @@
       "name": "Mercenary",
       "type": null,
       "rarity": "Epic",
-      "manufacturer": null,
+      "manufacturer": "Atlas | DAHL",
       "content": "Base Game",
       "elements": [],
       "sources": [
@@ -587,7 +587,7 @@
       "name": "Plaguebearer",
       "type": null,
       "rarity": "Epic",
-      "manufacturer": null,
+      "manufacturer": "Hyperion | S&S Munitions",
       "content": "Base Game",
       "elements": [],
       "sources": [
@@ -633,7 +633,7 @@
       "name": "Ranger",
       "type": null,
       "rarity": "Epic",
-      "manufacturer": null,
+      "manufacturer": "S&S Munitions | Tediore",
       "content": "Base Game",
       "elements": [],
       "sources": [
@@ -656,7 +656,7 @@
       "name": "Rifleman",
       "type": null,
       "rarity": "Epic",
-      "manufacturer": null,
+      "manufacturer": "Torgue | Vladof",
       "content": "Base Game",
       "elements": [],
       "sources": [
@@ -679,7 +679,7 @@
       "name": "Scavenger",
       "type": null,
       "rarity": "Epic",
-      "manufacturer": null,
+      "manufacturer": "Pangolin | Tediore",
       "content": "Base Game",
       "elements": [],
       "sources": [
@@ -725,7 +725,7 @@
       "name": "Shock Trooper",
       "type": null,
       "rarity": "Epic",
-      "manufacturer": null,
+      "manufacturer": "Anshin | Maliwan",
       "content": "Base Game",
       "elements": [],
       "sources": [
@@ -748,7 +748,7 @@
       "name": "Skirmisher",
       "type": null,
       "rarity": "Epic",
-      "manufacturer": null,
+      "manufacturer": "Pangolin | Vladof",
       "content": "Base Game",
       "elements": [],
       "sources": [
@@ -771,7 +771,7 @@
       "name": "Sniper",
       "type": null,
       "rarity": "Epic",
-      "manufacturer": null,
+      "manufacturer": "Hyperion | Jakobs",
       "content": "Base Game",
       "elements": [],
       "sources": [
@@ -840,7 +840,7 @@
       "name": "Support Gunner",
       "type": null,
       "rarity": "Epic",
-      "manufacturer": null,
+      "manufacturer": "S&S Munitions | Vladof",
       "content": "Base Game",
       "elements": [],
       "sources": [
@@ -863,7 +863,7 @@
       "name": "Survivor",
       "type": null,
       "rarity": "Epic",
-      "manufacturer": null,
+      "manufacturer": "Maliwan | Pangolin",
       "content": "Base Game",
       "elements": [],
       "sources": [
@@ -886,7 +886,7 @@
       "name": "Tactician",
       "type": null,
       "rarity": "Epic",
-      "manufacturer": null,
+      "manufacturer": "Anshin | Maliwan",
       "content": "Base Game",
       "elements": [],
       "sources": [
@@ -932,7 +932,7 @@
       "name": "Tempest",
       "type": null,
       "rarity": "Epic",
-      "manufacturer": null,
+      "manufacturer": "Pangolin | S&S Munitions",
       "content": "Base Game",
       "elements": [],
       "sources": [
@@ -955,7 +955,7 @@
       "name": "Titan",
       "type": null,
       "rarity": "Epic",
-      "manufacturer": null,
+      "manufacturer": "Atlas | Pangolin",
       "content": "Base Game",
       "elements": [],
       "sources": [
@@ -978,7 +978,7 @@
       "name": "Tormentor",
       "type": null,
       "rarity": "Epic",
-      "manufacturer": null,
+      "manufacturer": "Atlas | Hyperion",
       "content": "Base Game",
       "elements": [],
       "sources": [
@@ -1024,7 +1024,7 @@
       "name": "Warmonger",
       "type": null,
       "rarity": "Epic",
-      "manufacturer": null,
+      "manufacturer": "Hyperion | Torgue",
       "content": "Base Game",
       "elements": [],
       "sources": [
@@ -1070,7 +1070,7 @@
       "name": "Contact",
       "type": null,
       "rarity": "Rare",
-      "manufacturer": null,
+      "manufacturer": "Maliwan | Tediore",
       "content": "Base Game",
       "elements": [],
       "sources": [
@@ -1603,7 +1603,6 @@
       "content": "General Knoxx",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -1633,7 +1632,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -1662,8 +1660,7 @@
       "manufacturer": "Atlas",
       "content": "General Knoxx",
       "elements": [
-        "shock",
-        "icon round"
+        "shock"
       ],
       "sources": [
         "Badass Defender Road's End Crawmerax Craw's Lair Lance Chest Crimson Armory"
@@ -1689,7 +1686,6 @@
       "content": "General Knoxx",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -1718,8 +1714,7 @@
       "manufacturer": "Tediore",
       "content": "General Knoxx",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Badass Desperado Sunken Sea Badass Infantry Road's End Badass Engineer Road's End Crawmerax Craw's Lair"
@@ -1744,8 +1739,7 @@
       "manufacturer": "Gearbox",
       "content": "Enhanced",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Crawmerax Craw's Lair Destroyer Chest The Vault Skagzilla DAHL Headland"
@@ -1771,7 +1765,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -1800,8 +1793,7 @@
       "manufacturer": "Jakobs",
       "content": "General Knoxx",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Badass Desperado Sunken Sea Crawmerax Craw's Lair Lance Chest Crimson Armory"
@@ -1827,7 +1819,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -1856,8 +1847,7 @@
       "manufacturer": "Eridian",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Eridian Pool World Wide"
@@ -1881,8 +1871,7 @@
       "manufacturer": "Tediore",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Bone Head Arid Badlands Chaz Lockdown Palace"
@@ -1908,7 +1897,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -1938,7 +1926,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -1968,7 +1955,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "shock",
         "corrosive",
         "explosive"
@@ -1996,8 +1982,7 @@
       "manufacturer": "Eridian",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Master McCloud The Backdoor Eridian Pool World Wide"
@@ -2021,8 +2006,7 @@
       "manufacturer": "Atlas",
       "content": "Base Game",
       "elements": [
-        "explosive",
-        "icon round"
+        "explosive"
       ],
       "sources": [
         "Revolver Pool World Wide"
@@ -2048,7 +2032,6 @@
       "content": "General Knoxx",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -2077,8 +2060,7 @@
       "manufacturer": "Torgue",
       "content": "Base Game",
       "elements": [
-        "explosive",
-        "icon round"
+        "explosive"
       ],
       "sources": [
         "Sniper Pool World Wide"
@@ -2103,8 +2085,7 @@
       "manufacturer": "S&S Munitions",
       "content": "Base Game",
       "elements": [
-        "explosive",
-        "icon round"
+        "explosive"
       ],
       "sources": [
         "Shotgun Pool World Wide"
@@ -2129,8 +2110,7 @@
       "manufacturer": "Maliwan",
       "content": "Base Game",
       "elements": [
-        "corrosive",
-        "icon round"
+        "corrosive"
       ],
       "sources": [
         "Shotgun Pool World Wide"
@@ -2156,7 +2136,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -2186,7 +2165,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -2215,8 +2193,7 @@
       "manufacturer": "Maliwan",
       "content": "Base Game",
       "elements": [
-        "corrosive",
-        "icon round"
+        "corrosive"
       ],
       "sources": [
         "Revolver Pool World Wide"
@@ -2242,7 +2219,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -2271,8 +2247,7 @@
       "manufacturer": "S&S Munitions",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "AR Pool World Wide"
@@ -2298,7 +2273,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -2327,8 +2301,7 @@
       "manufacturer": "Eridian",
       "content": "General Knoxx",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Knoxx Eridian Pool DLC 3 Wide"
@@ -2352,8 +2325,7 @@
       "manufacturer": "Eridian",
       "content": "General Knoxx",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Pyro Road's End Drifter Sunken Sea Badass Bruiser Deep Fathoms Lance Chest Crimson Armory"
@@ -2377,8 +2349,7 @@
       "manufacturer": "Maliwan",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Repeater Pool World Wide"
@@ -2403,8 +2374,7 @@
       "manufacturer": "Eridian",
       "content": "General Knoxx",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Knoxx Eridian Pool DLC 3 Wide"
@@ -2428,8 +2398,7 @@
       "manufacturer": "Torgue",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Shotgun Pool World Wide"
@@ -2455,7 +2424,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -2484,8 +2452,7 @@
       "manufacturer": "S&S Munitions",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Repeater Pool World Wide"
@@ -2510,8 +2477,7 @@
       "manufacturer": "Eridian",
       "content": "General Knoxx",
       "elements": [
-        "corrosive",
-        "icon round"
+        "corrosive"
       ],
       "sources": [
         "Knoxx Eridian Pool DLC 3 Wide"
@@ -2536,7 +2502,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -2565,8 +2530,7 @@
       "manufacturer": "Vladof",
       "content": "Base Game",
       "elements": [
-        "explosive",
-        "icon round"
+        "explosive"
       ],
       "sources": [
         "Shotgun Pool World Wide"
@@ -2591,8 +2555,7 @@
       "manufacturer": "Maliwan",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "SMG Pool World Wide"
@@ -2617,8 +2580,7 @@
       "manufacturer": "Gearbox",
       "content": "Enhanced",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Crawmerax Craw's Lair Destroyer Chest The Vault Skagzilla DAHL Headland"
@@ -2643,8 +2605,7 @@
       "manufacturer": "DAHL",
       "content": "Base Game",
       "elements": [
-        "corrosive",
-        "icon round"
+        "corrosive"
       ],
       "sources": [
         "Repeater Pool World Wide"
@@ -2669,8 +2630,7 @@
       "manufacturer": "Atlas",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Shotgun Pool World Wide"
@@ -2696,7 +2656,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -2726,7 +2685,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -2756,7 +2714,6 @@
       "content": "General Knoxx",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -2786,7 +2743,6 @@
       "content": "General Knoxx",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -2815,8 +2771,7 @@
       "manufacturer": "Atlas",
       "content": "Base Game",
       "elements": [
-        "shock",
-        "icon round"
+        "shock"
       ],
       "sources": [
         "Krom's Turret Krom's Canyon"
@@ -2841,8 +2796,7 @@
       "manufacturer": "Atlas",
       "content": "General Knoxx",
       "elements": [
-        "explosive",
-        "icon round"
+        "explosive"
       ],
       "sources": [
         "Commander Kyros The Ridgeway"
@@ -2868,7 +2822,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -2897,8 +2850,7 @@
       "manufacturer": "Torgue",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Rakk Hive Trash Coast Rakk-Trap Hive Scorched Snake Canyon Wanted: Fresh Fish New Haven"
@@ -2923,8 +2875,7 @@
       "manufacturer": "Eridian",
       "content": "Base Game",
       "elements": [
-        "shock",
-        "icon round"
+        "shock"
       ],
       "sources": [
         "Eridian Pool World Wide"
@@ -2948,8 +2899,7 @@
       "manufacturer": "Maliwan",
       "content": "Base Game",
       "elements": [
-        "explosive",
-        "icon round"
+        "explosive"
       ],
       "sources": [
         "One-Eyed Jack Rust Commons West"
@@ -2974,8 +2924,7 @@
       "manufacturer": "Eridian",
       "content": "General Knoxx",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Shock Trooper Road's End Drifter Sunken Sea Badass Bruiser Deep Fathoms Lance Chest Crimson Armory"
@@ -3000,7 +2949,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive"
@@ -3028,8 +2976,7 @@
       "manufacturer": "Gearbox",
       "content": "Enhanced",
       "elements": [
-        "explosive",
-        "icon round"
+        "explosive"
       ],
       "sources": [
         "Crawmerax Craw's Lair Destroyer Chest The Vault Skagzilla DAHL Headland"
@@ -3054,8 +3001,7 @@
       "manufacturer": "DAHL",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Bleeder Trash Coast House Hunting Rust Commons East"
@@ -3080,8 +3026,7 @@
       "manufacturer": "Hyperion",
       "content": "General Knoxx",
       "elements": [
-        "shock",
-        "icon round"
+        "shock"
       ],
       "sources": [
         "Badass Defender Road's End Badass Infantry Road's End Crawmerax Craw's Lair Lance Chest Crimson Armory"
@@ -3107,7 +3052,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive"
@@ -3135,8 +3079,7 @@
       "manufacturer": "Atlas",
       "content": "Base Game",
       "elements": [
-        "explosive",
-        "icon round"
+        "explosive"
       ],
       "sources": [
         "AR Pool World Wide"
@@ -3161,8 +3104,7 @@
       "manufacturer": "S&S Munitions",
       "content": "Base Game",
       "elements": [
-        "shock",
-        "icon round"
+        "shock"
       ],
       "sources": [
         "Sniper Pool World Wide"
@@ -3187,8 +3129,7 @@
       "manufacturer": "Atlas",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Queen Tarantella Trash Coast Bait And Switch Rust Commons East"
@@ -3214,7 +3155,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -3244,7 +3184,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -3274,7 +3213,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -3303,8 +3241,7 @@
       "manufacturer": "Hyperion",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Repeater Pool World Wide"
@@ -3330,7 +3267,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -3360,7 +3296,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -3390,7 +3325,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive"
@@ -3419,7 +3353,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -3449,7 +3382,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive"
       ],
@@ -3477,7 +3409,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -3506,8 +3437,7 @@
       "manufacturer": "Eridian",
       "content": "General Knoxx",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Knoxx Eridian Pool DLC 3 Wide"
@@ -3531,8 +3461,7 @@
       "manufacturer": "Eridian",
       "content": "General Knoxx",
       "elements": [
-        "corrosive",
-        "icon round"
+        "corrosive"
       ],
       "sources": [
         "Knoxx Eridian Pool DLC 3 Wide"
@@ -3557,7 +3486,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -3586,8 +3514,7 @@
       "manufacturer": "S&S Munitions",
       "content": "General Knoxx",
       "elements": [
-        "corrosive",
-        "icon round"
+        "corrosive"
       ],
       "sources": [
         "Drifter Sunken Sea Badass Bruiser Deep Fathoms Crawmerax Craw's Lair Lance Chest Crimson Armory"
@@ -3612,8 +3539,7 @@
       "manufacturer": "Gearbox",
       "content": "Enhanced",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Crawmerax Craw's Lair Destroyer Chest The Vault Skagzilla DAHL Headland"
@@ -3638,8 +3564,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Sniper Pool World Wide"
@@ -3664,8 +3589,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Sledge Headstone Mine"
@@ -3690,8 +3614,7 @@
       "manufacturer": "Eridian",
       "content": "General Knoxx",
       "elements": [
-        "corrosive",
-        "icon round"
+        "corrosive"
       ],
       "sources": [
         "Knoxx Eridian Pool DLC 3 Wide"
@@ -3715,8 +3638,7 @@
       "manufacturer": "Vladof",
       "content": "General Knoxx",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Badass Defender Road's End Badass Engineer Road's End Crawmerax Craw's Lair Lance Chest Crimson Armory"
@@ -3741,8 +3663,7 @@
       "manufacturer": "Eridian",
       "content": "General Knoxx",
       "elements": [
-        "corrosive",
-        "icon round"
+        "corrosive"
       ],
       "sources": [
         "Chemical Trooper Road's End Drifter Sunken Sea Badass Bruiser Deep Fathoms Lance Chest Crimson Armory"
@@ -3766,8 +3687,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Shotgun Pool World Wide"
@@ -3792,8 +3712,7 @@
       "manufacturer": "Gearbox",
       "content": "Enhanced",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Crawmerax Craw's Lair Destroyer Chest The Vault Skagzilla DAHL Headland"
@@ -3819,7 +3738,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -3848,8 +3766,7 @@
       "manufacturer": "DAHL",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Scar Skag Gully T.K.'s Life And Limb Arid Badlands"
@@ -3875,7 +3792,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -3904,8 +3820,7 @@
       "manufacturer": "Torgue",
       "content": "Base Game",
       "elements": [
-        "corrosive",
-        "icon round"
+        "corrosive"
       ],
       "sources": [
         "Mothrakk Arid Badlands Like A Moth To Flame New Haven"
@@ -3930,8 +3845,7 @@
       "manufacturer": "Vladof",
       "content": "General Knoxx",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Motor Head The Ridgeway"
@@ -3956,8 +3870,7 @@
       "manufacturer": "Vladof",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Nine-Toes Skag Gully"
@@ -3982,8 +3895,7 @@
       "manufacturer": "DAHL",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Slither Rust Commons East Altar Ego: Godless Monsters Rust Commons East"
@@ -4009,7 +3921,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -4038,8 +3949,7 @@
       "manufacturer": "Maliwan",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Taylor Kobb Rust Commons East"
@@ -4064,8 +3974,7 @@
       "manufacturer": "Hyperion",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Rakkinishu Rust Commons West Jack's Other Eye New Haven"
@@ -4090,8 +3999,7 @@
       "manufacturer": "Hyperion",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "King Wee Wee Tetanus Warrens King Tossing New Haven"
@@ -4116,8 +4024,7 @@
       "manufacturer": "Eridian",
       "content": "Base Game",
       "elements": [
-        "shock",
-        "icon round"
+        "shock"
       ],
       "sources": [
         "Eridian Pool World Wide"
@@ -4141,8 +4048,7 @@
       "manufacturer": "Atlas",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Repeater Pool World Wide"
@@ -4167,8 +4073,7 @@
       "manufacturer": "Maliwan",
       "content": "General Knoxx",
       "elements": [
-        "shock",
-        "icon round"
+        "shock"
       ],
       "sources": [
         "Badass Desperado Sunken Sea Badass Infantry Road's End Badass Engineer Road's End Crawmerax Craw's Lair"
@@ -4193,8 +4098,7 @@
       "manufacturer": "DAHL",
       "content": "General Knoxx",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Commander Typhon The Ridgeway"
@@ -4220,7 +4124,6 @@
       "content": "General Knoxx",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive"
@@ -4248,8 +4151,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Revolver Pool World Wide"
@@ -4275,7 +4177,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -4305,7 +4206,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -4334,8 +4234,7 @@
       "manufacturer": "Gearbox",
       "content": "Enhanced",
       "elements": [
-        "explosive",
-        "icon round"
+        "explosive"
       ],
       "sources": [
         "Crawmerax Craw's Lair Destroyer Chest The Vault Skagzilla DAHL Headland"
@@ -4360,8 +4259,7 @@
       "manufacturer": "Maliwan",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Sniper Pool World Wide"
@@ -4386,8 +4284,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Skagzilla DAHL Headland Big Game Hunter DAHL Headland"
@@ -4413,7 +4310,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -6232,7 +6128,7 @@
       "category": "Grenade Mods",
       "name": "Antifection",
       "type": null,
-      "rarity": null,
+      "rarity": "Effervescent",
       "manufacturer": "Vladof",
       "content": null,
       "elements": [],
@@ -6301,7 +6197,7 @@
       "category": "Grenade Mods",
       "name": "Breath of Terramorphous",
       "type": null,
-      "rarity": null,
+      "rarity": "E Tech",
       "manufacturer": "Vladof",
       "content": "Base Game",
       "elements": [],
@@ -6367,7 +6263,7 @@
       "category": "Grenade Mods",
       "name": "Crossfire",
       "type": null,
-      "rarity": null,
+      "rarity": "Seraph",
       "manufacturer": "DAHL",
       "content": null,
       "elements": [],
@@ -6620,7 +6516,7 @@
       "category": "Grenade Mods",
       "name": "Meteor Shower",
       "type": null,
-      "rarity": null,
+      "rarity": "Seraph",
       "manufacturer": "Torgue",
       "content": null,
       "elements": [],
@@ -6689,7 +6585,7 @@
       "category": "Grenade Mods",
       "name": "O-Negative",
       "type": null,
-      "rarity": null,
+      "rarity": "Seraph",
       "manufacturer": "Maliwan",
       "content": null,
       "elements": [],
@@ -6804,7 +6700,7 @@
       "category": "Grenade Mods",
       "name": "The Electric Chair",
       "type": null,
-      "rarity": null,
+      "rarity": "Effervescent",
       "manufacturer": "Vladof",
       "content": null,
       "elements": [],
@@ -6849,7 +6745,7 @@
       "category": "Relics",
       "name": "Blood of the Ancients",
       "type": null,
-      "rarity": null,
+      "rarity": "E Tech",
       "manufacturer": null,
       "content": null,
       "elements": [],
@@ -6871,7 +6767,7 @@
       "category": "Relics",
       "name": "Blood of the Seraphs",
       "type": null,
-      "rarity": null,
+      "rarity": "Seraph",
       "manufacturer": null,
       "content": null,
       "elements": [],
@@ -6893,7 +6789,7 @@
       "category": "Relics",
       "name": "Bone of the Ancients",
       "type": null,
-      "rarity": null,
+      "rarity": "E Tech",
       "manufacturer": null,
       "content": null,
       "elements": [],
@@ -6915,7 +6811,7 @@
       "category": "Relics",
       "name": "Breath of the Seraphs",
       "type": null,
-      "rarity": null,
+      "rarity": "Seraph",
       "manufacturer": null,
       "content": null,
       "elements": [],
@@ -6959,7 +6855,7 @@
       "category": "Relics",
       "name": "Hard Carry",
       "type": null,
-      "rarity": null,
+      "rarity": "Effervescent",
       "manufacturer": null,
       "content": null,
       "elements": [],
@@ -6981,7 +6877,7 @@
       "category": "Relics",
       "name": "Heart of the Ancients",
       "type": null,
-      "rarity": null,
+      "rarity": "E Tech",
       "manufacturer": null,
       "content": null,
       "elements": [],
@@ -7025,7 +6921,7 @@
       "category": "Relics",
       "name": "Might of the Seraphs",
       "type": null,
-      "rarity": null,
+      "rarity": "Seraph",
       "manufacturer": null,
       "content": null,
       "elements": [],
@@ -7047,7 +6943,7 @@
       "category": "Relics",
       "name": "Mouthwash",
       "type": null,
-      "rarity": null,
+      "rarity": "Effervescent",
       "manufacturer": null,
       "content": null,
       "elements": [],
@@ -7136,7 +7032,7 @@
       "category": "Relics",
       "name": "Shadow of the Seraphs",
       "type": null,
-      "rarity": null,
+      "rarity": "Seraph",
       "manufacturer": null,
       "content": null,
       "elements": [],
@@ -7180,7 +7076,7 @@
       "category": "Relics",
       "name": "Skin of the Ancients",
       "type": null,
-      "rarity": null,
+      "rarity": "E Tech",
       "manufacturer": null,
       "content": null,
       "elements": [],
@@ -7311,7 +7207,7 @@
       "category": "Shields",
       "name": "Antagonist",
       "type": null,
-      "rarity": null,
+      "rarity": "Seraph",
       "manufacturer": "Maliwan",
       "content": null,
       "elements": [],
@@ -7334,7 +7230,7 @@
       "category": "Shields",
       "name": "Big Boom Blaster",
       "type": null,
-      "rarity": null,
+      "rarity": "Seraph",
       "manufacturer": "Torgue",
       "content": null,
       "elements": [],
@@ -7380,7 +7276,7 @@
       "category": "Shields",
       "name": "Blockade",
       "type": null,
-      "rarity": null,
+      "rarity": "Seraph",
       "manufacturer": null,
       "content": null,
       "elements": [],
@@ -7449,7 +7345,7 @@
       "category": "Shields",
       "name": "Easy Mode",
       "type": null,
-      "rarity": null,
+      "rarity": "Effervescent",
       "manufacturer": "Maliwan",
       "content": null,
       "elements": [],
@@ -7472,7 +7368,7 @@
       "category": "Shields",
       "name": "Evolution",
       "type": null,
-      "rarity": null,
+      "rarity": "Seraph",
       "manufacturer": null,
       "content": null,
       "elements": [],
@@ -7564,7 +7460,7 @@
       "category": "Shields",
       "name": "Hoplite",
       "type": null,
-      "rarity": null,
+      "rarity": "Seraph",
       "manufacturer": "Pangolin",
       "content": null,
       "elements": [],
@@ -7725,7 +7621,7 @@
       "category": "Shields",
       "name": "Pun-chee",
       "type": null,
-      "rarity": null,
+      "rarity": "Seraph",
       "manufacturer": "Bandit",
       "content": null,
       "elements": [],
@@ -7748,7 +7644,7 @@
       "category": "Shields",
       "name": "Retainer",
       "type": null,
-      "rarity": null,
+      "rarity": "Effervescent",
       "manufacturer": "Hyperion",
       "content": null,
       "elements": [],
@@ -7771,7 +7667,7 @@
       "category": "Shields",
       "name": "Sponge",
       "type": null,
-      "rarity": null,
+      "rarity": "Seraph",
       "manufacturer": "Vladof",
       "content": null,
       "elements": [],
@@ -7936,8 +7832,7 @@
       "manufacturer": "Torgue",
       "content": "Pirate's Booty",
       "elements": [
-        "explosive",
-        "icon round"
+        "explosive"
       ],
       "sources": [
         "Big Sleep Hayter's Folly"
@@ -7958,12 +7853,11 @@
       "category": "Weapons",
       "name": "Actualizer",
       "type": "SMG",
-      "rarity": null,
+      "rarity": "Seraph",
       "manufacturer": "Hyperion",
       "content": "Pirate's Booty",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -7988,12 +7882,11 @@
       "category": "Weapons",
       "name": "Ahab",
       "type": "Launcher",
-      "rarity": null,
+      "rarity": "Seraph",
       "manufacturer": "Torgue",
       "content": "Pirate's Booty",
       "elements": [
-        "explosive",
-        "icon round"
+        "explosive"
       ],
       "sources": [
         "Master Gee Hayter's Folly Oasis Seraph Shop Oasis"
@@ -8018,8 +7911,7 @@
       "manufacturer": "Jakobs",
       "content": "Fight for Sanctuary",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "BFFFs The Backburner"
@@ -8045,7 +7937,6 @@
       "content": "Ultimate Upgrade",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -8075,7 +7966,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -8104,8 +7994,7 @@
       "manufacturer": "Maliwan",
       "content": "Base Game",
       "elements": [
-        "corrosive",
-        "icon round"
+        "corrosive"
       ],
       "sources": [
         "Moxxi's Tip Jar Sanctuary"
@@ -8131,7 +8020,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "slag",
@@ -8161,7 +8049,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "slag"
@@ -8190,7 +8077,6 @@
       "content": "Ultimate Upgrade",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -8219,8 +8105,7 @@
       "manufacturer": "Jakobs",
       "content": "Digistruct Peak",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Chubby World Wide"
@@ -8246,7 +8131,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -8275,8 +8159,7 @@
       "manufacturer": "Tediore",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Badass Creeper Caustic Caverns"
@@ -8302,7 +8185,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -8331,8 +8213,7 @@
       "manufacturer": "Torgue",
       "content": "Campaign of Carnage",
       "elements": [
-        "explosive",
-        "icon round"
+        "explosive"
       ],
       "sources": [
         "Walking the Dog Badass Crater of Badassitude"
@@ -8357,8 +8238,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Demon Hunter Lynchwood"
@@ -8384,7 +8264,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "slag",
@@ -8414,7 +8293,6 @@
       "content": "Ultimate Upgrade",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -8443,8 +8321,7 @@
       "manufacturer": "Torgue",
       "content": "Digistruct Peak",
       "elements": [
-        "explosive",
-        "icon round"
+        "explosive"
       ],
       "sources": [
         "Chubby World Wide"
@@ -8470,7 +8347,6 @@
       "content": "Big Game Hunt",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -8499,8 +8375,7 @@
       "manufacturer": "Maliwan",
       "content": "Base Game",
       "elements": [
-        "slag",
-        "icon round"
+        "slag"
       ],
       "sources": [
         "Clan War: Zafords vs. Hodunks The Dust"
@@ -8526,7 +8401,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "slag"
@@ -8554,8 +8428,7 @@
       "manufacturer": "Jakobs",
       "content": "Campaign of Carnage",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Pete's Burners The Beatdown"
@@ -8580,8 +8453,7 @@
       "manufacturer": "Hyperion",
       "content": "Base Game",
       "elements": [
-        "shock",
-        "icon round"
+        "shock"
       ],
       "sources": [
         "Assassin Wot Southpaw S&P Digi. Assassins Digistruct Peak"
@@ -8607,7 +8479,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -8636,8 +8507,7 @@
       "manufacturer": "Torgue",
       "content": "Slaughter Dome",
       "elements": [
-        "explosive",
-        "icon round"
+        "explosive"
       ],
       "sources": [
         "Creature Slaughter: Round 5 Natural Selection Annex"
@@ -8662,8 +8532,7 @@
       "manufacturer": "Maliwan",
       "content": "Dragon Keep",
       "elements": [
-        "shock",
-        "icon round"
+        "shock"
       ],
       "sources": [
         "Critical Fail Flamerock Refuge"
@@ -8684,12 +8553,11 @@
       "category": "Weapons",
       "name": "Dahlminator",
       "type": "Pistol",
-      "rarity": null,
+      "rarity": "E Tech",
       "manufacturer": "DAHL",
       "content": "Base Game",
       "elements": [
-        "corrosive",
-        "icon round"
+        "corrosive"
       ],
       "sources": [
         "The Lost Treasure Sawtooth Cauldron"
@@ -8714,8 +8582,7 @@
       "manufacturer": "Jakobs",
       "content": "Big Game Hunt",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Bloodtail Candlerakk's Crag"
@@ -8741,7 +8608,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -8766,12 +8632,11 @@
       "category": "Weapons",
       "name": "Devastator",
       "type": "Pistol",
-      "rarity": null,
+      "rarity": "Seraph",
       "manufacturer": "Torgue",
       "content": "Pirate's Booty",
       "elements": [
-        "explosive",
-        "icon round"
+        "explosive"
       ],
       "sources": [
         "Master Gee Hayter's Folly Hyperius Washburne Refinery Oasis Seraph Shop Oasis"
@@ -8797,7 +8662,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -8826,8 +8690,7 @@
       "manufacturer": "Jakobs",
       "content": "Big Game Hunt",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Arizona Hunter's Grotto"
@@ -8853,7 +8716,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -8882,8 +8744,7 @@
       "manufacturer": "Torgue",
       "content": "Base Game",
       "elements": [
-        "explosive",
-        "icon round"
+        "explosive"
       ],
       "sources": [
         "The Chosen One Sawtooth Cauldron"
@@ -8909,7 +8770,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -8938,8 +8798,7 @@
       "manufacturer": "Torgue",
       "content": "Base Game",
       "elements": [
-        "explosive",
-        "icon round"
+        "explosive"
       ],
       "sources": [
         "The Warrior Vault of the Warrior Handsome Sorcerer Dragon Keep Torgue Shop DLC 2 Wide Shotgun Pool World Wide"
@@ -8960,12 +8819,11 @@
       "category": "Weapons",
       "name": "Florentine",
       "type": "SMG",
-      "rarity": null,
+      "rarity": "Seraph",
       "manufacturer": "Maliwan",
       "content": "Dragon Keep",
       "elements": [
-        "slag",
-        "icon round"
+        "slag"
       ],
       "sources": [
         "Refuge Seraph Shop Flamerock Refuge"
@@ -8991,7 +8849,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -9020,8 +8877,7 @@
       "manufacturer": "Jakobs",
       "content": "Digistruct Peak",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Chubby World Wide"
@@ -9046,8 +8902,7 @@
       "manufacturer": "Maliwan",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Moxxi's Tip Jar Sanctuary"
@@ -9072,8 +8927,7 @@
       "manufacturer": "Jakobs",
       "content": "Pirate's Booty",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Roscoe The Leviathan's Lair"
@@ -9098,8 +8952,7 @@
       "manufacturer": "Maliwan",
       "content": "Dragon Keep",
       "elements": [
-        "slag",
-        "icon round"
+        "slag"
       ],
       "sources": [
         "The Beard Makes the Man Mines of Avarice"
@@ -9124,8 +8977,7 @@
       "manufacturer": "Bandit",
       "content": "Base Game",
       "elements": [
-        "corrosive",
-        "icon round"
+        "corrosive"
       ],
       "sources": [
         "Laney White The Fridge Pistol Pool World Wide"
@@ -9151,7 +9003,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -9181,7 +9032,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -9211,7 +9061,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "slag"
@@ -9239,8 +9088,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "McNally The Dust AR Pool World Wide"
@@ -9261,12 +9109,11 @@
       "category": "Weapons",
       "name": "Hawk Eye",
       "type": "Sniper",
-      "rarity": null,
+      "rarity": "Seraph",
       "manufacturer": "Jakobs",
       "content": "Big Game Hunt",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Voracidous Candlerakk's Crag Dexiduous Hunter's Grotto Omnd-Omnd-Ohk Hunter's Grotto Grotto Seraph Shop Hunter's Grotto"
@@ -9291,8 +9138,7 @@
       "manufacturer": "Hyperion",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Safe and Sound Caustic Caverns"
@@ -9317,8 +9163,7 @@
       "manufacturer": "DAHL",
       "content": "Fight for Sanctuary",
       "elements": [
-        "shock",
-        "icon round"
+        "shock"
       ],
       "sources": [
         "Echoes of the Past Mt. Scarab Research Center"
@@ -9343,8 +9188,7 @@
       "manufacturer": "Maliwan",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Scorch Frostburn Canyon Digi. Scorch Digistruct Peak Sully the Blacksmith Hallowed Hollow SMG Pool World Wide"
@@ -9369,8 +9213,7 @@
       "manufacturer": "Maliwan",
       "content": "Base Game",
       "elements": [
-        "corrosive",
-        "icon round"
+        "corrosive"
       ],
       "sources": [
         "Saturn Arid Nexus Badlands Saturn 2.0 Digistruct Peak"
@@ -9395,8 +9238,7 @@
       "manufacturer": "DAHL",
       "content": "Base Game",
       "elements": [
-        "corrosive",
-        "icon round"
+        "corrosive"
       ],
       "sources": [
         "Knuckle Dragger Windshear Waste Hyperius Washburne Refinery Pistol Pool World Wide"
@@ -9417,12 +9259,11 @@
       "category": "Weapons",
       "name": "Hot Mama",
       "type": "Sniper",
-      "rarity": null,
+      "rarity": "Effervescent",
       "manufacturer": "Jakobs",
       "content": "Fight for Sanctuary",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Lt. Hoffman Mt. Scarab Research Center"
@@ -9447,8 +9288,7 @@
       "manufacturer": "Jakobs",
       "content": "Big Game Hunt",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Rouge Candlerakk's Crag"
@@ -9469,12 +9309,11 @@
       "category": "Weapons",
       "name": "Infection",
       "type": "Pistol",
-      "rarity": null,
+      "rarity": "Seraph",
       "manufacturer": "Maliwan",
       "content": "Big Game Hunt",
       "elements": [
-        "corrosive",
-        "icon round"
+        "corrosive"
       ],
       "sources": [
         "Voracidous Candlerakk's Crag Dexiduous Hunter's Grotto Omnd-Omnd-Ohk Hunter's Grotto Grotto Seraph Shop Hunter's Grotto"
@@ -9495,12 +9334,11 @@
       "category": "Weapons",
       "name": "Infection Cleaner",
       "type": "SMG",
-      "rarity": null,
+      "rarity": "Effervescent",
       "manufacturer": "Tediore",
       "content": "Fight for Sanctuary",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "New Pandora Soldiers DLC 5 Wide Lt. Angvar The Burrows Lt. Tetra Helios Fallen"
@@ -9526,7 +9364,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive"
@@ -9550,12 +9387,11 @@
       "category": "Weapons",
       "name": "Interfacer",
       "type": "Shotgun",
-      "rarity": null,
+      "rarity": "Seraph",
       "manufacturer": "Hyperion",
       "content": "Big Game Hunt",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -9585,7 +9421,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -9615,7 +9450,6 @@
       "content": "Pirate's Booty",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -9644,8 +9478,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Assassin Oney Southpaw S&P Digi. Assassins Digistruct Peak"
@@ -9670,8 +9503,7 @@
       "manufacturer": "Torgue",
       "content": "Base Game",
       "elements": [
-        "explosive",
-        "icon round"
+        "explosive"
       ],
       "sources": [
         "Midge-Mong Southern Shelf Bay Handsome Sorcerer Dragon Keep Torgue Shop DLC 2 Wide AR Pool World Wide"
@@ -9697,7 +9529,6 @@
       "content": "Campaign of Carnage",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "slag"
@@ -9726,7 +9557,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -9755,8 +9585,7 @@
       "manufacturer": "Torgue",
       "content": "Base Game",
       "elements": [
-        "explosive",
-        "icon round"
+        "explosive"
       ],
       "sources": [
         "Clan War: Zafords vs. Hodunks The Dust"
@@ -9781,8 +9610,7 @@
       "manufacturer": "DAHL",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Pond In Frostburn Canyon Frostburn Canyon"
@@ -9807,8 +9635,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Sheriff of Lynchwood Lynchwood Won't Get Fooled Again Sanctuary"
@@ -9829,12 +9656,11 @@
       "category": "Weapons",
       "name": "Lead Storm",
       "type": "Assault Rifle",
-      "rarity": null,
+      "rarity": "Seraph",
       "manufacturer": "Vladof",
       "content": "Big Game Hunt",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -9863,8 +9689,7 @@
       "manufacturer": "Maliwan",
       "content": "Pirate's Booty",
       "elements": [
-        "shock",
-        "icon round"
+        "shock"
       ],
       "sources": [
         "Mr. Bubbles & Lil' Sis Magnys Lighthouse"
@@ -9889,8 +9714,7 @@
       "manufacturer": "Hyperion",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Wilhelm End of the Line Pistol Pool World Wide"
@@ -9915,8 +9739,7 @@
       "manufacturer": "Hyperion",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Badass Creeper Caustic Caverns"
@@ -9942,7 +9765,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -9971,8 +9793,7 @@
       "manufacturer": "Jakobs",
       "content": "Fight for Sanctuary",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Grave in Dahl Abandon DAHL Abandon"
@@ -9998,7 +9819,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -10027,8 +9847,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Mick Zaford The Dust Pistol Pool World Wide"
@@ -10054,7 +9873,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "slag",
@@ -10084,7 +9902,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -10109,12 +9926,11 @@
       "category": "Weapons",
       "name": "Nirvana",
       "type": "SMG",
-      "rarity": null,
+      "rarity": "Effervescent",
       "manufacturer": "Maliwan",
       "content": "Fight for Sanctuary",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Infected Badass Sapling DLC 5 Wide"
@@ -10140,7 +9956,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "slag"
@@ -10168,8 +9983,7 @@
       "manufacturer": "Torgue",
       "content": "Base Game",
       "elements": [
-        "explosive",
-        "icon round"
+        "explosive"
       ],
       "sources": [
         "The Black Queen The Dust Digi. Black Queen Digistruct Peak Torgue Shop DLC 2 Wide Launcher Pool World Wide"
@@ -10195,7 +10009,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -10224,8 +10037,7 @@
       "manufacturer": "Torgue",
       "content": "Dragon Keep",
       "elements": [
-        "explosive",
-        "icon round"
+        "explosive"
       ],
       "sources": [
         "Warlord Slog Murderlin's Temple"
@@ -10246,12 +10058,11 @@
       "category": "Weapons",
       "name": "Omen",
       "type": "Shotgun",
-      "rarity": null,
+      "rarity": "Seraph",
       "manufacturer": "Tediore",
       "content": "Dragon Keep",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -10281,7 +10092,6 @@
       "content": "Dragon Keep",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -10310,8 +10120,7 @@
       "manufacturer": "Jakobs",
       "content": "Pirate's Booty",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Message in a Bottle: Oasis Oasis"
@@ -10337,7 +10146,6 @@
       "content": "Fight for Sanctuary",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -10362,12 +10170,11 @@
       "category": "Weapons",
       "name": "Patriot",
       "type": "Sniper",
-      "rarity": null,
+      "rarity": "Seraph",
       "manufacturer": "Vladof",
       "content": "Pirate's Booty",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -10392,12 +10199,11 @@
       "category": "Weapons",
       "name": "Peak Opener",
       "type": "Assault Rifle",
-      "rarity": null,
+      "rarity": "Effervescent",
       "manufacturer": "Torgue",
       "content": "Fight for Sanctuary",
       "elements": [
-        "shock",
-        "icon round"
+        "shock"
       ],
       "sources": [
         "Haderax Writhing Deep"
@@ -10423,7 +10229,6 @@
       "content": "Pirate's Booty",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "slag"
@@ -10452,7 +10257,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -10481,8 +10285,7 @@
       "manufacturer": "Torgue",
       "content": "Campaign of Carnage",
       "elements": [
-        "explosive",
-        "icon round"
+        "explosive"
       ],
       "sources": [
         "Torgue Shop DLC 2 Wide"
@@ -10507,8 +10310,7 @@
       "manufacturer": "Maliwan",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Cryptkeeper Clark Hallowed Hollow Incinerator Clayton Frostburn Canyon Hyperius Washburne Refinery Launcher Pool World Wide"
@@ -10534,7 +10336,6 @@
       "content": "Pirate's Booty",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -10559,12 +10360,11 @@
       "category": "Weapons",
       "name": "Retcher",
       "type": "Shotgun",
-      "rarity": null,
+      "rarity": "Seraph",
       "manufacturer": "Tediore",
       "content": "Pirate's Booty",
       "elements": [
-        "corrosive",
-        "icon round"
+        "corrosive"
       ],
       "sources": [
         "Hyperius Washburne Refinery Oasis Seraph Shop Oasis"
@@ -10589,8 +10389,7 @@
       "manufacturer": "Jakobs",
       "content": "Big Game Hunt",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Bulstoss Hunter's Grotto"
@@ -10616,7 +10415,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "slag",
@@ -10646,7 +10444,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -10676,7 +10473,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "slag"
@@ -10705,7 +10501,6 @@
       "content": "Pirate's Booty",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -10734,8 +10529,7 @@
       "manufacturer": "Bandit",
       "content": "Ultimate Upgrade",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "OMGWTH Digistruct Peak Chubby World Wide Loot Midget DAHL Abandon AR Pool World Wide"
@@ -10761,7 +10555,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -10786,12 +10579,11 @@
       "category": "Weapons",
       "name": "Seeker",
       "type": "Assault Rifle",
-      "rarity": null,
+      "rarity": "Seraph",
       "manufacturer": "Torgue",
       "content": "Dragon Keep",
       "elements": [
-        "explosive",
-        "icon round"
+        "explosive"
       ],
       "sources": [
         "Refuge Seraph Shop Flamerock Refuge"
@@ -10812,12 +10604,11 @@
       "category": "Weapons",
       "name": "Seraphim",
       "type": "Assault Rifle",
-      "rarity": null,
+      "rarity": "Seraph",
       "manufacturer": "DAHL",
       "content": "Pirate's Booty",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Master Gee Hayter's Folly Oasis Seraph Shop Oasis"
@@ -10842,8 +10633,7 @@
       "manufacturer": "Hyperion",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Out of Body Experience Bloodshot Ramparts"
@@ -10869,7 +10659,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -10898,8 +10687,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Son of Mothrakk Wildlife Exploitation Preserve Rakkanoth Scylla's Grove Sniper Pool World Wide"
@@ -10924,8 +10712,7 @@
       "manufacturer": "Bandit",
       "content": "Base Game",
       "elements": [
-        "slag",
-        "icon round"
+        "slag"
       ],
       "sources": [
         "Tector and Jimbo Hodunk The Dust Sorcerer's Daughter Lair of Infinite Agony SMG Pool World Wide"
@@ -10951,7 +10738,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -10981,7 +10767,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -11006,12 +10791,11 @@
       "category": "Weapons",
       "name": "Slow Hand",
       "type": "Shotgun",
-      "rarity": null,
+      "rarity": "E Tech",
       "manufacturer": "Hyperion",
       "content": "Campaign of Carnage",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "slag"
@@ -11040,7 +10824,6 @@
       "content": "Ultimate Upgrade",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -11065,12 +10848,11 @@
       "category": "Weapons",
       "name": "Stinger",
       "type": "Pistol",
-      "rarity": null,
+      "rarity": "Seraph",
       "manufacturer": "Vladof",
       "content": "Dragon Keep",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -11099,8 +10881,7 @@
       "manufacturer": "Jakobs",
       "content": "Pirate's Booty",
       "elements": [
-        "corrosive",
-        "icon round"
+        "corrosive"
       ],
       "sources": [
         "No-Beard Oasis"
@@ -11125,8 +10906,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Hungry Like the Skag Arid Nexus Badlands"
@@ -11151,8 +10931,7 @@
       "manufacturer": "Maliwan",
       "content": "Ultimate Upgrade",
       "elements": [
-        "shock",
-        "icon round"
+        "shock"
       ],
       "sources": [
         "OMGWTH Digistruct Peak Chubby World Wide Loot Midget DAHL Abandon Sniper Pool World Wide"
@@ -11177,8 +10956,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Old Slappy Highlands Outwash Master Gee Hayter's Folly Shotgun Pool World Wide"
@@ -11199,12 +10977,11 @@
       "category": "Weapons",
       "name": "SWORDSPLOSION",
       "type": "Shotgun",
-      "rarity": null,
+      "rarity": "E Tech",
       "manufacturer": "Torgue",
       "content": "Dragon Keep",
       "elements": [
-        "explosive",
-        "icon round"
+        "explosive"
       ],
       "sources": [
         "The Sword in The Stoner Unassuming Docks"
@@ -11225,12 +11002,11 @@
       "category": "Weapons",
       "name": "Tattler",
       "type": "SMG",
-      "rarity": null,
+      "rarity": "Seraph",
       "manufacturer": "Bandit",
       "content": "Pirate's Booty",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -11259,8 +11035,7 @@
       "manufacturer": "DAHL",
       "content": "Base Game",
       "elements": [
-        "corrosive",
-        "icon round"
+        "corrosive"
       ],
       "sources": [
         "You Are Cordially Invited: Tea Party Tundra Express"
@@ -11285,8 +11060,7 @@
       "manufacturer": "Bandit",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Terramorphous Terramorphous Peak"
@@ -11311,8 +11085,7 @@
       "manufacturer": "Maliwan",
       "content": "Base Game",
       "elements": [
-        "shock",
-        "icon round"
+        "shock"
       ],
       "sources": [
         "Captain Flynt Southern Shelf Sparky Flynt Wam Bam Island Pistol Pool World Wide"
@@ -11337,8 +11110,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Uncle Teddy Arid Nexus Badlands"
@@ -11363,8 +11135,7 @@
       "manufacturer": "Bandit",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Captain Flynt Southern Shelf Sparky Flynt Wam Bam Island Snowman in Tundra Express Tundra Express"
@@ -11385,12 +11156,11 @@
       "category": "Weapons",
       "name": "Toothpick",
       "type": "Assault Rifle",
-      "rarity": null,
+      "rarity": "Effervescent",
       "manufacturer": "DAHL",
       "content": "Fight for Sanctuary",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Sand Worm The Burrows Sand Worm Queen The Burrows"
@@ -11415,8 +11185,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Animal Rights Sanctuary"
@@ -11441,8 +11210,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Clan War: End of the Rainbow The Holy Spirits"
@@ -11467,8 +11235,7 @@
       "manufacturer": "Torgue",
       "content": "Ultimate Upgrade",
       "elements": [
-        "explosive",
-        "icon round"
+        "explosive"
       ],
       "sources": [
         "OMGWTH Digistruct Peak Chubby World Wide Loot Midget DAHL Abandon Launcher Pool World Wide"
@@ -11493,8 +11260,7 @@
       "manufacturer": "Jakobs",
       "content": "Big Game Hunt",
       "elements": [
-        "shock",
-        "icon round"
+        "shock"
       ],
       "sources": [
         "Omnd-Omnd-Ohk Hunter's Grotto"
@@ -11519,8 +11285,7 @@
       "manufacturer": "Jakobs",
       "content": "Ultimate Upgrade",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "OMGWTH Digistruct Peak Chubby World Wide Loot Midget DAHL Abandon Pistol Pool World Wide"
@@ -11541,12 +11306,11 @@
       "category": "Weapons",
       "name": "Unicornsplosion",
       "type": "Shotgun",
-      "rarity": null,
+      "rarity": "Effervescent",
       "manufacturer": "Torgue",
       "content": "Fight for Sanctuary",
       "elements": [
-        "explosive",
-        "icon round"
+        "explosive"
       ],
       "sources": [
         "Butt Stallion The Backburner"
@@ -11571,8 +11335,7 @@
       "manufacturer": "Torgue",
       "content": "Base Game",
       "elements": [
-        "explosive",
-        "icon round"
+        "explosive"
       ],
       "sources": [
         "Savage Lee Three Horns Divide Torgue Shop DLC 2 Wide Pistol Pool World Wide"
@@ -11598,7 +11361,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -11628,7 +11390,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -11657,8 +11418,7 @@
       "manufacturer": "Maliwan",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "The Warrior Vault of the Warrior Handsome Sorcerer Dragon Keep Sniper Pool World Wide"
@@ -11684,7 +11444,6 @@
       "content": "Digistruct Peak",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "slag"
@@ -11708,12 +11467,11 @@
       "category": "Weapons",
       "name": "World Burn",
       "type": "Launcher",
-      "rarity": null,
+      "rarity": "Effervescent",
       "manufacturer": "Torgue",
       "content": "Fight for Sanctuary",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Lt. Bolson DAHL Abandon"
@@ -11734,12 +11492,11 @@
       "category": "Weapons",
       "name": "Yellow Jacket",
       "type": "SMG",
-      "rarity": null,
+      "rarity": "E Tech",
       "manufacturer": "Hyperion",
       "content": "Big Game Hunt",
       "elements": [
-        "shock",
-        "icon round"
+        "shock"
       ],
       "sources": [
         "Jackenstein Terminus"
@@ -14432,7 +14189,7 @@
       "name": "Chupa's Organ",
       "type": null,
       "rarity": "Legendary",
-      "manufacturer": null,
+      "manufacturer": "Atlas | Hyperion",
       "content": "Base Game",
       "elements": [],
       "sources": [
@@ -14636,7 +14393,7 @@
       "name": "Firestorm",
       "type": null,
       "rarity": "Legendary",
-      "manufacturer": null,
+      "manufacturer": "Hyperion | Tediore | Vladof",
       "content": "Base Game",
       "elements": [],
       "sources": [
@@ -14981,7 +14738,7 @@
       "name": "Quasar",
       "type": null,
       "rarity": "Legendary",
-      "manufacturer": null,
+      "manufacturer": "Atlas | Hyperion | Tediore",
       "content": "Base Game",
       "elements": [],
       "sources": [
@@ -15073,7 +14830,7 @@
       "name": "Storm Front",
       "type": null,
       "rarity": "Legendary",
-      "manufacturer": null,
+      "manufacturer": "Hyperion | Tediore | Vladof",
       "content": "Base Game",
       "elements": [],
       "sources": [
@@ -15142,7 +14899,7 @@
       "name": "Tran-fusion",
       "type": null,
       "rarity": "Legendary",
-      "manufacturer": null,
+      "manufacturer": "Atlas | Hyperion | Tediore",
       "content": "Base Game",
       "elements": [],
       "sources": [
@@ -15208,7 +14965,7 @@
       "name": "Widowmaker",
       "type": null,
       "rarity": "Legendary",
-      "manufacturer": null,
+      "manufacturer": "Hyperion | Tediore | Torgue | Vladof",
       "content": "Base Game",
       "elements": [],
       "sources": [
@@ -16544,8 +16301,7 @@
       "manufacturer": "DAHL",
       "content": "Base Game",
       "elements": [
-        "shock",
-        "icon round"
+        "shock"
       ],
       "sources": [
         "Killavolt Lectra City"
@@ -16570,8 +16326,7 @@
       "manufacturer": "DAHL",
       "content": "Base Game",
       "elements": [
-        "shock",
-        "icon round"
+        "shock"
       ],
       "sources": [
         "Wick and Warty Lectra City Pistol Pool World Wide"
@@ -16596,8 +16351,7 @@
       "manufacturer": "COV",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Agonizer 9000",
@@ -16623,8 +16377,7 @@
       "manufacturer": "Torgue",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Heckle/Hyde Jakobs Estate AR Pool World Wide"
@@ -16649,8 +16402,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Life of the Party Devil's Razor Veteran Rewards Sanctuary III"
@@ -16675,8 +16427,7 @@
       "manufacturer": "Torgue",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Homeopathological Desolation's Edge Veteran Rewards Sanctuary III"
@@ -16702,7 +16453,6 @@
       "content": "Guns, Love, and Tentacles",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -16733,8 +16483,7 @@
       "manufacturer": "DAHL",
       "content": "Fantastic Fustercluck",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Does a Body Good Benediction of Pain"
@@ -16759,8 +16508,7 @@
       "manufacturer": "Maliwan",
       "content": "Base Game",
       "elements": [
-        "shock",
-        "icon round"
+        "shock"
       ],
       "sources": [
         "Maxitrillion Voracious Canopy Sniper Pool World Wide"
@@ -16785,8 +16533,7 @@
       "manufacturer": "Atlas",
       "content": "Director's Cut",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Hemovorous Darkthirst Dominion Sera of Supremacy Trial of Supremacy Director's Pool DLC 6 Wide"
@@ -16812,7 +16559,6 @@
       "content": "Handsome Jackpot",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive"
@@ -16841,7 +16587,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -16872,7 +16617,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -16903,7 +16647,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -16934,7 +16677,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "corrosive",
         "radiation"
       ],
@@ -16963,7 +16705,6 @@
       "content": "Bounty of Blood",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -16993,7 +16734,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -17024,8 +16764,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Legendary Hunt World Wide"
@@ -17050,8 +16789,7 @@
       "manufacturer": "Maliwan",
       "content": "Designer's Cut",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Dam",
@@ -17077,8 +16815,7 @@
       "manufacturer": "Jakobs",
       "content": "Director's Cut",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Vault Card #1 World Wide"
@@ -17104,7 +16841,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -17134,8 +16870,7 @@
       "manufacturer": "Torgue",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Witch's Brew Jakobs Estate Veteran Rewards Sanctuary III"
@@ -17160,8 +16895,7 @@
       "manufacturer": "Jakobs",
       "content": "Director's Cut",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Vault Card #3 World Wide"
@@ -17187,7 +16921,6 @@
       "content": "Fantastic Fustercluck",
       "elements": [
         "corrosive",
-        "icon round",
         "radiation"
       ],
       "sources": [
@@ -17214,7 +16947,6 @@
       "content": "Fantastic Fustercluck",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -17244,7 +16976,6 @@
       "content": "Fantastic Fustercluck",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -17273,8 +17004,7 @@
       "manufacturer": "Jakobs",
       "content": "Bounty of Blood",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "The Ruiner Crater's Edge"
@@ -17300,7 +17030,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -17331,7 +17060,6 @@
       "content": "Designer's Cut",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -17362,7 +17090,6 @@
       "content": "Handsome Jackpot",
       "elements": [
         "kinetic",
-        "icon round",
         "fire"
       ],
       "sources": [
@@ -17388,8 +17115,7 @@
       "manufacturer": "COV",
       "content": "Handsome Jackpot",
       "elements": [
-        "cryo",
-        "icon round"
+        "cryo"
       ],
       "sources": [
         "One Man's Treasure Impound Deluxe"
@@ -17414,8 +17140,7 @@
       "manufacturer": "Hyperion",
       "content": "Base Game",
       "elements": [
-        "shock",
-        "icon round"
+        "shock"
       ],
       "sources": [
         "Katagawa Ball Skywell-27 Shotgun Pool World Wide"
@@ -17441,7 +17166,6 @@
       "content": "Base Game",
       "elements": [
         "shock",
-        "icon round",
         "corrosive"
       ],
       "sources": [
@@ -17467,8 +17191,7 @@
       "manufacturer": "DAHL",
       "content": "Base Game",
       "elements": [
-        "corrosive",
-        "icon round"
+        "corrosive"
       ],
       "sources": [
         "Blinding Banshee Desolation's Edge AR Pool World Wide"
@@ -17494,7 +17217,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -17525,7 +17247,6 @@
       "content": "Bounty of Blood",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -17555,8 +17276,7 @@
       "manufacturer": "Maliwan",
       "content": "Bounty of Blood",
       "elements": [
-        "radiation",
-        "icon round"
+        "radiation"
       ],
       "sources": [
         "Dirty Deeds Ashfall Peaks"
@@ -17581,8 +17301,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Dump on Dumptruck The Droughts Veteran Rewards Sanctuary III"
@@ -17607,8 +17326,7 @@
       "manufacturer": "Atlas",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Judge Hightower Lectra City AR Pool World Wide"
@@ -17634,7 +17352,6 @@
       "content": "Bounty of Blood",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -17664,7 +17381,6 @@
       "content": "Handsome Jackpot",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -17694,8 +17410,7 @@
       "manufacturer": "Torgue",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Lagromar Konrad's Hold The Demon in the Dark Konrad's Hold Veteran Rewards Sanctuary III"
@@ -17720,8 +17435,7 @@
       "manufacturer": "Jakobs",
       "content": "Guns, Love, and Tentacles",
       "elements": [
-        "cryo",
-        "icon round"
+        "cryo"
       ],
       "sources": [
         "Kritchy Cursehaven"
@@ -17746,8 +17460,7 @@
       "manufacturer": "Maliwan",
       "content": "Base Game",
       "elements": [
-        "corrosive",
-        "icon round"
+        "corrosive"
       ],
       "sources": [
         "Beneath the Meridian The Forgotten Basilica"
@@ -17772,8 +17485,7 @@
       "manufacturer": "Jakobs",
       "content": "Guns, Love, and Tentacles",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Eista Skittermaw Basin Guns",
@@ -17799,8 +17511,7 @@
       "manufacturer": "Vladof",
       "content": "Base Game",
       "elements": [
-        "cryo",
-        "icon round"
+        "cryo"
       ],
       "sources": [
         "Hammerlocked Sanctuary III Veteran Rewards Sanctuary III"
@@ -17826,7 +17537,6 @@
       "content": "Bounty of Blood",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -17856,7 +17566,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -17887,7 +17596,6 @@
       "content": "Bounty of Blood",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -17918,7 +17626,6 @@
       "content": "Fantastic Fustercluck",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -17948,8 +17655,7 @@
       "manufacturer": "DAHL",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Agonizer 9000",
@@ -17976,7 +17682,6 @@
       "content": "Handsome Jackpot",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -18006,8 +17711,7 @@
       "manufacturer": "Torgue",
       "content": "Handsome Jackpot",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Junpai Goat Eater The Spendopticon Jackpot Pool DLC 1 Wide"
@@ -18032,8 +17736,7 @@
       "manufacturer": "DAHL",
       "content": "Director's Cut",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Vault Card #3 World Wide"
@@ -18058,8 +17761,7 @@
       "manufacturer": "Tediore",
       "content": "Base Game",
       "elements": [
-        "corrosive",
-        "icon round"
+        "corrosive"
       ],
       "sources": [
         "Mother of Grogans The Anvil"
@@ -18084,8 +17786,7 @@
       "manufacturer": "Maliwan",
       "content": "Base Game",
       "elements": [
-        "shock",
-        "icon round"
+        "shock"
       ],
       "sources": [
         "Moxxi's Tip Jar Sanctuary III"
@@ -18110,8 +17811,7 @@
       "manufacturer": "Torgue",
       "content": "Fantastic Fustercluck",
       "elements": [
-        "radiation",
-        "icon round"
+        "radiation"
       ],
       "sources": [
         "Fustercluck Pool DLC 4 Wide"
@@ -18136,8 +17836,7 @@
       "manufacturer": "Torgue",
       "content": "Designer's Cut",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Seepage & Creepage Stormblind Complex Heavyweight Harker Stormblind Complex Designer's Pool Stormblind Complex"
@@ -18163,7 +17862,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -18193,7 +17891,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive"
       ],
@@ -18220,8 +17917,7 @@
       "manufacturer": "Maliwan",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "General Traunt Desolation's Edge Anathema Minos Prime Scourge Minos Prime"
@@ -18246,8 +17942,7 @@
       "manufacturer": "Jakobs",
       "content": "Bounty of Blood",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Riding to Ruin Vestige"
@@ -18273,7 +17968,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -18305,7 +17999,6 @@
       "content": "Designer's Cut",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -18334,8 +18027,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Malevolent Practice Floodmoor Basin Veteran Rewards Sanctuary III"
@@ -18361,7 +18053,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -18390,8 +18081,7 @@
       "manufacturer": "Torgue",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "The Unstoppable Ambermire Pistol Pool World Wide"
@@ -18417,7 +18107,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -18448,7 +18137,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -18477,8 +18165,7 @@
       "manufacturer": "DAHL",
       "content": "Handsome Jackpot",
       "elements": [
-        "cryo",
-        "icon round"
+        "cryo"
       ],
       "sources": [
         "Do it for Digby (Part 3) The Spendopticon"
@@ -18504,7 +18191,6 @@
       "content": "Bounty of Blood",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -18534,8 +18220,7 @@
       "manufacturer": "Maliwan",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Cannonization Desolation's Edge Veteran Rewards Sanctuary III"
@@ -18560,8 +18245,7 @@
       "manufacturer": "DAHL",
       "content": "Anniversary",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [],
       "metadata": [
@@ -18584,7 +18268,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -18614,8 +18297,7 @@
       "manufacturer": "Maliwan",
       "content": "Handsome Jackpot",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Pieces of Résistance DLC 1 Wide"
@@ -18640,8 +18322,7 @@
       "manufacturer": "COV",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Hot Karl Devil's Razor AR Pool World Wide"
@@ -18666,8 +18347,7 @@
       "manufacturer": "Eridian",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Footsteps of Giants Desolation's Edge"
@@ -18692,8 +18372,7 @@
       "manufacturer": "COV",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Swamp Bro Floodmoor Basin Veteran Rewards Sanctuary III"
@@ -18718,8 +18397,7 @@
       "manufacturer": "Hyperion",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Muldock the Anointed Floodmoor Basin Shotgun Pool World Wide"
@@ -18745,7 +18423,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -18775,7 +18452,6 @@
       "content": "Bloody Harvest",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -18804,8 +18480,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "On the Blood Path The Anvil Veteran Rewards Sanctuary III"
@@ -18830,8 +18505,7 @@
       "manufacturer": "Hyperion",
       "content": "Guns, Love, and Tentacles",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Happily Ever After The Lodge"
@@ -18856,8 +18530,7 @@
       "manufacturer": "Vladof",
       "content": "Designer's Cut",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Shipping Encouraged Stormblind Complex Heavyweight Harker Stormblind Complex Designer's Pool Stormblind Complex"
@@ -18882,8 +18555,7 @@
       "manufacturer": "Maliwan",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Red Jabber Ambermire Katagawa Jr. Atlas HQ Sniper Pool World Wide"
@@ -18909,7 +18581,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "radiation"
       ],
@@ -18936,8 +18607,7 @@
       "manufacturer": "Tediore",
       "content": "Guns, Love, and Tentacles",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Wendigo The Cankerwood Guns",
@@ -18964,7 +18634,6 @@
       "content": "Bounty of Blood",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -18993,8 +18662,7 @@
       "manufacturer": "Maliwan",
       "content": "Director's Cut",
       "elements": [
-        "shock",
-        "icon round"
+        "shock"
       ],
       "sources": [
         "Beef Plissken Karass Canyon Director's Pool DLC 6 Wide"
@@ -19019,8 +18687,7 @@
       "manufacturer": "Atlas",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Warden The Anvil"
@@ -19046,7 +18713,6 @@
       "content": "Bounty of Blood",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -19075,8 +18741,7 @@
       "manufacturer": "Maliwan",
       "content": "Guns, Love, and Tentacles",
       "elements": [
-        "cryo",
-        "icon round"
+        "cryo"
       ],
       "sources": [
         "Kukuwajack Negul Neshai"
@@ -19101,8 +18766,7 @@
       "manufacturer": "COV",
       "content": "Bounty of Blood",
       "elements": [
-        "corrosive",
-        "icon round"
+        "corrosive"
       ],
       "sources": [
         "Dickon Goyle Bloodsun Canyon Bounty Pool DLC 3 Wide"
@@ -19127,8 +18791,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Sheega Devil's Razor AR Pool World Wide"
@@ -19153,8 +18816,7 @@
       "manufacturer": "Torgue",
       "content": "Base Game",
       "elements": [
-        "corrosive",
-        "icon round"
+        "corrosive"
       ],
       "sources": [
         "Dynasty Diner Meridian Metroplex Veteran Rewards Sanctuary III"
@@ -19179,8 +18841,7 @@
       "manufacturer": "Torgue",
       "content": "Toy Box",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [],
       "metadata": [
@@ -19203,7 +18864,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -19232,8 +18892,7 @@
       "manufacturer": "Hyperion",
       "content": "Director's Cut",
       "elements": [
-        "corrosive",
-        "icon round"
+        "corrosive"
       ],
       "sources": [
         "Vault Card #2 World Wide"
@@ -19259,7 +18918,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -19289,8 +18947,7 @@
       "manufacturer": "Maliwan",
       "content": "Revenge of the Cartels",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Joey Ultraviolet Villa Ultraviolet Roaster Villa Ultraviolet The Tenderizer Villa Ultraviolet"
@@ -19315,8 +18972,7 @@
       "manufacturer": "Hyperion",
       "content": "Director's Cut",
       "elements": [
-        "shock",
-        "icon round"
+        "shock"
       ],
       "sources": [
         "Vault Card #1 World Wide"
@@ -19342,7 +18998,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -19373,7 +19028,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -19403,8 +19057,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "The Guns of Reliance Floodmoor Basin"
@@ -19430,7 +19083,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -19460,8 +19112,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "King Bobo the Almighty Voracious Canopy"
@@ -19487,7 +19138,6 @@
       "content": "Handsome Jackpot",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo"
@@ -19515,8 +19165,7 @@
       "manufacturer": "DAHL",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Jabbermogwai Voracious Canopy"
@@ -19542,7 +19191,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "shock"
       ],
       "sources": [
@@ -19568,8 +19216,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Road Dog The Splinterlands Shotgun Pool World Wide"
@@ -19595,7 +19242,6 @@
       "content": "Base Game",
       "elements": [
         "corrosive",
-        "icon round",
         "radiation"
       ],
       "sources": [
@@ -19621,8 +19267,7 @@
       "manufacturer": "DAHL",
       "content": "Base Game",
       "elements": [
-        "corrosive",
-        "icon round"
+        "corrosive"
       ],
       "sources": [
         "Mother of Grogans The Anvil Pistol Pool World Wide"
@@ -19647,8 +19292,7 @@
       "manufacturer": "COV",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Hot Karl Devil's Razor"
@@ -19673,8 +19317,7 @@
       "manufacturer": "Torgue",
       "content": "Designer's Cut",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Seepage & Creepage Stormblind Complex Heavyweight Harker Stormblind Complex Designer's Pool Stormblind Complex"
@@ -19699,8 +19342,7 @@
       "manufacturer": "COV",
       "content": "Guns, Love, and Tentacles",
       "elements": [
-        "cryo",
-        "icon round"
+        "cryo"
       ],
       "sources": [
         "Shiverous the Unscathed Negul Neshai"
@@ -19725,8 +19367,7 @@
       "manufacturer": "Maliwan",
       "content": "Toy Box",
       "elements": [
-        "shock",
-        "icon round"
+        "shock"
       ],
       "sources": [],
       "metadata": [
@@ -19749,7 +19390,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -19779,8 +19419,7 @@
       "manufacturer": "Jakobs",
       "content": "Bounty of Blood",
       "elements": [
-        "cryo",
-        "icon round"
+        "cryo"
       ],
       "sources": [
         "Of Blood and Beans Obsidian Forest"
@@ -19805,8 +19444,7 @@
       "manufacturer": "Hyperion",
       "content": "Revenge of the Cartels",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Joey Ultraviolet Villa Ultraviolet Roaster Villa Ultraviolet The Tenderizer Villa Ultraviolet"
@@ -19832,7 +19470,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -19863,7 +19500,6 @@
       "content": "Guns, Love, and Tentacles",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -19894,7 +19530,6 @@
       "content": "Handsome Jackpot",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -19925,7 +19560,6 @@
       "content": "Handsome Jackpot",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -19954,8 +19588,7 @@
       "manufacturer": "Jakobs",
       "content": "Director's Cut",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Hemovorous Darkthirst Dominion Director's Pool DLC 6 Wide"
@@ -19980,8 +19613,7 @@
       "manufacturer": "Vladof",
       "content": "Base Game",
       "elements": [
-        "radiation",
-        "icon round"
+        "radiation"
       ],
       "sources": [
         "Crushjaw Cathedral of the Twin Gods Launcher Pool World Wide"
@@ -20007,7 +19639,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "cryo"
       ],
       "sources": [
@@ -20033,8 +19664,7 @@
       "manufacturer": "Hyperion",
       "content": "Handsome Jackpot",
       "elements": [
-        "corrosive",
-        "icon round"
+        "corrosive"
       ],
       "sources": [
         "The Handsome Jackpot The Spendopticon"
@@ -20059,8 +19689,7 @@
       "manufacturer": "DAHL",
       "content": "Guns, Love, and Tentacles",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Petting Mancubite The Lodge"
@@ -20086,7 +19715,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo"
@@ -20115,7 +19743,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -20145,8 +19772,7 @@
       "manufacturer": "DAHL",
       "content": "Base Game",
       "elements": [
-        "shock",
-        "icon round"
+        "shock"
       ],
       "sources": [
         "Transaction-Packed Desolation's Edge Veteran Rewards Sanctuary III"
@@ -20171,8 +19797,7 @@
       "manufacturer": "Maliwan",
       "content": "Base Game",
       "elements": [
-        "cryo",
-        "icon round"
+        "cryo"
       ],
       "sources": [
         "The Kevin Konundrum Sanctuary III"
@@ -20198,7 +19823,6 @@
       "content": "Designer's Cut",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -20228,8 +19852,7 @@
       "manufacturer": "Maliwan",
       "content": "Base Game",
       "elements": [
-        "shock",
-        "icon round"
+        "shock"
       ],
       "sources": [
         "Under Taker The Droughts Shotgun Pool World Wide"
@@ -20255,7 +19878,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "shock"
       ],
       "sources": [
@@ -20281,8 +19903,7 @@
       "manufacturer": "Maliwan",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Tumorhead Lectra City Sniper Pool World Wide"
@@ -20308,7 +19929,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -20337,8 +19957,7 @@
       "manufacturer": "Hyperion",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Baby Dancer Sanctuary III Veteran Rewards Sanctuary III"
@@ -20363,8 +19982,7 @@
       "manufacturer": "Torgue",
       "content": "Handsome Jackpot",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Great Escape Impound Deluxe"
@@ -20390,7 +20008,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -20419,8 +20036,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Billy",
@@ -20447,7 +20063,6 @@
       "content": "Bounty of Blood",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -20477,8 +20092,7 @@
       "manufacturer": "Torgue",
       "content": "Fantastic Fustercluck",
       "elements": [
-        "shock",
-        "icon round"
+        "shock"
       ],
       "sources": [
         "Fustercluck Pool DLC 4 Wide"
@@ -20503,8 +20117,7 @@
       "manufacturer": "Atlas",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Anointed Alpha The Anvil"
@@ -20530,7 +20143,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "corrosive"
       ],
       "sources": [
@@ -20556,8 +20168,7 @@
       "manufacturer": "Jakobs",
       "content": "Guns, Love, and Tentacles",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Yeti Skittermaw Basin"
@@ -20582,8 +20193,7 @@
       "manufacturer": "Tediore",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Lagromar Konrad's Hold SMG Pool World Wide"
@@ -20608,8 +20218,7 @@
       "manufacturer": "Torgue",
       "content": "Fantastic Fustercluck",
       "elements": [
-        "shock",
-        "icon round"
+        "shock"
       ],
       "sources": [
         "Evil Brick Castle Crimson Fustercluck Pool DLC 4 Wide"
@@ -20634,8 +20243,7 @@
       "manufacturer": "Jakobs",
       "content": "Guns, Love, and Tentacles",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "The Call of Gythian Heart's Desire"
@@ -20660,8 +20268,7 @@
       "manufacturer": "Jakobs",
       "content": "Guns, Love, and Tentacles",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Eleanor and the Heart Heart's Desire"
@@ -20687,7 +20294,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "corrosive",
         "cryo"
       ],
@@ -20714,8 +20320,7 @@
       "manufacturer": "Jakobs",
       "content": "Handsome Jackpot",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Scraptrap Prime The Compactor Skag of Survival Trial of Survival Jackpot Pool DLC 1 Wide"
@@ -20741,7 +20346,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -20771,8 +20375,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Turnkey Tim Floodmoor Basin Hag of Fervor Trial of Fervor Pistol Pool World Wide"
@@ -20798,7 +20401,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "corrosive"
       ],
@@ -20826,7 +20428,6 @@
       "content": "Fantastic Fustercluck",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -20857,7 +20458,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "cryo"
       ],
       "sources": [
@@ -20883,8 +20483,7 @@
       "manufacturer": "Hyperion",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Urist McEnforcer Lectra City"
@@ -20909,8 +20508,7 @@
       "manufacturer": "COV",
       "content": "Director's Cut",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Vault Card #1 World Wide"
@@ -20935,8 +20533,7 @@
       "manufacturer": "Hyperion",
       "content": "Handsome Jackpot",
       "elements": [
-        "corrosive",
-        "icon round"
+        "corrosive"
       ],
       "sources": [
         "Acid Trip The Spendopticon"
@@ -20961,8 +20558,7 @@
       "manufacturer": "Maliwan",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Mouthpiece Ascension Bluff"
@@ -20987,8 +20583,7 @@
       "manufacturer": "COV",
       "content": "Fantastic Fustercluck",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Locus of Rage Vaulthalla"
@@ -25701,8 +25296,7 @@
       "manufacturer": "Ripper",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Vile Lictor Umbral Foundry Sniper Pool World Wide"
@@ -25728,7 +25322,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -25758,8 +25351,7 @@
       "manufacturer": "Vladof",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Horace Hungering Plain AR Pool World Wide"
@@ -25785,7 +25377,6 @@
       "content": "The Vile Shadows",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -25816,7 +25407,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -25847,7 +25437,6 @@
       "content": "Stone Demon",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -25878,7 +25467,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "radiation"
@@ -25907,7 +25495,6 @@
       "content": "The Last Resort",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -25937,8 +25524,7 @@
       "manufacturer": "Order",
       "content": "The Last Resort",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Vulkorr Bagheera Range"
@@ -25964,7 +25550,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -25995,7 +25580,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -26026,7 +25610,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -26056,8 +25639,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Directive-0 Terminus District AR Pool World Wide"
@@ -26082,8 +25664,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Bramblesong Stoneblood Forest Sniper Pool World Wide"
@@ -26108,8 +25689,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "The Timekeeper Upper Dominion Sniper Pool World Wide"
@@ -26135,7 +25715,6 @@
       "content": "A Zane to Kill For",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -26166,7 +25745,6 @@
       "content": "Stone Demon",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -26196,7 +25774,6 @@
       "content": "Stone Demon",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -26226,7 +25803,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -26256,8 +25832,7 @@
       "manufacturer": "Torgue",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Bio-Thresher Omega Fades District The Battle Wagon Stoneblood Forest AR Pool World Wide"
@@ -26282,8 +25857,7 @@
       "manufacturer": "Order",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Core Observer The Howl Pistol Pool World Wide"
@@ -26308,8 +25882,7 @@
       "manufacturer": "Tediore",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Foundry Freaks Idolator's Noose Fractis Grindstone of the Worthy AR Pool World Wide"
@@ -26335,7 +25908,6 @@
       "content": "The Vile Shadows",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -26364,8 +25936,7 @@
       "manufacturer": "Torgue",
       "content": "Base Game",
       "elements": [
-        "cryo",
-        "icon round"
+        "cryo"
       ],
       "sources": [
         "Moxxi's Tip Jar Ruined Sumplands AR Pool World Wide"
@@ -26391,7 +25962,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -26421,7 +25991,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -26450,8 +26019,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Bloomreaper the Invincible The Bloom Shotgun Pool World Wide"
@@ -26477,7 +26045,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -26508,7 +26075,6 @@
       "content": "A Zane to Kill For",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -26539,7 +26105,6 @@
       "content": "Vault of the Damned",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -26569,8 +26134,7 @@
       "manufacturer": "Torgue",
       "content": "The Last Resort",
       "elements": [
-        "radiation",
-        "icon round"
+        "radiation"
       ],
       "sources": [
         "Logistics Manager Reyes Vinechoked Canopy"
@@ -26595,8 +26159,7 @@
       "manufacturer": "Order",
       "content": "Vault of the Damned",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Captain Willis The Maelstrom"
@@ -26621,8 +26184,7 @@
       "manufacturer": "Daedalus",
       "content": "Base Game",
       "elements": [
-        "corrosive",
-        "icon round"
+        "corrosive"
       ],
       "sources": [
         "Voraxis Coastal Bonescape SMG Pool World Wide"
@@ -26648,7 +26210,6 @@
       "content": "The Last Resort",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -26678,7 +26239,6 @@
       "content": "The Last Resort",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "radiation"
@@ -26707,7 +26267,6 @@
       "content": "A Zane to Kill For",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -26736,8 +26295,7 @@
       "manufacturer": "Tediore",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Core Observer The Howl AR Pool World Wide"
@@ -26762,8 +26320,7 @@
       "manufacturer": "Order",
       "content": "Murders & Acquisitions",
       "elements": [
-        "radiation",
-        "icon round"
+        "radiation"
       ],
       "sources": [
         "Vault Card: Desert Dreams World Wide"
@@ -26788,8 +26345,7 @@
       "manufacturer": "Jakobs",
       "content": "Stone Demon",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Bore-Tex The Demon's Domain"
@@ -26815,7 +26371,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -26846,7 +26401,6 @@
       "content": "The Vile Shadows",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -26877,7 +26431,6 @@
       "content": "Murders & Acquisitions",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -26908,7 +26461,6 @@
       "content": "The Last Resort",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -26938,7 +26490,6 @@
       "content": "Vault of the Damned",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -26968,8 +26519,7 @@
       "manufacturer": "Jakobs",
       "content": "Vault of the Damned",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Nightmare Rift DLC 1 Wide"
@@ -26994,8 +26544,7 @@
       "manufacturer": "Vladof",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "The Battle Wagon Stoneblood Forest Sniper Pool World Wide"
@@ -27020,8 +26569,7 @@
       "manufacturer": "Daedalus",
       "content": "Gilded Glory Pack",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [],
       "metadata": [
@@ -27043,8 +26591,7 @@
       "manufacturer": "Order",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Arjay Upper Dominion Sniper Pool World Wide"
@@ -27069,8 +26616,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Hadron Abyss Chests Research Center B-0451"
@@ -27095,8 +26641,7 @@
       "manufacturer": "Maliwan",
       "content": "Vault of the Damned",
       "elements": [
-        "cryo",
-        "icon round"
+        "cryo"
       ],
       "sources": [
         "The Penitent Steel Windswept Wastes"
@@ -27121,8 +26666,7 @@
       "manufacturer": "Jakobs",
       "content": "The Vile Shadows",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Vault Card: Warped & Weird World Wide"
@@ -27147,8 +26691,7 @@
       "manufacturer": "Torgue",
       "content": "Stone Demon",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Stone Demon The Demon's Domain"
@@ -27173,8 +26716,7 @@
       "manufacturer": "Tediore",
       "content": "Twitch Drops",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Shotgun Pool World Wide"
@@ -27200,7 +26742,6 @@
       "content": "The Last Resort",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -27230,8 +26771,7 @@
       "manufacturer": "Order",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Driller Hole Tonnage Peel AR Pool World Wide"
@@ -27256,8 +26796,7 @@
       "manufacturer": "Order",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Vile Experiments Terminus District AR Pool World Wide"
@@ -27283,7 +26822,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -27313,8 +26851,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Thol the Invincible Lair of the Subjugator AR Pool World Wide"
@@ -27340,7 +26877,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -27371,7 +26907,6 @@
       "content": "Stone Demon",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -27402,7 +26937,6 @@
       "content": "The Last Resort",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -27433,7 +26967,6 @@
       "content": "Stone Demon",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -27464,7 +26997,6 @@
       "content": "A Zane to Kill For",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -27495,7 +27027,6 @@
       "content": "Mercenary Day",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -27525,8 +27056,7 @@
       "manufacturer": "Ripper",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Skyspanner Kratch Cuspid Climb SMG Pool World Wide"
@@ -27551,8 +27081,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Meathead Riders Cuspid Climb Shotgun Pool World Wide"
@@ -27577,8 +27106,7 @@
       "manufacturer": "Vladof",
       "content": "Vault of the Damned",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Colonel Crash DCN Feuermann"
@@ -27604,7 +27132,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -27634,8 +27161,7 @@
       "manufacturer": "Jakobs",
       "content": "The Last Resort",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Kolavalin Tediore FOB Bravo Lima 4.2"
@@ -27661,7 +27187,6 @@
       "content": "The Last Resort",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -27690,8 +27215,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Callous Heart of the Mountain Shotgun Pool World Wide"
@@ -27717,7 +27241,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -27747,8 +27270,7 @@
       "manufacturer": "Jakobs",
       "content": "The Last Resort",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Lieutenant Harmony Tediore FOB Bravo Lima 4.2"
@@ -27774,7 +27296,6 @@
       "content": "Mercenary Day",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -27804,8 +27325,7 @@
       "manufacturer": "Order",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Child of Terramorphous Research Center B-0451 Hadron Abyss Chests Research Center B-0451"
@@ -27831,7 +27351,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -27861,7 +27380,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -27892,7 +27410,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -27922,7 +27439,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -27953,7 +27469,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "cryo"
@@ -27982,7 +27497,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "shock"
       ],
       "sources": [
@@ -28009,7 +27523,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -28038,8 +27551,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Vile Prototype Windspear Pistol Pool World Wide"
@@ -28065,7 +27577,6 @@
       "content": "Stone Demon",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -28095,7 +27606,6 @@
       "content": "Vault of the Damned",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -28125,7 +27635,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -28156,7 +27665,6 @@
       "content": "A Zane to Kill For",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -28186,7 +27694,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -28217,7 +27724,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -28248,7 +27754,6 @@
       "content": "The Last Resort",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -28279,7 +27784,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -28308,8 +27812,7 @@
       "manufacturer": "Order",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Horace Hungering Plain Pistol Pool World Wide"
@@ -28334,8 +27837,7 @@
       "manufacturer": "Daedalus",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Mimicron Idolator's Noose SMG Pool World Wide"
@@ -28361,7 +27863,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -28391,7 +27892,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -28421,7 +27921,6 @@
       "content": "Gilded Glory Pack",
       "elements": [
         "fire",
-        "icon round",
         "shock"
       ],
       "sources": [],
@@ -28445,7 +27944,6 @@
       "content": "Stone Demon",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -28476,7 +27974,6 @@
       "content": "Stone Demon",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -28506,8 +28003,7 @@
       "manufacturer": "Vladof",
       "content": "Twitch Drops",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [],
       "metadata": [
@@ -28530,7 +28026,6 @@
       "content": "Mercenary Day",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -28561,7 +28056,6 @@
       "content": "Horrors of Kairos",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -28591,8 +28085,7 @@
       "manufacturer": "Order",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Sidney Pointylegs Hungering Plain Pistol Pool World Wide"
@@ -28617,8 +28110,7 @@
       "manufacturer": "Maliwan",
       "content": "Base Game",
       "elements": [
-        "shock",
-        "icon round"
+        "shock"
       ],
       "sources": [
         "Moon-Maddened Callis Elpis Orbital Shatterfield SMG Pool World Wide"
@@ -28644,7 +28136,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -28674,7 +28165,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -28705,7 +28195,6 @@
       "content": "Murders & Acquisitions",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -28735,8 +28224,7 @@
       "manufacturer": "Order",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Primordial Guardian Radix Vault of Radix"
@@ -28761,8 +28249,7 @@
       "manufacturer": "Tediore",
       "content": "The Last Resort",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Barter Up Pyroclast Field"
@@ -28788,7 +28275,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -28817,8 +28303,7 @@
       "manufacturer": "Order",
       "content": "The Last Resort",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Jayson and his Frame Pyroclast Field"
@@ -28843,8 +28328,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Pango & Bango Lopside Pistol Pool World Wide"
@@ -28870,7 +28354,6 @@
       "content": "Base Game",
       "elements": [
         "shock",
-        "icon round",
         "radiation"
       ],
       "sources": [
@@ -28897,7 +28380,6 @@
       "content": "Murders & Acquisitions",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -28928,7 +28410,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -28959,7 +28440,6 @@
       "content": "The Vile Shadows",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -28990,7 +28470,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -29020,8 +28499,7 @@
       "manufacturer": "Jakobs",
       "content": "Murders & Acquisitions",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "BETAMAXXX The Toxic Scowl"
@@ -29046,8 +28524,7 @@
       "manufacturer": "Daedalus",
       "content": "Vault of the Damned",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Air Raider Scremulous Crooked Teeth"
@@ -29073,7 +28550,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -29104,8 +28580,7 @@
       "manufacturer": "Daedalus",
       "content": "A Zane to Kill For",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Biff Fistful Zane's Arcade"
@@ -29130,8 +28605,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Leader Willem Grindstone of the Worthy Shotgun Pool World Wide"
@@ -29157,7 +28631,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -29188,7 +28661,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -29218,7 +28690,6 @@
       "content": "Vault of the Damned",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -29247,8 +28718,7 @@
       "manufacturer": "Order",
       "content": "A Zane to Kill For",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Vault Card: Arcade Invaders World Wide"
@@ -29273,8 +28743,7 @@
       "manufacturer": "Torgue",
       "content": "The Last Resort",
       "elements": [
-        "corrosive",
-        "icon round"
+        "corrosive"
       ],
       "sources": [
         "Experiment C-23 Tediore FOB Bravo Lima 4.2"
@@ -29300,7 +28769,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -29331,7 +28799,6 @@
       "content": "Mercenary Day",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -29361,8 +28828,7 @@
       "manufacturer": "Order",
       "content": "Mercenary Day",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Vault Card: Mercenary Day World Wide"
@@ -29387,8 +28853,7 @@
       "manufacturer": "Order",
       "content": "Stone Demon",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Bore-Tex The Demon's Domain"
@@ -29413,8 +28878,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Directive-0 Terminus District AR Pool World Wide"
@@ -29439,8 +28903,7 @@
       "manufacturer": "Jakobs",
       "content": "Mercenary Day",
       "elements": [
-        "cryo",
-        "icon round"
+        "cryo"
       ],
       "sources": [
         "Minister Screw & Donk Ministry of Culture"
@@ -29466,7 +28929,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -29496,8 +28958,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Rocken Roller Ruined Sumplands"
@@ -29523,7 +28984,6 @@
       "content": "Vault of the Damned",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -29554,7 +29014,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -29583,8 +29042,7 @@
       "manufacturer": "Tediore",
       "content": "The Last Resort",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "The Relieving Of The Guard Pyroclast Field"
@@ -29609,8 +29067,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Vile Experiments Terminus District Pistol Pool World Wide"
@@ -29635,8 +29092,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Ordonite Processor Mini-Bosses The Demon's Domain"
@@ -29662,7 +29118,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -29692,8 +29147,7 @@
       "manufacturer": "Daedalus",
       "content": "The Last Resort",
       "elements": [
-        "cryo",
-        "icon round"
+        "cryo"
       ],
       "sources": [
         "Jr. Manager Warrant Baggett Vinechoked Canopy"
@@ -29719,7 +29173,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -29750,7 +29203,6 @@
       "content": "The Vile Shadows",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -29780,8 +29232,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Child of Terramorphous Research Center B-0451 Hadron Abyss Chests Research Center B-0451"
@@ -29806,8 +29257,7 @@
       "manufacturer": "Tediore",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Divisioner The Low Leys Pistol Pool World Wide"
@@ -29833,7 +29283,6 @@
       "content": "Murders & Acquisitions",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -29863,8 +29312,7 @@
       "manufacturer": "Order",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Primordial Guardian Timekeeper Upper Dominion Sniper Pool World Wide"
@@ -29890,7 +29338,6 @@
       "content": "Vault of the Damned",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -29921,7 +29368,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -29952,7 +29398,6 @@
       "content": "Murders & Acquisitions",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -29982,7 +29427,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -30012,7 +29456,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -30042,8 +29485,7 @@
       "manufacturer": "Order",
       "content": "Vault of the Damned",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Big Oil Bloodstained Hollow"
@@ -30069,7 +29511,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -30100,7 +29541,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -30129,8 +29569,7 @@
       "manufacturer": "Order",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "The Timekeeper Upper Dominion Sniper Pool World Wide"
@@ -30155,8 +29594,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Rocken Roller Ruined Sumplands Shotgun Pool World Wide"
@@ -30182,7 +29620,6 @@
       "content": "Stone Demon",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -30213,7 +29650,6 @@
       "content": "The Vile Shadows",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -30243,7 +29679,6 @@
       "content": "The Vile Shadows",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -30273,8 +29708,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Bio-Thresher Omega Fades District Sniper Pool World Wide"
@@ -30300,7 +29734,6 @@
       "content": "Vault of the Damned",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -30331,7 +29764,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -30361,8 +29793,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Ordonite Processor Mini-Bosses The Demon's Domain"
@@ -30387,8 +29818,7 @@
       "manufacturer": "Order",
       "content": "The Last Resort",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Burnt Offering Pyroclast Field"
@@ -30414,7 +29844,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -30444,8 +29873,7 @@
       "manufacturer": "Jakobs",
       "content": "The Vile Shadows",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Hybrid Thresher Dark Side of Elpis"
@@ -30471,7 +29899,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -30500,8 +29927,7 @@
       "manufacturer": "Daedalus",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Leader Willem Grindstone of the Worthy Pistol Pool World Wide"
@@ -32681,7 +32107,7 @@
       "category": "Grenades",
       "name": "Monster Trap",
       "type": null,
-      "rarity": null,
+      "rarity": "E Tech",
       "manufacturer": "Vladof",
       "content": "Base Game",
       "elements": [],
@@ -33543,12 +32969,11 @@
       "category": "Weapons",
       "name": "%Cu+ie^_^ki||er",
       "type": "SMG",
-      "rarity": null,
+      "rarity": "Glitch",
       "manufacturer": "Scav",
       "content": "Claptastic Voyage",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "The Sum of Some Fears Subconscious"
@@ -33569,12 +32994,11 @@
       "category": "Weapons",
       "name": "/He4rtf;ull Spl0Dge..r",
       "type": "Laser",
-      "rarity": null,
+      "rarity": "Glitch",
       "manufacturer": "DAHL",
       "content": "Claptastic Voyage",
       "elements": [
-        "corrosive",
-        "icon round"
+        "corrosive"
       ],
       "sources": [
         "0V3RL00K - Hidden Chest Cluster OV3RLOOK"
@@ -33599,8 +33023,7 @@
       "manufacturer": "Torgue",
       "content": "Base Game",
       "elements": [
-        "explosive",
-        "icon round"
+        "explosive"
       ],
       "sources": [
         "Pistol Pool World Wide"
@@ -33625,8 +33048,7 @@
       "manufacturer": "Maliwan",
       "content": "Claptastic Voyage",
       "elements": [
-        "cryo",
-        "icon round"
+        "cryo"
       ],
       "sources": [
         "EOS Deck 13.5 Claptastic Weapon Pool DLC 2 Wide"
@@ -33652,7 +33074,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -33682,7 +33103,6 @@
       "content": "Holodome",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -33711,8 +33131,7 @@
       "manufacturer": "Hyperion",
       "content": "Base Game",
       "elements": [
-        "corrosive",
-        "icon round"
+        "corrosive"
       ],
       "sources": [
         "Red Belly Crisis Scar"
@@ -33737,8 +33156,7 @@
       "manufacturer": "DAHL",
       "content": "Base Game",
       "elements": [
-        "corrosive",
-        "icon round"
+        "corrosive"
       ],
       "sources": [
         "Eghood Veins of Helios Pistol Pool World Wide"
@@ -33764,7 +33182,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -33793,8 +33210,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Rare Shotgun Pool World Wide"
@@ -33820,7 +33236,6 @@
       "content": "Tales Season Pass",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo"
@@ -33845,8 +33260,7 @@
       "manufacturer": "Tediore",
       "content": "Holodome",
       "elements": [
-        "shock",
-        "icon round"
+        "shock"
       ],
       "sources": [
         "Digistructed Madness The Holodome Holodome Mini-Boss The Holodome"
@@ -33872,7 +33286,6 @@
       "content": "BL1 Loyalty Reward",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -33898,8 +33311,7 @@
       "manufacturer": "DAHL",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Laser Pool World Wide"
@@ -33925,7 +33337,6 @@
       "content": "Claptastic Voyage",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -33955,7 +33366,6 @@
       "content": "Tales Season Pass",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -33982,7 +33392,6 @@
       "content": "Holodome",
       "elements": [
         "kinetic",
-        "icon round",
         "corrosive",
         "cryo"
       ],
@@ -34009,8 +33418,7 @@
       "manufacturer": "Maliwan",
       "content": "Base Game",
       "elements": [
-        "cryo",
-        "icon round"
+        "cryo"
       ],
       "sources": [
         "The Bosun Pity's Fall Launcher Pool World Wide"
@@ -34035,8 +33443,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "shock",
-        "icon round"
+        "shock"
       ],
       "sources": [
         "The Secret Chamber Pity's Fall"
@@ -34061,8 +33468,7 @@
       "manufacturer": "Maliwan",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Sub-Level 13: Part 2 Sub-Level 13"
@@ -34087,8 +33493,7 @@
       "manufacturer": "Hyperion",
       "content": "Base Game",
       "elements": [
-        "cryo",
-        "icon round"
+        "cryo"
       ],
       "sources": [
         "Sword in the Stone Stanton's Liver Laser Pool World Wide"
@@ -34114,7 +33519,6 @@
       "content": "Tales Season Pass",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -34140,8 +33544,7 @@
       "manufacturer": "Hyperion",
       "content": "Base Game",
       "elements": [
-        "cryo",
-        "icon round"
+        "cryo"
       ],
       "sources": [
         "Drongo Bones Outlands Canyon SMG Pool World Wide"
@@ -34166,8 +33569,7 @@
       "manufacturer": "DAHL",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Torgue-o! Torgue-o! Serenity's Waste"
@@ -34192,8 +33594,7 @@
       "manufacturer": "Torgue",
       "content": "Base Game",
       "elements": [
-        "explosive",
-        "icon round"
+        "explosive"
       ],
       "sources": [
         "Even-More-Disgusting Tork Stanton's Liver Shotgun Pool World Wide"
@@ -34218,8 +33619,7 @@
       "manufacturer": "Jakobs",
       "content": "Claptastic Voyage",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Viruses Motherlessboard EOS Deck 13.5 Claptastic Weapon Pool DLC 2 Wide"
@@ -34245,7 +33645,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -34274,8 +33673,7 @@
       "manufacturer": "DAHL",
       "content": "Base Game",
       "elements": [
-        "cryo",
-        "icon round"
+        "cryo"
       ],
       "sources": [
         "In Perfect Hibernation Veins of Helios"
@@ -34300,8 +33698,7 @@
       "manufacturer": "Maliwan",
       "content": "Base Game",
       "elements": [
-        "cryo",
-        "icon round"
+        "cryo"
       ],
       "sources": [
         "The Bestest Story Ever Told Concordia"
@@ -34327,7 +33724,6 @@
       "content": "Claptastic Voyage",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -34356,8 +33752,7 @@
       "manufacturer": "Hyperion",
       "content": "Base Game",
       "elements": [
-        "corrosive",
-        "icon round"
+        "corrosive"
       ],
       "sources": [
         "Eradicate! Veins of Helios"
@@ -34383,7 +33778,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -34413,7 +33807,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo"
@@ -34441,8 +33834,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "AR Pool World Wide"
@@ -34467,8 +33859,7 @@
       "manufacturer": "Maliwan",
       "content": "Claptastic Voyage",
       "elements": [
-        "shock",
-        "icon round"
+        "shock"
       ],
       "sources": [
         "Chip's Data Mining Adventure Cluster P4NDOR4"
@@ -34493,8 +33884,7 @@
       "manufacturer": "Hyperion",
       "content": "Pandora's Box",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [],
       "metadata": [
@@ -34516,8 +33906,7 @@
       "manufacturer": "Maliwan",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "SMG Pool World Wide"
@@ -34542,8 +33931,7 @@
       "manufacturer": "Vladof",
       "content": "Base Game",
       "elements": [
-        "cryo",
-        "icon round"
+        "cryo"
       ],
       "sources": [
         "Bunch of Ice Holes Concordia"
@@ -34569,7 +33957,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -34599,7 +33986,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -34628,8 +34014,7 @@
       "manufacturer": "Torgue",
       "content": "Base Game",
       "elements": [
-        "explosive",
-        "icon round"
+        "explosive"
       ],
       "sources": [
         "Rare Shotgun Pool World Wide"
@@ -34654,8 +34039,7 @@
       "manufacturer": "Tediore",
       "content": "Claptastic Voyage",
       "elements": [
-        "explosive",
-        "icon round"
+        "explosive"
       ],
       "sources": [
         "EOS Deck 13.5 Claptastic Weapon Pool DLC 2 Wide"
@@ -34680,8 +34064,7 @@
       "manufacturer": "Torgue",
       "content": "Base Game",
       "elements": [
-        "explosive",
-        "icon round"
+        "explosive"
       ],
       "sources": [
         "Boomer Outlands Spur AR Pool World Wide"
@@ -34706,8 +34089,7 @@
       "manufacturer": "Tediore",
       "content": "Claptastic Voyage",
       "elements": [
-        "explosive",
-        "icon round"
+        "explosive"
       ],
       "sources": [
         "5H4D0W-TP The Cortex EOS Deck 13.5 Claptastic Weapon Pool DLC 2 Wide"
@@ -34732,8 +34114,7 @@
       "manufacturer": "Maliwan",
       "content": "Base Game",
       "elements": [
-        "cryo",
-        "icon round"
+        "cryo"
       ],
       "sources": [
         "Lazlo Veins of Helios"
@@ -34758,8 +34139,7 @@
       "manufacturer": "Hyperion",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Pistol Pool World Wide"
@@ -34785,7 +34165,6 @@
       "content": "Claptastic Voyage",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo"
@@ -34814,7 +34193,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -34843,8 +34221,7 @@
       "manufacturer": "Jakobs",
       "content": "Claptastic Voyage",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Adbug Deck 13.5 EOS Deck 13.5 Claptastic Weapon Pool DLC 2 Wide"
@@ -34869,8 +34246,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Pistol Pool World Wide"
@@ -34895,8 +34271,7 @@
       "manufacturer": "Maliwan",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Sniper Pool World Wide"
@@ -34922,7 +34297,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -34951,8 +34325,7 @@
       "manufacturer": "Scav",
       "content": "Base Game",
       "elements": [
-        "corrosive",
-        "icon round"
+        "corrosive"
       ],
       "sources": [
         "Rabid Adams Outlands Canyon"
@@ -34978,7 +34351,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -35007,8 +34379,7 @@
       "manufacturer": "Tediore",
       "content": "Base Game",
       "elements": [
-        "shock",
-        "icon round"
+        "shock"
       ],
       "sources": [
         "Laser Pool World Wide"
@@ -35033,8 +34404,7 @@
       "manufacturer": "Maliwan",
       "content": "Claptastic Voyage",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Rose Tinting Cluster P4NDOR4"
@@ -35060,7 +34430,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo"
@@ -35089,7 +34458,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo",
@@ -35118,8 +34486,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Red",
@@ -35145,8 +34512,7 @@
       "manufacturer": "Torgue",
       "content": "Tales Season Pass",
       "elements": [
-        "explosive",
-        "icon round"
+        "explosive"
       ],
       "sources": [],
       "metadata": [
@@ -35168,8 +34534,7 @@
       "manufacturer": "Torgue",
       "content": "Base Game",
       "elements": [
-        "explosive",
-        "icon round"
+        "explosive"
       ],
       "sources": [
         "Flameknuckle Helios Station Flameknuckle The Holodome Launcher Pool World Wide"
@@ -35195,7 +34560,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -35224,8 +34588,7 @@
       "manufacturer": "Vladof",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Rare AR Pool World Wide"
@@ -35251,7 +34614,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo"
@@ -35279,8 +34641,7 @@
       "manufacturer": "Hyperion",
       "content": "Claptastic Voyage",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "The Sponx Subconscious EOS Deck 13.5 Claptastic Weapon Pool DLC 2 Wide"
@@ -35305,8 +34666,7 @@
       "manufacturer": "Tediore",
       "content": "Holodome",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Digistructed Madness The Holodome Holodome Mini-Boss The Holodome"
@@ -35331,8 +34691,7 @@
       "manufacturer": "Scav",
       "content": "Claptastic Voyage",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "H4X0rz Deck 13 ½"
@@ -35358,7 +34717,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -35387,8 +34745,7 @@
       "manufacturer": "Jakobs",
       "content": "Holodome",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Digistructed Madness The Holodome Holodome Mini-Boss The Holodome"
@@ -35414,7 +34771,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo"
@@ -35443,7 +34799,6 @@
       "content": "Claptastic Voyage",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -35472,8 +34827,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Home Delivery Concordia"
@@ -35499,7 +34853,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -35529,7 +34882,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -35558,8 +34910,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Sniper Pool World Wide"
@@ -35585,7 +34936,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -35614,8 +34964,7 @@
       "manufacturer": "Jakobs",
       "content": "BL2 Loyalty Reward",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [],
       "metadata": [
@@ -35637,8 +34986,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Red Belly Crisis Scar Shotgun Pool World Wide"
@@ -35664,7 +35012,6 @@
       "content": "Holodome",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo"
@@ -35692,8 +35039,7 @@
       "manufacturer": "Maliwan",
       "content": "Claptastic Voyage",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "The Temple of Boom Subconscious"
@@ -35719,7 +35065,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -35748,8 +35093,7 @@
       "manufacturer": "DAHL",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Colonel T. Zarpedon Eye of Helios The Sentinel Eleseer Laser Pool World Wide"
@@ -35774,8 +35118,7 @@
       "manufacturer": "Scav",
       "content": "Base Game",
       "elements": [
-        "corrosive",
-        "icon round"
+        "corrosive"
       ],
       "sources": [
         "Iwajira Serenity's Waste Launcher Pool World Wide"
@@ -35800,8 +35143,7 @@
       "manufacturer": "Maliwan",
       "content": "Claptastic Voyage",
       "elements": [
-        "shock",
-        "icon round"
+        "shock"
       ],
       "sources": [
         "Self-Loathing & Despair Subconscious EOS Deck 13.5 Claptastic Weapon Pool DLC 2 Wide"
@@ -35826,8 +35168,7 @@
       "manufacturer": "Maliwan",
       "content": "Base Game",
       "elements": [
-        "shock",
-        "icon round"
+        "shock"
       ],
       "sources": [
         "These are the Bots Vorago Solitude"
@@ -35852,8 +35193,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "cryo",
-        "icon round"
+        "cryo"
       ],
       "sources": [
         "Bunch of Ice Holes Concordia"
@@ -35878,8 +35218,7 @@
       "manufacturer": "Torgue",
       "content": "Base Game",
       "elements": [
-        "explosive",
-        "icon round"
+        "explosive"
       ],
       "sources": [
         "Torgue-o! Torgue-o! Serenity's Waste"
@@ -35905,7 +35244,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -35934,8 +35272,7 @@
       "manufacturer": "Tediore",
       "content": "Base Game",
       "elements": [
-        "shock",
-        "icon round"
+        "shock"
       ],
       "sources": [
         "Deadlift Regolith Range"
@@ -35960,8 +35297,7 @@
       "manufacturer": "Maliwan",
       "content": "Base Game",
       "elements": [
-        "shock",
-        "icon round"
+        "shock"
       ],
       "sources": [
         "Home Sweet Home Concordia"
@@ -35986,8 +35322,7 @@
       "manufacturer": "Hyperion",
       "content": "Base Game",
       "elements": [
-        "corrosive",
-        "icon round"
+        "corrosive"
       ],
       "sources": [
         "Shotgun Pool World Wide"
@@ -36012,8 +35347,7 @@
       "manufacturer": "Tediore",
       "content": "Base Game",
       "elements": [
-        "shock",
-        "icon round"
+        "shock"
       ],
       "sources": [
         "No Such Thing as a Free Launch Triton Flats"
@@ -36038,8 +35372,7 @@
       "manufacturer": "Jakobs",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Guardian Hunter Vorago Solitude"
@@ -36065,7 +35398,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "shock",
         "corrosive",
@@ -36094,8 +35426,7 @@
       "manufacturer": "Torgue",
       "content": "Base Game",
       "elements": [
-        "explosive",
-        "icon round"
+        "explosive"
       ],
       "sources": [
         "Zapped Triton Flats"
@@ -36121,7 +35452,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "shock",
         "corrosive",
         "cryo"
@@ -36149,8 +35479,7 @@
       "manufacturer": "Scav",
       "content": "Base Game",
       "elements": [
-        "cryo",
-        "icon round"
+        "cryo"
       ],
       "sources": [
         "Giant Shuggurath of Ice Triton Flats Pistol Pool World Wide"
@@ -38610,8 +37939,7 @@
       "manufacturer": "Torgue",
       "content": "Base Game",
       "elements": [
-        "lightning",
-        "icon round"
+        "lightning"
       ],
       "sources": [
         "In the Belly is a Beast CrackMast Cove Warsmith Shop World Wide"
@@ -38637,7 +37965,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "lightning",
         "poison",
         "frost",
@@ -38666,8 +37993,7 @@
       "manufacturer": "DAHLIA",
       "content": "Dragon Lord",
       "elements": [
-        "dark-magic",
-        "icon round"
+        "dark-magic"
       ],
       "sources": [],
       "metadata": [
@@ -38690,7 +38016,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "lightning",
         "poison",
         "frost",
@@ -38720,7 +38045,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "dark-magic"
       ],
       "sources": [
@@ -38747,8 +38071,7 @@
       "manufacturer": "Stoker",
       "content": "Base Game",
       "elements": [
-        "frost",
-        "icon round"
+        "frost"
       ],
       "sources": [
         "Soul Purpose Ossu-Gol Necropolis Warsmith Shop World Wide"
@@ -38773,8 +38096,7 @@
       "manufacturer": "Hyperius",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Chaos Chamber Pool The Chaos Chamber"
@@ -38799,8 +38121,7 @@
       "manufacturer": "Skuldugger",
       "content": "Base Game",
       "elements": [
-        "lightning",
-        "icon round"
+        "lightning"
       ],
       "sources": [
         "Chaos Chamber Mini-Boss The Chaos Chamber Launcher Pool World Wide"
@@ -38825,8 +38146,7 @@
       "manufacturer": "Kleave",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Necromance Her Karnok's Wall Warsmith Shop World Wide"
@@ -38852,7 +38172,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "lightning",
         "poison",
@@ -38882,8 +38201,7 @@
       "manufacturer": "Feriore",
       "content": "Base Game",
       "elements": [
-        "frost",
-        "icon round"
+        "frost"
       ],
       "sources": [
         "Ribula Snoring Valley"
@@ -38908,8 +38226,7 @@
       "manufacturer": "Torgue",
       "content": "Glutton's Gamble",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Imelda the Sand Witch Dreamveil Overlook Mirrors Pool Dreamveil Overlook"
@@ -38935,7 +38252,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "lightning",
         "poison",
@@ -38965,8 +38281,7 @@
       "manufacturer": "Blackpowder",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Chaos Chamber Mini-Boss The Chaos Chamber Sniper Pool World Wide"
@@ -38991,8 +38306,7 @@
       "manufacturer": "Blackpowder",
       "content": "Base Game",
       "elements": [
-        "lightning",
-        "icon round"
+        "lightning"
       ],
       "sources": [
         "Pistol Pool World Wide"
@@ -39018,7 +38332,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "lightning",
         "poison",
@@ -39049,7 +38362,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "lightning",
         "poison",
         "frost",
@@ -39079,8 +38391,7 @@
       "manufacturer": "Blackpowder",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Kastor The Normal-Sized Skeleton Tangle Drift AR Pool World Wide"
@@ -39105,8 +38416,7 @@
       "manufacturer": "Swifft",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Chaos Chamber Mini-Boss The Chaos Chamber Melee Pool World Wide"
@@ -39132,7 +38442,6 @@
       "content": "Coiled Captors",
       "elements": [
         "fire",
-        "icon round",
         "lightning",
         "poison",
         "frost",
@@ -39161,8 +38470,7 @@
       "manufacturer": "Stoker",
       "content": "Base Game",
       "elements": [
-        "poison",
-        "icon round"
+        "poison"
       ],
       "sources": [
         "Droll the Troll Queen's Gate AR Pool World Wide"
@@ -39187,8 +38495,7 @@
       "manufacturer": "Stoker",
       "content": "Base Game",
       "elements": [
-        "dark-magic",
-        "icon round"
+        "dark-magic"
       ],
       "sources": [
         "Ancient Powers Karnok's Wall Warsmith Shop World Wide"
@@ -39213,8 +38520,7 @@
       "manufacturer": "Stoker",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Dry'l The Godswell Sniper Pool World Wide"
@@ -39239,8 +38545,7 @@
       "manufacturer": "Hyperius",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Mortal Coil Drowned Abyss Warsmith Shop World Wide"
@@ -39265,8 +38570,7 @@
       "manufacturer": "Blackpowder",
       "content": "Molten Mirrors",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Fyodor the Soul Warden Dreamveil Overlook Mirrors Pool Dreamveil Overlook"
@@ -39291,8 +38595,7 @@
       "manufacturer": "Skuldugger",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "A Wandering Aye CrackMast Cove Warsmith Shop World Wide"
@@ -39317,8 +38620,7 @@
       "manufacturer": "Blackpowder",
       "content": "Base Game",
       "elements": [
-        "poison",
-        "icon round"
+        "poison"
       ],
       "sources": [
         "King Q'urub Hullsunder Drowned Abyss Sniper Pool World Wide"
@@ -39344,7 +38646,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "lightning",
         "poison",
@@ -39374,8 +38675,7 @@
       "manufacturer": "Feriore",
       "content": "Base Game",
       "elements": [
-        "frost",
-        "icon round"
+        "frost"
       ],
       "sources": [
         "Chaos Chamber Mini-Boss The Chaos Chamber SMG Pool World Wide"
@@ -39400,8 +38700,7 @@
       "manufacturer": "Kleave",
       "content": "Base Game",
       "elements": [
-        "frost",
-        "icon round"
+        "frost"
       ],
       "sources": [
         "Forgery Mount Craw Warsmith Shop World Wide"
@@ -39427,7 +38726,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "lightning",
         "poison",
@@ -39457,8 +38755,7 @@
       "manufacturer": "Feriore",
       "content": "Base Game",
       "elements": [
-        "dark-magic",
-        "icon round"
+        "dark-magic"
       ],
       "sources": [
         "Droll the Troll Queen's Gate Pistol Pool World Wide"
@@ -39484,7 +38781,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "lightning",
         "poison",
@@ -39514,8 +38810,7 @@
       "manufacturer": "Skuldugger",
       "content": "Base Game",
       "elements": [
-        "poison",
-        "icon round"
+        "poison"
       ],
       "sources": [
         "A Farmer's Ardor Queen's Gate Warsmith Shop World Wide"
@@ -39540,8 +38835,7 @@
       "manufacturer": "Swifft",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Non-Violent Offender Mount Craw Warsmith Shop World Wide"
@@ -39567,7 +38861,6 @@
       "content": "Molten Mirrors",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "lightning",
         "poison",
@@ -39597,8 +38890,7 @@
       "manufacturer": "Torgue",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Chaos Chamber Pool The Chaos Chamber"
@@ -39623,8 +38915,7 @@
       "manufacturer": "Torgue",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Armageddon Distracted Ossu-Gol Necropolis Warsmith Shop World Wide"
@@ -39649,8 +38940,7 @@
       "manufacturer": "DAHLIA",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Inner Daemons BrightHoof Warsmith Shop World Wide"
@@ -39675,8 +38965,7 @@
       "manufacturer": "Blackpowder",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Walk the Stalk Tangle Drift Warsmith Shop World Wide"
@@ -39702,7 +38991,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "lightning",
         "poison",
@@ -39732,8 +39020,7 @@
       "manufacturer": "Hyperius",
       "content": "Base Game",
       "elements": [
-        "frost",
-        "icon round"
+        "frost"
       ],
       "sources": [
         "Twenty Thousand Years Under the Sea Wargtooth Shallows Warsmith Shop World Wide"
@@ -39759,7 +39046,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "lightning",
         "poison",
@@ -39790,7 +39076,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "lightning",
         "poison",
@@ -39820,8 +39105,7 @@
       "manufacturer": "Skuldugger",
       "content": "Base Game",
       "elements": [
-        "frost",
-        "icon round"
+        "frost"
       ],
       "sources": [
         "Lissia",
@@ -39847,8 +39131,7 @@
       "manufacturer": "DAHLIA",
       "content": "Base Game",
       "elements": [
-        "lightning",
-        "icon round"
+        "lightning"
       ],
       "sources": [
         "SMG Pool World Wide"
@@ -39873,8 +39156,7 @@
       "manufacturer": "Skuldugger",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Non-Violent Offender Mount Craw Warsmith Shop World Wide"
@@ -39900,7 +39182,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "dark-magic"
       ],
@@ -39928,7 +39209,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "lightning",
         "poison",
@@ -39958,8 +39238,7 @@
       "manufacturer": "Blackpowder",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Captain Swallow Overworld Pistol Pool World Wide"
@@ -39985,7 +39264,6 @@
       "content": "Shattering Spectreglass",
       "elements": [
         "fire",
-        "icon round",
         "lightning",
         "poison",
         "frost",
@@ -40014,8 +39292,7 @@
       "manufacturer": "Torgue",
       "content": "Base Game",
       "elements": [
-        "poison",
-        "icon round"
+        "poison"
       ],
       "sources": [
         "Pistol Pool World Wide"
@@ -40040,8 +39317,7 @@
       "manufacturer": "Bonk",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Lyre and Brimstone WeepWild Dankness Warsmith Shop World Wide"
@@ -40066,8 +39342,7 @@
       "manufacturer": "DAHLIA",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "The Trial of Crooked-Eye Phil CrackMast Cove Warsmith Shop World Wide"
@@ -40092,8 +39367,7 @@
       "manufacturer": "Stoker",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Little Boys Blue WeepWild Dankness Warsmith Shop World Wide"
@@ -40118,8 +39392,7 @@
       "manufacturer": "Torgue",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Diplomatic Relations Drowned Abyss Warsmith Shop World Wide"
@@ -40144,8 +39417,7 @@
       "manufacturer": "DAHLIA",
       "content": "Glutton's Gamble",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "Imelda the Sand Witch Dreamveil Overlook Mirrors Pool Dreamveil Overlook"
@@ -40170,8 +39442,7 @@
       "manufacturer": "Valora",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "A Realm in Peril Overworld Warsmith Shop World Wide"
@@ -40197,7 +39468,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "lightning",
         "poison",
@@ -40228,7 +39498,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "lightning",
         "poison",
@@ -40258,8 +39527,7 @@
       "manufacturer": "Bonk",
       "content": "Molten Mirrors",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Mirrors Pool Dreamveil Overlook"
@@ -40285,7 +39553,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "lightning",
         "poison",
@@ -40315,8 +39582,7 @@
       "manufacturer": "Blackpowder",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "A Walk to Dismember CrackMast Cove Warsmith Shop World Wide"
@@ -40342,7 +39608,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "lightning",
         "poison",
@@ -40373,7 +39638,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "lightning",
         "poison",
@@ -40403,8 +39667,7 @@
       "manufacturer": "Stoker",
       "content": "Base Game",
       "elements": [
-        "frost",
-        "icon round"
+        "frost"
       ],
       "sources": [
         "The Maker The Chaos Chamber Pistol Pool World Wide"
@@ -40430,7 +39693,6 @@
       "content": "Shattering Spectreglass",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "lightning",
         "poison",
@@ -40461,7 +39723,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "lightning",
         "poison",
@@ -40492,7 +39753,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "lightning",
         "poison",
@@ -40522,8 +39782,7 @@
       "manufacturer": "Blackpowder",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Chaos Chamber Mini-Boss The Chaos Chamber Shotgun Pool World Wide"
@@ -40548,8 +39807,7 @@
       "manufacturer": "Skuldugger",
       "content": "Base Game",
       "elements": [
-        "fire",
-        "icon round"
+        "fire"
       ],
       "sources": [
         "AR Pool World Wide"
@@ -40574,8 +39832,7 @@
       "manufacturer": "DAHLIA",
       "content": "Base Game",
       "elements": [
-        "dark-magic",
-        "icon round"
+        "dark-magic"
       ],
       "sources": [
         "Monstrous Shroom WeepWild Dankness Pistol Pool World Wide"
@@ -40601,7 +39858,6 @@
       "content": "Glutton's Gamble",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "lightning",
         "poison",
@@ -40632,7 +39888,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "dark-magic"
       ],
       "sources": [
@@ -40658,8 +39913,7 @@
       "manufacturer": "DAHLIA",
       "content": "Base Game",
       "elements": [
-        "lightning",
-        "icon round"
+        "lightning"
       ],
       "sources": [
         "Sniper Pool World Wide"
@@ -40685,7 +39939,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "poison"
       ],
       "sources": [
@@ -40712,7 +39965,6 @@
       "content": "Shattering Spectreglass",
       "elements": [
         "fire",
-        "icon round",
         "lightning",
         "poison",
         "frost",
@@ -40742,7 +39994,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "lightning",
         "poison",
         "frost"
@@ -40771,7 +40022,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "lightning",
         "poison",
@@ -40801,8 +40051,7 @@
       "manufacturer": "Hyperius",
       "content": "Molten Mirrors",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Mirrors Pool Dreamveil Overlook"
@@ -40827,8 +40076,7 @@
       "manufacturer": "Valora",
       "content": "Base Game",
       "elements": [
-        "lightning",
-        "icon round"
+        "lightning"
       ],
       "sources": [
         "Dry'l The Godswell Melee Pool World Wide"
@@ -40854,7 +40102,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "lightning",
         "poison",
@@ -40886,7 +40133,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "lightning",
         "poison",
@@ -40916,8 +40162,7 @@
       "manufacturer": "Feriore",
       "content": "Base Game",
       "elements": [
-        "dark-magic",
-        "icon round"
+        "dark-magic"
       ],
       "sources": [
         "Chaos Chamber Pool The Chaos Chamber"
@@ -40942,8 +40187,7 @@
       "manufacturer": "Skuldugger",
       "content": "Base Game",
       "elements": [
-        "lightning",
-        "icon round"
+        "lightning"
       ],
       "sources": [
         "AR Pool World Wide"
@@ -40968,8 +40212,7 @@
       "manufacturer": "Valora",
       "content": "Base Game",
       "elements": [
-        "lightning",
-        "icon round"
+        "lightning"
       ],
       "sources": [
         "The Ditcher Sunfang Oasis Warsmith Shop World Wide"
@@ -40994,8 +40237,7 @@
       "manufacturer": "Hyperius",
       "content": "Base Game",
       "elements": [
-        "kinetic",
-        "icon round"
+        "kinetic"
       ],
       "sources": [
         "Cash 4 Teeth WeepWild Dankness Warsmith Shop World Wide"
@@ -41021,7 +40263,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "lightning",
         "poison",
         "frost",
@@ -41050,8 +40291,7 @@
       "manufacturer": "Stoker",
       "content": "Coiled Captors",
       "elements": [
-        "lightning",
-        "icon round"
+        "lightning"
       ],
       "sources": [
         "\"Chums\" the Old God Dreamveil Overlook Launcher Pool World Wide"
@@ -41076,8 +40316,7 @@
       "manufacturer": "Torgue",
       "content": "Shattering Spectreglass",
       "elements": [
-        "dark-magic",
-        "icon round"
+        "dark-magic"
       ],
       "sources": [
         "Redmourne Dreamveil Overlook Mirrors Pool Dreamveil Overlook"
@@ -41103,7 +40342,6 @@
       "content": "Base Game",
       "elements": [
         "kinetic",
-        "icon round",
         "fire",
         "lightning",
         "poison",
@@ -41133,8 +40371,7 @@
       "manufacturer": "DAHLIA",
       "content": "Base Game",
       "elements": [
-        "poison",
-        "icon round"
+        "poison"
       ],
       "sources": [
         "Wastard Karnok's Wall SMG Pool World Wide"
@@ -41160,7 +40397,6 @@
       "content": "Base Game",
       "elements": [
         "fire",
-        "icon round",
         "lightning",
         "poison",
         "frost",
