@@ -45,10 +45,12 @@
   }
   if(data.format!=="borderlands-loot-full-backup"||!data.progress||!data.catalog||!Array.isArray(data.catalog.items))throw Error("Файл не является полной резервной копией Borderlands Loot Tracker.");
   snapshot("before-restore");
+  const preRestoreSnapshot=backupHistory[0];
   done={...data.progress};settings={...defaults,...(data.settings||{})};
   db=data.catalog;
   try{localStorage.setItem(KEYS.override,JSON.stringify(db));localStorage.setItem(KEYS.forceOverride,"true")}catch{alert("Каталог слишком большой для локального хранения. Прогресс и настройки восстановлены, каталог останется текущим.");}
-  backupHistory=Array.isArray(data.history)?data.history.slice(0,30):backupHistory;
+  if(Array.isArray(data.history)) backupHistory=data.history.slice(0,29);
+  if(preRestoreSnapshot) backupHistory=[preRestoreSnapshot,...backupHistory].slice(0,30);
   persist();render();alert("Полная резервная копия восстановлена.");
  }
  function render(){
