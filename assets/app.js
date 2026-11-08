@@ -43,6 +43,13 @@
  const games=()=>{let a=GAMES.map(([id,name])=>({id,name}));(db.games||[]).forEach(g=>{if(!a.some(x=>x.id===g.id))a.push(g)});return a};
  const items=()=>db.items.filter(x=>x.gameId===active&&!x.archived);
  const stats=a=>({n:a.filter(x=>done[x.id]).length,t:a.length});
+ function updateProgressCounters(){
+  const current=items(),st=stats(current);
+  $("game-pct").textContent=(st.t?Math.round(st.n/st.t*100):0)+"%";
+  $("game-count").textContent=st.n+" / "+st.t+" собрано";
+  const all=db.items.filter(x=>!x.archived),total=stats(all),pct=total.t?Math.round(total.n/total.t*100):0;
+  $("all-pct").textContent=pct+"%";$("all-bar").style.width=pct+"%";$("all-count").textContent=total.n+" из "+total.t+" предметов";
+ }
  const asList=value=>value==null?[]:(Array.isArray(value)?value:[value]).flat(Infinity).map(v=>String(v??"").trim()).filter(Boolean);
  const contentValues=item=>asList(item.content);
  const contentOf=item=>contentValues(item)[0]||"";
@@ -237,7 +244,15 @@
    const details=fields.filter(f=>f.key!=="name").map(f=>renderValue(x,f)).join("");
    return '<article class="item '+(done[x.id]?"collected":"")+'"><div class="picture">'+(x.image?'<img loading="lazy" src="'+esc(x.image)+'" alt="'+esc(x.name)+'" onerror="this.remove()">':'<span class="placeholder">◇</span>')+'</div><div class="card-body"><div class="name '+rarityClass(x.rarity)+'">'+esc(x.name)+'</div>'+details+'<div class="item-foot">'+(x.url?'<a href="'+esc(x.url)+'" target="_blank" rel="noopener">Lootlemon ↗</a>':'<span></span>')+(x.code?'<button type="button" class="copy-code" data-copy-code="'+esc(x.code)+'">Copy Code</button>':'')+'<button type="button" data-id="'+esc(x.id)+'" class="collect-button '+(done[x.id]?"done":"")+'">'+(done[x.id]?"Collected":"Collect")+'</button></div></div></article>';
   }).join("");
-  $("items").querySelectorAll(".collect-button[data-id]").forEach(b=>b.onclick=()=>{let id=b.dataset.id;if(done[id])delete done[id];else done[id]=true;persist();render()});
+  $("items").onclick=event=>{
+   const b=event.target.closest(".collect-button[data-id]");if(!b)return;
+   const id=b.dataset.id;if(done[id])delete done[id];else done[id]=true;
+   const collected=!!done[id],card=b.closest(".item");
+   card.classList.toggle("collected",collected);b.classList.toggle("done",collected);
+   b.textContent=collected?"Collected":"Collect";
+   persist();updateProgressCounters();
+   if(settings.missing)render();
+  };
   $("items").querySelectorAll("[data-copy-code]").forEach(button=>button.addEventListener("click",event=>{event.stopPropagation();copyItemCode(button)}));
   $("empty").hidden=shown.length>0;
   let all=db.items.filter(x=>!x.archived),total=stats(all),pct=total.t?Math.round(total.n/total.t*100):0;
