@@ -192,7 +192,7 @@ class DynamicLootlemonMetadataTests(unittest.TestCase):
 
     def test_ring_filter_type_and_category_can_be_read_from_card_attributes(self):
         html = """
-        <div class="db_item w-dyn-item" data-type="amulet-wl" data-category="Offense">
+        <div class="db_item w-dyn-item" data-type="amulet-wl" data-category="Offense" data-content="base-game-ttwl">
           <div class="db_cell large"><a class="link-overlay" href="/item/hidden-ring">Hidden Ring</a></div>
           <div class="db_cell">Offense</div>
           <div class="db_cell">Base Game</div>
