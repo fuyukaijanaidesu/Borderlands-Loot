@@ -23,7 +23,7 @@ class DynamicLootlemonMetadataTests(unittest.TestCase):
           <div class="db_cell element-cell"><span class="element-radiation">Radiation</span></div>
           <div class="db_cell content-cell" data-content="Season 9">Season 9</div>
           <div class="db_cell source-cell"><a href="/boss">The Warden</a></div>
-          <div class="db_cell affix-cell" data-special-affix="Overcharged">Overcharged</div>
+          <div class="db_cell affix-cell"><span data-special-affix="Overcharged">Overcharged</span></div>
         </div>
         """
         item = self.parse(html)
