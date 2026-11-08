@@ -24,6 +24,12 @@
   const blob=new Blob([JSON.stringify(data,null,2)],{type:"application/json"});
   const url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
  }
+ function restoreLastLocal(){
+  const last=backupHistory.find(x=>x&&x.progress);
+  if(!last){alert("Локальных резервных копий пока нет.");return;}
+  if(!confirm("Восстановить прогресс и настройки из копии от "+new Date(last.at).toLocaleString("ru-RU")+"?"))return;
+  snapshot("before-local-rollback");done={...last.progress};settings={...defaults,...(last.settings||{})};persist();render();alert("Локальная копия восстановлена.");
+ }
  function fullBackup(){
   snapshot("manual-full-backup");
   download("borderlands-loot-full-backup-"+new Date().toISOString().slice(0,10)+".json",{
@@ -33,6 +39,7 @@
   persist();
  }
  function restoreBackup(data){
+  if(data.backupVersion===1&&data.catalog&&Array.isArray(data.catalog.items)){snapshot("before-catalog-rollback");db=data.catalog;try{localStorage.setItem(KEYS.override,JSON.stringify(db))}catch{}render();alert("Каталог из серверной резервной копии восстановлен. Прогресс и настройки сохранены.");return;}
   if(data.format==="borderlands-loot-progress"&&data.progress){
    snapshot("before-legacy-import");done={...data.progress};persist();render();alert("Прогресс импортирован.");return;
   }
@@ -72,6 +79,7 @@
   ["category","rarity","sort","missing"].forEach(id=>$(id).addEventListener("change",()=>{settings[id]=id==="missing"?$("missing").checked:$(id).value;persist();render()}));
  }
  $("export").onclick=fullBackup;
+ $("restore-local").onclick=restoreLastLocal;
  $("import").onchange=async e=>{try{const f=e.target.files[0];if(!f)return;restoreBackup(JSON.parse(await f.text()))}catch(err){alert(err.message)}e.target.value="";};
  bindSettings();
  (async()=>{
@@ -81,7 +89,7 @@
    const fresh=await response.json();
    const previous=read(KEYS.lastCatalog,null);
    if(previous&&previous.updatedAt&&fresh.updatedAt&&previous.updatedAt!==fresh.updatedAt){
-    snapshot("automatic-before-catalog-sync",previous);
+    snapshot("automatic-before-catalog-sync");
    }
    if(!localOverride||!localOverride.updatedAt||!fresh.updatedAt||new Date(fresh.updatedAt)>new Date(localOverride.updatedAt))db=fresh;
    else db=localOverride;
