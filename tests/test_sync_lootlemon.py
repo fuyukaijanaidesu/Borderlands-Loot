@@ -164,7 +164,7 @@ class DynamicLootlemonMetadataTests(unittest.TestCase):
           <div class="db_cell large"><a class="link-overlay" href="/item/test-oz-kit">Test Oz Kit</a></div>
           <div class="db_cell">Survivability</div>
           <div class="db_cell"><span class="element-fire">Fire</span></div>
-          <div class="db_cell">Base Game</div>
+          <div class="db_cell content-cell"><span class="content-base-game-tps">Base Game</span></div>
           <div class="db_cell"><a href="/boss">CL4P-L3K</a></div>
         </div>
         """
@@ -192,7 +192,7 @@ class DynamicLootlemonMetadataTests(unittest.TestCase):
 
     def test_ring_filter_type_and_category_can_be_read_from_card_attributes(self):
         html = """
-        <div class="db_item w-dyn-item" data-type="Ring" data-category="Offense">
+        <div class="db_item w-dyn-item" data-type="amulet-wl" data-category="Offense">
           <div class="db_cell large"><a class="link-overlay" href="/item/hidden-ring">Hidden Ring</a></div>
           <div class="db_cell">Offense</div>
           <div class="db_cell">Base Game</div>
@@ -200,7 +200,7 @@ class DynamicLootlemonMetadataTests(unittest.TestCase):
         </div>
         """
         item = self.parse(html, category="rings-amulets")
-        self.assertEqual(item["item_type"], "Ring")
+        self.assertEqual(item["item_type"], "Amulet")
         self.assertEqual(item["item_category"], "Offense")
         self.assertEqual(item["content"], "Base Game")
         self.assertEqual(item["sources"], ["Ring Pool"])
