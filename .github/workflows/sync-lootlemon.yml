@@ -4,13 +4,21 @@ on:
     branches:
       - main
     paths:
+      - 'index.html'
+      - 'assets/**'
+      - 'data/catalog.json'
       - 'scripts/**'
+      - 'requirements.txt'
+      - 'START_HERE.md'
+      - 'README.md'
       - '.github/workflows/sync-lootlemon.yml'
   workflow_dispatch:
   schedule:
     - cron: "17 5 * * *"
+
 permissions:
   contents: write
+
 jobs:
   sync:
     runs-on: ubuntu-latest
@@ -35,3 +43,36 @@ jobs:
             git pull --rebase origin "${GITHUB_REF_NAME}"
             git push origin "HEAD:${GITHUB_REF_NAME}"
           fi
+
+  deploy:
+    name: Deploy website to GitHub Pages
+    needs: sync
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout latest main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Prepare static website
+        run: |
+          mkdir -p _site/assets _site/data
+          cp index.html _site/
+          cp -R assets/. _site/assets/
+          cp data/catalog.json _site/data/
+          touch _site/.nojekyll
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
