@@ -302,8 +302,10 @@ def parse_page(url,game,category):
    if not content and len(after)>1: content=text_of(after[1]) or None
    if not sources and len(after)>2: sources=split_values(after[2])
   elif cat=="Rings & Amulets":
-   if not content and len(after)>1: content=text_of(after[1]) or None
-   if not sources and len(after)>2: sources=split_values(after[2])
+   explicit_item_type=next((value for value in [*semantic_values["type"],*attributes.get("type",[]),*(text_of(c) for c in after)] if value.casefold() in {"ring","amulet"}),None)
+   content_index=2 if explicit_item_type and len(after)>2 else 1
+   if not content and len(after)>content_index: content=text_of(after[content_index]) or None
+   if not sources and len(after)>content_index+1: sources=split_values(after[content_index+1])
   elif cat=="Armor":
    # Wonderlands Armor cards list manufacturer, content, and sources only.
    if not manufacturer and len(after)>0: manufacturer=text_of(after[0]) or None
@@ -355,9 +357,8 @@ def parse_page(url,game,category):
   item_type=next(iter(semantic_values["item_type"]),None)
   item_category=next(iter(semantic_values["item_category"]),None)
   if cat=="Rings & Amulets":
-   item_type=item_type or next((value for value in semantic_values["type"] if value.casefold() in {"ring","amulet"}),None)
-   item_type=item_type or next((value for value in attributes.get("type",[]) if value.casefold() in {"ring","amulet"}),None)
-   item_category=item_category or next(iter(semantic_values["type"]),None) or (text_of(after[0]) if after else None)
+   item_type=item_type or next((value for value in [*attributes.get("item_type",[]),*semantic_values["type"],*attributes.get("type",[]),*(text_of(c) for c in after)] if value.casefold() in {"ring","amulet"}),None)
+   item_category=item_category or next(iter(attributes.get("item_category",[])),None) or next(iter(attributes.get("category",[])),None) or next((value for value in semantic_values["type"] if value.casefold() not in {"ring","amulet"}),None) or (text_of(after[1]) if item_type and len(after)>1 else (text_of(after[0]) if after else None))
    type_value=item_type
   if cat=="Class Mods":
    if not class_value and len(after)>0: class_value=text_of(after[0]) or None
