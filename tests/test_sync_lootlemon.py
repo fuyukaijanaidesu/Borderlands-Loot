@@ -81,6 +81,42 @@ class DynamicLootlemonMetadataTests(unittest.TestCase):
         self.assertEqual(item["content"], "Base Game")
         self.assertEqual(item["sources"], ["Boss One"])
 
+    def test_class_mod_keeps_class_and_skill_labels(self):
+        html = """
+        <div class="db_item w-dyn-item">
+          <div class="db_cell image"><img src="/images/mod.png"></div>
+          <div class="db_cell large"><a class="link-overlay" href="/item/class-mod">Artificer</a></div>
+          <div class="db_cell">Amon</div>
+          <div class="db_cell"><span><img alt="Bullet Hail" title="Bullet Hail"><img alt="Wildfire" title="Wildfire"></span></div>
+          <div class="db_cell">Base Game</div>
+          <div class="db_cell"><a href="/boss">Subjugator</a></div>
+        </div>
+        """
+        item = self.parse(html, category="class-mods")
+        self.assertEqual(item["category"], "Class Mods")
+        self.assertEqual(item["class"], "Amon")
+        self.assertIn("Bullet Hail", item["skills"])
+        self.assertIn("Wildfire", item["skills"])
+        self.assertEqual(item["content"], "Base Game")
+        self.assertEqual(item["sources"], ["Subjugator"])
+
+    def test_shield_type_is_parsed_positionally(self):
+        html = """
+        <div class="db_item w-dyn-item">
+          <div class="db_cell large"><a class="link-overlay" href="/item/shield">Beta Shield</a></div>
+          <div class="db_cell">Shield Generator</div>
+          <div class="db_cell">Maliwan</div>
+          <div class="db_cell"><span class="element-shock">Shock</span></div>
+          <div class="db_cell">Base Game</div>
+          <div class="db_cell"><a href="/boss">Boss B</a></div>
+        </div>
+        """
+        item = self.parse(html, category="shields")
+        self.assertEqual(item["type"], "Shield Generator")
+        self.assertEqual(item["manufacturer"], "Maliwan")
+        self.assertIn("Shock", item["elements"])
+        self.assertEqual(item["sources"], ["Boss B"])
+
 
 if __name__ == "__main__":
     unittest.main()
