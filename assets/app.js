@@ -3,21 +3,23 @@
  const KEYS={newItems:"bl-loot-new-items-v1",progress:"bl-loot-progress-v1",settings:"bl-loot-settings-v1",history:"bl-loot-backups-v1",lastCatalog:"bl-loot-last-catalog-v1",override:"bl-loot-catalog-override-v1",forceOverride:"bl-loot-force-catalog-override-v1"};
  const GAMES=[["borderlands-1","Borderlands"],["borderlands-2","Borderlands 2"],["borderlands-tps","The Pre-Sequel"],["borderlands-3","Borderlands 3"],["wonderlands","Tiny Tina's Wonderlands"],["borderlands-4","Borderlands 4"]];
  let db={games:[],items:[]},done={},active="borderlands-4";
- const defaults={search:"",category:"",rarity:"",manufacturer:"",type:"",element:"",content:"",sort:"name",missing:false,moveCollectedToBottom:true};
+ const defaults={search:"",category:"",filters:{},sort:"name",missing:false,moveCollectedToBottom:true};
  let settings={...defaults},backupHistory=[];
  const read=(key,fallback)=>{try{return JSON.parse(localStorage.getItem(key)||"null")??fallback}catch{return fallback}};
  done=read(KEYS.progress,{});
  settings={...defaults,...read(KEYS.settings,{})};
+ if(!["name","rarity","content"].includes(settings.sort))settings.sort="name";
+ settings.filters=settings.filters||{};
  backupHistory=read(KEYS.history,[]);
  const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
  const ELEMENTS={
-  fire:{icon:"🔥",label:"Огонь",className:"fire"},incendiary:{icon:"🔥",label:"Огонь",className:"fire"},
-  shock:{icon:"⚡",label:"Шок",className:"shock"},electric:{icon:"⚡",label:"Шок",className:"shock"},lightning:{icon:"⚡",label:"Шок",className:"shock"},
-  corrosive:{icon:"☣",label:"Коррозия",className:"corrosive"},poison:{icon:"☣",label:"Коррозия",className:"corrosive"},
-  cryo:{icon:"❄",label:"Крио",className:"cryo"},ice:{icon:"❄",label:"Крио",className:"cryo"},frost:{icon:"❄",label:"Крио",className:"cryo"},
-  radiation:{icon:"☢",label:"Радиация",className:"radiation"},
-  explosive:{icon:"💥",label:"Взрыв",className:"explosive"},kinetic:{icon:"◉",label:"Кинетика",className:"kinetic"},
-  slag:{icon:"✦",label:"Шлак",className:"slag"},"dark magic":{icon:"✧",label:"Тёмная магия",className:"dark-magic"}
+  fire:{icon:"🔥",label:"Fire",className:"fire"},incendiary:{icon:"🔥",label:"Fire",className:"fire"},
+  shock:{icon:"⚡",label:"Shock",className:"shock"},electric:{icon:"⚡",label:"Shock",className:"shock"},lightning:{icon:"⚡",label:"Shock",className:"shock"},
+  corrosive:{icon:"☣",label:"Corrosive",className:"corrosive"},poison:{icon:"☣",label:"Corrosive",className:"corrosive"},
+  cryo:{icon:"❄",label:"Cryo",className:"cryo"},ice:{icon:"❄",label:"Cryo",className:"cryo"},frost:{icon:"❄",label:"Cryo",className:"cryo"},
+  radiation:{icon:"☢",label:"Radiation",className:"radiation"},
+  explosive:{icon:"💥",label:"Explosive",className:"explosive"},kinetic:{icon:"◉",label:"Kinetic",className:"kinetic"},
+  slag:{icon:"✦",label:"Slag",className:"slag"},"dark magic":{icon:"✧",label:"Dark Magic",className:"dark-magic"}
  };
  const elementInfo=value=>ELEMENTS[String(value||"").toLowerCase().replace(/[-_]+/g," ").trim()]||{icon:"✧",label:value,className:"unknown"};
  const rarityClass=value=>{
@@ -42,8 +44,62 @@
  const items=()=>db.items.filter(x=>x.gameId===active&&!x.archived);
  const stats=a=>({n:a.filter(x=>done[x.id]).length,t:a.length});
  const asList=value=>value==null?[]:(Array.isArray(value)?value:[value]).flat(Infinity).map(v=>String(v??"").trim()).filter(Boolean);
- const contentOf=item=>asList(item.content)[0]||"Unknown";
+ const contentValues=item=>asList(item.content);
+ const contentOf=item=>contentValues(item)[0]||"";
  const sourcesOf=item=>asList(item.sources);
+ const rarityLabel=value=>{
+  const raw=String(value&&typeof value==="object"?(value.name||value.label||value.value||""):value||"").trim();
+  const key=raw.toLowerCase().replace(/^[a-i]-/,"").replace(/[-_]+/g," ").trim();
+  const known={"common":"Common","uncommon":"Uncommon","rare":"Rare","epic":"Epic","legendary":"Legendary","seraph":"Seraph","pearlescent":"Pearlescent","effervescent":"Effervescent","glitch":"Glitch","e tech":"E-Tech","etech":"E-Tech","radiant":"Radiant"};
+  return known[key]||raw.replace(/^[a-i]-/i,"").replace(/[-_]+/g," ").replace(/\b\w/g,c=>c.toUpperCase());
+ };
+ const uniqueValues=values=>[...new Set(values.map(v=>String(v??"").trim()).filter(Boolean))];
+
+ const normalized=value=>String(value??"").trim().toLocaleLowerCase();
+ const FIELD_LABELS={rarity:"Rarity",name:"Name",type:"Type",manufacturer:"Manufacturer",elements:"Elements",content:"Content",sources:"Sources",class:"Class",skills:"Skills",tree:"Trees"};
+ const FILTER_LABELS={rarity:"Any rarity",manufacturer:"Any manufacturer",type:"Any type",elements:"Any element",content:"All content",class:"Any class",tree:"Any tree",sources:"Any source"};
+ const SCHEMAS={
+  "borderlands-4":{
+   "Weapons":{fields:["rarity","name",{key:"type",label:"Weapon Type"},"manufacturer","elements","content","sources"],filters:["rarity","elements","type","manufacturer","content"]},
+   "Shields":{fields:["rarity","name",{key:"type",label:"Shield Type"},"manufacturer","elements","content","sources"],filters:["type","elements","manufacturer","content"]},
+   "Ordnance":{fields:["rarity","name",{key:"type",label:"Ordnance Type"},"manufacturer","elements","content","sources"],filters:["type","elements","manufacturer","content"]},
+   "Repkits":{fields:["rarity","name","manufacturer","content","sources"],filters:["manufacturer","content"]},
+   "Class Mods":{fields:["rarity","name","class","skills","content","sources"],filters:["class","tree","content"]},
+   "Enhancements":{fields:["rarity","name","manufacturer","content","sources"],filters:["manufacturer"]}
+  },
+  "borderlands-3":{"Artifacts":{fields:["rarity","name",{key:"type",label:"Artifact Type"},"content","sources"],filters:["rarity","type","content"]}}
+ };
+ const attrValues=(item,key)=>asList(item?.attributes?.[key]??[]);
+ const fieldValues=(item,key)=>{
+  if(key==="rarity")return item.rarity?[rarityLabel(item.rarity)]:[];
+  if(key==="name")return asList(item.name);
+  if(key==="elements")return asList(item.elements);
+  if(key==="sources")return sourcesOf(item);
+  if(key==="content")return contentValues(item);
+  if(key==="manufacturer")return asList(item.manufacturer).length?asList(item.manufacturer):attrValues(item,"manufacturer");
+  if(key==="type")return asList(item.type).length?asList(item.type):["weapon_type","shield_type","ordnance_type","artifact_type","type"].flatMap(k=>attrValues(item,k));
+  if(key==="class")return asList(item.class).length?asList(item.class):attrValues(item,"class");
+  if(key==="skills")return asList(item.skills).length?asList(item.skills):[...attrValues(item,"skill"),...attrValues(item,"skills")];
+  if(key==="tree")return [...attrValues(item,"tree"),...attrValues(item,"trees")];
+  return attrValues(item,key);
+ };
+ const schemaFor=(game,category)=>{
+  const known=SCHEMAS[game]?.[category];if(known)return known;
+  const fields=["rarity","name"];
+  if(category==="Weapons")fields.push({key:"type",label:"Weapon Type"},"manufacturer","elements","content","sources");
+  else if(category==="Shields")fields.push({key:"type",label:"Shield Type"},"manufacturer","elements","content","sources");
+  else if(["Grenades","Ordnance","Wards","Spells","Spellbooks","Melee Weapons"].includes(category))fields.push({key:"type",label:({Grenades:"Grenade Type",Ordnance:"Ordnance Type",Wards:"Ward Type",Spells:"Spell Type",Spellbooks:"Spell Type","Melee Weapons":"Weapon Type"})[category]},"manufacturer","elements","content","sources");
+  else if(category==="Class Mods")fields.push("class","skills","content","sources");
+  else if(category==="Artifacts"||category==="Relics")fields.push({key:"type",label:category==="Artifacts"?"Artifact Type":"Relic Type"},"content","sources");
+  else if(category==="Armor")fields.push({key:"type",label:"Armor Type"},"class","skills","content","sources");
+  else if(category==="Rings & Amulets")fields.push({key:"type",label:"Item Type"},"content","sources");
+  else if(category==="Oz Kits"||category==="Repkits"||category==="Enhancements")fields.push("manufacturer","content","sources");
+  else fields.push("manufacturer","content","sources");
+  return {fields,filters:fields.map(f=>typeof f==="string"?f:f.key).filter(k=>!["name","skills","sources"].includes(k))};
+ };
+ const fieldDefinition=value=>typeof value==="string"?{key:value,label:FIELD_LABELS[value]||value}:value;
+ const fieldFilterLabel=key=>FILTER_LABELS[key]||("Any "+(FIELD_LABELS[key]||key).toLowerCase());
+
  const persist=()=>{localStorage.setItem(KEYS.progress,JSON.stringify(done));localStorage.setItem(KEYS.settings,JSON.stringify(settings))};
  function snapshot(reason,catalog=null){
   const entry={version:2,at:new Date().toISOString(),reason,progress:{...done},settings:{...settings},catalogUpdatedAt:db.updatedAt||null,catalog:catalog||undefined};
@@ -86,36 +142,55 @@
  }
  function render(){
   let gs=games(),g=gs.find(x=>x.id===active)||gs[0];if(!g)return;
-  let a=items(),st=stats(a);
+  let allGameItems=items(),st=stats(allGameItems),categories=uniqueValues(allGameItems.map(x=>x.category)).sort();
+  if(!categories.includes(settings.category))settings.category=categories.includes("Weapons")?"Weapons":(categories[0]||"");
+  let a=allGameItems.filter(x=>x.category===settings.category);
   renderNewItemsNotice();
   $("game-title").textContent=g.name;$("game-label").textContent=g.name.toUpperCase();$("game-desc").textContent="Каталог предметов";
   $("game-pct").textContent=(st.t?Math.round(st.n/st.t*100):0)+"%";$("game-count").textContent=st.n+" / "+st.t+" собрано";
   $("games").innerHTML=gs.map(x=>'<button data-game="'+esc(x.id)+'" class="'+(x.id===active?"active":"")+'">'+esc(x.name)+'</button>').join("");
   $("games").querySelectorAll("[data-game]").forEach(b=>b.onclick=()=>{active=b.dataset.game;render()});
-  let cats=[...new Set(a.map(x=>x.category).filter(Boolean))].sort(),rs=[...new Set(a.map(x=>x.rarity).filter(Boolean))].sort();
-  let makers=[...new Set(a.map(x=>x.manufacturer).filter(Boolean))].sort();
-  let types=[...new Set(a.map(x=>x.type).filter(Boolean))].sort();
-  let elements=[...new Set(a.flatMap(x=>asList(x.elements)))].sort();
-  let contents=[...new Set(a.map(contentOf).filter(x=>x!=="Unknown"))].sort((x,y)=>{const rank=v=>/^base game$/i.test(v)?0:/^event$/i.test(v)?1:2;return rank(x)-rank(y)||x.localeCompare(y)});
-  const fillSelect=(id,values,placeholder)=>{const current=settings[id];$(id).innerHTML='<option value="">'+placeholder+'</option>'+values.map(x=>'<option value="'+esc(x)+'">'+esc(x)+'</option>').join("");$(id).value=values.includes(current)?current:"";};
-  fillSelect("category",cats,"Все категории");fillSelect("rarity",rs,"Любая редкость");
-  fillSelect("manufacturer",makers,"Любой производитель");fillSelect("type",types,"Любой тип");fillSelect("element",elements,"Любой элемент");fillSelect("content",contents,"Весь контент");
+
+  const category=settings.category||"",schema=schemaFor(active,category),filterDefs=schema.filters.map(key=>({key,label:fieldFilterLabel(key)}));
+  $("category").innerHTML=categories.map(value=>'<option value="'+esc(value)+'"'+(value===category?' selected':'')+'>'+esc(value)+'</option>').join("");
+  const filtersState=settings.filters||(settings.filters={});
+  const optionsFor=key=>uniqueValues(a.flatMap(item=>fieldValues(item,key))).sort((x,y)=>x.localeCompare(y));
+  $("dynamic-filters").innerHTML=filterDefs.map(def=>{
+   const values=optionsFor(def.key),current=filtersState[def.key]||"",selected=values.includes(current)?current:"";
+   filtersState[def.key]=selected;
+   return '<select data-filter="'+esc(def.key)+'"><option value="">'+esc(def.label)+'</option>'+values.map(value=>'<option value="'+esc(value)+'"'+(value===selected?' selected':'')+'>'+esc(value)+'</option>').join("")+'</select>';
+  }).join("");
   $("search").value=settings.search;$("sort").value=settings.sort;$("missing").checked=!!settings.missing;$("move-collected").checked=settings.moveCollectedToBottom!==false;
-  let q=settings.search.toLowerCase().trim(),cat=$("category").value,rar=$("rarity").value;
-  let maker=$("manufacturer").value,type=$("type").value,element=$("element").value,content=$("content").value;
-  let shown=a.filter(x=>(!q||[x.name,x.category,x.manufacturer,x.type,x.description,...asList(x.elements),...sourcesOf(x),contentOf(x),...(x.tags||[]),...Object.values(x.attributes||{}).flat()].join(" ").toLowerCase().includes(q))&&(!cat||x.category===cat)&&(!rar||x.rarity===rar)&&(!maker||x.manufacturer===maker)&&(!type||x.type===type)&&(!element||asList(x.elements).includes(element))&&(!content||contentOf(x)===content)&&(!settings.missing||!done[x.id]));
+  const selectedFilters=Object.entries(filtersState).filter(([key,value])=>value&&filterDefs.some(def=>def.key===key));
+  let q=settings.search.toLowerCase().trim();
+  let shown=a.filter(x=>{
+   const searchable=[x.name,x.category,x.description,...schema.fields.flatMap(f=>fieldValues(x,fieldDefinition(f).key)),...asList(x.tags),...Object.values(x.attributes||{}).flat()].join(" ").toLowerCase();
+   return (!q||searchable.includes(q))&&selectedFilters.every(([key,value])=>fieldValues(x,key).some(v=>normalized(v)===normalized(value)))&&(!settings.missing||!done[x.id]);
+  });
   shown.sort((x,y)=>{
    if(settings.moveCollectedToBottom){
     const collected=Number(!!done[x.id])-Number(!!done[y.id]);
     if(collected)return collected;
    }
-   if(settings.sort==="category")return (x.category||"").localeCompare(y.category||"")||x.name.localeCompare(y.name);
-   if(settings.sort==="rarity")return (x.rarity||"").localeCompare(y.rarity||"")||x.name.localeCompare(y.name);
+   if(settings.sort==="rarity")return rarityLabel(x.rarity).localeCompare(rarityLabel(y.rarity))||x.name.localeCompare(y.name);
    if(settings.sort==="content"){const rank=v=>/^base game$/i.test(v)?0:/^event$/i.test(v)?1:2;return rank(contentOf(x))-rank(contentOf(y))||contentOf(x).localeCompare(contentOf(y))||x.name.localeCompare(y.name)}
    return x.name.localeCompare(y.name);
   });
   $("shown").textContent=shown.length+" из "+a.length+" предметов";$("updated").textContent=db.updatedAt?"Обновлено: "+new Date(db.updatedAt).toLocaleDateString("ru-RU"):"Источник: Lootlemon";
-  $("items").innerHTML=shown.map(x=>'<article class="item '+(done[x.id]?"collected":"")+'"><div class="picture">'+(x.image?'<img loading="lazy" src="'+esc(x.image)+'" alt="'+esc(x.name)+'" onerror="this.remove()">':'<span class="placeholder">◇</span>')+'</div><div class="card-body"><div class="cat">'+esc(x.category||"Предмет")+'</div><div class="name '+rarityClass(x.rarity)+'">'+esc(x.name)+'</div><div class="tags">'+[x.rarity,x.manufacturer,x.type,x.content,...(x.tags||[]),...Object.values(x.attributes||{}).flat()].filter((v,i,a)=>a.indexOf(v)===i).filter(Boolean).map(v=>'<span class="tag">'+esc(v)+'</span>').join("")+'</div>'+(asList(x.elements).length?'<div class="element-icons" aria-label="Стихии">'+asList(x.elements).map(el=>{const info=elementInfo(el);return '<span class="element-icon element-'+esc(info.className)+'" title="'+esc(info.label)+'" aria-label="'+esc(info.label)+'"><i>'+info.icon+'</i><small>'+esc(el)+'</small></span>'}).join("")+'</div>':'')+(sourcesOf(x).length?'<div class="drop-sources"><div class="drop-sources-title">Источники выпадения</div><div class="drop-source-list">'+sourcesOf(x).map(source=>'<span class="drop-source">'+esc(source)+'</span>').join("")+'</div></div>':'')+'<div class="item-foot">'+(x.url?'<a href="'+esc(x.url)+'" target="_blank" rel="noopener">Lootlemon ↗</a>':'<span></span>')+'<button data-id="'+esc(x.id)+'" class="'+(done[x.id]?"done":"")+'">'+(done[x.id]?"✓ Собрано":"+ Собрал")+'</button></div></div></article>').join("");
+
+  const renderValue=(item,def)=>{
+   const key=def.key,values=fieldValues(item,key);if(!values.length)return '<div class="loot-field is-empty" aria-hidden="true"><span>'+esc(def.label)+'</span><b>—</b></div>';
+   if(key==="elements")return '<div class="loot-field"><span>'+esc(def.label)+'</span><div class="element-icons">'+values.map(value=>{const info=elementInfo(value);return '<span class="element-icon element-'+esc(info.className)+'" title="'+esc(info.label)+'"><i>'+info.icon+'</i><small>'+esc(info.label)+'</small></span>'}).join("")+'</div></div>';
+   if(key==="sources")return '<div class="loot-field"><span>'+esc(def.label)+'</span><div class="drop-source-list">'+values.map(value=>'<span class="drop-source">'+esc(value)+'</span>').join("")+'</div></div>';
+   if(key==="skills")return '<div class="loot-field"><span>'+esc(def.label)+'</span><div class="skill-list">'+values.map(value=>'<span class="skill-chip">'+esc(value)+'</span>').join("")+'</div></div>';
+   const value=key==="rarity"?rarityLabel(values[0]):values.join(", ");
+   return '<div class="loot-field '+(key==="rarity"?"rarity-field":"")+'"><span>'+esc(def.label)+'</span><b class="'+(key==="rarity"?rarityClass(item.rarity):"")+'">'+esc(value)+'</b></div>';
+  };
+  $("items").innerHTML=shown.map(x=>{
+   const schema=schemaFor(active,x.category||""),fields=schema.fields.map(fieldDefinition);
+   const details=fields.filter(f=>f.key!=="name").map(f=>renderValue(x,f)).join("");
+   return '<article class="item '+(done[x.id]?"collected":"")+'"><div class="picture">'+(x.image?'<img loading="lazy" src="'+esc(x.image)+'" alt="'+esc(x.name)+'" onerror="this.remove()">':'<span class="placeholder">◇</span>')+'</div><div class="card-body"><div class="name '+rarityClass(x.rarity)+'">'+esc(x.name)+'</div>'+details+'<div class="item-foot">'+(x.url?'<a href="'+esc(x.url)+'" target="_blank" rel="noopener">Lootlemon ↗</a>':'<span></span>')+'<button data-id="'+esc(x.id)+'" class="'+(done[x.id]?"done":"")+'">'+(done[x.id]?"✓ Собрано":"+ Собрал")+'</button></div></div></article>';
+  }).join("");
   $("items").querySelectorAll("[data-id]").forEach(b=>b.onclick=()=>{let id=b.dataset.id;if(done[id])delete done[id];else done[id]=true;persist();render()});
   $("empty").hidden=shown.length>0;
   let all=db.items.filter(x=>!x.archived),total=stats(all),pct=total.t?Math.round(total.n/total.t*100):0;
@@ -133,7 +208,9 @@
  }
  function bindSettings(){
   $("search").addEventListener("input",()=>{settings.search=$("search").value;persist();render()});
-  ["category","rarity","manufacturer","type","element","content","sort","missing"].forEach(id=>$(id).addEventListener("change",()=>{settings[id]=id==="missing"?$("missing").checked:$(id).value;persist();render()}));
+  $("category").addEventListener("change",()=>{settings.category=$("category").value;settings.filters={};persist();render()});
+  $("dynamic-filters").addEventListener("change",event=>{const select=event.target.closest("[data-filter]");if(!select)return;settings.filters=settings.filters||{};settings.filters[select.dataset.filter]=select.value;persist();render()});
+  ["sort","missing"].forEach(id=>$(id).addEventListener("change",()=>{settings[id]=id==="missing"?$("missing").checked:$(id).value;persist();render()}));
   $("move-collected").addEventListener("change",()=>{settings.moveCollectedToBottom=$("move-collected").checked;persist();render()});
  }
  $("export").onclick=fullBackup;
