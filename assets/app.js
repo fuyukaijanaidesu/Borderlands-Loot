@@ -184,7 +184,7 @@
    if(key==="sources")return '<div class="loot-field"><span>'+esc(def.label)+'</span><div class="drop-source-list">'+values.map(value=>'<span class="drop-source">'+esc(value)+'</span>').join("")+'</div></div>';
    if(key==="skills")return '<div class="loot-field"><span>'+esc(def.label)+'</span><div class="skill-list">'+values.map(value=>'<span class="skill-chip">'+esc(value)+'</span>').join("")+'</div></div>';
    const value=key==="rarity"?rarityLabel(values[0]):values.join(", ");
-   return '<div class="loot-field '+(key==="rarity"?"rarity-field":"")+'"><span>'+esc(def.label)+'</span><b class="'+(key==="rarity"?rarityClass(item.rarity):"")'">'+esc(value)+'</b></div>';
+   return '<div class="loot-field '+(key==="rarity"?"rarity-field":"")+'"><span>'+esc(def.label)+'</span><b class="'+(key==="rarity"?rarityClass(item.rarity):"")+'">'+esc(value)+'</b></div>';
   };
   $("items").innerHTML=shown.map(x=>{
    const schema=schemaFor(active,x.category||""),fields=schema.fields.map(fieldDefinition);
