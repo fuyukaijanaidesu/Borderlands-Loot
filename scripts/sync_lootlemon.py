@@ -276,6 +276,7 @@ def parse_page(url,game,category):
     if text_of(c): rarity_candidates.extend(re.split(r"\s*[•·]\s*",text_of(c)))
   rarity=next((x for x in clean_values(rarity_candidates) if x.lower() not in {"rarity","quality","tier"}),None)
   # Semantic fields win; positional fallbacks preserve compatibility with current Lootlemon pages.
+  cat=label(category)
   manufacturer=next(iter(semantic_values["manufacturer"]),None)
   type_value=next(iter(semantic_values["type"]),None)
   if cat=="Spells" and semantic_values["spell_cast"]:
@@ -284,7 +285,6 @@ def parse_page(url,game,category):
   elements=semantic_values["element"]
   sources=semantic_values["source"]
   values=[text_of(c) for c in after if text_of(c)]
-  cat=label(category)
   if cat=="Weapons":
    if not type_value and len(after)>0: type_value=text_of(after[0]) or None
    if not manufacturer and len(after)>1: manufacturer=text_of(after[1]) or None
