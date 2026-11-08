@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Safely sync all discoverable Lootlemon database routes."""
 # Scraper updates are validated automatically by GitHub Actions on push.
+# IDs retain the original game/category/URL hash to preserve collected-state links.
 import hashlib, json, re, sys, time
 from datetime import datetime, timezone
 from pathlib import Path
