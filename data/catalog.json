@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-08T17:29:09.167157+00:00",
+  "updatedAt": "2026-11-08T17:34:55.666684+00:00",
   "games": [
     {
       "id": "borderlands-1",
@@ -123788,8 +123788,8 @@
   "sync": {
     "routesDiscovered": 30,
     "routesSucceeded": 30,
-    "itemCodesChecked": 1648,
-    "itemCodesFound": 1648,
+    "itemCodesChecked": 0,
+    "itemCodesFound": 0,
     "itemCodeErrors": 0,
     "itemCodesAvailable": 1648,
     "itemCodesEligible": 1648,
