@@ -120,6 +120,76 @@ def discover():
 def label(slug):
  return LABELS.get(slug,re.sub(r"[-_]+"," ",slug).title())
 
+CONTENT_LABELS={
+ "a-zane-to-kill-for":"A Zane to Kill For",
+ "anniversary-events":"Anniversary Events",
+ "baroness-feature-pack":"Baroness Feature Pack",
+ "big-game-hunt-dlc":"Big Game Hunt",
+ "bl1-promotion":"BL1 Promotion",
+ "bl2-promotion":"BL2 Promotion",
+ "bloody-harvest-event-bl3":"Bloody Harvest Event",
+ "boost-mods-cosmetic-pack":"Boost Mods Cosmetic Pack",
+ "bounty-of-blood-dlc":"Bounty of Blood",
+ "butt-stallion-cosmetic-pack":"Butt Stallion Cosmetic Pack",
+ "campaign-of-carnage-dlc":"Campaign of Carnage",
+ "claptastic-voyage-dlc":"Claptastic Voyage",
+ "coiled-captors-mini-dlc":"Coiled Captors",
+ "collectors-edition-cosmetic-pack":"Collector's Edition Cosmetic Pack",
+ "designers-cut-feature-pack":"Designer's Cut",
+ "digistruct-peak-feature-pack":"Digistruct Peak",
+ "directors-cut-feature-pack":"Director's Cut",
+ "doppelganger-feature-pack":"Doppelganger",
+ "dragon-keep-dlc":"Dragon Keep",
+ "dragon-lord-cosmetic-pack":"Dragon Lord Cosmetic Pack",
+ "enhanced":"Enhanced",
+ "fantastic-fustercluck-dlc":"Fantastic Fustercluck",
+ "fight-for-sanctuary-dlc":"Fight for Sanctuary",
+ "general-knoxx-dlc":"General Knoxx",
+ "gilded-glory-pack":"Gilded Glory Pack",
+ "gluttons-gamble-mini-dlc":"G. Gamble",
+ "guns-love-and-tentacles-dlc":"Guns, Love, and Tentacles",
+ "handsome-jackpot-dlc":"Handsome Jackpot",
+ "horrors-of-kairos-event":"Horrors of Kairos",
+ "mechromancer-feature-pack":"Mechromancer",
+ "mercenary-day":"Mercenary Day",
+ "molten-mirrors-mini-dlc":"Molten Mirrors",
+ "murders-and-acquisitions":"Murders & Acquisitions",
+ "pandoras-box-promotion":"Pandora's Box",
+ "pirates-booty-dlc":"Pirate's Booty",
+ "premiere-club-bl2":"Premiere Club",
+ "psycho-feature-pack":"Psycho",
+ "revenge-of-the-cartels-event":"Revenge of the Cartels",
+ "shattering-spectreglass-mini-dlc":"Shattering Spectreglass",
+ "slaughter-pit-mini-dlc":"Slaughter Pit",
+ "slaughterdome-mini-dlc":"Slaughterdome",
+ "stone-demon":"Stone Demon",
+ "tales-promotion":"Tales Promotion",
+ "the-holodome-onslaught-mini-dlc":"Holodome Onslaught",
+ "the-last-resort-dlc":"The Last Resort",
+ "the-vile-shadows":"The Vile Shadows",
+ "toy-box-cosmetic-pack":"Toy Box Cosmetic Pack",
+ "twitch-drops-bl4":"Twitch Drops",
+ "ultimate-upgrade-feature-pack":"Ultimate Upgrade",
+ "vault-of-the-damned-dlc":"Vault of the Damned",
+ "veterans-day-event":"Veterans Day Event"
+}
+def content_label(value):
+ if not value: return value
+ slug=re.sub(r"[^a-z0-9]+","-",str(value).casefold()).strip("-")
+ if slug.startswith("base-game"): return "Base Game"
+ if slug in CONTENT_LABELS: return CONTENT_LABELS[slug]
+ dlc_match=re.fullmatch(r"dlc-?(\d+)",slug)
+ if dlc_match: return f"DLC {dlc_match.group(1)}"
+ # Future content values stay readable even before an explicit Lootlemon alias is added.
+ suffixes=("-mini-dlc","-dlc","-event","-promotion")
+ for suffix in suffixes:
+  if slug.endswith(suffix):
+   slug=slug[:-len(suffix)]
+   break
+ words=slug.split("-")
+ small={"and","of","the","for","to","in"}
+ return " ".join(word.upper() if word in {"bl1","bl2","bl3","bl4","tps"} else (word.capitalize() if i==0 or word not in small else word) for i,word in enumerate(words))
+
 def parse_page(url,game,category):
  html=get(url)
  soup=BeautifulSoup(html,"html.parser")
@@ -357,6 +427,7 @@ def parse_page(url,game,category):
    known={"daedalus","jakobs","maliwan","order","ripper","tediore","torgue","vladof","bandit","dahl","hyperion","s&s","atlas","cov","eridian","pangolin"}
    manufacturer=next((v for v in values if any(part.strip().lower() in known for part in re.split(r"\s*[|,/]+\s*",v))),None)
   if not content: content=next((v for v in values if v.lower() in {"base game","dlc","vault card","gilded glory pack","vault of the damned"}),None)
+  content=content_label(content)
   if content:
    content_slug=re.sub(r"[^a-z0-9]+","-",content.casefold()).strip("-")
    content_labels={
