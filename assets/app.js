@@ -239,12 +239,34 @@
   $("items").innerHTML=shown.map(x=>{
    const schema=schemaFor(active,x.category||""),fields=schema.fields.map(fieldDefinition);
    const details=fields.filter(f=>f.key!=="name").map(f=>renderValue(x,f)).join("");
-   return '<article class="item '+(done[x.id]?"collected":"")+'"><div class="picture">'+(x.image?'<img loading="lazy" src="'+esc(x.image)+'" alt="'+esc(x.name)+'" onerror="this.remove()">':'<span class="placeholder">◇</span>')+'</div><div class="card-body"><div class="name '+rarityClass(x.rarity)+'">'+esc(x.name)+'</div>'+details+'<div class="item-foot">'+(x.url?'<a href="'+esc(x.url)+'" target="_blank" rel="noopener">Lootlemon ↗</a>':'<span></span>')+'<button data-id="'+esc(x.id)+'" class="'+(done[x.id]?"done":"")+'">'+(done[x.id]?"✓ Собрано":"+ Собрал")+'</button></div></div></article>';
+   return '<article class="item '+(done[x.id]?"collected":"")+'"><div class="picture">'+(x.image?'<img loading="lazy" src="'+esc(x.image)+'" alt="'+esc(x.name)+'" onerror="this.remove()">':'<span class="placeholder">◇</span>')+'</div><div class="card-body"><div class="name '+rarityClass(x.rarity)+'">'+esc(x.name)+'</div>'+details+'<div class="item-foot">'+(x.url?'<a href="'+esc(x.url)+'" target="_blank" rel="noopener">Lootlemon ↗</a>':'<span></span>')+(x.code?'<button type="button" class="copy-code" data-copy-code="'+esc(x.code)+'">Copy Code</button>':'')+'<button data-id="'+esc(x.id)+'" class="'+(done[x.id]?"done":"")+'">'+(done[x.id]?"✓ Собрано":"+ Собрал")+'</button></div></div></article>';
   }).join("");
   $("items").querySelectorAll("[data-id]").forEach(b=>b.onclick=()=>{let id=b.dataset.id;if(done[id])delete done[id];else done[id]=true;persist();render()});
+  $("items").querySelectorAll("[data-copy-code]").forEach(button=>button.addEventListener("click",event=>{event.stopPropagation();copyItemCode(button)}));
   $("empty").hidden=shown.length>0;
   let all=db.items.filter(x=>!x.archived),total=stats(all),pct=total.t?Math.round(total.n/total.t*100):0;
   $("all-pct").textContent=pct+"%";$("all-bar").style.width=pct+"%";$("all-count").textContent=total.n+" из "+total.t+" предметов";
+ }
+ async function copyItemCode(button){
+  const code=button.dataset.copyCode;
+  if(!code)return;
+  try{
+   if(navigator.clipboard&&navigator.clipboard.writeText){
+    await navigator.clipboard.writeText(code);
+   }else{
+    const field=document.createElement("textarea");
+    field.value=code;field.setAttribute("readonly","");field.style.position="fixed";field.style.opacity="0";
+    document.body.appendChild(field);field.select();
+    const copied=document.execCommand("copy");field.remove();
+    if(!copied)throw Error("Clipboard unavailable");
+   }
+   button.textContent="Copied!";
+   button.classList.add("copied");
+   setTimeout(()=>{if(button.isConnected){button.textContent="Copy Code";button.classList.remove("copied")}},1600);
+  }catch{
+   button.textContent="Copy failed";
+   setTimeout(()=>{if(button.isConnected)button.textContent="Copy Code"},1600);
+  }
  }
  function renderNewItemsNotice(){
   const notice=$("new-items-notice");if(!notice)return;
