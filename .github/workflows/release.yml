@@ -1,12 +1,16 @@
 name: Publish release
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - VERSION
   workflow_dispatch:
     inputs:
       tag_name:
         description: "Release tag (for example v1.1.0)"
         required: true
-        default: "v1.1.0"
+        default: "v1.3.0"
         type: string
 
 permissions:
@@ -15,6 +19,8 @@ permissions:
 jobs:
   validate:
     name: Validate release candidate
+    outputs:
+      tag_name: ${{ steps.release_tag.outputs.tag_name }}
     runs-on: ubuntu-latest
     steps:
       - name: Check out main
@@ -23,7 +29,7 @@ jobs:
           ref: main
       - name: Validate release tag
         env:
-          TAG_NAME: ${{ inputs.tag_name }}
+          TAG_NAME: ${{ needs.validate.outputs.tag_name }}
         run: |
           if ! [[ "$TAG_NAME" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
             echo "Tag must use semantic versioning, for example v1.1.0"
@@ -66,7 +72,7 @@ jobs:
       - name: Publish GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ inputs.tag_name }}
+          tag_name: ${{ needs.validate.outputs.tag_name }}
           target_commitish: main
           name: Borderlands Loot ${{ inputs.tag_name }}
           generate_release_notes: true
