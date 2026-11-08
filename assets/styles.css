@@ -96,3 +96,27 @@
 .loot-field.is-empty{visibility:hidden;}
 /* Make drop-source names easier to read. */
 .loot-field .drop-source{font-size:12px;line-height:1.5;}
+
+/* Lootlemon item serial copy action */
+.item-foot{gap:6px;flex-wrap:wrap}
+.item-foot .copy-code{padding:6px 9px;color:#d8d3dc;background:#302f35;border-color:#4a4850;white-space:nowrap}
+.item-foot .copy-code:hover{background:#3a3941;border-color:#6a6672}
+.item-foot .copy-code.copied{color:#a5efbd;background:#203b2c;border-color:#38664b}
+
+
+/* Slightly larger, more readable site typography and roomier item cards */
+body{font-size:15px}
+button,.import{font-size:12px}
+.hero p,.heading p{font-size:14px}
+.filters input[type=search],.filters select{font-size:12px}
+main{grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:15px}
+.item .picture{flex-basis:155px}
+.item .picture img{max-height:130px}
+.item .card-body{padding:14px}
+.item .name{font-size:14px}
+.loot-field>b{font-size:12px}
+.loot-field>span{font-size:10px}
+.loot-field.field-manufacturer>b,.loot-field.field-type>b{text-transform:capitalize}
+.loot-field .drop-source{font-size:13px;line-height:1.5}
+.item-foot a{font-size:11px}
+@media(max-width:700px){main{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.item .picture{flex-basis:125px}.item .picture img{max-height:105px}.item .card-body{padding:10px}.item .name{font-size:13px}.loot-field>b{font-size:11px}.loot-field .drop-source{font-size:12px}}

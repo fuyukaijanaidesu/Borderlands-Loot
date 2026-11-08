@@ -8,7 +8,7 @@ const root=path.resolve(__dirname,"..");
 const html=fs.readFileSync(path.join(root,"index.html"),"utf8");
 const app=fs.readFileSync(path.join(root,"assets/app.js"),"utf8");
 const catalog={updatedAt:"2026-11-08T01:22:03.181332+00:00",games:[],items:[
- {id:"weapon-1",gameId:"borderlands-4",category:"Weapons",name:"Alpha Rifle",rarity:"f-legendary",manufacturer:"Dahl",type:"Assault Rifle",elements:["Fire"],content:"Base Game",sources:["Boss A"],archived:false},
+ {id:"weapon-1",gameId:"borderlands-4",category:"Weapons",name:"Alpha Rifle",rarity:"f-legendary",manufacturer:"Dahl",type:"Assault Rifle",elements:["Fire"],content:"Base Game",sources:["Boss A"],code:"@Uexample<serial>&value",archived:false},
  {id:"weapon-2",gameId:"borderlands-4",category:"Weapons",name:"Second Shotgun",rarity:"d-epic",manufacturer:"Maliwan",type:"Shotgun",elements:["Shock"],content:"Base Game",sources:["Boss B"],archived:false},
  {id:"shield-1",gameId:"borderlands-4",category:"Shields",name:"Beta Shield",rarity:"d-epic",manufacturer:"Maliwan",type:"Shield Generator",elements:["Shock"],content:"Base Game",sources:["Boss C"],archived:false},
  {id:"classmod-1",gameId:"borderlands-4",category:"Class Mods",name:"Gamma Mod",rarity:"f-legendary",class:"Amon",skills:["Bullet Hail","Wildfire"],attributes:{tree:["Green"]},content:"Base Game",sources:["Boss D"],archived:false},
@@ -24,19 +24,28 @@ const catalog={updatedAt:"2026-11-08T01:22:03.181332+00:00",games:[],items:[
  {id:"wl-amulet",gameId:"wonderlands",category:"Rings & Amulets",name:"Test Amulet",rarity:"Legendary",item_type:"Amulet",item_category:"Universal",content:"Base Game",sources:["Amulet Pool"],archived:false}
 ]};
 async function boot(seed={}){
- const dom=new JSDOM(html,{url:"https://tracker.test/",runScripts:"outside-only",pretendToBeVisual:true}),w=dom.window;
+ const dom=new JSDOM(html,{url:"https://tracker.test/",runScripts:"outside-only",pretendToBeVisual:true}),w=dom.window,copied=[];
+ Object.defineProperty(w.navigator,"clipboard",{value:{writeText:async value=>{copied.push(value)}},configurable:true});
  w.fetch=async()=>({ok:true,json:async()=>structuredClone(catalog)});w.confirm=()=>true;w.alert=()=>{};
  w.URL.createObjectURL=()=>"blob:test";w.URL.revokeObjectURL=()=>{};w.HTMLAnchorElement.prototype.click=function(){};
  for(const [key,value] of Object.entries(seed))w.localStorage.setItem(key,JSON.stringify(value));
  vm.runInContext(app,dom.getInternalVMContext());
  for(let i=0;i<50&&w.document.getElementById("status").textContent!=="Каталог загружен";i++)await new Promise(resolve=>setTimeout(resolve,10));
  assert.equal(w.document.getElementById("status").textContent,"Каталог загружен");
- return {dom,w,doc:w.document,close:()=>dom.window.close()};
+ return {dom,w,doc:w.document,copied,close:()=>dom.window.close()};
 }
 const change=(el,w)=>el.dispatchEvent(new w.Event("change",{bubbles:true}));
 const chooseCategory=(x,name)=>{const el=x.doc.getElementById("category");el.value=name;change(el,x.w)};
 const chooseFilter=(x,key,value)=>{const el=x.doc.querySelector('[data-filter="'+key+'"]');assert.ok(el,"missing filter "+key);el.value=value;change(el,x.w)};
 
+test("Lootlemon item serials have a working copy button only when a code exists",async()=>{const x=await boot();try{
+ const copy=x.doc.querySelector("#items [data-copy-code]");
+ assert.ok(copy);assert.equal(copy.textContent,"Copy Code");
+ assert.equal(x.doc.querySelectorAll("#items [data-copy-code]").length,1);
+ copy.click();await new Promise(resolve=>setTimeout(resolve,10));
+ assert.deepEqual(x.copied,["@Uexample<serial>&value"]);
+ assert.equal(copy.textContent,"Copied!");
+}finally{x.close()}});
 test("initial view selects Weapons and keeps game-wide counters",async()=>{const x=await boot();try{
  assert.equal(x.doc.getElementById("category").value,"Weapons");
  assert.equal(x.doc.querySelectorAll("#items .item").length,2);
