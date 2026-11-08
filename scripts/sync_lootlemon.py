@@ -127,16 +127,23 @@ def parse_page(url,game,category):
  def labels_of(node):
   out=[]
   if not node: return out
+  ignored_classes={"db","cell","db cell","image","icon","round","icon round","icon grid",
+                   "w dyn item","w-dyn-item","w-dyn-list","w-dyn-items","element"}
   for el in [node,*node.find_all(True)]:
    for key in ("alt","title","aria-label","data-name","data-filter"):
     value=el.get(key)
     if value and value.strip() not in out: out.append(value.strip())
    for cls in el.get("class") or []:
     clean=re.sub(r"[-_]+"," ",cls).strip()
-    if clean and clean.lower() not in {"db cell","image","icon grid","w dyn item"} and clean not in out:
+    if clean and clean.lower() not in ignored_classes and clean not in out:
      out.append(clean)
   return out
  def split_values(node):
+  if not node: return []
+  # Lootlemon often renders source names as individual links inside one cell.
+  linked=[text_of(a) for a in node.find_all("a") if text_of(a)]
+  linked=list(dict.fromkeys(linked))
+  if linked: return linked
   value=text_of(node)
   return [x.strip() for x in re.split(r"\s*[•·,]\s*",value) if x.strip()]
  for card in cards:
@@ -176,7 +183,7 @@ def parse_page(url,game,category):
   # cells preceding the name (the DOM column order can differ by game).
   rarity=None
   rarity_pattern=re.compile(
-   r"(?<![a-z])(pearlescent|very[-_ ]?rare|legendary|epic|uncommon|common|rare)(?![a-z])",
+   r"(?<![a-z])(effervescent|pearlescent|very[-_ ]?rare|legendary|seraph|e[-_ ]?tech|glitch|epic|uncommon|common|rare)(?![a-z])",
    re.I
   )
   rarity_candidates=[]
@@ -191,7 +198,7 @@ def parse_page(url,game,category):
   for value in rarity_candidates:
    match=rarity_pattern.search(str(value).replace("_"," ").replace("-"," "))
    if match:
-    rarity=re.sub(r"\\s+"," ",match.group(1).replace("-"," ")).title()
+    rarity=re.sub(r"\s+"," ",match.group(1).replace("-"," ")).title()
     break
   if rarity is None:
    for c in before:
@@ -225,7 +232,8 @@ def parse_page(url,game,category):
     if not type_value and any(t in low for t in ("assault rifle","pistol","shotgun","smg","sniper","launcher")):
      type_value=v
   known={"daedalus","jakobs","maliwan","order","ripper","tediore","torgue","vladof","bandit","dahl","hyperion","s&s","atlas","cov","eridian","pangolin"}
-  if not manufacturer: manufacturer=next((v for v in values if v.lower() in known),None)
+  if not manufacturer:
+   manufacturer=next((v for v in values if any(part.strip().lower() in known for part in re.split(r"\s*[|,/]+\s*",v))),None)
   if not content: content=next((v for v in values if v.lower() in {"base game","dlc","vault card","gilded glory pack","vault of the damned"}),None)
   clean_name=re.sub(r"\s+"," ",name).strip().casefold()
   identity=f"{game}|{category}|{href}" if href else f"{game}|{category}|{clean_name}"
