@@ -81,6 +81,14 @@ class DynamicLootlemonMetadataTests(unittest.TestCase):
         self.assertEqual(item["content"], "Base Game")
         self.assertEqual(item["sources"], ["Boss One"])
 
+    def test_content_slugs_are_normalized_to_readable_lootlemon_labels(self):
+        self.assertEqual(sync.content_label("base-game-ttwl"), "Base Game")
+        self.assertEqual(sync.content_label("base-game-tps"), "Base Game")
+        self.assertEqual(sync.content_label("coiled-captors-mini-dlc"), "Coiled Captors")
+        self.assertEqual(sync.content_label("gluttons-gamble-mini-dlc"), "G. Gamble")
+        self.assertEqual(sync.content_label("dlc-6"), "DLC 6")
+        self.assertEqual(sync.content_label("new-story-dlc"), "New Story")
+
     def test_class_mod_keeps_class_and_skill_labels(self):
         html = """
         <div class="db_item w-dyn-item">
