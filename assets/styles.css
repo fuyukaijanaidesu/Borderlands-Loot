@@ -120,3 +120,42 @@ main{grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:15px}
 .loot-field .drop-source{font-size:13px;line-height:1.5}
 .item-foot a{font-size:11px}
 @media(max-width:700px){main{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.item .picture{flex-basis:125px}.item .picture img{max-height:105px}.item .card-body{padding:10px}.item .name{font-size:13px}.loot-field>b{font-size:11px}.loot-field .drop-source{font-size:12px}}
+
+/* Smooth, lightweight interface motion */
+:root{scroll-behavior:smooth}
+@keyframes page-enter{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes card-enter{from{opacity:0;transform:translateY(10px) scale(.99)}to{opacity:1;transform:translateY(0) scale(1)}}
+.shell{animation:page-enter .42s cubic-bezier(.2,.7,.2,1) both}
+.hero aside,.filters{transition:border-color .22s ease,background-color .22s ease,box-shadow .22s ease}
+.hero aside:hover{border-color:#67404c;box-shadow:0 8px 26px #0003}
+.track i{transition:width .55s cubic-bezier(.22,.8,.25,1)}
+nav button{transition:color .2s ease,background-color .2s ease,border-color .2s ease,transform .2s ease}
+nav button:hover{color:var(--text);transform:translateY(-1px)}
+button,.import{transition:color .18s ease,background-color .18s ease,border-color .18s ease,box-shadow .18s ease,transform .18s ease}
+button:hover,.import:hover{border-color:#62515a;box-shadow:0 3px 12px #0003}
+button:active,.import:active{transform:scale(.97)}
+.filters input,.filters select{transition:border-color .18s ease,box-shadow .18s ease,background-color .18s ease}
+.filters input:focus,.filters select:focus{outline:none;border-color:var(--pink);box-shadow:0 0 0 3px #f04b6825}
+.item{transform:translateZ(0);transition:transform .22s cubic-bezier(.2,.7,.2,1),border-color .22s ease,box-shadow .22s ease,background-color .22s ease}
+.item:hover{transform:translateY(-4px);border-color:#55505b;box-shadow:0 10px 25px #0004}
+.item .picture img{transition:transform .28s cubic-bezier(.2,.7,.2,1),filter .28s ease}
+.item:hover .picture img{transform:scale(1.045);filter:drop-shadow(0 5px 8px #0005)}
+.item-foot button{transition:background-color .18s ease,border-color .18s ease,color .18s ease,transform .18s ease}
+.item-foot button:hover{transform:translateY(-1px)}
+#items .item{animation:card-enter .32s cubic-bezier(.2,.7,.2,1) both}
+#items .item:nth-child(1){animation-delay:0ms}
+#items .item:nth-child(2){animation-delay:22ms}
+#items .item:nth-child(3){animation-delay:44ms}
+#items .item:nth-child(4){animation-delay:66ms}
+#items .item:nth-child(5){animation-delay:88ms}
+#items .item:nth-child(6){animation-delay:110ms}
+#items .item:nth-child(7){animation-delay:132ms}
+#items .item:nth-child(8){animation-delay:154ms}
+#items .item:nth-child(n+9){animation-delay:176ms}
+.new-items-notice{animation:page-enter .28s ease both}
+#empty{animation:page-enter .22s ease both}
+.item-foot .copy-code.copied{box-shadow:0 0 0 3px #83d9a622}
+@media(prefers-reduced-motion:reduce){
+ :root{scroll-behavior:auto}
+ *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+}
