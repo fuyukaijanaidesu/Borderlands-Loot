@@ -208,7 +208,8 @@ def parse_page(url,game,category):
   if not manufacturer: manufacturer=next((v for v in values if v.lower() in known),None)
   if not content: content=next((v for v in values if v.lower() in {"base game","dlc","vault card","gilded glory pack","vault of the damned"}),None)
   clean_name=re.sub(r"\s+"," ",name).strip().casefold()
-  ident=hashlib.sha1((href or f"{game}|{category}|{clean_name}").encode("utf-8")).hexdigest()[:20]
+  identity=f"{game}|{category}|{href}" if href else f"{game}|{category}|{clean_name}"
+  ident=hashlib.sha1(identity.encode("utf-8")).hexdigest()[:20]
   found.append({"id":ident,"gameId":game,"category":cat,"name":name,"type":type_value,
    "rarity":rarity,"manufacturer":manufacturer,"content":content,"elements":elements,
    "sources":sources,"metadata":metadata,"image":image,"url":href,"archived":False})
