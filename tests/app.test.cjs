@@ -160,10 +160,18 @@ test("search has its own row and filters use a responsive grid",()=>{
 
 test("collected cards keep their position and use a single Collected label",async()=>{const x=await boot();try{
  const before=[...x.doc.querySelectorAll("#items .item .name")].map(el=>el.textContent);
- const button=x.doc.querySelector('#items [data-id="weapon-1"]');
+ const firstCard=x.doc.querySelector('#items [data-id="weapon-1"]').closest(".item");
+ const secondCard=x.doc.querySelector('#items [data-id="weapon-2"]').closest(".item");
+ const firstImage=firstCard.querySelector("img");
+ const button=firstCard.querySelector(".collect-button");
  button.click();
  const after=[...x.doc.querySelectorAll("#items .item .name")].map(el=>el.textContent);
  const collected=x.doc.querySelector('#items [data-id="weapon-1"]');
+ assert.equal(collected.closest(".item"),firstCard,"the clicked card should be updated in place");
+ assert.equal(x.doc.querySelector('#items [data-id="weapon-2"]').closest(".item"),secondCard,"other cards should not be recreated");
+ assert.equal(firstCard.querySelector("img"),firstImage,"the clicked card image should not be recreated");
+ assert.equal(x.doc.getElementById("game-count").textContent,"1 / 4 собрано");
+ assert.equal(x.doc.getElementById("all-count").textContent,"1 из 14 предметов");
  assert.deepEqual(after,before);
  assert.equal(collected.textContent,"Collected");
  assert.equal(collected.textContent.includes("✓"),false);
