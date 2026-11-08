@@ -166,7 +166,6 @@ button:active,.import:active{transform:scale(.97)}
 .item-foot .copy-code{color:#d8d3dc;background:#302f35;border-color:#4a4850}
 .item-foot .copy-code::before{content:none!important}
 .item.collected .item-foot .collect-button{color:#a5efbd;background:#28563a;border-color:#4d8c61}
-.item.collected .item-foot .collect-button::before{content:"✓ ";font-weight:900}
 .item.collected .item-foot .copy-code{color:#d8d3dc;background:#302f35;border-color:#4a4850}
 .item.collected .item-foot .copy-code::before{content:none!important}
 
