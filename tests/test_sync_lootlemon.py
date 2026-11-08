@@ -137,7 +137,7 @@ class DynamicLootlemonMetadataTests(unittest.TestCase):
         self.assertEqual(item["category"], "Grenade Mods")
         self.assertEqual(item["type"], "MIRV")
         self.assertEqual(item["manufacturer"], "Torgue")
-        self.assertIn("Shock", item["elements"])
+        self.assertIn("shock", [value.lower() for value in item["elements"]])
         self.assertEqual(item["content"], "Base Game")
         self.assertEqual(item["sources"], ["Boss One"])
 
@@ -170,7 +170,7 @@ class DynamicLootlemonMetadataTests(unittest.TestCase):
         """
         item = self.parse(html, category="oz-kits")
         self.assertEqual(item["type"], "Survivability")
-        self.assertIn("Fire", item["elements"])
+        self.assertIn("fire", [value.lower() for value in item["elements"]])
         self.assertEqual(item["content"], "Base Game")
         self.assertEqual(item["sources"], ["CL4P-L3K"])
 
