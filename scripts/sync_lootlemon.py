@@ -23,7 +23,7 @@ GAMES={
 LABELS={"class-mods":"Class Mods","melee":"Melee Weapons","melee-weapons":"Melee Weapons",
  "repkits":"Repkits","ordnance":"Ordnance","enhancements":"Enhancements",
  "spellbooks":"Spellbooks","shields":"Shields","weapons":"Weapons",
- "grenades":"Grenades","relics":"Relics","artifacts":"Artifacts","armor":"Armor"}
+ "grenades":"Grenades","relics":"Relics","artifacts":"Artifacts","armor":"Armor","oz-kits":"Oz Kits","wards":"Wards","spells":"Spells","rings-amulets":"Rings & Amulets"}
 
 def get(url):
  r=SESSION.get(url,timeout=45); r.raise_for_status(); return r.text
@@ -269,12 +269,26 @@ def parse_page(url,game,category):
    if not elements and len(after)>2: elements=labels_of(after[2])
    if not content and len(after)>3: content=text_of(after[3]) or None
    if not sources and len(after)>4: sources=split_values(after[4])
-  elif cat in {"Shields","Ordnance"}:
+  elif cat in {"Shields","Ordnance","Grenades","Wards","Spells","Spellbooks","Melee Weapons"}:
    if not type_value and len(after)>0: type_value=text_of(after[0]) or None
    if not manufacturer and len(after)>1: manufacturer=text_of(after[1]) or None
    if not elements and len(after)>2: elements=labels_of(after[2])
    if not content and len(after)>3: content=text_of(after[3]) or None
    if not sources and len(after)>4: sources=split_values(after[4])
+  elif cat in {"Artifacts","Relics","Rings & Amulets"}:
+   if not type_value and len(after)>0: type_value=text_of(after[0]) or None
+   if not content and len(after)>1: content=text_of(after[1]) or None
+   if not sources and len(after)>2: sources=split_values(after[2])
+  elif cat=="Armor":
+   if not type_value and len(after)>0: type_value=text_of(after[0]) or None
+   if not semantic_values["class"] and len(after)>1: semantic_values["class"].extend(split_values(after[1]))
+   if not semantic_values["skill"] and len(after)>2: semantic_values["skill"].extend(labels_of(after[2]))
+   if not content and len(after)>3: content=text_of(after[3]) or None
+   if not sources and len(after)>4: sources=split_values(after[4])
+  elif cat in {"Oz Kits","Repkits","Enhancements"}:
+   if not manufacturer and len(after)>0: manufacturer=text_of(after[0]) or None
+   if not content and len(after)>1: content=text_of(after[1]) or None
+   if not sources and len(after)>2: sources=split_values(after[2])
   elif cat=="Class Mods":
    if not semantic_values["class"] and len(after)>0: semantic_values["class"].extend(split_values(after[0]))
    if not semantic_values["skill"] and len(after)>1: semantic_values["skill"].extend(labels_of(after[1]))
