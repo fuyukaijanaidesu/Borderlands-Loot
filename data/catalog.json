@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-08T18:10:17.033666+00:00",
+  "updatedAt": "2026-11-09T13:59:41.734011+00:00",
   "games": [
     {
       "id": "borderlands-1",
@@ -74672,13 +74672,14 @@
         "kinetic"
       ],
       "sources": [
-        "Grenade Pool"
+        "Grenade Pool",
+        "Meathead Riders"
       ],
       "metadata": [
         "Grenade",
         "Order",
         "Horrors of Kairos",
-        "Grenade Pool World Wide"
+        "Grenade Pool World Wide Meathead Riders Cuspid Climb"
       ],
       "attributes": {
         "rarity": [
@@ -74697,13 +74698,16 @@
           "Grenade"
         ],
         "location": [
-          "World Wide"
+          "World Wide",
+          "Cuspid Climb"
         ],
         "source": [
-          "Grenade Pool"
+          "Grenade Pool",
+          "Meathead Riders"
         ],
         "source_type": [
-          "loot-pool"
+          "loot-pool",
+          "boss"
         ]
       },
       "tags": [
@@ -74713,8 +74717,11 @@
         "horrors-of-kairos-event",
         "Grenade",
         "World Wide",
+        "Cuspid Climb",
         "Grenade Pool",
+        "Meathead Riders",
         "loot-pool",
+        "boss",
         "kinetic"
       ],
       "image": "https://cdn.prod.website-files.com/5ff36780a1084987868ce198/6a22d75f3986459d91f9ad23_Skully%2520%2528BL4%2529.avif",
@@ -86365,13 +86372,14 @@
         "radiation"
       ],
       "sources": [
+        "Genone",
         "AR Pool"
       ],
       "metadata": [
         "Assault Rifle",
         "Tediore",
         "Horrors of Kairos",
-        "AR Pool World Wide"
+        "Genone Lopside AR Pool World Wide"
       ],
       "attributes": {
         "rarity": [
@@ -86390,12 +86398,15 @@
           "assault-rifle-bl4"
         ],
         "location": [
+          "Lopside",
           "World Wide"
         ],
         "source": [
+          "Genone",
           "AR Pool"
         ],
         "source_type": [
+          "boss",
           "loot-pool"
         ]
       },
@@ -86405,8 +86416,11 @@
         "tediore",
         "horrors-of-kairos-event",
         "assault-rifle-bl4",
+        "Lopside",
         "World Wide",
+        "Genone",
         "AR Pool",
+        "boss",
         "loot-pool",
         "kinetic",
         "fire",
